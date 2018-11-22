@@ -70,9 +70,20 @@ class Users extends Conexao {
     	$this->atualizar->execute();
     }
 
+    public function listaEspecifica()
+    {
+        $conexao = Conexao::conectarBanco();
+    	$this->listaEspecifica = $conexao->prepare("SELECT * FROM users WHERE id = :id");
+    	$this->listaEspecifica->bindValue(":id", $this->id, PDO::PARAM_STR);    	
+    	$this->listaEspecifica->execute();       
+        $listausuario = $this->listaEspecifica->fetch();
+        return $listausuario;
+    }
+
 
 
 }
 
 
 
+ 

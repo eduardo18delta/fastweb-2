@@ -10,7 +10,8 @@
 				<th>Código:</th>
 				<th>Email:</th>
 				<th>Password:</th>
-				<th>Ações:</th>
+				<th>Deletar:</th>
+				<th>Editar:</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -23,6 +24,12 @@
 					<form name="deleteuser" method="post" action="../controller/deleteusersController.php">
 					<input type="hidden" name="id" value="<?= $users['id']?>">						
 					<input class="btn btn-danger" onclick="return confirm('Deseja realmente apagar? Cod:<?= $users['id']?>');" type="submit" value="Apagar">
+					</form>
+				</td>
+				<td>				
+					<form name="updateuser" method="get" action="../view/edit-user.php">
+					<input type="hidden" name="id" value="<?= $users['id']?>">						
+					<input class="btn btn-info" onclick="return confirm('Deseja realmente editar? Cod:<?= $users['id']?>');" type="submit" value="Editar">
 					</form>
 				</td>
 			</tr>		
