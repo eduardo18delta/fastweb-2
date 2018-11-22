@@ -37,6 +37,8 @@ if(isset($_SESSION['user'])) {
 						<img src="../assets/img/logo.png" class="rounded-circle rounded mx-auto d-block">
 					</div><br><br>
 
+                    
+
                     <span class="text-center logo">
                         Sistema Login
                     </span><br><br>
@@ -78,7 +80,7 @@ if(isset($_SESSION['user'])) {
                 <div class="list-group-item" style="background-color: #eaeef3">
                     <div class="d-flex">
                         <div class="mr-auto p-2">
-                            <h2 class="display-4 titulo text-center">Página Inicial <i class="fa fa-code"></i></h2><br>
+                            <h2 class="display-4 titulo text-center">Página Inicial <?php echo $_SESSION['email']; ?><i class="fa fa-code"></i></h2><br>
                         </div>
                     </div>
                     <div class="row mb-3">

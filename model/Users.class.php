@@ -19,7 +19,9 @@ class Users extends Conexao {
 	{
 		$sql = $this->login->fetch();
 		$id = $sql['id'];
+		$email = $sql['email'];
 		$_SESSION['user'] = $id;
+		$_SESSION['email'] = $email;
 		header("Location: ../view/index.php?login_sucess");
 	} 
 	else
@@ -34,6 +36,7 @@ class Users extends Conexao {
 	public function Logout()
 	{
 		unset($_SESSION['user']);
+		unset($_SESSION['email']);
 
 	}
 
