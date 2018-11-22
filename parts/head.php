@@ -13,7 +13,7 @@
 <body>
 
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <a class="navbar-brand" href="https://127.0.0.1">Home</a>
+  <a class="navbar-brand" href="http://127.0.0.1/fastweb-2/view/menu.php">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>

@@ -4,4 +4,8 @@
 
 # Models - Concept
 
-- Toda e qualquer classe criada dentro da pasta /model deve ser inserida no arquivo "/model/autoload.php" via include. Para que os Controller's só incluam o arquivo <b>include_once '../model/autoload.php'</b> e facilitar na hora do coding.
+- Toda e qualquer classe criada dentro da pasta /model deve ser inserida no arquivo "/model/autoload.php" via include. 
+
+# Controller's - Concept
+
+- Os Controller's devem incluir o arquivo <b>include_once '../model/autoload.php'</b> para utilizar as classes do sistema.
