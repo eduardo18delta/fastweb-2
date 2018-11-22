@@ -60,6 +60,18 @@ class Users extends Conexao {
     	$this->deletar->execute();
     }
 
+    public function atualizar()
+    {
+    	$conexao = Conexao::conectarBanco();
+    	$this->atualizar = $conexao->prepare("UPDATE users SET email = :email ,password = md5(:pass) WHERE id = :id");
+    	$this->atualizar->bindValue(":id", $this->id, PDO::PARAM_STR);    	
+    	$this->atualizar->bindValue(":email", $this->email, PDO::PARAM_STR);  
+    	$this->atualizar->bindValue(":pass", $this->password, PDO::PARAM_STR);  
+    	$this->atualizar->execute();
+    }
+
+
+
 }
 
 
