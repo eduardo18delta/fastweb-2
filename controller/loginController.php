@@ -18,7 +18,7 @@ $users->password = md5($_POST['password']);
 if (isset($_POST['email'])  && !empty($_POST['email']))
 {
 	$users->setLogged();
-} ;
+} 
 
 
 

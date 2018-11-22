@@ -25,8 +25,6 @@ if(isset($_SESSION['user'])) {
     </head>
     <body>
 
-        <!-- Init of Template - Marcos André -->
-
         <div class="d-flex">
             <nav class="sidebar">
                 <ul class="list-unstyled">
@@ -40,7 +38,7 @@ if(isset($_SESSION['user'])) {
                     
 
                     <span class="text-center logo">
-                        Sistema Login
+                        Fastweb
                     </span><br><br>
 
 					<!-- End Img -->
@@ -50,15 +48,15 @@ if(isset($_SESSION['user'])) {
 
 					<!-- List of Menu and Icons -->
 
-                    <li><a href=""><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
 
-                    <li><a href=""><i class="fas fa-user"></i> Clientes </a></li>
+                    <li><a href="list-cliente.php"><i class="fas fa-user"></i> Clientes </a></li>
                
-                    <li><a href=""><i class="fas fa-paste"></i> Relatórios </a></li>
+                    <li><a href="list-reports.php"><i class="fas fa-paste"></i> Relatórios </a></li>
 
-                    <li><a href=""><i class="fas fa-dolly"></i> Estoque </a></li>
+                    <li><a href="list-estoque.php"><i class="fas fa-dolly"></i> Estoque </a></li>
 
-                    <li><a href=""><i class="fas fa-handshake"></i> Financeiro</a></li>
+                    <li><a href="list-financeiro.php"><i class="fas fa-handshake"></i> Financeiro</a></li>
 
 
                     <!-- Button of Logoff -->
@@ -80,11 +78,12 @@ if(isset($_SESSION['user'])) {
                 <div class="list-group-item" style="background-color: #eaeef3">
                     <div class="d-flex">
                         <div class="mr-auto p-2">
-                            <h2 class="display-4 titulo text-center">Página Inicial <?php echo $_SESSION['email']; ?><i class="fa fa-code"></i></h2><br>
+                            <h2 class="display-4 titulo text-center">Página Inicial<i class="fa fa-code"></i></h2><br>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-lg-3 col-sm-6">
+                            <a href="clientes.php">
                             <div class="card bg-primary text-white">
                                 <div class="card-body">
                                     <i class="fas fa-users fa-3x"></i>
@@ -92,6 +91,7 @@ if(isset($_SESSION['user'])) {
                                     <h2 class="lead">324</h2>
                                 </div>
                             </div>
+                            </a>
                         </div>
                         <div class="col-lg-3 col-sm-6">
                             <div class="card bg-success text-white">
@@ -121,6 +121,21 @@ if(isset($_SESSION['user'])) {
                             </div>
                         </div>
                     </div>
+
+                <div class="row mb-3">
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="card bg-info text-white">
+                                <div class="card-body">
+                                    <i class="fas fa-paste fa-3x"></i>
+                                    <h6 class="card-title"> Usuários </h6>
+                                    <h2 class="lead">56</h2>
+                                </div>
+                            </div>
+                        </div>
+   
+                        
+                    </div>
+
                 </div>
             </div>
 

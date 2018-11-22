@@ -22,12 +22,12 @@ class Users extends Conexao {
 		$email = $sql['email'];
 		$_SESSION['user'] = $id;
 		$_SESSION['email'] = $email;
-		header("Location: ../view/index.php?login_sucess");
+		header("Location: ../view/menu.php?login_sucess");
 	} 
 	else
 	{
 		echo "<script> alert('Email ou senha incorretos!'); </script>";
-		echo "<script> window.location.href = '../login.php' </script>";
+		echo "<script> window.location.href = '../view/login.php' </script>";
 
 	}
 
@@ -36,7 +36,7 @@ class Users extends Conexao {
 	public function Logout()
 	{
 		unset($_SESSION['user']);
-		unset($_SESSION['email']);
+		unset($_SESSION['email']);	
 
 	}
 
