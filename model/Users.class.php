@@ -22,8 +22,31 @@ class Users extends Conexao {
 
 			header("Location: ../view/index.php?login_sucess");
 
-		} 
+		} else
+
+		{
+			echo "<script> alert('Email ou senha incorretos!'); </script>";
+			echo "<script> window.location.href = '../login.php' </script>";
+
+		}
+
+
+
 	}
+
+
+	public function Logout(){
+		unset($_SESSION['user']);
+
+	}
+
+
+
+
+
+
+
+
 }
 
 
