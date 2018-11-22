@@ -1,0 +1,89 @@
+/*
+	CSS of Page Index.
+	Marcos André
+*/
+
+* {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	outline: none;
+	transition: all .23s ease-in-out;
+}
+
+body {
+    background-color: #eaeef3;
+}
+
+.image_company img {
+	width: 140px;
+	height: 140px;
+	margin-top: 30px;
+}
+
+.logo {
+	font-size: 20px;
+	color: #FFF;
+	margin-left: 51px;
+}
+
+.menu-header{
+    color: #FFF !important;
+}
+.sidebar{
+    background-color: #1f232a;
+    min-width: 250px;
+    max-width: 250px;
+    height:654px;
+    transition: all 0.3s;
+}
+.sidebar ul li a{
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #c7cace;
+    text-decoration: none;
+}
+.sidebar ul li a:hover, .sidebar ul .active a{
+    color: #000;
+    background-color: #eaeef3;
+}
+.sidebar ul ul a{
+    padding-left: 2.5rem;
+    background-color: #1e2835;
+}
+
+/*Seletor utilizado para ativar o botão ocultar menu em PC*/ 
+.sidebar.toggled{
+    margin-left: -250px;
+}
+
+@media (max-width: 768px){
+    .sidebar{
+        margin-left: -250px;
+    }
+    .sidebar.toggled{
+        margin-left: 0px;
+    }
+}
+
+.sidebar [data-toggle="collapse"]{
+    position: relative;
+}
+.sidebar [data-toggle="collapse"]:before{
+    content: "\f0d7";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 1rem;
+}
+.sidebar [aria-expanded="true"]{
+    background-color: #19222d;
+}
+.sidebar [aria-expanded="true"]:before{
+    content: "\f0d8";
+}
+.content{
+    width: 100%;
+}
+.titulo{
+    font-size: 2.0rem !important;
+}

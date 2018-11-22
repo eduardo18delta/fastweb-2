@@ -1,0 +1,110 @@
+/* 
+	CSS of Page Login.
+	Marcos André
+*/
+* {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	outline: none;
+	transition: all .23s ease-in-out;
+}
+
+body {
+	background-color: #2196f3;
+	color: #333;
+}
+
+h1 {
+	color: #FFF;
+	display: block;
+	margin: auto;
+	width: 90%;
+	text-align: center;
+	padding-top: 10vh;
+	padding-bottom: 10vh;
+}
+
+form.log {
+	display: block;
+	margin: auto;
+	width: 90%;
+	max-width: 400px;
+	border-radius: 5px;
+	background:#FFF;
+	box-shadow: 0px 0px 10px #EEE;
+	padding: 10px 0px;
+	text-align: center;
+}
+
+form.log p {
+	font-size: 19pt;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+form.log input.field {
+	display: block;
+	margin: auto;
+	width: 90%;
+	border: 1px solid #CCC;
+	border-radius: 3px;
+	background: #FFF;
+}
+
+form.log button {
+	display: block;
+	width: 90%;
+	margin: auto;
+	padding: 10px 7px;
+	font-weight: bold;
+}
+
+form.log button:hover {
+	background-color: #2196f3;
+	width: 75%;
+	border-radius: 15px;
+	display: block;
+	margin: auto;
+	padding: 10px 7px;
+	font-weight: bold;
+	transition: all .23s ease-in-out;
+}
+
+form.log a {
+	display: block;
+	margin: auto;
+	width: auto;
+	text-align: center;
+	text-decoration: none;
+	color: #666;
+	margin-top: 10px;
+	font-size: 12pt;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+form.log a:hover {
+	color: #2196f3;
+}
+
+form#register.log {
+	display: none;
+}
+
+p#credits {
+	display: block;
+	margin: auto;
+	text-align: center;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #FFF;
+	font-size: 12pt;
+	font-style: italic;
+}
+
+/*
+
+End of CSS
+
+*/
