@@ -40,6 +40,16 @@ class Users extends Conexao {
 
 	}
 
+
+	public function listar()
+    {       
+        $conexao = Conexao::conectarBanco();
+        $query = "SELECT * FROM users";
+        $resultado = $conexao->query($query);
+        $lista = $resultado->fetchAll();
+        return $lista;
+    }
+
 }
 
 

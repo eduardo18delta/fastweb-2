@@ -124,6 +124,7 @@ if(isset($_SESSION['user'])) {
 
                 <div class="row mb-3">
                         <div class="col-lg-3 col-sm-6">
+                            <a href="list-users.php">
                             <div class="card bg-info text-white">
                                 <div class="card-body">
                                     <i class="fas fa-paste fa-3x"></i>
@@ -131,6 +132,7 @@ if(isset($_SESSION['user'])) {
                                     <h2 class="lead">56</h2>
                                 </div>
                             </div>
+                            </a>
                         </div>
    
                         

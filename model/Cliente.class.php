@@ -3,16 +3,7 @@
 
 Class Cliente{
 
-	public function listaClientes()
-	{
-
-
-
-
-
-
-
-	}
+	
 
 
 }
