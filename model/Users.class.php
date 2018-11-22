@@ -6,6 +6,7 @@ class Users extends Conexao {
 
 	public $email;
 	public $password;	
+	public $id;
 
 	public function setLogged()
 	{
@@ -48,6 +49,15 @@ class Users extends Conexao {
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
         return $lista;
+    }
+
+
+    public function deletar()
+    {
+    	$conexao = Conexao::conectarBanco();
+    	$this->deletar = $conexao->prepare("DELETE FROM users WHERE id = :id");
+    	$this->deletar->bindValue(":id", $this->id, PDO::PARAM_STR);    	
+    	$this->deletar->execute();
     }
 
 }

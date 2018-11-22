@@ -6,17 +6,12 @@ require_once '../model/autoload.php';
 
 $users = new Users();
 
-$users->email = $_POST['email'];
-$users->password = md5($_POST['password']);
+$users->id = $_POST['id'];
 
 
-
-if (isset($_POST['email'])  && !empty($_POST['email']))
+if (isset($_POST['id'])  && !empty($_POST['id']))
 {
-	$users->setLogged();
+	$users->deletar();
+	header("Location: ../view/list-users.php");
 } 
 
-
-
-
- ?>
