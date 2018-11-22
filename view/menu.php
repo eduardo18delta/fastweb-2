@@ -83,7 +83,7 @@ if(isset($_SESSION['user'])) {
                     </div>
                     <div class="row mb-3">
                         <div class="col-lg-3 col-sm-6">
-                            <a href="clientes.php">
+                            <a href="list-cliente.php">
                             <div class="card bg-primary text-white">
                                 <div class="card-body">
                                     <i class="fas fa-users fa-3x"></i>
