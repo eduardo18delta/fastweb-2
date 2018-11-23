@@ -2,6 +2,9 @@
 
 <?php 
 
+$listarpermissao = $users->listarpermissao();
+$listarcargo = $users->listarcargo();
+
 session_start();
 
 if(isset($_SESSION['user'])) {
@@ -14,6 +17,9 @@ include_once '../parts/head.php'; ?>
 	<div class="col-12">
 		<a class="btn btn-primary" href="#">Permissões</a>
 		<a class="btn btn-primary" href="#">Cargos</a>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+			Criar Usuário
+		</button>
 	</div>
 </div>
 
@@ -57,6 +63,68 @@ include_once '../parts/head.php'; ?>
 		<?php endforeach?>
 		</tbody>
 	</table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cadastrar Usuário</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">      
+      	<form method="post" action="../controller/cadusersController.php" autocomplete="off">
+      		
+      		<div class="form-group">
+      		<label>Nome:</label>
+      		<input class="form-control" type="text" name="nome">
+      		</div>
+
+      		<div class="form-group">
+      		<label>Email:</label>
+      		<input class="form-control" type="text" name="email" autocomplete="off">
+      		</div>
+
+      		<div class="form-group">
+      		<label>Password:</label>
+      		<input class="form-control" type="password" name="password" autocomplete="off">
+      		</div>
+
+
+      		<div class="form-group">
+      		<label>Cargo:</label>
+      		<select name="cargo" class="form-control">
+      		<?php foreach ($listarcargo as $cargo):?>	
+			<option value="<?=$cargo['id_cargo']?>"><?=$cargo['descricao']?></option>
+			<?php endforeach?>
+      		</select>
+      		</div>
+
+      		<div class="form-group">
+      		<label>Permissão:</label>
+      		<select name="permissao" class="form-control">
+			<?php foreach ($listarpermissao as $permissao):?>	
+			<option value="<?= $permissao['id_permissao']?>"><?=$permissao['descricao']?></option>
+			<?php endforeach?>
+      		</select>
+      		</div>
+
+      		<div class="form-group">
+      			<input class="btn btn-success btn-block" type="submit" name="Cadastrar">
+      		</div>
+
+
+      	</form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>     
+      </div>
+    </div>
+  </div>
 </div>
 
 </div>

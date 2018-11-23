@@ -34,12 +34,12 @@ $listarcargo = $users->listarcargo();
 
 		<div class="form-group">
 		<label>Nova Senha:</label>
-		<input class="form-control" type="text" name="password1">
+		<input class="form-control" type="password" name="password1">
 		</div>
 
 		<div class="form-group">
 		<label>Confirmar Senha:</label>
-		<input class="form-control" type="text" name="password2">
+		<input class="form-control" type="password" name="password2">
 		</div>
 
 
