@@ -156,6 +156,26 @@ class Users extends Conexao {
         return $listausuario;
     }
 
+       public function cadastrarUser()
+    {
+        $conexao = Conexao::conectarBanco();
+        $this->cadastrarUser = $conexao->prepare("
+
+        INSERT INTO users 
+        (id, nome,email,password,cargo_fk,permissao) 
+
+        VALUES 
+
+        (NULL,:nome,:email,:pass,:cargo,:permissao) ;");
+        
+        $this->cadastrarUser->bindValue(":nome", $this->nome, PDO::PARAM_STR); 
+        $this->cadastrarUser->bindValue(":email", $this->email, PDO::PARAM_STR);  
+        $this->cadastrarUser->bindValue(":pass", $this->password, PDO::PARAM_STR);  
+        $this->cadastrarUser->bindValue(":cargo", $this->cargo, PDO::PARAM_STR); 
+        $this->cadastrarUser->bindValue(":permissao", $this->permissao, PDO::PARAM_STR); 
+        $this->cadastrarUser->execute();
+    }
+
 
 }
 
