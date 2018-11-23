@@ -19,15 +19,32 @@
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
-  <!--<li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li> -->
+       <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">    Info.
+       </button>
+      </li> 
+
       <li class="nav-item">
         <a class="nav-link" href="http://127.0.0.1/fastweb-2/controller/logoutController.php">Sair</a>
       </li> 
     </ul>
   </div> 
 </nav>
+
+
+<!-- Small modal -->
+
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+     <div class="modal-content">      
+     <div class="container">   
+
+     <div class="alert alert-info mt-4">
+      <h5 class="alert-heading">Sessão:</h5>  
+      Usuário: <?php echo $_SESSION['nome']; ?></div>          
+     </div>
+
+    </div>
+  </div>
+</div>
