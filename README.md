@@ -12,10 +12,10 @@
 
 ## Instalação
 
-1. Clone o repositorio usando <b>git clone https://github.com/eduardo18delta/fastweb-2.git</b>.
+1. Clone o repositorio usando <b>git clone https://github.com/eduardo18delta/fastweb-2.git</b>
 2. Use o arquivo fastweb-2.sql que está alocado na pasta /database para instalar o banco de dados do sistema.
-3. Configure o acesso ao banco de dados local no arquivo /model/config.php.
+3. Configure o acesso ao seu banco de dados local no arquivo /model/config.php.
 
-- A partir de agora o sistema está funcinal e rodando localmente em sua máquina.
+- A partir de agora o sistema está funcional e rodando localmente em sua máquina.
 
 
