@@ -7,6 +7,7 @@ class Users extends Conexao {
 	public $email;
 	public $password;	
 	public $id;
+    public $permissaodesc;
 
 	public function setLogged()
 	{
@@ -73,13 +74,92 @@ class Users extends Conexao {
     public function listaEspecifica()
     {
         $conexao = Conexao::conectarBanco();
-    	$this->listaEspecifica = $conexao->prepare("SELECT * FROM users WHERE id = :id");
-    	$this->listaEspecifica->bindValue(":id", $this->id, PDO::PARAM_STR);    	
-    	$this->listaEspecifica->execute();       
+        $this->listaEspecifica = $conexao->prepare("
+
+        SELECT 
+            users.id,
+            users.nome, 
+            users.email,
+            cargo.descricao as cargo,
+            permissao.descricao as permissao
+        FROM  
+            users,cargo,permissao
+        WHERE
+            users.id = cargo.id_cargo AND
+            users.id = permissao.id_permissao AND
+            id = :id" );
+        $this->listaEspecifica->bindValue(":id", $this->id, PDO::PARAM_STR);        
+        $this->listaEspecifica->execute();       
         $listausuario = $this->listaEspecifica->fetch();
         return $listausuario;
     }
 
+    public function listarpermissao()
+    {       
+        $conexao = Conexao::conectarBanco();
+        $query = "SELECT * FROM permissao";
+        $resultado = $conexao->query($query);
+        $lista = $resultado->fetchAll();
+        return $lista;
+    }
+
+    public function listarcargo()
+    {       
+        $conexao = Conexao::conectarBanco();
+        $query = "SELECT * FROM permissao";
+        $resultado = $conexao->query($query);
+        $lista = $resultado->fetchAll();
+        return $lista;
+    }
+
+
+    public function permissao($permissao){
+        switch ($permissao) {
+            case 1:
+                echo $this->permissaodesc = "Admin";
+                break;
+
+            case 2:
+                echo $this->permissaodesc = "Gerente";
+                break;
+
+            case 3:
+                echo  $this->permissaodesc = "Auxiliar";
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+    }
+
+    public function cargo($permissao){
+        switch ($permissao) {
+            case 1:
+                echo $this->permissaodesc = "Administrador";
+                break;
+
+            case 2:
+                echo $this->permissaodesc = "Caixa";
+                break;
+
+            case 3:
+                echo  $this->permissaodesc = "Auxiliar de Estoque";
+                break;
+            
+            case 4:
+                echo  $this->permissaodesc = "Coord. Estoque";
+                break;
+
+            case 4:
+                echo  $this->permissaodesc = "Vendedor";
+                break;    
+
+            default:
+                # code...
+                break;
+        }
+    }
 
 
 }

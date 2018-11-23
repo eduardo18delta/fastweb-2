@@ -26,7 +26,7 @@
         <a class="nav-link" href="#">Link</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="http://127.0.0.1/fastweb-2/controller/logoutController.php">Sair</a>
       </li> 
     </ul>
   </div> 

@@ -7,7 +7,7 @@
 	<!-- Bootstrap 4 -->
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap/bootstrap.min.css">
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
 	<!-- GoogleFonts - OpenSans -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<!-- Fontawesome 5.0-->
