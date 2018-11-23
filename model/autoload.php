@@ -3,6 +3,7 @@
 include 'Conexao.class.php';
 include 'Users.class.php';
 include 'Cliente.class.php';
+include 'Permissao.class.php';
 
 
 

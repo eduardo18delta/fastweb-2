@@ -15,7 +15,7 @@ include_once '../parts/head.php'; ?>
 
 <div class="row mt-4">
 	<div class="col-12">
-		<a class="btn btn-primary" href="#">Permissões</a>
+		<a class="btn btn-primary" href="list-permissao.php">Permissões</a>
 		<a class="btn btn-primary" href="#">Cargos</a>
 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 			Criar Usuário
