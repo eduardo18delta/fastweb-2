@@ -4,10 +4,13 @@ require_once "autoload.php";
 
 class Users extends Conexao {
 
+    public $nome;
 	public $email;
 	public $password;	
 	public $id;
     public $permissaodesc;
+    public $cargo;
+    public $permissao;
 
 	public function setLogged()
 	{
@@ -46,7 +49,21 @@ class Users extends Conexao {
 	public function listar()
     {       
         $conexao = Conexao::conectarBanco();
-        $query = "SELECT * FROM users";
+        $query = "
+
+        SELECT 
+            users.id,
+            users.nome, 
+            users.email,
+            users.password,
+            cargo.descricao as cargo,
+            permissao.descricao as permissao
+        FROM  
+            users,cargo,permissao
+        WHERE
+            users.cargo_fk = cargo.id_cargo AND
+            users.permissao = permissao.id_permissao";
+
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
         return $lista;
@@ -64,10 +81,25 @@ class Users extends Conexao {
     public function atualizar()
     {
     	$conexao = Conexao::conectarBanco();
-    	$this->atualizar = $conexao->prepare("UPDATE users SET email = :email ,password = :pass WHERE id = :id");
+    	$this->atualizar = $conexao->prepare("
+
+
+        UPDATE users SET 
+
+        nome = :nome, 
+        email = :email,
+        password = :pass,
+        cargo_fk = :cargo,
+        permissao = :permissao
+
+        WHERE id = :id ");
+
     	$this->atualizar->bindValue(":id", $this->id, PDO::PARAM_STR);    	
+        $this->atualizar->bindValue(":nome", $this->nome, PDO::PARAM_STR); 
     	$this->atualizar->bindValue(":email", $this->email, PDO::PARAM_STR);  
     	$this->atualizar->bindValue(":pass", $this->password, PDO::PARAM_STR);  
+        $this->atualizar->bindValue(":cargo", $this->cargo, PDO::PARAM_STR); 
+        $this->atualizar->bindValue(":permissao", $this->permissao, PDO::PARAM_STR); 
     	$this->atualizar->execute();
     }
 
@@ -80,14 +112,16 @@ class Users extends Conexao {
             users.id,
             users.nome, 
             users.email,
+            users.password,
             cargo.descricao as cargo,
             permissao.descricao as permissao
         FROM  
             users,cargo,permissao
         WHERE
-            users.id = cargo.id_cargo AND
-            users.id = permissao.id_permissao AND
+            users.cargo_fk = cargo.id_cargo AND
+            users.permissao = permissao.id_permissao AND
             id = :id" );
+
         $this->listaEspecifica->bindValue(":id", $this->id, PDO::PARAM_STR);        
         $this->listaEspecifica->execute();       
         $listausuario = $this->listaEspecifica->fetch();
@@ -106,59 +140,20 @@ class Users extends Conexao {
     public function listarcargo()
     {       
         $conexao = Conexao::conectarBanco();
-        $query = "SELECT * FROM permissao";
+        $query = "SELECT * FROM cargo";
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
         return $lista;
     }
 
-
-    public function permissao($permissao){
-        switch ($permissao) {
-            case 1:
-                echo $this->permissaodesc = "Admin";
-                break;
-
-            case 2:
-                echo $this->permissaodesc = "Gerente";
-                break;
-
-            case 3:
-                echo  $this->permissaodesc = "Auxiliar";
-                break;
-            
-            default:
-                # code...
-                break;
-        }
-    }
-
-    public function cargo($permissao){
-        switch ($permissao) {
-            case 1:
-                echo $this->permissaodesc = "Administrador";
-                break;
-
-            case 2:
-                echo $this->permissaodesc = "Caixa";
-                break;
-
-            case 3:
-                echo  $this->permissaodesc = "Auxiliar de Estoque";
-                break;
-            
-            case 4:
-                echo  $this->permissaodesc = "Coord. Estoque";
-                break;
-
-            case 4:
-                echo  $this->permissaodesc = "Vendedor";
-                break;    
-
-            default:
-                # code...
-                break;
-        }
+    public function recuperandosenha()
+    {
+        $conexao = Conexao::conectarBanco();
+        $this->recuperandosenha = $conexao->prepare("SELECT users.password FROM users WHERE id = :id" );
+        $this->recuperandosenha->bindValue(":id", $this->id, PDO::PARAM_STR);        
+        $this->recuperandosenha->execute();       
+        $listausuario = $this->recuperandosenha->fetch();
+        return $listausuario;
     }
 
 

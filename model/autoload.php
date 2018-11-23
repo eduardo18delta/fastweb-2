@@ -3,9 +3,6 @@
 include 'Conexao.class.php';
 include 'Users.class.php';
 include 'Cliente.class.php';
-include 'querys.php';
-
-
 
 
 

@@ -6,6 +6,7 @@ $users = new Users();
 $users->id = $_POST['id'];
 
 $lista = $users->listaEspecifica(); 
+
 $listarpermissao = $users->listarpermissao();
 $listarcargo = $users->listarcargo();
 
@@ -44,7 +45,7 @@ $listarcargo = $users->listarcargo();
 
 		<div class="form-group">
 		<label>Permissão atual:</label>
-		<input class="form-control" type="text" name="email" value="<?=$lista['permissao']?>" disabled>
+		<input class="form-control bg-warning" type="text" name="permissaoatual" value="<?=$lista['permissao']?>" disabled>
 		</div>
 
 		<div class="form-group">
@@ -58,14 +59,14 @@ $listarcargo = $users->listarcargo();
 
 		<div class="form-group">
 		<label>Cargo atual:</label>
-		<input class="form-control" type="text" name="email" value="<?=($lista['cargo'])?>" disabled>
+		<input class="form-control bg-warning" type="text" name="cargoatual" value="<?=($lista['cargo'])?>" disabled>
 		</div>
 
 		<div class="form-group">
 		<label>Novo Cargo:</label>
-		<select class="form-control" name="permissao">
+		<select class="form-control" name="cargo">
 		<?php foreach ($listarcargo as $cargo):?>	
-		<option value="<?= $cargo['id_cargo']?>"><?=$cargo['descricao']?></option>
+		<option value="<?=$cargo['id_cargo']?>"><?=$cargo['descricao']?></option>
 		<?php endforeach?>
 		</select>
 		</div>

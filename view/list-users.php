@@ -37,9 +37,8 @@ include_once '../parts/head.php'; ?>
 				<td><?= $users['id']?></td>	
 				<td><?= $users['nome']?></td>
 				<td><?= $users['email']?></td> 
-				<td><strike><?= $users['password']?></strike></td> 
-				
-				<td><?= $users['cargo_fk']?></td>
+				<td><strike><?= $users['password']?></strike></td> 				
+				<td><?= $users['cargo']?></td>
 				<td><?= $users['permissao']?></td>
 
 				<td>

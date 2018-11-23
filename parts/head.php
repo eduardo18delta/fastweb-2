@@ -19,12 +19,12 @@
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
-      <li class="nav-item">
+  <!--<li class="nav-item">
         <a class="nav-link" href="#">Link</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
-      </li>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link" href="http://127.0.0.1/fastweb-2/controller/logoutController.php">Sair</a>
       </li> 
