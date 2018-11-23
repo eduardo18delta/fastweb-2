@@ -1,5 +1,12 @@
 <?php require_once '../model/autoload.php'; $users = new Users(); $lista = $users->listar(); ?>
-<?php include_once '../parts/head.php'; ?>
+
+<?php 
+
+session_start();
+
+if(isset($_SESSION['user'])) {
+
+include_once '../parts/head.php'; ?>
 
 <div class="container">
 
@@ -39,5 +46,7 @@
 </div>
 
 </div>
+
+<?php } else {header("Location: ../view/login.php?acess_denied");}?>
 
 <?php include_once '../parts/footer.php'; ?>
