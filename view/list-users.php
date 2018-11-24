@@ -29,8 +29,7 @@ include_once '../parts/head.php'; ?>
 			<tr>
 				<th>Código:</th>
 				<th>Nome:</th>
-				<th>Email:</th>
-				<th>Password:</th>
+				<th>Email:</th>				
 				<th>Cargo:</th>
 				<th>Permissão</th>
 				<th>Deletar:</th>
@@ -38,12 +37,14 @@ include_once '../parts/head.php'; ?>
 			</tr>
 		</thead>
 		<tbody>
+			<tr>
+				<div class="alert alert-info mt-4">Para mudar a senha edite o usuário desejado.</div>
+			</tr>
 		<?php foreach ($lista as $users):?>		
 			<tr>
 				<td><?= $users['id']?></td>	
 				<td><?= $users['nome']?></td>
-				<td><?= $users['email']?></td> 
-				<td><strike><?= $users['password']?></strike></td> 				
+				<td><?= $users['email']?></td> 				
 				<td><?= $users['cargo']?></td>
 				<td><?= $users['permissao']?></td>
 
