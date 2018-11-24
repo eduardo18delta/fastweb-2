@@ -51,13 +51,13 @@ include_once '../parts/head.php'; ?>
 				<td>
 					<form name="deleteuser" method="post" action="../controller/deleteusersController.php">
 					<input type="hidden" name="id" value="<?= $users['id']?>">						
-					<input class="btn btn-danger" onclick="return confirm('Deseja realmente apagar? Cod:<?= $users['nome']?>');" type="submit" value="Apagar">
+					<input class="btn btn-danger" onclick="return confirm('Deseja realmente apagar? User:<?= $users['nome']?>');" type="submit" value="Apagar">
 					</form>
 				</td>
 				<td>				
 					<form name="updateuser" method="post" action="../view/edit-user.php">
 					<input type="hidden" name="id" value="<?= $users['id']?>">						
-					<input class="btn btn-info" onclick="return confirm('Deseja realmente editar? Cod:<?= $users['nome']?>');" type="submit" value="Editar">
+					<input class="btn btn-info" onclick="return confirm('Deseja realmente editar? User:<?= $users['nome']?>');" type="submit" value="Editar">
 					</form>
 				</td>
 			</tr>		
