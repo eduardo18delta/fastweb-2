@@ -16,7 +16,7 @@ include_once '../parts/head.php'; ?>
 <div class="row mt-4">
 	<div class="col-12">
 		<a class="btn btn-primary" href="list-permissao.php">Permissões</a>
-		<a class="btn btn-primary" href="#">Cargos</a>
+		<a class="btn btn-primary" href="list-cargos.php">Cargos</a>
 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 			Criar Usuário
 		</button>
@@ -24,7 +24,7 @@ include_once '../parts/head.php'; ?>
 </div>
 
 <div class="table-responsive">
-	<table class="table table-striped table-hover mt-4">
+	<table class="table table-striped table-hover table-bordered mt-4">
 		<thead>
 			<tr>
 				<th>Código:</th>
