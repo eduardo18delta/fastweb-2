@@ -40,7 +40,7 @@ include_once '../parts/head.php'; ?>
 			<tr>
 				<div class="alert alert-info mt-4">Para mudar a senha edite o usuário desejado.</div>
 			</tr>
-		<?php foreach ($lista as $users):?>		
+		<?php foreach($lista as $users):?>		
 			<tr>
 				<td><?= $users['id']?></td>	
 				<td><?= $users['nome']?></td>
@@ -81,17 +81,17 @@ include_once '../parts/head.php'; ?>
       		
       		<div class="form-group">
       		<label>Nome:</label>
-      		<input class="form-control" type="text" name="nome">
+      		<input class="form-control" type="text" name="nome" required>
       		</div>
 
       		<div class="form-group">
       		<label>Email:</label>
-      		<input class="form-control" type="text" name="email" autocomplete="off">
+      		<input class="form-control" type="text" name="email" required>
       		</div>
 
       		<div class="form-group">
       		<label>Password:</label>
-      		<input class="form-control" type="password" name="password" autocomplete="off">
+      		<input class="form-control" type="password" name="password" required>
       		</div>
 
 

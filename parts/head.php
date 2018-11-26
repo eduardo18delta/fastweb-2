@@ -8,7 +8,7 @@
     	<title>FastWeb</title>    
     	<link href="../assets/css/styles.css" rel="stylesheet">    
     	<link href="../assets/img/icons/dev-icon.png" rel="icon" type="image/png">            
-    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">  
 	</head>
 <body>
 
@@ -23,17 +23,14 @@
        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">    Info.
        </button>
       </li> 
-
       <li class="nav-item">
         <a class="nav-link" href="http://127.0.0.1/fastweb-2/controller/logoutController.php">Sair</a>
       </li> 
     </ul>
   </div> 
 </nav>
-
-
+    
 <!-- Small modal -->
-
 
 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">

@@ -4,14 +4,12 @@
 */
 * {
 	margin: 0;
-	font-family: 'Open Sans', sans-serif;
-	outline: none;
-	transition: all .23s ease-in-out;
-}
+};
 
 body {
 	background-color: #2196f3;
 	color: #333;
+	
 }
 
 h1 {
