@@ -1,12 +1,15 @@
-<?php  
+<?php require_once '../model/autoload.php';
 
-session_start();
+$users = new Menu();
 
-if(isset($_SESSION['user'])) {
+$numerousuarios = $users->listarusuarios();
+$numerocargos = $users->listarcargos();
+
+
 
 ?>
 
-<!-- Template by Marcos André -->
+<?php  session_start();if(isset($_SESSION['user'])) { ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -127,9 +130,20 @@ if(isset($_SESSION['user'])) {
                             <a href="list-users.php">
                             <div class="card bg-info text-white">
                                 <div class="card-body">
-                                    <i class="fas fa-paste fa-3x"></i>
+                                    <i class="fas fa-users fa-3x"></i>
                                     <h6 class="card-title"> Usuários </h6>
-                                    <h2 class="lead">56</h2>
+                                    <h2 class="lead"><?=$numerousuarios;?></h2>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <a href="list-cargos.php">
+                            <div class="card bg-secondary text-white">
+                                <div class="card-body">
+                                    <i class="fas fa-address-card fa-3x"></i>
+                                    <h6 class="card-title">Cargos </h6>
+                                    <h2 class="lead"><?=$numerocargos;?></h2>
                                 </div>
                             </div>
                             </a>
@@ -165,16 +179,7 @@ if(isset($_SESSION['user'])) {
 
 
 
-        
     </body>
 </html>
 
-<!-- Template by Marcos André -->
-
-<?php  
-
-} else {
-	header("Location: ../login.php?acess_denied");
-}
-
-?>
+<?php  } else { header("Location: ../login.php?acess_denied"); } ?>
