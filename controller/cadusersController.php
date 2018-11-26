@@ -7,8 +7,10 @@ require_once '../model/autoload.php';
 $nome = $_POST['nome'];
 $email = $_POST['email'];
 $password = md5($_POST['password']);
+$password = md5($_POST['password_again']);
 $cargo = $_POST['cargo'];
 $permissao = $_POST['permissao'];
+
 
 $users = new Users();
 

@@ -77,7 +77,7 @@ include_once '../parts/head.php'; ?>
         </button>
       </div>
       <div class="modal-body">      
-      	<form method="post" action="../controller/cadusersController.php" autocomplete="off">
+      	<form id="cadastro" method="post" action="../controller/cadusersController.php" autocomplete="off">
       		
       		<div class="form-group">
       		<label>Nome:</label>
@@ -90,10 +90,14 @@ include_once '../parts/head.php'; ?>
       		</div>
 
       		<div class="form-group">
-      		<label>Password:</label>
-      		<input class="form-control" type="password" name="password" required>
+      		<label>Senha:</label>
+      		<input class="form-control" id="password" type="password" name="password" required>
       		</div>
 
+      		<div class="form-group">
+      		<label>Confirme a senha:</label>
+      		<input class="form-control" id="password_again" type="password" name="password_again" required>
+      		</div>
 
       		<div class="form-group">
       		<label>Cargo:</label>
