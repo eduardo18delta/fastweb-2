@@ -61,6 +61,10 @@ $numerocargos = $users->listarcargos();
 
                     <li><a href="list-financeiro.php"><i class="fas fa-handshake"></i> Financeiro</a></li>
 
+                    <li><a href="list-users.php"><i class="fas fa-users"></i> Usuários</a></li>
+
+                    <li><a href="list-cargos.php"><i class="fas fa-address-card"></i> Cargos</a></li>
+
 
                     <!-- Button of Logoff -->
 
@@ -81,7 +85,7 @@ $numerocargos = $users->listarcargos();
                 <div class="list-group-item" style="background-color: #eaeef3">
                     <div class="d-flex">
                         <div class="mr-auto p-2">
-                            <h2 class="display-4 titulo text-center">Página Inicial<i class="fa fa-code"></i></h2><br>
+                            <h2 class="display-4 titulo text-center">Menu Principal <i class="fas fa-store"></i></h2><br>
                         </div>
                     </div>
                     <div class="row mb-3">
