@@ -1,0 +1,104 @@
+/*========DESKTOP CSS==========*/
+@media(min-width:601px){
+  .rdpInicio, .rdpFinal, .btnNovidades, .rdpEnd{
+    background-color:#000;
+    color:#fff;
+  }
+  .rdpInicio{
+    height:100px;
+  }
+  .rdpFinal{
+    /* height:450px; */
+  }
+  .btnNovidades{
+    border-radius:0;
+    border:1px solid #fff;
+  }
+  .icone{
+    color:#fff;
+  }
+  .nomeNovidades{
+    border-radius:0;
+  }
+  .sugestoesRdp{
+    height:250px;
+  }
+  .sugestoesRdp, .rdpDev{
+    background-color:rgb(54, 54, 54);
+    color:#fff;
+  }
+  .rdpLancamentos,.rdpPaginas,.rdpMais{
+    background-color:rgb(89, 89, 89);
+    height:80%;
+    width:30%;
+    color:#fff;
+  }
+  .rdpLancamentos li,.rdpPaginas li,.rdpMais li, .rdpInstitucional li, .rdpAtendimento li{
+    list-style:none;
+  }
+  .rdpLancamentos li a,.rdpPaginas li a,.rdpMais li a, .rdpInstitucional li a, .rdpAtendimento li{
+    color:#fff;
+  }
+  .rdpPagamentos li{
+    list-style:none;
+    display:inline;
+  }
+  .imgProcon{
+    width:25%;
+  }
+}
+/*========FIM DESKTOP CSS==========*/
+
+/*=======RESPONSIVE CSS=========*/
+@media(max-width:600px){
+  .rdpInicio, .rdpFinal, .btnNovidades, .rdpEnd{
+    background-color:#000;
+    color:#fff;
+  }
+  .rdpInicio{
+    height:100px;
+  }
+  .rdpFinal{
+    /* height:450px; */
+  }
+  .btnNovidades{
+    border-radius:0;
+    border:1px solid #fff;
+  }
+  .icone{
+    color:#fff;
+  }
+  .nomeNovidades{
+    border-radius:0;
+  }
+  .sugestoesRdp{
+    height:250px;
+  }
+  .sugestoesRdp, .rdpDev{
+    background-color:rgb(54, 54, 54);
+    color:#fff;
+  }
+  .rdpLancamentos,.rdpPaginas,.rdpMais{
+    background-color:rgb(89, 89, 89);
+    height:80%;
+    width:30%;
+    color:#fff;
+  }
+  .rdpLancamentos li,.rdpPaginas li,.rdpMais li, .rdpInstitucional li, .rdpAtendimento li{
+    list-style:none;
+  }
+  .rdpLancamentos li a,.rdpPaginas li a,.rdpMais li a, .rdpInstitucional li a, .rdpAtendimento li{
+    color:#fff;
+  }
+  .rdpPagamentos li{
+    list-style:none;
+    display:inline;
+  }
+  .imgProcon{
+    width:25%;
+  }
+  .newsLater{
+    display:none;
+  }
+}
+/*=======FIM RESPONSIVE CSS=========*/
