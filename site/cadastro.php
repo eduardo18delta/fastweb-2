@@ -6,52 +6,10 @@
 ?>
 <html>
   <head>
-    <title></title>
-    <style>
-    @media(min-width:601px){
-      .frase-form{
-        border-bottom:1px solid rgb(213, 213, 213);
-        width:40%;
-        text-align:center;
-      }
-      .div-form{
-        margin: 50px 0 250px 0;
-      }
-      .teste{
-        border:1px solid red;
-      }
-      .form{
-        width:500px;
-      }
-      .btn-cadastro{
-        width:20%;
-        margin:0 auto;
-      }
-      .margem{
-        margin-bottom:30px;
-      }
-    }
-
-    @media(max-width:600px){
-      .btn-cadastro{
-        width:50%;
-        margin:0 auto;
-      }
-      .frase-form{
-        border-bottom:1px solid rgb(213, 213, 213);
-        width:50%;
-        text-align:center;
-      }
-      .div-form{
-        margin: 0 0 100px 0;
-        height:900px;
-      }
-      .margem{
-        margin-bottom:30px;
-      }
-    }
-
-    </style>
+    <title>Cadastro</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="_css/cadastro-site.css"/>
   </head>
   <body>
     <main>
