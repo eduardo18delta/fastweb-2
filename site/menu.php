@@ -1,3 +1,6 @@
+<?php
+  include 'links.php';
+?>
 <!--===================MENU==================-->
 <html>
   <head>
@@ -5,6 +8,8 @@
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="_css/menu.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="_script/menu-site.js">
+    </script>
   </head>
   <body>
     <header>
@@ -41,17 +46,29 @@
         </div>
       </nav>
       <div class="menuLateral">
-        <div class="respLogin">
-          <i class="far fa-user-circle "></i>Olá, visitante!
+        <div class="btn-close">
+          <i class="far fa-times-circle"></i>
         </div>
-        <ul>
-          <li>Hortfruti</li>
-          <li>Higiene e Limpeza</li>
-          <li>Perfumaria</li>
-          <li>Utilidades</li>
-          <li>Padaria</li>
-          <li>Açougue</li>
-          <li>Enlatados</li>
+        <div class="respUser d-flex flex-column align-items-center mt-3">
+          <i class="far fa-user-circle fa-3x"></i>
+          <p>Olá, visitante!</p>
+        </div>
+        <div class="d-flex flex-column mt-3 pb-3 login-cad">
+          <div class="">
+            <i class="fas fa-sign-in-alt fa-1x mr-3"></i>Entrar
+          </div>
+          <div class="">
+            <i class="fas fa-user-plus mr-2"></i>Cadastrar
+          </div>
+        </div>
+        <ul class="d-flex flex-column align-items-center nav navbar">
+          <li class="nav-item">Hortfruti</li>
+          <li class="nav-item">Higiene e Limpeza</li>
+          <li class="nav-item">Perfumaria</li>
+          <li class="nav-item">Utilidades</li>
+          <li class="nav-item">Padaria</li>
+          <li class="nav-item">Açougue</li>
+          <li class="nav-item">Enlatados</li>
         </ul>
       </div>
       <div class="fundoBlack">
@@ -92,7 +109,4 @@
       </nav>
     </header>
   </body>
-  <?php
-    include 'links.php';
-  ?>
 </html>
