@@ -179,8 +179,8 @@ class Users extends Conexao {
         $this->cadastrarUser->execute();
     }
 
-
 }
+
 
 
 
