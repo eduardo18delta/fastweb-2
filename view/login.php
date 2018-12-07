@@ -2,12 +2,10 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
    	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
-    <title>Template de login, usando Bootstrap.</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/login.css">
+    <title>Login</title>
   </head>
 
   <body class="text-center">
@@ -24,7 +22,7 @@
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+      <p class="mt-5 mb-3 text-muted">&copy; 2018</p>
     </form>
   </body>
 </html>
