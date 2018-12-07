@@ -1,46 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Sistema Login</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<!-- Bootstrap 4 -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap/bootstrap.min.css">
-	<!-- CSS -->
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
-	<!-- GoogleFonts - OpenSans -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<!-- Fontawesome 5.0-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-</head>
-<body>
+    <title>Template de login, usando Bootstrap.</title>
+  </head>
 
-<!-- Init of Bootstrap -->
-
-<div class="container">
-	
-	<div class="col-md-12 col-md-offset-6">
-		<h1>Login Fastweb</h1>
-
-			<form method="POST" class="log" action="../controller/loginController.php" autocomplete="off">
-
-				<br><br><p>Entre na sua conta:</p><br>
-			
-				<input type="email" name="email" class="form-control field" placeholder="example@email.com" autofocus required><br>
-				
-				<input type="password" name="password" class="form-control field" placeholder="********" required><br>
-			
-				<button class="btn btn-default" type="submit">
-					 <i class="fa fa-lock"></i> Entrar
-				</button><br><br>
-			</form>
-	
-			<p id="credits">Fastweb <?php echo date("Y"); ?> - Todos os direitos Reservados - 2018</p>
-		
-
-	</div>
-
-</div>
-
-</body>
+  <body class="text-center">
+    <form class="form-signin" method="POST" class="log" action="../controller/loginController.php" autocomplete="off">
+      <img class="mb-4" src="../assets/img/logo.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+      <label for="inputEmail" class="sr-only">Email:</label>
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Seu email" required autofocus>
+      <label for="inputPassword" class="sr-only">Senha:</label>
+      <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+      <div class="checkbox mb-3">
+        <label>
+          <a href="mailto:meajuda@fastweb.com">meajuda@fastweb.com</a>
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+  </body>
 </html>
