@@ -38,7 +38,7 @@
         <div class="d-flex align-items-center respDisplay">
           <a href="#" class="mr-1 respDisplay">CADASTRE-SE</a> <span class="respDisplay">|</span> <a href="#" class="ml-1 respDisplay">LOGIN</a>
         </div>
-        <div class="respSearch d-flex justify-content-center align-items-center">
+        <div class="respSearch d-flex justify-content-center align-items-center d-lg-none">
           <i class="fas fa-search respSearch"></i>
         </div>
         <div class="d-flex justify-content-center align-items-center" id="divCarrinho">
