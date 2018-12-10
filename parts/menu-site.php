@@ -20,7 +20,7 @@
         <div class="p-2 logo">
           <a href="#"><img src="../assets/img/logo_redimencionada.png"/></a>
         </div>
-        <div class="col-6 pt-3 respDisplay">
+        <div class="col-6 respDisplay">
           <form class="input-group align-middle buscar" >
             <input class="form-control buscar" type="text" placeholder="O que você procura?"/>
             <button type="submit" class="d-flex justify-content-center align-items-center pesquisar ">
