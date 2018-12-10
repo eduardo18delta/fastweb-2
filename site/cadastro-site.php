@@ -1,8 +1,8 @@
 <?php
-  include 'links.php';
+  include 'links-site.php';
 ?>
 <?php
-  include 'menu.php';
+  include 'menu-site.php';
 ?>
 <html>
   <head>
@@ -47,5 +47,5 @@
   </body>
 </html>
 <?php
-  include 'rodape.php';
+  include 'rodape-site.php';
 ?>

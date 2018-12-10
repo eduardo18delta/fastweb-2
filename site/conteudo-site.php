@@ -1,52 +1,13 @@
 <?php
-  include 'links.php';
+  include 'links-site.php';
 ?>
 <html>
   <head>
     <title></title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="_css/conteudo-site.css" />
   </head>
-  <style>
-  /*CSS PARA RESPONSIVE E DESKTOP */
-  .titulo{
-    border-bottom:1px solid rgb(223, 223, 223);
-    background-color:#e3e3e3;
-  }
-  /*RESPONSIVE CSS */
-  @media(max-width:600px) {
-    .borda{
-      border:1px solid #000;
-    }
-    .prod{
-      border:1px solid rgb(223, 223, 223);
-
-    }
-    .info-prod{
-      font-size:15pt;
-    }
-    .preco{
-      font-size:15pt;
-    }
-    .btn-comprar{
-      font-size:10pt;
-    }
-    .img-prod{
-      height:220px;
-    }
-  }
-/*DESKTOP CSS*/
-  @media(min-width:601px){
-    .prod{
-      border:1px solid rgb(223, 223, 223);
-    }
-    .img-prod{
-      height:280px;
-    }
-  }
-
-
-  </style>
   <body>
     <main class="container-fluid my-4">
 

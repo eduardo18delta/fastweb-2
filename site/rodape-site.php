@@ -1,11 +1,11 @@
 <?php
-  include 'links.php';
+  include 'links-site.php';
 ?>
 <html>
   <head>
     <title></title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="_css/rodape.css"/>
+    <link rel="stylesheet" type="text/css" href="_css/rodape-site.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
