@@ -1,3 +1,27 @@
+html{
+  width:100%;
+}
+@media(max-width:600px) {
+  .bordaCima{
+    /* display:flex; */
+    border:1px solid red;
+    width:100%;
+  }
+  .prod{
+    border:1px solid rgb(207, 207, 207);
+    width:210px !important;
+  }
+  .fotoProd img{
+    width:100%;
+  }
+  .btnComprar{
+    display:none;
+  }
+  .bor{
+    border:1px solid #000;
+  }
+}
+
 @media(min-width:601px){
   .tituloProds{
     color:rgb(185, 29, 29);
@@ -45,18 +69,3 @@
   }
 }
 /*====RESPONSIVE CSS====*/
-@media(max-width:600px) {
-  .bordaCima{
-    display:flex;
-  }
-  .prod{
-    border:1px solid rgb(207, 207, 207);
-    width:100px;
-  }
-  .fotoProd img{
-    width:100%;
-  }
-  .btnComprar{
-    display:none;
-  }
-}
