@@ -10,7 +10,7 @@
   </head>
   <body>
     <footer>
-      <div class="">
+      <div class="mt-4">
         <div class="d-flex px-4 justify-content-between align-items-center rdpInicio">
           <div>
             <h6>Não perca nenhuma novidade</h6>
