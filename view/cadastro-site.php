@@ -7,12 +7,12 @@
     <title>Cadastro</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="../css/cadastro-site.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/cadastro-site.css"/>
   </head>
   <body>
-    <main>
+    <main class="mt-4">
       <div class="d-flex flex-column align-items-center div-form">
-        <i class="fas fa-user fa-3x"></i>
+        <i class="fas fa-user fa-3x mt-4"></i>
         <h3>Cadastre-se</h3>
         <P class="frase-form">Preencha o formulário abaixo</P>
         <form class="col-6">

@@ -32,7 +32,7 @@
           <a href="#" class="mr-2 respDisplay" id="linkUser"><i class="far fa-user-circle fa-2x respDisplay"></i></a>
           <span class="respDisplay">Olá, visitante!</span>
         </div>
-        <div class="respFast d-flex">
+        <div class="respFast d-flex d-lg-none">
           Fast<span class="respWeb">Web</span>
         </div>
         <div class="d-flex align-items-center respDisplay">
