@@ -1,13 +1,7 @@
-<html>
-  <head>
     <title>Fast Web</title>
-  </head>
-  <body>
     <?php
-      include 'menu-site.php';
-      include 'slide-site.php';
-      include 'conteudo-site.php';
-      include 'rodape-site.php';
+      include '../parts/menu-site.php';
+      include '../parts/slide-site.php';
+      include '../parts/conteudo-site.php';
+      include '../parts/rodape-site.php';
     ?>
-  </body>
-</html>

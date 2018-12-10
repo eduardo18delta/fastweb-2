@@ -6,9 +6,9 @@
   <head>
     <title></title>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="_css/menu-site.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/menu-site.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="_script/menu-site.js">
+    <script src="../assets/js/menu-site.js">
     </script>
   </head>
   <body>
@@ -18,9 +18,9 @@
           <i class="fas fa-bars fa-2x ml-2"></i>
         </div>
         <div class="p-2 logo">
-          <a href="#"><img src="_img/logo_redimencionada.png"/></a>
+          <a href="#"><img src="../assets/img/logo_redimencionada.png"/></a>
         </div>
-        <div class="col-6 respDisplay">
+        <div class="col-6 pt-3 respDisplay">
           <form class="input-group align-middle buscar" >
             <input class="form-control buscar" type="text" placeholder="O que você procura?"/>
             <button type="submit" class="d-flex justify-content-center align-items-center pesquisar ">
@@ -32,16 +32,16 @@
           <a href="#" class="mr-2 respDisplay" id="linkUser"><i class="far fa-user-circle fa-2x respDisplay"></i></a>
           <span class="respDisplay">Olá, visitante!</span>
         </div>
-        <div class="respFast">
+        <div class="respFast d-flex">
           Fast<span class="respWeb">Web</span>
         </div>
         <div class="d-flex align-items-center respDisplay">
           <a href="#" class="mr-1 respDisplay">CADASTRE-SE</a> <span class="respDisplay">|</span> <a href="#" class="ml-1 respDisplay">LOGIN</a>
         </div>
-        <div class="respSearch d-flex justify-content-center align-items-center d-lg-none">
+        <div class="respSearch d-flex justify-content-center align-items-center d-lg-none ml-4">
           <i class="fas fa-search respSearch"></i>
         </div>
-        <div class="d-flex justify-content-center align-items-center" id="divCarrinho">
+        <div class="d-flex justify-content-center align-items-center mr-3" id="divCarrinho">
           <a href="#" id="linkCarrinho"><i class="fas fa-shopping-cart"></i></a>
         </div>
       </nav>
@@ -49,7 +49,7 @@
         <div class="btn-close">
           <i class="far fa-times-circle"></i>
         </div>
-        <div class="respUser d-flex flex-column align-items-center mt-3">
+        <div class="respUser d-flex flex-column align-items-center mt-4">
           <i class="far fa-user-circle fa-3x"></i>
           <p>Olá, visitante!</p>
         </div>
@@ -71,11 +71,8 @@
           <li class="nav-item">Enlatados</li>
         </ul>
       </div>
-      <div class="fundoBlack">
-
-      </div>
     <!--==============SUBMENU================-->
-      <nav class="navbar navbar-expand-lg submenu">
+      <nav class="navbar navbar-expand-lg submenu d-none d-lg-block">
         <button class="navbar-toggler" type="button" data-toggle="colapse" data-target="#navbarSite">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -107,6 +104,11 @@
           </ul>
         </div>
       </nav>
+
+      <div class="fundoBlack">
+
+      </div>
+
     </header>
   </body>
 </html>

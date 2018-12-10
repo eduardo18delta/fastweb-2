@@ -1,11 +1,11 @@
 <?php
-  include 'links-site.php';
+  include '../parts/links-site.php';
 ?>
 <html>
   <head>
     <title></title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="_css/rodape-site.css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/rodape-site.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
@@ -67,7 +67,7 @@
                 <li>Segunda à Sexta: 08:00 às 18:00hr</li>
                 <li><i class="fas fa-phone-volume icone"></i> (96)00000-0000</li>
                 <li><i class="fas fa-envelope icone"></i> vendas@fastweb.com.br</li>
-                <li><img src="_img/procon.jpg" class="imgProcon"/></li>
+                <li><img src="../assets/img/procon.jpg" class="imgProcon"/></li>
                 <li>Para reclamações, <a href="#">clique aqui.</a></li>
               </ul>
             </div>

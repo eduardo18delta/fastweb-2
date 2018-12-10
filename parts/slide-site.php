@@ -1,11 +1,11 @@
 <?php
-  include 'links-site.php';
+  include '../parts/links-site.php';
 ?>
 <html>
   <head>
     <title></title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="_css/slide-site.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/slide-site.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
@@ -13,13 +13,13 @@
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="first-slide" src="_img/slide/1.jpg" alt="First slide">
+            <img class="first-slide" src="../assets/img/slide/1.jpg" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="second-slide" src="_img/slide/2.jpg" alt="Second slide">
+            <img class="second-slide" src="../assets/img/slide/2.jpg" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="third-slide" src="_img/slide/3.jpg" alt="Third slide">
+            <img class="third-slide" src="../assets/img/slide/3.jpg" alt="Third slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" id="bLeft">

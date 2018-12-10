@@ -1,15 +1,13 @@
 <?php
-  include 'links-site.php';
-?>
-<?php
-  include 'menu-site.php';
+  include '../parts/links-site.php';
+  include '../parts/menu-site.php';
 ?>
 <html>
   <head>
     <title>Cadastro</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="_css/cadastro-site.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/cadastro-site.css"/>
   </head>
   <body>
     <main>
@@ -47,5 +45,5 @@
   </body>
 </html>
 <?php
-  include 'rodape-site.php';
+  include '../parts/rodape-site.php';
 ?>

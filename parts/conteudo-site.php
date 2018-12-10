@@ -6,7 +6,7 @@
     <title></title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="_css/conteudo-site.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/conteudo-site.css" />
   </head>
   <body>
     <main class="container-fluid my-4">
@@ -19,7 +19,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/prod1.jpg" class="w-100"/>
+            <img src="../assets/img/home/prod1.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -34,7 +34,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/miojo.png" class="w-100"/>
+            <img src="../assets/img/home/miojo.png" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Miojo</p>
@@ -49,7 +49,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/acai.jpg" class="w-100"/>
+            <img src="../assets/img/home/acai.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Açai</p>
@@ -64,7 +64,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/prod1.jpg" class="w-100"/>
+            <img src="../assets/img/home/prod1.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -79,7 +79,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/danone.png" class="w-100"/>
+            <img src="../assets/img/home/danone.png" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -94,7 +94,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/prod1.jpg" class="w-100"/>
+            <img src="../assets/img/home/prod1.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -109,7 +109,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/prod1.jpg" class="w-100"/>
+            <img src="../assets/img/home/prod1.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -124,7 +124,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/miojo.png" class="w-100"/>
+            <img src="../assets/img/home/miojo.png" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Miojo</p>
@@ -139,7 +139,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/acai.jpg" class="w-100"/>
+            <img src="../assets/img/home/acai.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Açai</p>
@@ -154,7 +154,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/prod1.jpg" class="w-100"/>
+            <img src="../assets/img/home/prod1.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -169,7 +169,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/danone.png" class="w-100"/>
+            <img src="../assets/img/home/danone.png" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -184,7 +184,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/prod1.jpg" class="w-100"/>
+            <img src="../assets/img/home/prod1.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -211,7 +211,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/prod1.jpg" class="w-100"/>
+            <img src="../assets/img/home/prod1.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -226,7 +226,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/miojo.png" class="w-100"/>
+            <img src="../assets/img/home/miojo.png" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Miojo</p>
@@ -241,7 +241,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/acai.jpg" class="w-100"/>
+            <img src="../assets/img/home/acai.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Açai</p>
@@ -256,7 +256,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/prod1.jpg" class="w-100"/>
+            <img src="../assets/img/home/prod1.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -271,7 +271,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/danone.png" class="w-100"/>
+            <img src="../assets/img/home/danone.png" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -286,7 +286,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/prod1.jpg" class="w-100"/>
+            <img src="../assets/img/home/prod1.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -301,7 +301,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/prod1.jpg" class="w-100"/>
+            <img src="../assets/img/home/prod1.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -316,7 +316,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/miojo.png" class="w-100"/>
+            <img src="../assets/img/home/miojo.png" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Miojo</p>
@@ -331,7 +331,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/acai.jpg" class="w-100"/>
+            <img src="../assets/img/home/acai.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Açai</p>
@@ -346,7 +346,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/prod1.jpg" class="w-100"/>
+            <img src="../assets/img/home/prod1.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -361,7 +361,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/danone.png" class="w-100"/>
+            <img src="../assets/img/home/danone.png" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
@@ -376,7 +376,7 @@
 
         <div class="col-6 col-lg-2 prod">
           <div class="text-center img-prod">
-            <img src="_img/home/prod1.jpg" class="w-100"/>
+            <img src="../assets/img/home/prod1.jpg" class="w-100"/>
           </div>
           <div class="text-center info-prod">
             <p class="d-inline align-middle">Calabresa</p>
