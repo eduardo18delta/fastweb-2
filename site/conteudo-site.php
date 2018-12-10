@@ -23,9 +23,9 @@
   <body>
     <main class="container-fluid borda">
       <div class="row borda" style="border:1px solid red;">
-        <div class="borda">
-          <div class="borda">
-            <img src="_img/home/prod1.jpg" class=""/>
+        <div class="col-6 borda">
+          <div class="text-center borda">
+            <img src="_img/home/prod1.jpg" class="w-100"/>
           </div>
           <div class="text-center borda info-prod">
             <p class="d-inline align-middle">Calabresa</p>
