@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <style>
+  /*RESPONSIVE CSS */
   @media(max-width:600px) {
     .borda{
       border:1px solid #000;
@@ -29,25 +30,26 @@
       height:220px;
     }
   }
-
+/*DESKTOP CSS*/
   @media(min-width:601px){
     .prod{
       border:1px solid rgb(223, 223, 223);
-
     }
     .img-prod{
       height:280px;
     }
-
+    .titulo{
+      /* border-bottom:1px solid rgb(223, 223, 223); */
+    }
   }
 
 
   </style>
   <body>
-    <main class="container-fluid">
+    <main class="container-fluid my-4" style="border:1px solid red;">
 
-      <div class="row">
-        <div class="col-12">
+      <div class="row m">
+        <div class="col-12 titulo">
           <h2 class="text-center text-danger">Destaques</h2>
           <h5 class="text-center">Aproveite antes que acabe!</h5>
         </div>
