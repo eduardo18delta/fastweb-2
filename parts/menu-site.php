@@ -18,7 +18,7 @@
           <i class="fas fa-bars fa-2x ml-2"></i>
         </div>
         <div class="p-2 logo">
-          <a href="#"><img src="../assets/img/logo_redimencionada.png"/></a>
+          <a href="../view/index-site.php"><img src="../assets/img/logo_redimencionada.png"/></a>
         </div>
         <div class="col-6 respDisplay">
           <form class="input-group align-middle buscar" >
@@ -33,10 +33,10 @@
           <span class="respDisplay">Olá, visitante!</span>
         </div>
         <div class="respFast d-flex d-lg-none">
-          Fast<span class="respWeb">Web</span>
+          <a href="../view/index-site.php" class="text-white">Fast<span class="respWeb">Web</span></a>
         </div>
         <div class="d-flex align-items-center respDisplay">
-          <a href="#" class="mr-1 respDisplay">CADASTRE-SE</a> <span class="respDisplay">|</span> <a href="#" class="ml-1 respDisplay">LOGIN</a>
+          <a href="../view/cadastro-site.php" class="mr-1 respDisplay">CADASTRE-SE</a> <span class="respDisplay">|</span> <a href="../view/login-site.php" class="ml-1 respDisplay">LOGIN</a>
         </div>
         <div class="respSearch d-flex justify-content-center align-items-center d-lg-none ml-4">
           <i class="fas fa-search respSearch"></i>
@@ -55,10 +55,10 @@
         </div>
         <div class="d-flex flex-column mt-3 pb-3 login-cad">
           <div class="">
-            <i class="fas fa-sign-in-alt fa-1x mr-3"></i>Entrar
+            <a href="../view/login-site.php" class="text-white"><i class="fas fa-sign-in-alt fa-1x mr-3"></i>Entrar</a>
           </div>
           <div class="">
-            <i class="fas fa-user-plus mr-2"></i>Cadastrar
+            <a href="../view/cadastro-site.php" class="text-white"><i class="fas fa-user-plus mr-2"></i>Cadastrar</a>
           </div>
         </div>
         <ul class="d-flex flex-column align-items-center nav navbar">

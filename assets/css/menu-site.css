@@ -55,6 +55,9 @@
       font-size:20pt;
       margin:0;
     }
+    .respFast a:hover{
+      text-decoration:none;
+    }
     .respWeb{
       color:rgb(222, 42, 42);
     }
