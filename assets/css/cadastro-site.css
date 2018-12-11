@@ -20,6 +20,10 @@
   .margem{
     margin-bottom:30px;
   }
+  #main-cadastro{
+    margin-bottom:150px;
+    border:1px solid #fff;
+  }
 }
 
 @media(max-width:600px){
@@ -38,5 +42,9 @@
   }
   .margem{
     margin-bottom:30px;
+  }
+  #main-cadastro{
+    margin-bottom:150px;
+    border:1px solid #fff;
   }
 }
