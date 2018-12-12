@@ -5,5 +5,5 @@
 		$uri = 'http://';
 	}
 	$uri .= $_SERVER['HTTP_HOST'];
-	header('Location: '.$uri.'../view/login.php');
+	header('Location: '.$uri.'/fastweb-2/view/login.php');
 	exit;

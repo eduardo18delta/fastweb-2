@@ -1,9 +1,10 @@
 <?php require_once '../model/autoload.php';
 
-$users = new Menu();
+$menu = new Menu();
 
-$numerousuarios = $users->listarusuarios();
-$numerocargos = $users->listarcargos();
+$numerousuarios = $menu->listarusuarios();
+$numerocargos = $menu->listarcargos();
+$numeroprodutos = $menu->listarprodutos();
 
 
 
@@ -57,7 +58,7 @@ $numerocargos = $users->listarcargos();
                
                     <li><a href="list-reports.php"><i class="fas fa-paste"></i> Relatórios </a></li>
 
-                    <li><a href="list-estoque.php"><i class="fas fa-dolly"></i> Estoque </a></li>
+                    <li><a href="list-produtos.php"><i class="fas fa-dolly"></i> Estoque </a></li>
 
                     <li><a href="list-financeiro.php"><i class="fas fa-handshake"></i> Financeiro</a></li>
 
@@ -100,7 +101,7 @@ $numerocargos = $users->listarcargos();
                             </div>
                             </a>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
+<!--                         <div class="col-lg-3 col-sm-6">
                             <div class="card bg-success text-white">
                                 <div class="card-body">
                                     <i class="fas fa-paste fa-3x"></i>
@@ -108,17 +109,19 @@ $numerocargos = $users->listarcargos();
                                     <h2 class="lead">56</h2>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-lg-3 col-sm-6">
+                            <a href="list-produtos.php">
                             <div class="card bg-danger text-white">
                                 <div class="card-body">
                                     <i class="fas fa-dolly fa-3x"></i>
                                     <h6 class="card-title"> Estoque</h6>
-                                    <h2 class="lead">765</h2>
+                                    <h2 class="lead"><?=$numeroprodutos;?></h2>
                                 </div>
                             </div>
+                            </a>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
+<!--                         <div class="col-lg-3 col-sm-6">
                             <div class="card bg-warning text-white">
                                 <div class="card-body">
                                     <i class="fas fa-handshake fa-3x"></i>
@@ -126,7 +129,7 @@ $numerocargos = $users->listarcargos();
                                     <h2 class="lead">13</h2>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                 <div class="row mb-3">

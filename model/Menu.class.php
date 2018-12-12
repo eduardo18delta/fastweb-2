@@ -19,8 +19,17 @@ class Menu extends Conexao
         	$conexao = Conexao::conectarBanco();
         	$query = "SELECT * FROM cargo";
         	$resultado = $conexao->query($query);        	
-        	$numerousers = $resultado->rowCount();
-        	return $numerousers;
+        	$numerocargos = $resultado->rowCount();
+        	return $numerocargos;
+    }
+
+        public function listarprodutos()
+        {       
+            $conexao = Conexao::conectarBanco();
+            $query = "SELECT * FROM produtos";
+            $resultado = $conexao->query($query);           
+            $numeroprodutos = $resultado->rowCount();
+            return $numeroprodutos;
     }
 
 }

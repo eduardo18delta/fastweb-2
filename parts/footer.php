@@ -5,6 +5,7 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 <script src="../assets/js/cadastrouser.js"></script>
 <script src="../assets/js/cadastrocargos.js"></script>
+<script src="../assets/js/cadastroprodutos.js"></script>
 
 </body>
 </html>
