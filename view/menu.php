@@ -5,6 +5,7 @@ $menu = new Menu();
 $numerousuarios = $menu->listarusuarios();
 $numerocargos = $menu->listarcargos();
 $numeroprodutos = $menu->listarprodutos();
+$numeroclientes = $menu->listarclientes();
 
 
 
@@ -38,29 +39,22 @@ $numeroprodutos = $menu->listarprodutos();
                 	<div class="image_company">
 						<img src="../assets/img/logo.png" class="rounded-circle rounded mx-auto d-block">
 					</div><br><br>
-
-                    
-
+            
                     <span class="text-center logo">
                         Fastweb
                     </span><br><br>
 
 					<!-- End Img -->
 
-
-
-
 					<!-- List of Menu and Icons -->
 
                     <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
 
+                    <li><a href="http://127.0.0.1/fastweb-2/view/index-site.php"><i class="fa fa-home"></i> Supermercado</a></li>
+
                     <li><a href="list-cliente.php"><i class="fas fa-user"></i> Clientes </a></li>
                
-                    <li><a href="list-reports.php"><i class="fas fa-paste"></i> Relatórios </a></li>
-
-                    <li><a href="list-produtos.php"><i class="fas fa-dolly"></i> Estoque </a></li>
-
-                    <li><a href="list-financeiro.php"><i class="fas fa-handshake"></i> Financeiro</a></li>
+                    <li><a href="list-produtos.php"><i class="fas fa-dolly"></i> Estoque </a></li>              
 
                     <li><a href="list-users.php"><i class="fas fa-users"></i> Usuários</a></li>
 
@@ -96,12 +90,12 @@ $numeroprodutos = $menu->listarprodutos();
                                 <div class="card-body">
                                     <i class="fas fa-users fa-3x"></i>
                                     <h6 class="card-title">Clientes</h6>
-                                    <h2 class="lead">324</h2>
+                                    <h2 class="lead"><?=$numeroclientes;?></h2>
                                 </div>
                             </div>
                             </a>
                         </div>
-<!--                         <div class="col-lg-3 col-sm-6">
+                         <div class="col-lg-3 col-sm-6">
                             <div class="card bg-success text-white">
                                 <div class="card-body">
                                     <i class="fas fa-paste fa-3x"></i>
@@ -109,7 +103,7 @@ $numeroprodutos = $menu->listarprodutos();
                                     <h2 class="lead">56</h2>
                                 </div>
                             </div>
-                        </div> -->
+                        </div> 
                         <div class="col-lg-3 col-sm-6">
                             <a href="list-produtos.php">
                             <div class="card bg-danger text-white">
@@ -121,7 +115,7 @@ $numeroprodutos = $menu->listarprodutos();
                             </div>
                             </a>
                         </div>
-<!--                         <div class="col-lg-3 col-sm-6">
+                         <div class="col-lg-3 col-sm-6">
                             <div class="card bg-warning text-white">
                                 <div class="card-body">
                                     <i class="fas fa-handshake fa-3x"></i>
@@ -129,7 +123,7 @@ $numeroprodutos = $menu->listarprodutos();
                                     <h2 class="lead">13</h2>
                                 </div>
                             </div>
-                        </div> -->
+                        </div> 
                     </div>
 
                 <div class="row mb-3">

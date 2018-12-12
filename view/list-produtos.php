@@ -16,10 +16,14 @@ include_once '../parts/head.php'; ?>
 
 <div class="row mt-4">
 	<div class="col-12">
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cadastroprodutomodal">
 			Cadastrar produto
 		</button>
-		<a class="btn btn-primary" href="list-categorias.php">Categorias</a>
+
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#categorias">
+			Categorias
+		</button>
+		
 	</div>
 </div>
 
@@ -60,9 +64,9 @@ include_once '../parts/head.php'; ?>
 					</form>
 				</td>
 				<td>				
-					<form name="updateuser" method="post" action="../view/edit-user.php">
+					<form name="updateuser" method="post" action="../view/edit-produtos.php">
 					<input type="hidden" name="id" value="<?= $produtos['id_produto']?>">						
-					<input class="btn btn-info" onclick="return confirm('Deseja realmente editar? User:<?= $users['nome']?>');" type="submit" value="Editar">
+					<input class="btn btn-info" onclick="return confirm('Deseja realmente editar? Produto: <?= $produtos['nome']?>');" type="submit" value="Editar">
 					</form>
 				</td>
 			</tr>		
@@ -73,7 +77,7 @@ include_once '../parts/head.php'; ?>
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="cadastroprodutomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -132,7 +136,45 @@ include_once '../parts/head.php'; ?>
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>     
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>     
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="categorias" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Categorias</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">      
+      	
+      	<table class="table table-striped table-hover table-bordered mt-4">
+      		<thead>
+      			<th>Código:</th>
+      			<th>Descrição</th>
+      		</thead>
+
+      		<tbody>
+      		<?php foreach ($listacategorias as $categorias):?>	
+			<tr>
+				<td><?=$categorias['id_categoria']?></td>
+				<td><?=$categorias['descricao']?></td>
+			</tr>			
+			<?php endforeach?>
+			</tbody>
+		</table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>     
       </div>
     </div>
   </div>

@@ -14,6 +14,15 @@ class Menu extends Conexao
         	return $numerousers;
     }
 
+    public function listarclientes()
+        {       
+            $conexao = Conexao::conectarBanco();
+            $query = "SELECT * FROM clientes";
+            $resultado = $conexao->query($query);           
+            $numeroclientes = $resultado->rowCount();
+            return $numeroclientes;
+    }
+
     public function listarcargos()
     	{       
         	$conexao = Conexao::conectarBanco();
