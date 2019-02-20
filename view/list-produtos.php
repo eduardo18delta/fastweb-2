@@ -76,63 +76,103 @@ include_once '../parts/head.php'; ?>
 </div>
 
 
+
+
 <!-- Modal -->
 <div class="modal fade" id="cadastroprodutomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Cadastrar Produto</h5>
+        <span>Cadastrar Produtos</span>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">      
-      	<form id="cadastroproduto" method="post" action="../controller/cadprodutosController.php" autocomplete="off">
-      		
-      		<div class="form-group">
-      		<label>Nome:</label>
-      		<input class="form-control" type="text" name="nome" required>
-      		</div>
+        <form id="cadastroproduto" method="post" action="../controller/cadprodutosController.php" autocomplete="off">
+<div class="row">  
+<div class="col-md-12 col-sm-12 form-group produtos-selecionados">
+    <label for='input-foto-produto-01' class="produtos-adicionados add-produto-principal" id="add-foto-produto-01">
+    <img src="../assets/img/foto-produto.png" width="100%" height="100%">
+    <span>PRINCIPAL</span> 
+    </label>
+    <label for='input-foto-produto-02' class="produtos-adicionados" id="add-foto-produto-02">
+    <img src="../assets/img/foto-produto.png" width="100%" height="100%"> 
+    </label>
+    <label for='input-foto-produto-03' class="produtos-adicionados" id="add-foto-produto-03">
+    <img src="../assets/img/foto-produto.png" width="100%" height="100%"> 
+    </label>
+    <label for='input-foto-produto-04' class="produtos-adicionados" id="add-foto-produto-04">
+    <img src="../assets/img/foto-produto.png" width="100%" height="100%"> 
+    </label>
+    <label for='input-foto-produto-05' class="produtos-adicionados" id="add-foto-produto-05">
+    <img src="../assets/img/foto-produto.png" width="100%" height="100%"> 
+    </label>
+    <label for='input-foto-produto-06' class="produtos-adicionados" id="add-foto-produto-06">
+    <img src="../assets/img/foto-produto.png" width="100%" height="100%"> 
+    </label>
+ 
 
-      		<div class="form-group">
-      		<label>Valor:</label>
-      		<input class="form-control"  type="number" step="0.01" name="valor" required>
-      		</div>
+    <input type="file" name="input-foto-produto-01" id='input-foto-produto-01' class="dnone">
+    <input type="file" name="input-foto-produto-02" id='input-foto-produto-02' class="dnone">
+    <input type="file" name="input-foto-produto-03" id='input-foto-produto-03' class="dnone">
+    <input type="file" name="input-foto-produto-04" id='input-foto-produto-04' class="dnone">
+    <input type="file" name="input-foto-produto-05" id='input-foto-produto-05' class="dnone">
+    <input type="file" name="input-foto-produto-06" id='input-foto-produto-06' class="dnone">
 
-      		<div class="form-group">
-      		<label>Fornecedor:</label>
-      		<input class="form-control" type="text" name="fornecedor" required>
-      		</div>
+  </div>
+ 
 
-      		<div class="form-group">
-      		<label>Validade:</label>
-      		<input class="form-control" type="date" name="validade" required>
-      		</div>
+</div>
 
-      		<div class="form-group">
-      		<label>Quantidade:</label>
-      		<input class="form-control" type="number" name="quantidade" required>
-      		</div>
+<div class="row">  
+          <div class="col-md-8 col-sm-12 form-group">
+          <label>Nome:</label>
+          <input class="form-control" type="text" name="nome" required>
+          </div>
 
-      		<div class="form-group">
-      		<label>Marca:</label>
-      		<input class="form-control" type="text" name="marca" required>
-      		</div>
+          <div class="col-md-4 col-sm-12 form-group">
+          <label>Valor:</label>
+          <input class="form-control"  type="number" step="0.01" name="valor" required>
+          </div>
+</div>
+<div class="row">  
+          <div class="col-md-8 col-sm-12 form-group">
+          <label>Fornecedor:</label>
+          <input class="form-control" type="text" name="fornecedor" required>
+          </div>
 
-      		<div class="form-group">
-      		<label>Categoria:</label>
-      		<select name="categoria" class="form-control">
-      		<?php foreach ($listacategorias as $categorias):?>	
-			<option value="<?=$categorias['id_categoria']?>"><?=$categorias['descricao']?></option>
-			<?php endforeach?>
-      		</select>
-      		</div>
+          <div class="col-md-4 col-sm-12 form-group">
+          <label>Validade:</label>
+          <input class="form-control" type="date" name="validade" required>
+          </div>
+</div>
+<div class="row">  
 
-      		<div class="form-group">
-      			<input class="btn btn-success btn-block" type="submit" name="Cadastrar">
-      		</div>
+          <div class="col-md-4 col-sm-12 form-group">
+          <label>Quantidade:</label>
+          <input class="form-control" type="number" name="quantidade" required>
+          </div>
 
-      	</form>
+          <div class="col-md-4 col-sm-12 form-group">
+          <label>Marca:</label>
+          <input class="form-control" type="text" name="marca" required>
+          </div>
+
+          <div class="col-md-4 col-sm-12 form-group">
+          <label>Categoria:</label>
+          <select name="categoria" class="form-control">
+          <?php foreach ($listacategorias as $categorias):?>  
+      <option value="<?=$categorias['id_categoria']?>"><?=$categorias['descricao']?></option>
+      <?php endforeach?>
+          </select>
+          </div>
+</div>
+          <div class="form-group">
+            <input class="btn btn-success btn-block" type="submit" name="Cadastrar">
+          </div>
+
+        </form>
 
       </div>
       <div class="modal-footer">
@@ -141,6 +181,7 @@ include_once '../parts/head.php'; ?>
     </div>
   </div>
 </div>
+
 
 
 
