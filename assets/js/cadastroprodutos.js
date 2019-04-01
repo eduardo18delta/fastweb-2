@@ -47,18 +47,18 @@ $(document).ready( function() {
     }
   });
 
-  $("#input-foto-produto-01").on('change', function () {
+  $("#input-img-produto-01").on('change', function () {
  
     if (typeof (FileReader) != "undefined") {
  
-        var image_holder = $("#add-foto-produto-01");
+        var image_holder = $("#add-img-produto-01");
         image_holder.empty();
  
         var reader = new FileReader();
         reader.onload = function (e) {
             $("<img />", {
                 "src": e.target.result,
-                "class": "resul-foto-produto"
+                "class": "resul-img-produto"
             }).appendTo(image_holder);
         }
         image_holder.show();
@@ -69,41 +69,18 @@ $(document).ready( function() {
 
 });
 
-$("#input-foto-produto-02").on('change', function () {
+$("#input-img-produto-02").on('change', function () {
  
     if (typeof (FileReader) != "undefined") {
  
-        var image_holder = $("#add-foto-produto-02");
+        var image_holder = $("#add-img-produto-02");
         image_holder.empty();
  
         var reader = new FileReader();
         reader.onload = function (e) {
             $("<img />", {
                 "src": e.target.result,
-                "class": "resul-foto-produto"
-            }).appendTo(image_holder);
-        }
-        image_holder.show();
-        reader.readAsDataURL($(this)[0].files[0]);
-    } else{
-        alert("Este navegador nao suporta FileReader.");
-    }
-
-});
-
-
-$("#input-foto-produto-03").on('change', function () {
- 
-    if (typeof (FileReader) != "undefined") {
- 
-        var image_holder = $("#add-foto-produto-03");
-        image_holder.empty();
- 
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            $("<img />", {
-                "src": e.target.result,
-                "class": "resul-foto-produto"
+                "class": "resul-img-produto"
             }).appendTo(image_holder);
         }
         image_holder.show();
@@ -115,18 +92,18 @@ $("#input-foto-produto-03").on('change', function () {
 });
 
 
-$("#input-foto-produto-04").on('change', function () {
+$("#input-img-produto-03").on('change', function () {
  
     if (typeof (FileReader) != "undefined") {
  
-        var image_holder = $("#add-foto-produto-04");
+        var image_holder = $("#add-img-produto-03");
         image_holder.empty();
  
         var reader = new FileReader();
         reader.onload = function (e) {
             $("<img />", {
                 "src": e.target.result,
-                "class": "resul-foto-produto"
+                "class": "resul-img-produto"
             }).appendTo(image_holder);
         }
         image_holder.show();
@@ -137,18 +114,19 @@ $("#input-foto-produto-04").on('change', function () {
 
 });
 
-$("#input-foto-produto-05").on('change', function () {
+
+$("#input-img-produto-04").on('change', function () {
  
     if (typeof (FileReader) != "undefined") {
  
-        var image_holder = $("#add-foto-produto-05");
+        var image_holder = $("#add-img-produto-04");
         image_holder.empty();
  
         var reader = new FileReader();
         reader.onload = function (e) {
             $("<img />", {
                 "src": e.target.result,
-                "class": "resul-foto-produto"
+                "class": "resul-img-produto"
             }).appendTo(image_holder);
         }
         image_holder.show();
@@ -159,18 +137,40 @@ $("#input-foto-produto-05").on('change', function () {
 
 });
 
-$("#input-foto-produto-06").on('change', function () {
+$("#input-img-produto-05").on('change', function () {
  
     if (typeof (FileReader) != "undefined") {
  
-        var image_holder = $("#add-foto-produto-06");
+        var image_holder = $("#add-img-produto-05");
         image_holder.empty();
  
         var reader = new FileReader();
         reader.onload = function (e) {
             $("<img />", {
                 "src": e.target.result,
-                "class": "resul-foto-produto"
+                "class": "resul-img-produto"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+
+});
+
+$("#input-img-produto-06").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $("#add-img-produto-06");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-img-produto"
             }).appendTo(image_holder);
         }
         image_holder.show();

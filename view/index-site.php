@@ -1,5 +1,6 @@
     <title>Fast Web</title>
     <?php
+      //include '../parts/modal_produtos.php'; 
       include '../parts/menu-site.php';
       include '../parts/slide-site.php';
       include '../parts/conteudo-site.php';

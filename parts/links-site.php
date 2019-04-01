@@ -1,5 +1,6 @@
 <!--CSS LOCAL-->
 <link rel="stylesheet" type="text/css" href="../assets/css/style-site.css"/>
+<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 <!--BOOTSTRAP-->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -13,3 +14,5 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
 <!--PLUGIN JQUERY MASK-->
 <script src="../assets/js/plugins/mask.js"></script>
+
+

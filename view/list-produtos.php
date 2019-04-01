@@ -31,6 +31,8 @@ include_once '../parts/head.php'; ?>
 	<table class="table table-striped table-hover table-bordered mt-4">
 		<thead>
 			<tr>
+        <th><input type="checkbox" name="delete"></th>
+        <th>Produto:</th>
 				<th>Código:</th>
 				<th>Nome:</th>
 				<th>Valor:</th>				
@@ -47,6 +49,8 @@ include_once '../parts/head.php'; ?>
 
 		<?php foreach($lista as $produtos):?>		
 			<tr>
+        <th><input type="checkbox" name="delete"></th>
+        <th><img src="../assets/img/upload_produtos/<?= $produtos['img_01']?>" width="70px" height="70px"></th>
 				<td><?= $produtos['id_produto']?></td>	
 				<td><?= $produtos['nome']?></td>
 				<td><?= "R$ ".$produtos['valor']?></td> 				
@@ -89,36 +93,36 @@ include_once '../parts/head.php'; ?>
         </button>
       </div>
       <div class="modal-body">      
-        <form id="cadastroproduto" method="post" action="../controller/cadprodutosController.php" autocomplete="off">
+        <form id="cadastroproduto" method="post" action="../controller/cadprodutosController.php" autocomplete="off" enctype="multipart/form-data">
 <div class="row">  
 <div class="col-md-12 col-sm-12 form-group produtos-selecionados">
-    <label for='input-foto-produto-01' class="produtos-adicionados add-produto-principal" id="add-foto-produto-01">
-    <img src="../assets/img/foto-produto.png" width="100%" height="100%">
+    <label for='input-img-produto-01' class="produtos-adicionados add-produto-principal" id="add-img-produto-01">
+    <img src="../assets/img/img-add-produto.png" width="100%" height="100%">
     <span>PRINCIPAL</span> 
     </label>
-    <label for='input-foto-produto-02' class="produtos-adicionados" id="add-foto-produto-02">
-    <img src="../assets/img/foto-produto.png" width="100%" height="100%"> 
+    <label for='input-img-produto-02' class="produtos-adicionados" id="add-img-produto-02">
+    <img src="../assets/img/img-add-produto.png" width="100%" height="100%" class="teste"> 
     </label>
-    <label for='input-foto-produto-03' class="produtos-adicionados" id="add-foto-produto-03">
-    <img src="../assets/img/foto-produto.png" width="100%" height="100%"> 
+    <label for='input-img-produto-03' class="produtos-adicionados" id="add-img-produto-03">
+    <img src="../assets/img/img-add-produto.png" width="100%" height="100%"> 
     </label>
-    <label for='input-foto-produto-04' class="produtos-adicionados" id="add-foto-produto-04">
-    <img src="../assets/img/foto-produto.png" width="100%" height="100%"> 
+    <label for='input-img-produto-04' class="produtos-adicionados" id="add-img-produto-04">
+    <img src="../assets/img/img-add-produto.png" width="100%" height="100%"> 
     </label>
-    <label for='input-foto-produto-05' class="produtos-adicionados" id="add-foto-produto-05">
-    <img src="../assets/img/foto-produto.png" width="100%" height="100%"> 
+    <label for='input-img-produto-05' class="produtos-adicionados" id="add-img-produto-05">
+    <img src="../assets/img/img-add-produto.png" width="100%" height="100%"> 
     </label>
-    <label for='input-foto-produto-06' class="produtos-adicionados" id="add-foto-produto-06">
-    <img src="../assets/img/foto-produto.png" width="100%" height="100%"> 
+    <label for='input-img-produto-06' class="produtos-adicionados" id="add-img-produto-06">
+    <img src="../assets/img/img-add-produto.png" width="100%" height="100%"> 
     </label>
  
 
-    <input type="file" name="input-foto-produto-01" id='input-foto-produto-01' class="dnone">
-    <input type="file" name="input-foto-produto-02" id='input-foto-produto-02' class="dnone">
-    <input type="file" name="input-foto-produto-03" id='input-foto-produto-03' class="dnone">
-    <input type="file" name="input-foto-produto-04" id='input-foto-produto-04' class="dnone">
-    <input type="file" name="input-foto-produto-05" id='input-foto-produto-05' class="dnone">
-    <input type="file" name="input-foto-produto-06" id='input-foto-produto-06' class="dnone">
+    <input type="file" name="img_01" id='input-img-produto-01' class="dnone">
+    <input type="file" name="img_02" id='input-img-produto-02' class="dnone">
+    <input type="file" name="img_03" id='input-img-produto-03' class="dnone">
+    <input type="file" name="img_04" id='input-img-produto-04' class="dnone">
+    <input type="file" name="img_05" id='input-img-produto-05' class="dnone">
+    <input type="file" name="img_06" id='input-img-produto-06' class="dnone">
 
   </div>
  
