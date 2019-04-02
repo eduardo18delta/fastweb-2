@@ -1,0 +1,1 @@
+Esse arquivo foi criado para que a pasta upload seja enviado para o git hub, já que uma pasta vazia não pode ser versionado
