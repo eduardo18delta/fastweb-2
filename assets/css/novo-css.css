@@ -1,0 +1,44 @@
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+.pesquisa{
+  width: 45% !important;
+}
+
+.quebra-linha{
+  display: inline !important;
+}
+
+.logo-menu{
+  margin-left: 5px;
+}
+
+.login-botao{
+  color: white !important;
+}
+
+#divBusca{
+  background-color:#FFFFFF;
+  border:solid 1px;  
+  width:500px;
+  height: 35px;
+}
+ 
+#txtBusca{
+  float:left;  
+  padding-left:5px;
+  background-color:transparent;    
+  font-size:18px;
+  border:none;
+  height:32px;
+  width:463px;
+}
+
+#btnBusca{
+  float: right;
+  height: 30px;
+  margin-top: 2.4px;
+
+}

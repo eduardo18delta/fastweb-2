@@ -1,6 +1,3 @@
-<?php
-  include '../parts/links-site.php';
-?>
 <html>
   <head>
     <title></title>
