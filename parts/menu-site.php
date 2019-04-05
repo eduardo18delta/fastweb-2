@@ -32,21 +32,30 @@
   </head>
   <body>
     
-    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-        <a class="navbar-brand" href="#">
-          <img class="logo-menu" src="../assets/img/logo_small.png">
-        </a>        
-          <div id="divBusca">
-            <form action="" method="post">
-              <input type="text" id="txtBusca" placeholder="Buscar produtos..."/>
-              <a href="#"><img src="../assets/img/icons/search-icon.png" id="btnBusca" alt="Buscar"/></a>
-            </form>
-          </div>    
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+      <a class="navbar-brand" href="#">
+        <img src="../assets/img/logo_small.png" width="30" height="30" alt="">
+      </a>
 
-          <ul class="navbar-nav px-3">
-            <li class="nav-item login-botao">            
-              <a class="nav-link" href="#">Login</a>                       
-            </li>
-          </ul>
-    </nav>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Entrar</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Cadastrar</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar produtos.." aria-label="Buscar">
+      <button class="btn btn-light my-2 my-sm-0" type="submit">Procurar</button>
+    </form>
+  </div>
+</nav>
 
