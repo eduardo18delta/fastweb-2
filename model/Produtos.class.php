@@ -44,14 +44,12 @@ class Produtos extends Conexao
             produtos.img_03,
             produtos.img_04,
             produtos.img_05,
-            produtos.img_06
-
+            produtos.img_06            
 		FROM 
 
 			produtos, categoria
 
-		WHERE 
-
+		WHERE             
 			categoria.id_categoria = produtos.categoria_fk order by id_produto desc";
 
         $resultado = $conexao->query($query);

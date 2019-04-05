@@ -1,3 +1,4 @@
+
 body{
   margin: 0px;
   padding: 0px;
@@ -33,7 +34,7 @@ body{
   font-size:18px;
   border:none;
   height:32px;
-  width:463px;
+  
 }
 
 #btnBusca{
@@ -41,4 +42,21 @@ body{
   height: 30px;
   margin-top: 2.4px;
 
+}
+
+
+.sub-menu{
+  height: 25px;
+  background-color: white;
+  width: 100%;  
+}
+
+.float-right{
+  float: right;
+  
+}
+
+.link-submenu{
+  text-decoration:none; 
+  color: black
 }
