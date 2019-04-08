@@ -4,7 +4,7 @@ session_start();
 
 # Arquivos necessários para autenticação via facebook
 require_once '../assets/lib/Facebook/autoload.php';
-include_once '../model/autoload.php';
+include_once '../model/conexaoFacebook.php';
 
 $fb = new \Facebook\Facebook([
   'app_id' => '2162318747411837',
@@ -36,10 +36,10 @@ try {
 }
 
 if (! isset($accessToken)) {
-	$url_login = 'http://localhost/fastweb-2/view/perfilclienteView.php';
+	$url_login = 'http://localhost/fastweb-2/controller/facebookloginController.php';
 	$loginUrl = $helper->getLoginUrl($url_login, $permissions);
 }else{
-	$url_login = 'http://localhost/fastweb-2/view/perfilclienteView.php';
+	$url_login = 'http://localhost/fastweb-2/controller/facebookloginController.php';
 	$loginUrl = $helper->getLoginUrl($url_login, $permissions);
 	//Usuário ja autenticado
 	if(isset($_SESSION['face_access_token'])){
@@ -57,14 +57,14 @@ if (! isset($accessToken)) {
 		$response = $fb->get('/me?fields=name, picture, email');
 		$user = $response->getGraphUser();
 		//var_dump($user);
-		$result_usuario = "SELECT id, nome, email FROM usuarios WHERE email='".$user['email']."' LIMIT 1";
+		$result_usuario = "SELECT id, nome, email FROM users WHERE email='".$user['email']."' LIMIT 1";
 		$resultado_usuario = mysqli_query($conn, $result_usuario);
 		if($resultado_usuario){
 			$row_usuario = mysqli_fetch_assoc($resultado_usuario);
 			$_SESSION['id'] = $row_usuario['id'];
 			$_SESSION['nome'] = $row_usuario['nome'];
 			$_SESSION['email'] = $row_usuario['email'];
-			header("Location: administrativo.php");			
+			header("Location: ../view/perfilclienteView.php");			
 		}
 	} catch(Facebook\Exceptions\FacebookResponseException $e) {
 		echo 'Graph returned an error: ' . $e->getMessage();
