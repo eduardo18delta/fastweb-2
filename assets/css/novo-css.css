@@ -33,8 +33,17 @@
 
 /* Cards do produto - Home */
 
+.titulo-produtos{
+  height: 35px;
+  padding: 5px;
+  width: 100%;
+  background-color: #EEE9E9;
+  font-weight: bold;
+}
+
 .card-principal {
-  width: 230px;
+  margin: 0px;
+  width: 100%;
   height: 325px;
   border: 1px solid #ccc;
 }

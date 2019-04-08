@@ -1,23 +1,25 @@
 <!-- Ultimos produtos adicionados-->
-<?php require_once '../model/autoload.php'; $produtos = new Produtos(); $lista=$produtos->listar(); ?>
+<?php require_once '../model/autoload.php'; $produtos = new Produtos(); $lista=$produtos->listarDestaque(); ?>
 
 <div class="container-fluid">
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="alert alert-secondary">Ofertas</div>
-    </div>
-  </div>
-
   <div class="row justify-content-center">
     <div class="col-md-3">
-      <aside>
-        
-      </aside>      
+    
     </div>
 
     <div class="col-md-9">
+
       <div class="row">
+        <div class="col-md-12">
+          <div class="titulo-produtos">
+            Ofertas <a href="#">Veja mais-></a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">        
         <?php foreach($lista as $produtos): ?>               
         <div class="col-md-3 mt-4">
         <section class="card-principal">
@@ -44,7 +46,7 @@
               <input type="radio" id="cm_star-5" name="fb" value="5"/>
             </div>
             <div class="row justify-content-center">
-              <a class="item btn btn-primary" href="">Comprar</a>
+              <a class="item btn btn-danger" href="">Comprar</a>
             </div>
         </section>
         </div>
@@ -52,8 +54,6 @@
       </div>    
     </div>
   </div>
-
-
 
 </div>
 

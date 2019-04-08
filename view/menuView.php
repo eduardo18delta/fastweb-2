@@ -63,7 +63,7 @@
             <svg class="icons-white">
                 <use xlink:href="#man-user"></use>
             </svg>
-                <a href="#" class="text-white"><b>Entrar</b></a> <span class="mx-2">|</span><a href="#" class="text-white">Cadastrar</a>
+                <a href="loginclienteView.php" class="text-white"><b>Entrar</b></a> <span class="mx-2">|</span><a href="#" class="text-white">Cadastrar</a>
         </div>
         
         <div class="">
