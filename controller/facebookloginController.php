@@ -2,10 +2,9 @@
 session_start();
 //unset($_SESSION['face_access_token']);
 
-# Arquivos necessários para autenticaçã via facebook
+# Arquivos necessários para autenticação via facebook
 require_once '../assets/lib/Facebook/autoload.php';
 include_once '../model/autoload.php';
-
 
 $fb = new \Facebook\Facebook([
   'app_id' => '2162318747411837',
