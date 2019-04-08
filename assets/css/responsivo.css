@@ -1,0 +1,11 @@
+@media screen and (max-width:532px)
+{    
+    .esconder{
+    	display: none !important;
+    }
+
+    .cadastros{
+    	width: 100%;
+    	font-size: 14px;
+    }
+}

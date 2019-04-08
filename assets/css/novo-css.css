@@ -1,35 +1,35 @@
+
 /* CSS menu fastweb - home */
 
-  div#menu{
-        background-color:#000;
-        color:#fff;
-        height:50px;
-      }
-      div#campo-busca{
-        width:35%;
-        height:65%;
-      }
-      div#logo{
-        height:100%;
-        width:50px;
-        background-image:url("logo.png");
-        background-repeat:no-repeat;
-        background-size:contain;
-      }
-      .icons-white{
-        fill:#fff;
-        width:25px;
-        height:25px;
-      }
-      .icons-black{
-        fill:#000;
-        width:20px;
-        height:20px;
-      }
-      a:hover{
-        text-decoration:none;
-      }
-
+div#menu{
+  background-color:#000;
+  color:#fff;
+  height:50px;
+}
+div#campo-busca{
+  width:35%;
+  height:65%;
+}
+div#logo{
+  height:100%;
+  width:50px;
+  background-image:url("logo.png");
+  background-repeat:no-repeat;
+  background-size:contain;
+}
+.icons-white{
+  fill:#fff;
+  width:25px;
+  height:25px;
+}
+.icons-black{
+  fill:#000;
+  width:20px;
+  height:20px;
+}
+a:hover{
+  text-decoration:none;
+}
 
 /* Cards do produto - Home */
 

@@ -22,6 +22,8 @@
     <meta name="keywords" content="Varejo, Supermercado Online, Ecommerce, Vendas"/>   
     <!-- Links css's -->
     <link rel="stylesheet" type="text/css" href="../assets/css/novo-css.css"/>
+    <!-- Links css's -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/responsivo.css" media="screen">
     <!-- Css do slide da home-->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
     <!-- Css do Bootstrap 4-->
@@ -39,7 +41,7 @@
         </div>
         
         <div class="d-flex justify-content-center" id="campo-busca">
-            <form class="h-100 w-100" id="form-busca">
+            <form class="h-100 w-100 esconder" id="form-busca">
                 <div class="input-group input-group-sm h-100">
                     <input class="form-control input rounded-0 h-100" type="text" placeholder="Buscar podutos...">
                     <div class="input-group-prepend">
@@ -53,20 +55,22 @@
             </form>
         </div>
 
-        <div class="">
+        <div class="cadastros">
             <svg class="icons-white">
                 <use xlink:href="#man-user"></use>
             </svg>
-                <a href="loginclienteView.php" class="text-white"><b>Entrar</b></a> <span class="mx-2">|</span><a href="#" class="text-white">Cadastrar</a>
+                <a href="loginclienteView.php" class="text-white"><b>Entrar</b></a> 
+                <span class="mx-2">|</span>
+                <a href="#" class="text-white">Cadastrar</a>
         </div>
         
         <div class="">
-            <a href="#" class="mr-4">
+            <a href="#" class="mr-5">
                 <svg class="icons-white">
                     <use xlink:href="#shopping-cart-black-shape"></use>
                 </svg>
             </a>
-            <a href="#" class="mx-4">
+            <a class="esconder" href="#" class="mx-4">
             <svg class="icons-white">
                 <use xlink:href="#valentines-heart"></use>
             </svg>
