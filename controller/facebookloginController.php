@@ -36,10 +36,10 @@ try {
 }
 
 if (! isset($accessToken)) {
-	$url_login = 'http://localhost/login/face.php';
+	$url_login = 'http://localhost/fastweb-2/view/perfilclienteView.php';
 	$loginUrl = $helper->getLoginUrl($url_login, $permissions);
 }else{
-	$url_login = 'http://localhost/login/face.php';
+	$url_login = 'http://localhost/fastweb-2/view/perfilclienteView.php';
 	$loginUrl = $helper->getLoginUrl($url_login, $permissions);
 	//Usuário ja autenticado
 	if(isset($_SESSION['face_access_token'])){

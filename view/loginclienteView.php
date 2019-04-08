@@ -5,9 +5,9 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Celke - Login</title>
+		<title>Fastweb- Login</title>
 		<link href="../assets/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-		<link href="css/signin.css" rel="stylesheet">
+		<link href="../assets/css/login-cadastro-cliente.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="container">
@@ -34,7 +34,7 @@
 					
 					<div class="row text-center" style="margin-top: 20px;"> 
 						<h4>Você ainda não possui uma conta?</h4>
-						<a href="cadastrar.php">Crie grátis</a>
+						<a href="cadastroclienteView.php">Crie grátis</a>
 					</div>
 					<div class="row text-center" style="margin-top: 20px;"> 
 						<a href="<?php echo $loginUrl; ?>">

@@ -179,6 +179,35 @@ class Users extends Conexao {
         $this->cadastrarUser->execute();
     }
 
+
+    public function loginFacebook()
+    {
+      $conexao = Conexao::conectarBanco();
+      $this->login = $conexao->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
+      $this->login->bindValue(":email", $this->email, PDO::PARAM_STR);
+      $this->login->bindValue(":password", $this->password, PDO::PARAM_STR);
+      $this->login->execute();
+
+    if ($this->login->rowCount() > 0) 
+    {
+        $sql = $this->login->fetch();
+        $id = $sql['id'];
+        $email = $sql['email'];
+        $nome = $sql['nome'];
+        $_SESSION['user'] = $id;
+        $_SESSION['email'] = $email;
+        $_SESSION['nome'] = $nome;
+        header("Location: ../view/menu.php?login_sucess");
+    } 
+    else
+    {
+        echo "<script> alert('Email ou senha incorretos!'); </script>";
+        echo "<script> window.location.href = '../view/login.php' </script>";
+
+    }
+
+    }
+
 }
 
 
