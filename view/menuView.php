@@ -22,14 +22,8 @@
     <meta name="keywords" content="Varejo, Supermercado Online, Ecommerce, Vendas"/>   
     <!-- Links css's -->
     <link rel="stylesheet" type="text/css" href="../assets/css/novo-css.css"/>
-    <!-- Links css's slide -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/slide-site.css"/>
-    <!-- Links css's rodape -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/rodape-site.css"/>
     <!-- Css do slide da home-->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
-    <!-- Css do icone do slide-->
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
     <!-- Css do Bootstrap 4-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">  
 

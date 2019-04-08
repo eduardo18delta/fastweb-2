@@ -23,7 +23,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
       <div class="row">
         <div class="col-md-12">
           <div class="titulo-produtos">
-            Ofertas <a href="#">Veja mais-></a>
+            Ofertas <a href="#"> Veja mais-></a>
           </div>
         </div>
       </div>
@@ -63,17 +63,16 @@ $listaAlimentos=$produtos->listaAlimentos();?>
         <?php endforeach?>
       </div> 
 
-
       <div class="row mt-4">
         <div class="col-md-12">
           <div class="titulo-produtos">
-            Bebidas<a href="#">Veja mais-></a>
+            Alimentos<a href="#"> Veja mais-></a>
           </div>
         </div>
       </div>
 
         <div class="row">        
-        <?php foreach($listaBebidas as $produtos): ?>               
+        <?php foreach($listaAlimentos as $produtos): ?>               
         <div class="col-md-3 mt-4">
         <section class="card-principal">
           <div class="nome-produto"><i class="fas fa-cart-arrow-down"></i></div>
@@ -106,16 +105,16 @@ $listaAlimentos=$produtos->listaAlimentos();?>
         <?php endforeach?>
       </div> 
 
-      <div class="row mt-4">
+       <div class="row mt-4">
         <div class="col-md-12">
           <div class="titulo-produtos">
-            Alimentos<a href="#">Veja mais-></a>
+            Bebidas<a href="#"> Veja mais-></a>
           </div>
         </div>
       </div>
 
         <div class="row">        
-        <?php foreach($listaAlimentos as $produtos): ?>               
+        <?php foreach($listaBebidas as $produtos): ?>               
         <div class="col-md-3 mt-4">
         <section class="card-principal">
           <div class="nome-produto"><i class="fas fa-cart-arrow-down"></i></div>
