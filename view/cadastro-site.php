@@ -1,16 +1,8 @@
-<?php
-  include '../parts/links-site.php';
-  include '../parts/menu-site.php';
-?>
-<html>
-  <head>
-    <title>Cadastro</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="../assets/css/cadastro-site.css"/>
-    <script src="../assets/js/cadastro-site.js"></script>
-  </head>
-  <body>
+<?php include '../view/menuView.php'; ?>
+
+<script src="../assets/js/cadastro-site.js"></script>
+
+
     <main class="mt-4" id="main-cadastro">
       <div class="d-flex flex-column align-items-center div-form">
         <i class="fas fa-user fa-3x mt-4"></i>

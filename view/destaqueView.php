@@ -3,7 +3,7 @@
 
 foreach($lista as $produtos): ?>
 
-<div class="col-md-3 mt-4">
+<div class="col-md-6 mt-4">
 
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="../assets/img/upload_produtos/<?= $produtos['img_01']?>" alt="Card image cap">
