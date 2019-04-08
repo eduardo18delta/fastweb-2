@@ -1,51 +1,30 @@
-  <div class="wrapper">
-    <input class="esconder" checked type=radio name="slider" id="slide1" />
-    <input class="esconder" type=radio name="slider" id="slide2" />
-    <input class="esconder" type=radio name="slider" id="slide3" />
-    <input class="esconder" type=radio name="slider" id="slide4" />
-    <input class="esconder" type=radio name="slider" id="slide5" />
+<div id="demo" class="carousel slide" data-ride="carousel">
 
-  <div class="slider-wrapper">
-    <div class=inner>
-      <article>
-        <div class="info top-left">
-          <h3>Carnes</h3></div>
-        <img src="../assets/img/slide/1.jpg" />
-      </article>
-
-      <article>
-        <div class="info bottom-right">
-          <h3>Dia da feira</h3></div>
-        <img src="../assets/img/slide/2.jpg" />
-      </article>
-
-      <article>
-        <div class="info bottom-left">
-          <h3>Economia</h3></div>
-        <img src="../assets/img/slide/3.jpg" />
-      </article>
+  <!-- Indicadores -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- Imagens para o slide -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../assets/img/slide/3.jpg" alt="Los Angeles" width="1100" height="500">
     </div>
-    <!-- .inner -->
+    <div class="carousel-item">
+      <img src="../assets/img/slide/2.jpg" alt="Chicago" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="../assets/img/slide/1.jpg" alt="New York" width="1100" height="500">
+    </div>
   </div>
-  <!-- .slider-wrapper -->
-
-  <div class="slider-prev-next-control">
-    <label for=slide1></label>
-    <label for=slide2></label>
-    <label for=slide3></label>
-  </div>
-  <!-- .slider-prev-next-control -->
-
-  <div class="slider-dot-control">
-    <label for=slide1></label>
-    <label for=slide2></label>
-    <label for=slide3></label>
-  </div>
-  <!-- .slider-dot-control -->
+  
+  <!-- Controles do slide -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
 </div>
-
-<script src='https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js'></script>
-
-<script id="rendered-js">
-</script>
-
