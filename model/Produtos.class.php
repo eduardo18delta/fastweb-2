@@ -92,6 +92,82 @@ class Produtos extends Conexao
         return $lista;
     }
 
+    public function listaBebidas()
+    {       
+        $conexao = Conexao::conectarBanco();
+        $query = "
+
+        SELECT 
+
+            produtos.id_produto,
+            produtos.nome,
+            produtos.valor,
+            produtos.fornecedor,
+            produtos.validade,
+            produtos.quantidade,
+            produtos.marca,
+            produtos.url_imagem,
+            categoria.descricao,
+            produtos.img_01,
+            produtos.img_02,
+            produtos.img_03,
+            produtos.img_04,
+            produtos.img_05,
+            produtos.img_06            
+        FROM 
+
+            produtos, categoria
+
+        WHERE             
+            categoria.id_categoria = produtos.categoria_fk
+            and 
+            categoria.id_categoria = 8
+             order by id_produto desc
+            LIMIT 4";
+
+        $resultado = $conexao->query($query);
+        $lista = $resultado->fetchAll();
+        return $lista;
+    }
+
+    public function listaAlimentos()
+    {       
+        $conexao = Conexao::conectarBanco();
+        $query = "
+
+        SELECT 
+
+            produtos.id_produto,
+            produtos.nome,
+            produtos.valor,
+            produtos.fornecedor,
+            produtos.validade,
+            produtos.quantidade,
+            produtos.marca,
+            produtos.url_imagem,
+            categoria.descricao,
+            produtos.img_01,
+            produtos.img_02,
+            produtos.img_03,
+            produtos.img_04,
+            produtos.img_05,
+            produtos.img_06            
+        FROM 
+
+            produtos, categoria
+
+        WHERE             
+            categoria.id_categoria = produtos.categoria_fk
+            and 
+            categoria.id_categoria = 1
+             order by id_produto desc
+            LIMIT 4";
+
+        $resultado = $conexao->query($query);
+        $lista = $resultado->fetchAll();
+        return $lista;
+    }
+
     public function listaEspecifica()
     {
         $conexao = Conexao::conectarBanco();
