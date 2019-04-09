@@ -13,6 +13,18 @@ include_once '../parts/head.php'; ?>
 
 <div class="container">
 
+<div class="row">
+	<div class="col">
+		<?php
+			if(isset($_SESSION['msgcadastro']))
+			{
+			echo $_SESSION['msgcadastro'];
+			unset($_SESSION['msgcadastro']);
+			}
+		?>
+	</div>
+</div>
+
 <div class="row mt-4">
 	<div class="col-12">
 		<a class="btn btn-primary" href="list-permissao.php">Permissões</a>

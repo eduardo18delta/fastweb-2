@@ -177,6 +177,7 @@ class Users extends Conexao {
         $this->cadastrarUser->bindValue(":cargo", $this->cargo, PDO::PARAM_STR); 
         $this->cadastrarUser->bindValue(":permissao", $this->permissao, PDO::PARAM_STR); 
         $this->cadastrarUser->execute();
+        $_SESSION['msgcadastro'] = "<div class='alert alert-success mt-4'>Usuário criado com sucesso!</div>";
     }
 
 }
