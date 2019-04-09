@@ -3,7 +3,7 @@
 
 	<body>
 		<div class="container">
-			<div class="row justify-content-center">
+			<div class="row justify-content-center mt-4">
 				<div class="col-md-4">
 					<div class="form-signin">
 						<h2 class="text-center">Login Cliente</h2>
@@ -33,16 +33,16 @@
 								<input type="submit" name="btnLogin" value="Acessar" class="btn btn-success btn-block">
 							</div>	
 					
-							<div class="form-group">										
-								<h4>Você ainda não possui uma conta?</h4>
-								<a href="cadastroclienteView.php">Crie grátis</a>
+							<div class="form-group">													<div class="row justify-content-center">	
+									<a class="btn btn-info"href="cadastroclienteView.php">	
+										<i class="far fa-edit"></i>
+										Cadastrar
+									</a>							
+									<a class="ml-2 btn btn-primary" href="<?php echo $loginUrl; ?>">	<i class="fab fa-facebook"></i>
+										Login com Facebook
+									</a>
+								</div>	
 							</div>
-
-							<div class="form-group">										
-								<a href="<?php echo $loginUrl; ?>">
-									<button type="button" class="btn btn-primary">Facebook</button>
-								</a>
-							</div>	
 						</form>	
 					</div>															
 				</div>

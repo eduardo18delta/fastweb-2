@@ -37,7 +37,9 @@
 
     <div class="d-flex align-items-center justify-content-between" id="menu">
         <div class="" id="logo">
-            <img src="../assets/img/logo_small.png">
+            <a href="index-site.php">
+                <img src="../assets/img/logo_small.png">
+            </a>
         </div>
         
         <div class="d-flex justify-content-center" id="campo-busca">
@@ -61,7 +63,7 @@
             </svg>
                 <a href="loginclienteView.php" class="text-white"><b>Entrar</b></a> 
                 <span class="mx-2">|</span>
-                <a href="#" class="text-white">Cadastrar</a>
+                <a href="cadastroclienteView.php" class="text-white">Cadastrar</a>
         </div>
         
         <div class="">
