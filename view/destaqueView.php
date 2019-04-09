@@ -31,7 +31,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
 
       <div class="row">        
         <?php foreach($listadestaque as $destaque): ?>               
-        <div class="col-md-3 mt-4">
+        <div class="col-md-3 col mt-4">
         <section class="card-principal">
           <div class="nome-produto"><i class="fas fa-cart-arrow-down"></i></div>
           <div class="item">
@@ -40,7 +40,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
             <div class="nome-produto"><?=$destaque['nome']?></div>
             <div> 
               <div class="valor-produto">R$ <?= $destaque['valor']?></div>
-              <div class="unidade-produto">(Unidade)</div>
+              <div class="unidade-produto">(Uni)</div>
             </div>  
             <div class="estrelas">
               <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
@@ -73,7 +73,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
 
         <div class="row">        
         <?php foreach($listaAlimentos as $produtos): ?>               
-        <div class="col-md-3 mt-4">
+        <div class="col-md-3 col mt-4">
         <section class="card-principal">
           <div class="nome-produto"><i class="fas fa-cart-arrow-down"></i></div>
           <div class="item">
@@ -82,7 +82,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
             <div class="nome-produto"><?=$produtos['nome']?></div>
             <div> 
               <div class="valor-produto">R$ <?= $produtos['valor']?></div>
-              <div class="unidade-produto">(Unidade)</div>
+              <div class="unidade-produto">(Uni)</div>
             </div>  
             <div class="estrelas">
               <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
@@ -115,7 +115,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
 
         <div class="row">        
         <?php foreach($listaBebidas as $produtos): ?>               
-        <div class="col-md-3 mt-4">
+        <div class="col-md-3 col mt-4">
         <section class="card-principal">
           <div class="nome-produto"><i class="fas fa-cart-arrow-down"></i></div>
           <div class="item">
@@ -124,7 +124,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
             <div class="nome-produto"><?=$produtos['nome']?></div>
             <div> 
               <div class="valor-produto">R$ <?= $produtos['valor']?></div>
-              <div class="unidade-produto">(Unidade)</div>
+              <div class="unidade-produto">(Uni)</div>
             </div>  
             <div class="estrelas">
               <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
