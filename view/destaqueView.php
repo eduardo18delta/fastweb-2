@@ -56,7 +56,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
               <input type="radio" id="cm_star-5" name="fb" value="5"/>
             </div>
             <div class="row justify-content-center">
-              <a class="item btn btn-danger" href="">Comprar</a>
+              <a class="item btn btn-danger" href="#!">Comprar</a>
             </div>
         </section>
         </div>
@@ -98,7 +98,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
               <input type="radio" id="cm_star-5" name="fb" value="5"/>
             </div>
             <div class="row justify-content-center">
-              <a class="item btn btn-danger" href="">Comprar</a>
+              <a class="item btn btn-danger" href="#!">Comprar</a>
             </div>
         </section>
         </div>
@@ -140,7 +140,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
               <input type="radio" id="cm_star-5" name="fb" value="5"/>
             </div>
             <div class="row justify-content-center">
-              <a class="item btn btn-danger" href="">Comprar</a>
+              <a class="item btn btn-danger" href="#!">Comprar</a>
             </div>
         </section>
         </div>

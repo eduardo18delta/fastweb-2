@@ -1,4 +1,13 @@
+a.link-footer{
+  text-decoration: none;
+  color: white;
+}
 
+
+a.link-footer:hover {
+   text-decoration: none;
+   color: red;
+}
 /* CSS menu fastweb - home */
 
 div#menu{
