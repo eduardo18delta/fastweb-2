@@ -1,3 +1,5 @@
+/* Links do footer*/
+
 a.link-footer{
   text-decoration: none;
   color: white;
@@ -96,8 +98,8 @@ a:hover{
 .nome-produto{
   margin: 5px;  
   margin-left: 5px;
-  text-align: left; !important; 
-  font-size: 20px;
+  text-align: left; 
+  font-size: 18.5px;
   color: #000;
 }
 

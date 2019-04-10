@@ -53,20 +53,28 @@
             </form>
         </div>
 
-        <div class="cadastros">
-            <svg class="icons-white">
-                <use xlink:href="#man-user"></use>
-            </svg>
-                <a href="loginclienteView.php" class="text-white"><b>Entrar</b></a> 
-                <span class="mx-2">|</span>
-                <a href="cadastroclienteView.php" class="text-white">Cadastrar</a>
+        <div class="cadastros">            
+                <a href="loginclienteView.php" class="text-white">
+                    <i class="fas fa-user"></i>
+                    <b>Entrar</b>
+                </a>   
+                <span> 
+                    | 
+                </span>
+                <a href="cadastroclienteView.php" class="text-white">
+                    <i class="fas fa-edit"></i>
+                    Cadastrar
+                </a>
         </div>
         
-        <div class="">
-            <a href="#" class="mr-5 icon-white">
+        <div class="icons-cart">
+            <a href="#">
                <i class="fas fa-shopping-cart"></i>
             </a>
-            <a class="esconder mr-5 icon-white" href="#" class="mx-4">
+            <span> 
+               | 
+            </span>
+            <a class="mr-5 icon-white" href="#">
                 <i class="fas fa-heart"></i>
             </a>
         </div>

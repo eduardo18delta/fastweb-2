@@ -5,7 +5,13 @@
     }
 
     .cadastros{
-    	width: 100%;
-    	font-size: 14px;
+    	width: 70%;
+    	font-size: 15.5px;
+    }
+
+    .icons-cart{
+    	width: 30%;
+    	float: right;
+    	margin-right: 5px;
     }
 }
