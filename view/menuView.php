@@ -56,7 +56,7 @@
                 <?php if(!empty($_SESSION['id'])){ ?>
                 <a href="perfilclienteView.php" class="text-white">
                     <i class="fas fa-user"></i>
-                    <b>Entrar</b>
+                    <b>Perfil</b>
                 </a>   
                         
                 <?php }else{?>
