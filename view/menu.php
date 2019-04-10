@@ -17,16 +17,17 @@ $numeroclientes = $menu->listarclientes();
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">        
-        <title>Sistema Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+        <link href="../assets/img/logo_small.png" rel="icon" type="image/png">        
+        <title>FastWeb - Admin</title>
         <!-- Bootstrap 4 -->
-		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap/bootstrap.min.css">
-		<!-- CSS da INDEX -->
+	    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap/bootstrap.min.css">
+		<!-- CSS da home do menu -->
         <link rel="stylesheet" href="../assets/css/index.css">
         <!-- GoogleFonts - OpenSans -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<!-- Fontawesome 5.0-->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
     </head>
     <body>
 
@@ -34,17 +35,19 @@ $numeroclientes = $menu->listarclientes();
             <nav class="sidebar">
                 <ul class="list-unstyled">
 
-                	<!-- Image of Company -->
+                	<!-- Logo da fastweb -->
 
                 	<div class="image_company">
+                        <a href="index-site.php">
 						<img src="../assets/img/logo.png" class="rounded-circle rounded mx-auto d-block">
+                        </a>
 					</div><br><br>
             
                     <span class="text-center logo">
-                        Fastweb
+                        Fastweb - <a href="index-site.php">ver site</a>
                     </span><br><br>
 
-					<!-- End Img -->
+					<!-- fim logo -->
 
 					<!-- List of Menu and Icons -->
 
@@ -144,6 +147,17 @@ $numeroclientes = $menu->listarclientes();
                                 <div class="card-body">
                                     <i class="fas fa-address-card fa-3x"></i>
                                     <h6 class="card-title">Cargos </h6>
+                                    <h2 class="lead"><?=$numerocargos;?></h2>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <a href="list-cargos.php">
+                            <div class="card bg-secondary text-white">
+                                <div class="card-body">
+                                    <i class="fas fa-bars fa-3x"></i>
+                                    <h6 class="card-title">Slides Home </h6>
                                     <h2 class="lead"><?=$numerocargos;?></h2>
                                 </div>
                             </div>
