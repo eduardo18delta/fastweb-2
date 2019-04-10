@@ -17,6 +17,14 @@ $listaAlimentos=$produtos->listaAlimentos();?>
     <div class="col-md-3">        
       <div class="sidenav">
         
+        <div class="row ">
+          <div class="col">                                  
+            <a id="categorias-gerais" href="#">              
+            Departamentos       
+            </a>  
+          </div>          
+        </div>
+
         <div class="row">
           <div class="col">                                  
             <a class=""href="vizualiarcategoriasController.php">  
@@ -50,7 +58,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
           <div class="col">
             <a class=""href="vizualiarcategoriasController.php">  
             <i class="fas fa-bread-slice"></i>
-            Padaria e Confeitaria
+            Padaria
             <i class="fas fa-plus icon-plus"></i>
             </a> 
           </div>          
@@ -60,7 +68,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
           <div class="col">
             <a class=""href="vizualiarcategoriasController.php">  
             <i class="fas fa-cheese"></i>
-            Frio e Lacticínios
+            Frios
             <i class="fas fa-plus icon-plus"></i>
             </a> 
           </div>          

@@ -17,7 +17,7 @@ div#menu{
 }
 div#campo-busca{
   width:35%;
-  height:65%;
+  height:65%;  
 }
 div#logo{
   height:100%;
@@ -38,6 +38,11 @@ div#logo{
 }
 a:hover{
   text-decoration:none;
+}
+
+.icon-white{
+  color: white;
+  text-decoration: none;
 }
 
 /* Cards do produto - Home */
@@ -120,9 +125,9 @@ a:hover{
   width: 100%;
   margin: 0px;    
   background-color: #F0F0F0; 
-   padding-top: 20px;   
-   border-bottom: 1px white;
-   margin-bottom: 7px;
+  padding-top: 0px;   
+  border-bottom: 1px white;
+  margin-bottom: 7px;
 }
 
 .sidenav a {
@@ -141,4 +146,9 @@ a:hover{
 
 .icon-plus{
   float: right;
+}
+
+#categorias-gerais{  
+  background-color: black;
+  color: white !important;
 }

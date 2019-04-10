@@ -1,9 +1,9 @@
 <html>
   <head>    
-    <?php require_once 'iconsView.php'?>
+    <?php #require_once 'iconsView.php'?>
     <title>FastWeb - Supermercado Online</title>
     <meta charset="utf-8"/>  
-    <link href="../assets/img/logo_small.png" rel="icon" type="image/png">  
+    <link href="../assets/img/logo_small.png" rel="icon" type="image/png">     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Meta Tags - Open Graph -->       
     <meta property="og:url" content="https://www.fastweb.com"/>
@@ -48,9 +48,7 @@
                     <input class="form-control input rounded-0 h-100" type="text" placeholder="Buscar podutos...">
                     <div class="input-group-prepend">
                         <button class="btn bg-white">
-                        <svg class="icons-black">
-                            <use xlink:href="#magnifier"></use>
-                        </svg>
+                        <i class="fas fa-search"></i>
                         </button>
                     </div>
                 </div>
@@ -67,15 +65,11 @@
         </div>
         
         <div class="">
-            <a href="#" class="mr-5">
-                <svg class="icons-white">
-                    <use xlink:href="#shopping-cart-black-shape"></use>
-                </svg>
+            <a href="#" class="mr-5 icon-white">
+               <i class="fas fa-shopping-cart"></i>
             </a>
-            <a class="esconder mr-5" href="#" class="mx-4">
-            <svg class="icons-white">
-                <use xlink:href="#valentines-heart"></use>
-            </svg>
+            <a class="esconder mr-5 icon-white" href="#" class="mx-4">
+                <i class="fas fa-heart"></i>
             </a>
         </div>
     </div>
