@@ -19,26 +19,24 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="FastWeb">      
     <meta name="description" content="FastWeb - Supermercado Online">
-    <meta name="keywords" content="Varejo, Supermercado Online, Ecommerce, Vendas"/>   
+    <meta name="keywords" content="Varejo, Supermercado Online, Ecommerce, Vendas"/>  
     <!-- Links css's -->
     <link rel="stylesheet" type="text/css" href="../assets/css/novo-css.css"/>
-    <!-- Links css's -->
+    <!-- Links css's responsivo -->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsivo.css" media="screen">
     <!-- Css do slide da home-->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
     <!-- Css do Bootstrap 4-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">  
-
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Css FontAwesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   </head>
   <body>  
 
     <div class="d-flex align-items-center justify-content-between" id="menu">
-        <div class="" id="logo">
+        <div id="logo-div">
             <a href="index-site.php">
-                <img src="../assets/img/logo_small.png">
+                <img id="logo-home" src="../assets/img/logo_small.png">
             </a>
         </div>
         
