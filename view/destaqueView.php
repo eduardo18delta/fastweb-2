@@ -27,7 +27,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
 
         <div class="row">
           <div class="col">                                  
-            <a class=""href="vizualiarcategoriasController.php">  
+            <a class=""href="#!">  
             <i class="fa fa-bars"></i>
             Todos os Produtos            
             </a>  
@@ -36,7 +36,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
 
         <div class="row">
           <div class="col">                                  
-            <a class=""href="vizualiarcategoriasController.php">  
+            <a class=""href="#!">  
             <i class="fas fa-tags"></i>
             Ofertas
             <i class="fas fa-plus icon-plus"></i>
@@ -46,7 +46,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
         
         <div class="row">
           <div class="col">
-            <a class=""href="vizualiarcategoriasController.php">  
+            <a class=""href="#!">  
             <i class="fas fa-apple-alt"></i>
             Hortifrúti
             <i class="fas fa-plus icon-plus"></i>
@@ -56,7 +56,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
         
         <div class="row">
           <div class="col">
-            <a class=""href="vizualiarcategoriasController.php">  
+            <a class=""href="#!">  
             <i class="fas fa-bread-slice"></i>
             Padaria
             <i class="fas fa-plus icon-plus"></i>
@@ -66,7 +66,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
         
         <div class="row">
           <div class="col">
-            <a class=""href="vizualiarcategoriasController.php">  
+            <a class=""href="#!">  
             <i class="fas fa-cheese"></i>
             Frios
             <i class="fas fa-plus icon-plus"></i>
@@ -76,7 +76,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
         
         <div class="row">
           <div class="col">
-            <a class=""href="vizualiarcategoriasController.php">  
+            <a class=""href="#!">  
             <i class="fas fa-tags"></i>
             Bebidas
             <i class="fas fa-plus icon-plus"></i>

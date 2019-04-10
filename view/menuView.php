@@ -1,6 +1,5 @@
 <html>
-  <head>    
-    <?php #require_once 'iconsView.php'?>
+  <head>        
     <title>FastWeb - Supermercado Online</title>
     <meta charset="utf-8"/>  
     <link href="../assets/img/logo_small.png" rel="icon" type="image/png">     
@@ -53,11 +52,19 @@
             </form>
         </div>
 
-        <div class="cadastros">            
+        <div class="cadastros"> 
+                <?php if(!empty($_SESSION['id'])){ ?>
+                <a href="perfilclienteView.php" class="text-white">
+                    <i class="fas fa-user"></i>
+                    <b>Entrar</b>
+                </a>   
+                        
+                <?php }else{?>
                 <a href="loginclienteView.php" class="text-white">
                     <i class="fas fa-user"></i>
                     <b>Entrar</b>
                 </a>   
+                <?php } ?>                    
                 <span> 
                     | 
                 </span>
