@@ -14,8 +14,69 @@ $listaAlimentos=$produtos->listaAlimentos();?>
 <div class="container-fluid">
 
   <div class="row justify-content-center">
-    <div class="col-md-3">
-    
+    <div class="col-md-3">        
+      <div class="sidenav">
+        
+        <div class="row">
+          <div class="col">                                  
+            <a class=""href="vizualiarcategoriasController.php">  
+            <i class="fa fa-bars"></i>
+            Todos os Produtos            
+            </a>  
+          </div>          
+        </div>
+
+        <div class="row">
+          <div class="col">                                  
+            <a class=""href="vizualiarcategoriasController.php">  
+            <i class="fas fa-tags"></i>
+            Ofertas
+            <i class="fas fa-plus icon-plus"></i>
+            </a>  
+          </div>          
+        </div>
+        
+        <div class="row">
+          <div class="col">
+            <a class=""href="vizualiarcategoriasController.php">  
+            <i class="fas fa-apple-alt"></i>
+            Hortifrúti
+            <i class="fas fa-plus icon-plus"></i>
+            </a>
+          </div>          
+        </div>
+        
+        <div class="row">
+          <div class="col">
+            <a class=""href="vizualiarcategoriasController.php">  
+            <i class="fas fa-bread-slice"></i>
+            Padaria e Confeitaria
+            <i class="fas fa-plus icon-plus"></i>
+            </a> 
+          </div>          
+        </div>
+        
+        <div class="row">
+          <div class="col">
+            <a class=""href="vizualiarcategoriasController.php">  
+            <i class="fas fa-cheese"></i>
+            Frio e Lacticínios
+            <i class="fas fa-plus icon-plus"></i>
+            </a> 
+          </div>          
+        </div>
+        
+        <div class="row">
+          <div class="col">
+            <a class=""href="vizualiarcategoriasController.php">  
+            <i class="fas fa-tags"></i>
+            Bebidas
+            <i class="fas fa-plus icon-plus"></i>
+            </a> 
+          </div>          
+        </div>
+        
+      </div>
     </div>
 
     <div class="col-md-9">

@@ -72,7 +72,7 @@
                     <use xlink:href="#shopping-cart-black-shape"></use>
                 </svg>
             </a>
-            <a class="esconder" href="#" class="mx-4">
+            <a class="esconder mr-5" href="#" class="mx-4">
             <svg class="icons-white">
                 <use xlink:href="#valentines-heart"></use>
             </svg>

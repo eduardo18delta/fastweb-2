@@ -46,6 +46,7 @@ a:hover{
   height: 35px;
   padding: 5px;
   width: 100%;
+  margin-top: 7px;
   background-color: #EEE9E9;
   font-weight: bold;
 }
@@ -115,9 +116,30 @@ a:hover{
 
 /* area das categorias */
 
-aside{
-  width: 95%;
+.sidenav {
   height: 100%;
-  background-color: black;
+  width: 100%;
+  margin: 0px;    
+  background-color: #F0F0F0; 
+   padding-top: 20px;   
+   border-bottom: 1px white;
+   margin-bottom: 7px;
+}
 
+.sidenav a {
+  padding: 8px 10px 8px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  color: black;
+  border-bottom: 3px solid white;
+}
+
+.sidenav a:hover {
+  color: red;
+  text-decoration: none;
+}
+
+.icon-plus{
+  float: right;
 }
