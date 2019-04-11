@@ -119,7 +119,7 @@ include '../parts/scriptmodal.php';
           <?php echo "<div class='btn-action-modal comprar-produto'>Comprar<i class='fas fa-cash-register dnone'></i></div>"; ?>
 
           <!--====ADICIONAR AO CARRINHO====-->
-          <?php echo "<div class='btn-action-modal dnone'>Adicionar ao Carrinho<i class='fas fa-shopping-cart'></i></div>"; ?>
+          <?php echo "<div class='btn-action-modal add-carrinho dnone'>Adicionar ao Carrinho<i class='fas fa-shopping-cart'></i></div>"; ?>
 
           <!--====ADICIONAR LISTA====-->
           <?php echo "<div class='btn-action-modal dnone'>Adicionar a lista de Compras<i class='fas fa-clipboard-list'></i></div>"; ?>
