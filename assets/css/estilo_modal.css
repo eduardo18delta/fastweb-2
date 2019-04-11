@@ -12,7 +12,7 @@
 .modal {
       margin: 0 auto;
       width: 95%;
-      height: 680px;
+      height: 580px;
       position: fixed;
       bottom: 25px;
       left: 25px;
@@ -52,7 +52,7 @@
       border-radius: 15px;
       background: #fff;
       width: 100%;
-      height: 660px;
+      height: 560px;
       overflow: auto;
       
     }
@@ -61,14 +61,15 @@
       display: flex;
       background: #fff;
       width: 100%;
-      height: 770px;
+      height: 670px;
       flex-direction: column;
+
    }
    .body_modal_filho_column{
       display: flex;
       background: #fff;
       width: 100%;
-      height: 800px;
+      height: 700px;
       flex-direction: column;
    }
    .body_modal_filho_row{
@@ -315,7 +316,7 @@
 .modal {
       margin: 0 auto;
       width: 65%;
-      height: 700px;
+      height: 570px;
       position: absolute;
       left: 60px;
       margin-top: 27px; 
@@ -354,7 +355,7 @@
       border-radius: 15px;
       background: #fff;
       width: 98%;
-      height: 650px;
+      height: 520px;
       /*overflow: auto;*/
       box-shadow: 0 0 10px;
       display: flex;
@@ -366,14 +367,14 @@
       display: flex;
       background: #fff;
       width: 98%;
-      height: 650px;
+      height: 520px;
       flex-direction: row;
    }
    .body_modal_filho_column{
       display: flex;
       background: #fff;
       width: 100%;
-      height: 650px;
+      height: 520px;
       flex-direction: column;
    }
    .body_modal_filho_row{
@@ -384,7 +385,7 @@
       justify-content: space-around;
    }
     .modelos {
-      height: 650px;
+      height: 520px;
       width: 14%;
       padding: 15px;
       border: 1px solid #ccc;
@@ -397,14 +398,14 @@
       display: flex;
       flex-direction: row;
       align-content: space-between;
-      height: 550px;
+      height: 400px;
       width: 53%;
     border: 1px solid #ccc;
     margin: 30px;
     margin-top: 80px;
     }
     .informacao{
-      height: 650px;
+      height: 500px;
       width: 33%;
       padding-right: 15px;
       display: flex;
@@ -523,7 +524,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 310px;
+  height: 210px;
   justify-content: space-around;
   margin: 30px 30px 0 0;
 }
