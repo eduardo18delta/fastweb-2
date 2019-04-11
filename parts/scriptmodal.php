@@ -58,6 +58,18 @@ $(".desfocar").css("filter", "blur(10px)");
         $(".desfocar").css("filter", "blur(0px)");
       })
       
+      $(".comprar-produto").click(function(){
+        $(".background_modal").fadeOut();
+        $(".produto'.$modal['id_produto'].'").removeClass("addproduto'.$modal['id_produto'].'")
+        $(".desfocar").css("filter", "blur(0px)");
+      })
+
+      $(".add-carrinho").click(function(){
+        $(".background_modal").fadeOut();
+        $(".produto'.$modal['id_produto'].'").removeClass("addproduto'.$modal['id_produto'].'")
+        $(".desfocar").css("filter", "blur(0px)");
+      })
+      
 
 });
 
