@@ -265,7 +265,40 @@ $(".und").click(function(){
   $(".und").css("color","#fff")
 })
 
+//Animação de alerta ao adicionar produto no carrinho
 
+$(".cont_add_produto").hide()
+var cont_add_produto=0
+$(".add-carrinho").click(function(){
+
+   // if ($(".vender").hasClass("acesso_permitido")) {
+
+            $(".cont_add_produto").show()
+            $(".cont_add_produto").animate({right: "95px"},100)
+            $(".cont_add_produto").animate({right: "85px"},100)
+            $(".cont_add_produto").animate({right: "95px"},100)
+            $(".cont_add_produto").animate({right: "85px"},100)
+            $(".cont_add_produto").animate({right: "95px"},100)
+            $(".cont_add_produto").animate({right: "85px"},100)
+            $(".cont_add_produto").animate({right: "95px"},100)
+            $(".cont_add_produto").animate({right: "85px"},100)
+            $(".cont_add_produto").animate({right: "95px"},100)
+            $(".cont_add_produto").animate({right: "85px"},100)
+            $(".cont_add_produto").animate({right: "95px"},100)
+            $(".cont_add_produto").animate({right: "85px"},100)
+            $(".cont_add_produto").animate({right: "95px"},100)
+            $(".cont_add_produto").animate({right: "85px"},100)
+            $(".cont_add_produto").animate({right: "95px"},100)
+            $(".cont_add_produto").animate({right: "90px"},100)
+
+            cont_add_produto++
+            $(".cont_add_produto").text(cont_add_produto)
+
+         /*   } else {
+            $(".background_login").fadeIn();
+            }
+          */
+})
 
 
 }); //fim do jquery
