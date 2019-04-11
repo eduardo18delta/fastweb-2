@@ -5,13 +5,15 @@ include '../view/menuView.php';
 
 <?php  if(isset($_SESSION['id'])) { ?>
 
+
 <div class="container-fluid">
 
 	<div class="row mt-4">
 		<div class="col">
 			<nav aria-label="breadcrumb">
   				<ol class="breadcrumb">
-    				<li class="breadcrumb-item active"><a href="perfilclienteView.php">Perfil</a></li>
+    				<li class="breadcrumb-item"><a href="perfilclienteView.php">Perfil</a></li>
+    				<li class="breadcrumb-item active" aria-current="page">Endereços</li>
   				</ol>
 			</nav>
 		</div>	
@@ -21,7 +23,7 @@ include '../view/menuView.php';
 		<div class="col-md-4">
 			<div class="sidenavcliente">       
         		<div class="row">
-          			<div class="col">                                            			
+          			<div class="col">                         			
             			<a id="nome-cliente" href="perfilclienteView.php">              
             			<i class="fas fa-bars"></i>
             			Minha conta - Olá  <?=$_SESSION['nome'] ?>    
@@ -31,7 +33,7 @@ include '../view/menuView.php';
 
         		<div class="row">
           			<div class="col">                                  
-            			<a class=""href="list-enderecoclienteView.php">  
+            			<a class="menu-marcado"href="list-enderecoclienteView.php">  
             			<i class="fas fa-address-card"></i>
             			Endereços    
             			<i class="fas fa-arrow-circle-right icon-plus"></i>      
@@ -65,19 +67,22 @@ include '../view/menuView.php';
 			<div class="row">
 				<div class="col">
 					<div class="alert alert-primary resumo">
-						<b>Resumo do seu perfil</b>	
+						<b>Endereços cadastrados</b>	
 					</div>
 
 					<div class="alert alert-danger">
-						<b>Aqui vão as últimas compras feitas</b>	
+						<b>Aqui vai um foreach para mostrar os endereços cadastrados</b>	
 					</div>
 				</div>
 
 			</div>
 		</div>
 	</div>
-
 </div>
+
+
+
+
 
 <?php  
 } 
@@ -88,4 +93,3 @@ else
 } 
 
 ?>
-

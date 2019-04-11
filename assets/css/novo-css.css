@@ -170,3 +170,48 @@ a:hover{
   background-color: black;
   color: white !important;
 }
+
+
+
+
+/*  Perfil do cliente */
+
+
+.sidenavcliente {  
+  width: 100%;
+  margin: 0px;    
+  background-color: #F0F0F0; 
+  padding-top: 0px;   
+  border-bottom: 1px white;
+  margin-bottom: 7px;
+}
+
+.sidenavcliente a {
+  padding: 8px 10px 8px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  color: black;
+  border-bottom: 3px solid white;
+}
+
+.sidenavcliente a:hover {
+  color: red;
+  text-decoration: none;
+}
+
+#nome-cliente{  
+  background-color: #F5F5F5;
+  color: #000000!important;
+}
+
+.resumo{
+  background-color: #F0F0F0 !important; 
+  border-color: #F0F0F0 !important;
+  color: black !important;
+}
+
+.menu-marcado{
+  background-color: #C20A01;
+  color: white !important;
+}
