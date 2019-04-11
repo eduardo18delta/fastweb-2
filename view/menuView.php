@@ -31,7 +31,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   </head>
   <body>  
-
+    <div id="menu-space"> 
+    </div>
     <div class="d-flex align-items-center justify-content-between desfocar" id="menu">
         <div id="logo-div">
             <a href="index-site.php">
@@ -76,6 +77,7 @@
         
         <div class="icons-cart">
             <a href="#">
+                <div class="cont_add_produto carrinho_compra_ativo carrinho-compra-alert"></div>
                <i class="fas fa-shopping-cart"></i>
             </a>
             <span> 
