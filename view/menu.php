@@ -31,7 +31,7 @@ $numeroclientes = $menu->listarclientes();
     </head>
     <body>
 
-        <div class="d-flex">
+        <div class="d-flex desfocar">
             <nav class="sidebar">
                 <ul class="list-unstyled">
 

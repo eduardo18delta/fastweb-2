@@ -32,7 +32,7 @@
   </head>
   <body>  
 
-    <div class="d-flex align-items-center justify-content-between" id="menu">
+    <div class="d-flex align-items-center justify-content-between desfocar" id="menu">
         <div id="logo-div">
             <a href="index-site.php">
                 <img id="logo-home" src="../assets/img/logo_small.png">
@@ -52,7 +52,7 @@
             </form>
         </div>
 
-        <div class="cadastros"> 
+        <div class="cadastros desfocar"> 
                 <?php if(!empty($_SESSION['id'])){ ?>
                 <a href="perfilclienteView.php" class="text-white">
                     <i class="fas fa-user"></i>
