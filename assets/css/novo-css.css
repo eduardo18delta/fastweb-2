@@ -26,6 +26,13 @@ div#menu{
   background-color:#000;
   color:#fff;
   height:50px;
+  position: fixed; 
+  width: 100%; 
+  z-index: 5;
+  top: 0px;
+}
+div#menu-space{
+  height:50px;
 }
 div#campo-busca{
   width:35%;
@@ -215,3 +222,22 @@ a:hover{
   background-color: #C20A01;
   color: white !important;
 }
+
+/*  Alerta ao adicionar produto no carrinho */
+.carrinho-compra-alert{
+        width: 30px; 
+        height: 30px; 
+        border-radius: 50%; 
+        background-color: red; 
+        color: #fff; 
+        position: absolute; 
+        top:10px; 
+        right: 90px;
+        z-index: 2; 
+        display: flex; 
+        justify-content: center;
+        align-items: center; 
+        box-shadow: 0 0 10px #000; 
+        font-size: 14px; 
+        font-weight: bold;
+      }
