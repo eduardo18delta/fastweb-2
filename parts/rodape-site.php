@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
-    <footer>
+    <footer class="desfocar">
       <div class="mt-4">
         <div class="d-flex px-4 justify-content-between align-items-center rdpInicio">
           <div>

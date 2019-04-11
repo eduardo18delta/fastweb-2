@@ -1,4 +1,4 @@
-  <div class="wrapper">
+  <div class="wrapper desfocar">
     <input class="esconder" checked type=radio name="slider" id="slide1" />
     <input class="esconder" type=radio name="slider" id="slide2" />
     <input class="esconder" type=radio name="slider" id="slide3" />
