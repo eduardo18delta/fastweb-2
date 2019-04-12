@@ -76,7 +76,7 @@
         </div>
         
         <div class="icons-cart">
-            <a href="#">
+            <a href="../view/carrinhoView.php">
                 <div class="cont_add_produto carrinho_compra_ativo carrinho-compra-alert"></div>
                <i class="fas fa-shopping-cart"></i>
             </a>
