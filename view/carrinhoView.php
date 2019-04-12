@@ -1,4 +1,16 @@
 <!-- Ultimos produtos adicionados-->
+
+<?php 
+include '../view/modalprodutosView.php';
+include '../view/menuView.php';
+?>
+
+<div class="container-fluid desfocar">
+
+  <div class="row mt-4">      
+     
+  
+
 <?php 
 
 require_once '../model/autoload.php'; $produtos = new Produtos(); 
@@ -14,78 +26,6 @@ $listaAlimentos=$produtos->listaAlimentos();?>
 <div class="container-fluid">
 
   <div class="row justify-content-center">
-    <div class="col-md-3">        
-      <div class="sidenav">
-        
-        <div class="row ">
-          <div class="col">                                  
-            <a id="categorias-gerais" href="#">              
-            Departamentos       
-            </a>  
-          </div>          
-        </div>
-
-        <div class="row">
-          <div class="col">                                  
-            <a class=""href="#!">  
-            <i class="fa fa-bars"></i>
-            Todos os Produtos            
-            </a>  
-          </div>          
-        </div>
-
-        <div class="row">
-          <div class="col">                                  
-            <a class=""href="#!">  
-            <i class="fas fa-tags"></i>
-            Ofertas
-            <i class="fas fa-plus icon-plus"></i>
-            </a>  
-          </div>          
-        </div>
-        
-        <div class="row">
-          <div class="col">
-            <a class=""href="#!">  
-            <i class="fas fa-apple-alt"></i>
-            Hortifrúti
-            <i class="fas fa-plus icon-plus"></i>
-            </a>
-          </div>          
-        </div>
-        
-        <div class="row">
-          <div class="col">
-            <a class=""href="#!">  
-            <i class="fas fa-bread-slice"></i>
-            Padaria
-            <i class="fas fa-plus icon-plus"></i>
-            </a> 
-          </div>          
-        </div>
-        
-        <div class="row">
-          <div class="col">
-            <a class=""href="#!">  
-            <i class="fas fa-cheese"></i>
-            Frios
-            <i class="fas fa-plus icon-plus"></i>
-            </a> 
-          </div>          
-        </div>
-        
-        <div class="row">
-          <div class="col">
-            <a class=""href="#!">  
-            <i class="fas fa-tags"></i>
-            Bebidas
-            <i class="fas fa-plus icon-plus"></i>
-            </a> 
-          </div>          
-        </div>
-        
-      </div>
-    </div>
 
     <div class="col-md-9">
 
@@ -234,3 +174,5 @@ $listaAlimentos=$produtos->listaAlimentos();?>
 
 
 
+</div>
+</div>
