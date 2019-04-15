@@ -5,6 +5,80 @@ include '../view/menuView.php';
 
 <?php  if(isset($_SESSION['id'])) { ?>
 
+   <!-- Adicionando JQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <!-- Adicionando Javascript -->
+    <script type="text/javascript" >
+
+        $(document).ready(function() {
+
+            function limpa_formulário_cep() {
+                // Limpa valores do formulário de cep.
+                $("#rua").val("");
+                $("#bairro").val("");
+                $("#cidade").val("");
+                $("#uf").val("");
+                $("#ibge").val("");
+            }
+            
+            //Quando o campo cep perde o foco.
+            $("#cep").blur(function() {
+
+                //Nova variável "cep" somente com dígitos.
+                var cep = $(this).val().replace(/\D/g, '');
+
+                //Verifica se campo cep possui valor informado.
+                if (cep != "") {
+
+                    //Expressão regular para validar o CEP.
+                    var validacep = /^[0-9]{8}$/;
+
+                    //Valida o formato do CEP.
+                    if(validacep.test(cep)) {
+
+                        //Preenche os campos com "..." enquanto consulta webservice.
+                        $("#rua").val("...");
+                        $("#bairro").val("...");
+                        $("#cidade").val("...");
+                        $("#uf").val("...");
+                        $("#ibge").val("...");
+
+                        //Consulta o webservice viacep.com.br/
+                        $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+
+                            if (!("erro" in dados)) {
+                                //Atualiza os campos com os valores da consulta.
+                                $("#rua").val(dados.logradouro);
+                                $("#bairro").val(dados.bairro);
+                                $("#cidade").val(dados.localidade);
+                                $("#uf").val(dados.uf);
+                                $("#ibge").val(dados.ibge);
+                            } //end if.
+                            else {
+                                //CEP pesquisado não foi encontrado.
+                                limpa_formulário_cep();
+                                alert("CEP não encontrado.");
+                            }
+                        });
+                    } //end if.
+                    else {
+                        //cep é inválido.
+                        limpa_formulário_cep();
+                        alert("Formato de CEP inválido.");
+                    }
+                } //end if.
+                else {
+                    //cep sem valor, limpa formulário.
+                    limpa_formulário_cep();
+                }
+            });
+        });
+
+    </script>
+
 
 <div class="container-fluid">
 
@@ -70,7 +144,7 @@ include '../view/menuView.php';
 						<b>Endereços cadastrados</b>	
 					</div>
 
-          <a data-toggle="modal" data-target="#exampleModal" class="btn btn-danger col-12" href="">Cadastrar novo endereço</a>
+          <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Cadastrar novo endereço</a>
 
 				</div>
 
@@ -83,17 +157,56 @@ include '../view/menuView.php';
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Cadastrar novo endereço</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <form method="get" action=".">
+          <div class="form-group">            
+            Cep:
+            <input class="form-control" name="cep" type="text" id="cep" value=""/>
+          </div>
+
+          <div class="form-group">
+            Rua:
+            <input class="form-control" name="rua" type="text" id="rua">
+          </div>
+
+          <div class="form-group">      
+           Número:
+            <input class="form-control" name="numero" type="text" id="numero"/>
+          </div>
+
+          <div class="form-group">      
+           Bairro:
+            <input class="form-control" name="bairro" type="text" id="bairro"/>
+          </div>
+
+          <div class="form-group">
+            Cidade:
+            <input class="form-control" name="cidade" type="text" id="cidade"/>
+          </div>
+
+          <div class="form-group">
+           Estado:
+            <input class="form-control" name="uf" type="text" id="uf"/>
+          </div>
+
+          <div class="form-group">
+            IBGE:
+            <input class="form-control" name="ibge" type="text" id="ibge"/>
+          </div>
+
+          <div class="form-group">
+            <input type="submit" class="btn btn-success btn-block" name="enviar">
+          </div>
+
+        </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>        
       </div>
     </div>
   </div>
