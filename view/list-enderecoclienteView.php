@@ -144,6 +144,14 @@ include '../view/menuView.php';
 						<b>Endereços cadastrados</b>	
 					</div>
 
+          <?php
+              if(isset($_SESSION['msgcadastro']))
+              {
+                echo $_SESSION['msgcadastro'];
+                unset($_SESSION['msgcadastro']);
+              }
+          ?>
+
           <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Cadastrar novo endereço</a>
 
 				</div>
@@ -163,7 +171,10 @@ include '../view/menuView.php';
         </button>
       </div>
       <div class="modal-body">
-        <form method="get" action=".">
+        <form method="get" action="../controller/cadenderecoController.php">
+
+          <input type="hidden" name="cliente_fk" value="<?=$_SESSION['id']?>">
+
           <div class="form-group">            
             Cep:
             <input class="form-control" name="cep" type="text" id="cep" value=""/>
@@ -213,9 +224,6 @@ include '../view/menuView.php';
 </div>  
 
 </div>
-
-
-
 
 
 <?php  

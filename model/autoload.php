@@ -11,3 +11,4 @@ include_once 'Produtos.class.php';
 include_once 'Cliente.class.php';
 include_once 'Permissao.class.php';
 include_once 'Cargos.class.php';
+include_once 'Endereco.class.php';
