@@ -13,20 +13,14 @@
 								echo $_SESSION['msg'];
 								unset($_SESSION['msg']);
 							}
-
-							if(isset($_SESSION['msgcad']))
-							{
-								echo $_SESSION['msgcad'];
-								unset($_SESSION['msgcad']);
-							}
 						?>
-						<form method="POST" action="valida.php">				
+						<form method="POST" action="../controller/loginclienteController.php">				
 							<div class="form-group">
-								<input type="text" name="usuario" placeholder="Digite o seu usuário" class="form-control">
+								<input type="text" name="email" placeholder="Digite o seu usuário" class="form-control">
 							</div>
 									
 							<div class="form-group">									
-								<input type="password" name="senha" placeholder="Digite a sua senha" class="form-control">
+								<input type="password" name="password" placeholder="Digite a sua senha" class="form-control">
 							</div>
 					
 							<div class="form-group">									

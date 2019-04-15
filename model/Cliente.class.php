@@ -7,6 +7,7 @@ Class Cliente extends Conexao{
 
 	public $id;
 	public $email;
+    public $password;
 	public $nome;
 	public $telefone;
 	public $genero;
@@ -56,29 +57,29 @@ Class Cliente extends Conexao{
     }
 
 
-    public function setLogged()
+    public function loginCliente()
 	{
 	  $conexao = Conexao::conectarBanco();
-      $this->login = $conexao->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
+      $this->login = $conexao->prepare("SELECT email, senha FROM clientes WHERE email = :email AND senha = :senha");
       $this->login->bindValue(":email", $this->email, PDO::PARAM_STR);
-      $this->login->bindValue(":password", $this->password, PDO::PARAM_STR);
+      $this->login->bindValue(":senha", $this->password, PDO::PARAM_STR);
       $this->login->execute();
 
 	if ($this->login->rowCount() > 0) 
 	{
 		$sql = $this->login->fetch();
+        session_start();
 		$id = $sql['id'];
 		$email = $sql['email'];
         $nome = $sql['nome'];
-		$_SESSION['user'] = $id;
+		$_SESSION['id'] = $id;
 		$_SESSION['email'] = $email;
         $_SESSION['nome'] = $nome;
-		header("Location: ../view/menu.php?login_sucess");
+		header("Location: ../view/perfilclienteView.php");
 	} 
 	else
 	{
-		echo "<script> alert('Email ou senha incorretos!'); </script>";
-		echo "<script> window.location.href = '../view/login.php' </script>";
+		echo "Error";		
 
 	}
 
