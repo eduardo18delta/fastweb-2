@@ -41,11 +41,15 @@ class Endereco extends Conexao
         $this->cadastrarEndereco->bindValue(":ibge", $this->ibge, PDO::PARAM_STR); 
         $this->cadastrarEndereco->bindValue(":cliente_fk", $this->cliente_fk, PDO::PARAM_STR); 
         $this->cadastrarEndereco->execute();
-        $_SESSION['msgcadastro'] = "<div class='alert alert-success mt-4'>
-        <button type='button' class='close' data-dismiss='alert' aria-label='Close>
-    <span aria-hidden='true'>&times;</span>
-  </button>Endereço cadastrado com sucesso!</div>";
+        $_SESSION['msgcadastro'] = "
+        <div class='alert alert-success mt-4'>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close>
+            <span aria-hidden='true'>&times;</span>
+            </button>Endereço cadastrado com sucesso!
+        </div>";
     }
+
+
 }
 
 

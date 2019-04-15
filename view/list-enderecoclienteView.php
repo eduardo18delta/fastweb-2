@@ -1,9 +1,4 @@
-<?php  
-session_start(); 
-include '../view/menuView.php';
-?>
-
-<?php  if(isset($_SESSION['id'])) { ?>
+<?php  session_start(); include '../view/menuView.php'; if(isset($_SESSION['id'])) { ?>
 
    <!-- Adicionando JQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -153,6 +148,10 @@ include '../view/menuView.php';
           ?>
 
           <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Cadastrar novo endereço</a>
+
+          <div class="col">
+              dados do endereço
+          </div>
 
 				</div>
 
