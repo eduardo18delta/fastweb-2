@@ -60,7 +60,9 @@ Class Cliente extends Conexao{
     public function loginCliente()
 	{
 	  $conexao = Conexao::conectarBanco();
-      $this->login = $conexao->prepare("SELECT email, senha FROM clientes WHERE email = :email AND senha = :senha");
+      $this->login = $conexao->prepare("
+        SELECT * FROM clientes WHERE email = :email AND senha = :senha
+        ");
       $this->login->bindValue(":email", $this->email, PDO::PARAM_STR);
       $this->login->bindValue(":senha", $this->password, PDO::PARAM_STR);
       $this->login->execute();
@@ -68,7 +70,6 @@ Class Cliente extends Conexao{
 	if ($this->login->rowCount() > 0) 
 	{
 		$sql = $this->login->fetch();
-        session_start();
 		$id = $sql['id'];
 		$email = $sql['email'];
         $nome = $sql['nome'];

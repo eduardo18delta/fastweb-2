@@ -3,7 +3,7 @@ session_start();
 include '../view/menuView.php';
 ?>
 
-<?php  if(isset($_SESSION['id'])) { ?>
+<?php if(isset($_SESSION['email'])) { ?>
 
 <div class="container-fluid">
 
@@ -86,6 +86,7 @@ else
 	$_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita!</div>";
 	header("Location: loginclienteView.php"); 
 } 
+
 
 ?>
 
