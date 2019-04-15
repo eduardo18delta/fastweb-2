@@ -80,7 +80,8 @@ Class Cliente extends Conexao{
 	} 
 	else
 	{
-		echo "Error";		
+		$_SESSION['msg'] = "<div class='alert alert-danger'>Dados Incorretos!</div>";	
+        header("Location: ../view/loginclienteView.php");
 
 	}
 
