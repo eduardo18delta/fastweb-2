@@ -87,6 +87,7 @@ else
 	header("Location: loginclienteView.php"); 
 } 
 
+include_once '../view/footerView.php';
 
 ?>
 
