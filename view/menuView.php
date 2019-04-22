@@ -1,3 +1,6 @@
+<?php
+include '../view/modalprodutosView.php';
+?>
 <html>
   <head>        
     <title>FastWeb - Supermercado Online</title>
@@ -23,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/novo-css.css"/>
     <!-- Links css's responsivo -->
     <link rel="stylesheet" type="text/css" href="../assets/css/responsivo.css" media="screen">
+    <!-- Links css's -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/carrinho.css"/>
     <!-- Css do slide da home-->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
     <!-- Css do Bootstrap 4-->
