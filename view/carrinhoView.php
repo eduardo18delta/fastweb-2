@@ -1,178 +1,114 @@
-<!-- Ultimos produtos adicionados-->
-
 <?php 
+//==========================================INCLUDES=============================================
 include '../view/modalprodutosView.php';
 include '../view/menuView.php';
-?>
-
-<div class="container-fluid desfocar">
-
-  <div class="row mt-4">      
-     
-  
-
-<?php 
-
 require_once '../model/autoload.php'; $produtos = new Produtos(); 
+echo '<img src="../assets/img/carrinho-vazio.jpg" width="100%" height="100%" class="bk-carrinho">';
+//==================SE A SESSÃO "CARRINHO" TIVER VALOR 0, NÃO TEM NADA NO CARRINHO================
+if(count($_SESSION['carrinho']) == 0){
+    echo '<div>
+    <div class="carrinho-vazio-msg">NÃO HÁ PRODUTOS NO CARRINHO</div>
+    <img src="../assets/img/carrinho-vazio.jpg" class="carrinho-vazio-img">
+    </div>';
 
-$listadestaque=$produtos->listarDestaque();
+//==================SENÃO, HAVENDO VALORES, SERÁ CONSTRUIDO AS INFORMAÇÕES DO CARRINHO===========
+}else{   
+$total_produtos = 0; //variável total dos valores iniciando com zero
+$qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com zero
+        foreach($_SESSION['carrinho'] as $id_produto => $qtd): //Listando valores da sessão "carrinho"
+            $listaEspecifica=$produtos->setId($id_produto); //Setando o ID dos produtos da sessão 
+            $listaEspecifica=$produtos->listaEspecifica(); //Em seguida lista específicamente o setado
+            $subtotal_produtos = $listaEspecifica['valor'] * $qtd; //Armazenando o subtotal dos valores 
+            $total_produtos += $listaEspecifica['valor'] * $qtd; //Armazenando o TOTAL dos valores
+            $qtd_produtos++; //Armazenando a quantidade de produtos
+        ?>
 
-$listaBebidas=$produtos->listaBebidas(); 
-
-$listaAlimentos=$produtos->listaAlimentos();?>
-
-
-
-<div class="container-fluid">
-
-  <div class="row justify-content-center">
-
-    <div class="col-md-9">
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="titulo-produtos">
-            Ofertas <a href="#"> Veja mais-></a>
-          </div>
-        </div>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--+++++++++++++++++++++BEM VINDO AO FORMULÁRIO DO CARRINHO DE COMPRAS+++++++++++++++++++++++-->
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<form method="POST" id="carrinho_produtos<?= $listaEspecifica['id_produto']?>" enctype="multipart/form-data">     
+<input type="hidden" name="form-produto-id" value="<?= $listaEspecifica['id_produto']?>"> 
+<div class="container-fluid desfocar">
+ 
+<div class="row mt-4">  
+<!--===========================IMAGEM DO PRODUTO=================================-->          
+  <div class="col-md-2 col mt-4">
+    <section class="carrinho-card-principal">
+      <div class="desconto-site">
+           <div class="desconto-texto-site"><?=$listaEspecifica['desconto']?>%</div>
+           <i class="fas fa-bookmark"></i>
       </div>
-
-
-      <div class="row">        
-        <?php foreach($listadestaque as $destaque): ?>               
-        <div class="col-md-3 col mt-4">
-        <section class="card-principal">
-          <div class="nome-produto"><i class="fas fa-cart-arrow-down"></i></div>
-          <div class="item">
-          <img class="card-imagem" src="../assets/img/upload_produtos/<?= $destaque['img_01']?>">  
-          </div>        
-            <div class="nome-produto"><?=$destaque['nome']?></div>
-            <div> 
-              <div class="valor-produto">R$ <?= $destaque['valor']?></div>
-              <div class="unidade-produto">(Uni)</div>
-            </div>  
-            <div class="estrelas">
-              <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-              <label for="cm_star-1"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-1" name="fb" value="1"/>
-              <label for="cm_star-2"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-2" name="fb" value="2"/>
-              <label for="cm_star-3"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-3" name="fb" value="3"/>
-              <label for="cm_star-4"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-4" name="fb" value="4"/>
-              <label for="cm_star-5"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-5" name="fb" value="5"/>
-            </div>
-            <div class="row justify-content-center">
-              <a class="item btn btn-danger produto<?=$destaque['id_produto']?>">Comprar</a>
-            </div>
-        </section>
+      <div class="item-carrinho">
+      <img class="card-imagem" src="../assets/img/upload_produtos/<?= $listaEspecifica['img_01']?>">
+      </div>         
+      <div class="estrelas">
+          <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+          <label for="cm_star-1"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-1" name="fb" value="1"/>
+          <label for="cm_star-2"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-2" name="fb" value="2"/>
+          <label for="cm_star-3"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-3" name="fb" value="3"/>
+          <label for="cm_star-4"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-4" name="fb" value="4"/>
+          <label for="cm_star-5"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-5" name="fb" value="5"/>
         </div>
-        <?php endforeach?>
-      </div> 
-
-      <div class="row mt-4">
-        <div class="col-md-12">
-          <div class="titulo-produtos">
-            Alimentos<a href="#"> Veja mais-></a>
-          </div>
+        <div class="row justify-content-center">
+          <a class="item btn btn-danger produto<?=$listaEspecifica['id_produto']?>">Vizualizar</a>
         </div>
+      </section>
+  </div>
+  <!--===========================COMPRAR/SALVAR LISTA DE COMPRA/REMOVER=======================-->
+    <div class="col-md-4 col mt-4">
+      <div class="nome-produto-carrinho"><?=$listaEspecifica['nome']?></div>
+      <div class="carrinho-opcao">
+        <div class="btn btn-success">Comprar</div>
+        <div class="btn btn-primary">Salvar na listade compras</div>
+        <button name="rm-produto" class="btn btn-danger remover-produto">Remover</button>
       </div>
-
-        <div class="row">        
-        <?php foreach($listaAlimentos as $produtos): ?>               
-        <div class="col-md-3 col mt-4">
-        <section class="card-principal">
-          <div class="nome-produto"><i class="fas fa-cart-arrow-down"></i></div>
-          <div class="item">
-          <img class="card-imagem" src="../assets/img/upload_produtos/<?= $produtos['img_01']?>">  
-          </div>        
-            <div class="nome-produto"><?=$produtos['nome']?></div>
-            <div> 
-              <div class="valor-produto">R$ <?= $produtos['valor']?></div>
-              <div class="unidade-produto">(Uni)</div>
-            </div>  
-            <div class="estrelas">
-              <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-              <label for="cm_star-1"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-1" name="fb" value="1"/>
-              <label for="cm_star-2"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-2" name="fb" value="2"/>
-              <label for="cm_star-3"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-3" name="fb" value="3"/>
-              <label for="cm_star-4"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-4" name="fb" value="4"/>
-              <label for="cm_star-5"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-5" name="fb" value="5"/>
-            </div>
-            <div class="row justify-content-center">
-              <a class="item btn btn-danger produto<?=$produtos['id_produto']?>">Comprar</a>
-            </div>
-        </section>
-        </div>
-        <?php endforeach?>
-      </div> 
-
-       <div class="row mt-4">
-        <div class="col-md-12">
-          <div class="titulo-produtos">
-            Bebidas<a href="#"> Veja mais-></a>
-          </div>
-        </div>
-      </div>
-
-        <div class="row">        
-        <?php foreach($listaBebidas as $produtos): ?>               
-        <div class="col-md-3 col mt-4">
-        <section class="card-principal">
-          <div class="nome-produto"><i class="fas fa-cart-arrow-down"></i></div>
-          <div class="item">
-          <img class="card-imagem" src="../assets/img/upload_produtos/<?= $produtos['img_01']?>">  
-          </div>        
-            <div class="nome-produto"><?=$produtos['nome']?></div>
-            <div> 
-              <div class="valor-produto">R$ <?= $produtos['valor']?></div>
-              <div class="unidade-produto">(Uni)</div>
-            </div>  
-            <div class="estrelas">
-              <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-              <label for="cm_star-1"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-1" name="fb" value="1"/>
-              <label for="cm_star-2"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-2" name="fb" value="2"/>
-              <label for="cm_star-3"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-3" name="fb" value="3"/>
-              <label for="cm_star-4"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-4" name="fb" value="4"/>
-              <label for="cm_star-5"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-5" name="fb" value="5"/>
-            </div>
-            <div class="row justify-content-center">
-              <a class="item btn btn-danger produto<?=$produtos['id_produto']?>">Comprar</a>
-            </div>
-        </section>
-        </div>
-        <?php endforeach?>
-      </div> 
-
+    </div>
+  <!--===========================QUANTIDADE/VALOR/SUBTOTAL=======================-->
+    <div class="col-md-2 col mt-2">
+      <div class="carrinho-titulo-info">Quantidade (UND.)</div>
+      <input type="number" name="carrinho-qtd-produto[<?=$listaEspecifica['id_produto']?>]" class="form-control carrinho-qtd-produto qtd-produto<?=$listaEspecifica['id_produto']?>"  min="1" value="<?=$qtd?>" required>
+      <div><?=$listaEspecifica['quantidade']?> Unidades</div>
+    </div>
+    <div class="col-md-2 col mt-4"> 
+          <div class="carrinho-titulo-info">Valor (UND.)</div>
+          <div>R$ <?=$listaEspecifica['valor']?></div> 
+    </div>
+    <div class="col-md-2 col mt-4"> 
+        <div class="carrinho-titulo-info">Sub Total (UND.)</div>
+          <div class="fofo valor-produto<?=$listaEspecifica['id_produto']?>"><?=$subtotal_produtos?></div>
     </div>
   </div>
-
 </div>
+</form> 
+<?php endforeach?>
 
-				
+<!--===========================FOOTER DO CARRINHO (PREÇO TOTAL)=======================-->
+<div class="row mt-4 desfocar carrinho-footer">       
+  <div class="col-md-7 col mt-4">
+    <div>Quantidade de Produtos (<?=$qtd_produtos?>)</div>
+    <div>Endereço de Entrega</div>
+    <div>Rua Sucupira, 244, Ipê | <span class="carrinho-endereco">Alterar endereço de entrega</span></div>
+  </div>    
+    <div class="col-md-3 col mt-4">
+    <div class="btn btn-danger form-control">FINALIZAR COMPRA</div>
+    </div>
+    <div class="col-md-2 col mt-4">
+      <h2>Total</h2>
+        <h2 class="carrinho-valor-total">R$ <?=$total_produtos?></h2>
+    </div>  
+</div>       
 
 
 
+<?php
+} // Fim do IF
+?>
 
-
-
-
-
-
-
-
-
-</div>
+<!--=======Esse container levanta os produtos para que não seja ocultado no footer======-->
+<div class="bk-footer">
 </div>
