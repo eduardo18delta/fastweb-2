@@ -14,14 +14,22 @@ class Produtos extends Conexao
 	public $quantidade;
 	public $marca;
 	public $categoria;
-	public $url_imagem;
+    public $descricao;
+    public $peso;
+    public $medida;
+    public $desconto;
+    public $cod_barra;
+    public $destaque;
     public $img_01;
     public $img_02;
     public $img_03;
     public $img_04;
     public $img_05;
     public $img_06;
-	
+    	
+    public function setId($id){
+        $this->id = $id;
+    }
 
 	public function listar()
     {       
@@ -37,7 +45,12 @@ class Produtos extends Conexao
 			produtos.validade,
 			produtos.quantidade,
 			produtos.marca,
-			produtos.url_imagem,
+            produtos.descricao,
+            produtos.peso,
+            produtos.medida,
+            produtos.desconto,
+            produtos.cod_barra,
+            produtos.destaque,
 			categoria.descricao,
             produtos.img_01,
             produtos.img_02,
@@ -71,7 +84,12 @@ class Produtos extends Conexao
             produtos.validade,
             produtos.quantidade,
             produtos.marca,
-            produtos.url_imagem,
+            produtos.descricao,
+            produtos.peso,
+            produtos.medida,
+            produtos.desconto,
+            produtos.cod_barra,
+            produtos.destaque,
             categoria.descricao,
             produtos.img_01,
             produtos.img_02,
@@ -106,7 +124,12 @@ class Produtos extends Conexao
             produtos.validade,
             produtos.quantidade,
             produtos.marca,
-            produtos.url_imagem,
+            produtos.descricao,
+            produtos.peso,
+            produtos.medida,
+            produtos.desconto,
+            produtos.cod_barra,
+            produtos.destaque,
             categoria.descricao,
             produtos.img_01,
             produtos.img_02,
@@ -144,7 +167,12 @@ class Produtos extends Conexao
             produtos.validade,
             produtos.quantidade,
             produtos.marca,
-            produtos.url_imagem,
+            produtos.descricao,
+            produtos.peso,
+            produtos.medida,
+            produtos.desconto,
+            produtos.cod_barra,
+            produtos.destaque,
             categoria.descricao,
             produtos.img_01,
             produtos.img_02,
@@ -182,7 +210,12 @@ class Produtos extends Conexao
 			produtos.validade,
 			produtos.quantidade,
 			produtos.marca,
-			produtos.url_imagem,
+            produtos.descricao,
+            produtos.peso,
+            produtos.medida,
+            produtos.desconto,
+            produtos.cod_barra,
+            produtos.destaque,
 			categoria.descricao,
             produtos.img_01,
             produtos.img_02,
@@ -227,19 +260,25 @@ class Produtos extends Conexao
         $this->cadastrarProduto = $conexao->prepare("
 
         INSERT INTO produtos 
-        (id_produto,nome,valor,categoria_fk,fornecedor,validade,quantidade,marca,img_01,img_02,img_03,img_04,img_05,img_06) 
+        (id_produto,nome,valor,categoria_fk,fornecedor,validade,quantidade,marca,descricao,peso,medida,desconto,cod_barra,destaque,img_01,img_02,img_03,img_04,img_05,img_06) 
 
         VALUES 
 
-        (NULL,:nome,:valor,:categoria,:fornecedor,:validade,:quantidade,:marca,:img_01,:img_02,:img_03,:img_04,:img_05,:img_06) ;");
+        (NULL,:nome,:valor,:categoria,:fornecedor,:validade,:quantidade,:marca,:descricao,:peso,:medida,:desconto,:cod_barra,:destaque,:img_01,:img_02,:img_03,:img_04,:img_05,:img_06) ;");
         
         $this->cadastrarProduto->bindValue(":nome", $this->nome, PDO::PARAM_STR); 
         $this->cadastrarProduto->bindValue(":valor", $this->valor, PDO::PARAM_STR);  
         $this->cadastrarProduto->bindValue(":categoria", $this->categoria, PDO::PARAM_STR);  
         $this->cadastrarProduto->bindValue(":fornecedor", $this->fornecedor, PDO::PARAM_STR); 
         $this->cadastrarProduto->bindValue(":validade", $this->validade, PDO::PARAM_STR); 
-        $this->cadastrarProduto->bindValue(":quantidade", $this->quantidade, PDO::PARAM_STR); 
+        $this->cadastrarProduto->bindValue(":quantidade", $this->quantidade, PDO::PARAM_STR);
         $this->cadastrarProduto->bindValue(":marca", $this->marca, PDO::PARAM_STR); 
+        $this->cadastrarProduto->bindValue(":descricao", $this->descricao, PDO::PARAM_STR);
+        $this->cadastrarProduto->bindValue(":peso", $this->peso, PDO::PARAM_STR);
+        $this->cadastrarProduto->bindValue(":medida", $this->medida, PDO::PARAM_STR);
+        $this->cadastrarProduto->bindValue(":desconto", $this->desconto, PDO::PARAM_STR);
+        $this->cadastrarProduto->bindValue(":cod_barra", $this->cod_barra, PDO::PARAM_STR);
+        $this->cadastrarProduto->bindValue(":destaque", $this->destaque, PDO::PARAM_STR);
         $this->cadastrarProduto->bindValue(":img_01", $this->img_01, PDO::PARAM_STR); 
         $this->cadastrarProduto->bindValue(":img_02", $this->img_02, PDO::PARAM_STR); 
         $this->cadastrarProduto->bindValue(":img_03", $this->img_03, PDO::PARAM_STR); 
@@ -267,6 +306,12 @@ class Produtos extends Conexao
         $this->updateProduto->bindValue(":validade", $this->validade, PDO::PARAM_STR); 
         $this->updateProduto->bindValue(":quantidade", $this->quantidade, PDO::PARAM_STR); 
         $this->updateProduto->bindValue(":marca", $this->marca, PDO::PARAM_STR); 
+        $this->cadastrarProduto->bindValue(":descricao", $this->descricao, PDO::PARAM_STR);
+        $this->cadastrarProduto->bindValue(":peso", $this->peso, PDO::PARAM_STR);
+        $this->cadastrarProduto->bindValue(":medida", $this->medida, PDO::PARAM_STR);
+        $this->cadastrarProduto->bindValue(":desconto", $this->desconto, PDO::PARAM_STR);
+        $this->cadastrarProduto->bindValue(":cod_barra", $this->cod_barra, PDO::PARAM_STR);
+        $this->cadastrarProduto->bindValue(":destaque", $this->destaque, PDO::PARAM_STR);
         $this->cadastrarProduto->bindValue(":img_01", $this->img_01, PDO::PARAM_STR); 
         $this->cadastrarProduto->bindValue(":img_02", $this->img_02, PDO::PARAM_STR); 
         $this->cadastrarProduto->bindValue(":img_03", $this->img_03, PDO::PARAM_STR); 
