@@ -13,6 +13,7 @@
 
 .produtos-selecionados > label{
   width: 16%;
+  height: 75%;
 }
 
 .dnone{
@@ -53,3 +54,17 @@
 .add-produto-principal{
   border: 1px solid blue;
 }
+
+.modal-content-custom{
+  width: 150%; 
+  left: -25%;
+}
+
+.item-medida{
+      border: 1px solid #ccc; 
+      font-size: 11px; 
+      width: 30%; 
+      text-align: center; 
+      color: #fff;
+      cursor: pointer;
+    }
