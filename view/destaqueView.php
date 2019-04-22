@@ -1,4 +1,3 @@
-<!-- Ultimos produtos adicionados-->
 <?php 
 
 require_once '../model/autoload.php'; $produtos = new Produtos(); 
@@ -102,7 +101,10 @@ $listaAlimentos=$produtos->listaAlimentos();?>
         <?php foreach($listadestaque as $destaque): ?>               
         <div class="col-md-3 col mt-4">
         <section class="card-principal">
-          <div class="nome-produto"><i class="fas fa-cart-arrow-down"></i></div>
+          <div class="desconto-site">
+               <div class="desconto-texto-site"><?=$destaque['desconto']?>%</div>
+               <i class="fas fa-bookmark"></i>
+          </div>
           <div class="item">
           <img class="card-imagem" src="../assets/img/upload_produtos/<?= $destaque['img_01']?>">  
           </div>        
@@ -144,7 +146,10 @@ $listaAlimentos=$produtos->listaAlimentos();?>
         <?php foreach($listaAlimentos as $produtos): ?>               
         <div class="col-md-3 col mt-4">
         <section class="card-principal">
-          <div class="nome-produto"><i class="fas fa-cart-arrow-down"></i></div>
+          <div class="desconto-site">
+               <div class="desconto-texto-site"><?=$produtos['desconto']?>%</div>
+               <i class="fas fa-bookmark"></i>
+          </div>
           <div class="item">
           <img class="card-imagem" src="../assets/img/upload_produtos/<?= $produtos['img_01']?>">  
           </div>        
@@ -186,7 +191,10 @@ $listaAlimentos=$produtos->listaAlimentos();?>
         <?php foreach($listaBebidas as $produtos): ?>               
         <div class="col-md-3 col mt-4">
         <section class="card-principal">
-          <div class="nome-produto"><i class="fas fa-cart-arrow-down"></i></div>
+          <div class="desconto-site">
+               <div class="desconto-texto-site"><?=$produtos['desconto']?>%</div>
+               <i class="fas fa-bookmark"></i>
+          </div>
           <div class="item">
           <img class="card-imagem" src="../assets/img/upload_produtos/<?= $produtos['img_01']?>">  
           </div>        
@@ -220,11 +228,6 @@ $listaAlimentos=$produtos->listaAlimentos();?>
   </div>
 
 </div>
-
-				
-
-
-
 
 
 
