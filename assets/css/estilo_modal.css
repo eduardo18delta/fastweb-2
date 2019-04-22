@@ -599,6 +599,29 @@
       left: 10px;
     }
 
+
+    /* css do desconto */
+    .desconto-site{
+      position: absolute; 
+      margin-left: 5px;
+    }
+    .desconto-site i {
+      font-size: 35px; 
+      left: 10px;
+      height: 30px;
+    }
+    .desconto-texto-site{
+      position: absolute; 
+      color: #fff; 
+      font-size: 10px; 
+      height: 30px; 
+      width: 25px; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center;"
+      font-weight: bold;
+    }
+
     .container_descricao{
       display: flex; 
       margin-bottom: 20px;
@@ -619,6 +642,7 @@
 
     .item-medida{
       border: 1px solid #ccc; 
+      background-color: #fff;
       font-size: 11px; 
       width: 15%; 
       text-align: center; 
