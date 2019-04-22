@@ -25,30 +25,30 @@ $(".add-medida").click(function(){
     //inicialmente esconde os slides
     $slide_img.find("img.slide_produtos").hide();
     //encontra o prmeiro slide e ativa-o
-    $ativo = $slide_img.find("img.slide_produtos").first().addClass("ativo").show();
+    $medida_ativo = $slide_img.find("img.slide_produtos").first().addClass("medida_ativo").show();
 
 
     $slide2 = $(".slides_img");
     //inicialmente esconde os slides
     $slide2.find("img.slide_produtos").hide();
     //encontra o prmeiro slide e ativa-o
-    $ativo2 = $slide_img.find("img.slide_produtos").first().addClass("ativo2").show();
+    $medida_ativo2 = $slide_img.find("img.slide_produtos").first().addClass("medida_ativo2").show();
 
     $("#slide_direita").click(function(){
 
 
 
-      $ativo2.hide();
+      $medida_ativo2.hide();
       //esconde o slide atual
-      $ativo.hide();
+      $medida_ativo.hide();
 
       //procura o proximo
-      $ativo = $slide_img.find("img.ativo").next();
-      if(!$ativo.length) $ativo = $slide_img.find("img.slide_produtos").first();//volta ao primeiro
+      $medida_ativo = $slide_img.find("img.medida_ativo").next();
+      if(!$medida_ativo.length) $medida_ativo = $slide_img.find("img.slide_produtos").first();//volta ao primeiro
       //remove o marcador do slide anterior
-      $slide_img.find("img.ativo").removeClass("ativo");
+      $slide_img.find("img.medida_ativo").removeClass("medida_ativo");
       //coloca o marcador e mostra
-      $ativo.addClass("ativo").show();
+      $medida_ativo.addClass("medida_ativo").show();
 
 
     });
@@ -57,12 +57,12 @@ $(".add-medida").click(function(){
     $("#slide_esquerda").click(function(){
 
 
-      $ativo2.hide();
-      $ativo.hide();
-      $ativo = $slide_img.find("img.ativo").prev();
-      if(!$ativo.length) $ativo = $slide_img.find("img.slide_produtos").last();//volta ao ultimo
-      $slide_img.find("img.ativo").removeClass("ativo");
-      $ativo.addClass("ativo").show();
+      $medida_ativo2.hide();
+      $medida_ativo.hide();
+      $medida_ativo = $slide_img.find("img.medida_ativo").prev();
+      if(!$medida_ativo.length) $medida_ativo = $slide_img.find("img.slide_produtos").last();//volta ao ultimo
+      $slide_img.find("img.medida_ativo").removeClass("medida_ativo");
+      $medida_ativo.addClass("medida_ativo").show();
 
 
     });
@@ -70,40 +70,40 @@ $(".add-medida").click(function(){
 
 
     $(".img_produto_hover01").hover(function(){
-      $ativo.hide();
-      $ativo2.hide();
-      $ativo2 = $slide2.find(".produto_img_01").addClass("ativo2").show();
-      $ativo = $ativo2
+      $medida_ativo.hide();
+      $medida_ativo2.hide();
+      $medida_ativo2 = $slide2.find(".produto_img_01").addClass("medida_ativo2").show();
+      $medida_ativo = $medida_ativo2
      });
     $(".img_produto_hover02").hover(function(){
-      $ativo.hide();
-      $ativo2.hide();
-      $ativo2 = $slide2.find(".produto_img_02").addClass("ativo2").show();
-      $ativo = $ativo2
+      $medida_ativo.hide();
+      $medida_ativo2.hide();
+      $medida_ativo2 = $slide2.find(".produto_img_02").addClass("medida_ativo2").show();
+      $medida_ativo = $medida_ativo2
      });
      $(".img_produto_hover03").hover(function(){
-      $ativo.hide();
-      $ativo2.hide();
-      $ativo2 = $slide2.find(".produto_img_03").addClass("ativo2").show();
-      $ativo = $ativo2
+      $medida_ativo.hide();
+      $medida_ativo2.hide();
+      $medida_ativo2 = $slide2.find(".produto_img_03").addClass("medida_ativo2").show();
+      $medida_ativo = $medida_ativo2
     });
      $(".img_produto_hover04").hover(function(){
-      $ativo.hide();
-      $ativo2.hide();
-      $ativo2 = $slide2.find(".produto_img_04").addClass("ativo2").show();
-      $ativo = $ativo2
+      $medida_ativo.hide();
+      $medida_ativo2.hide();
+      $medida_ativo2 = $slide2.find(".produto_img_04").addClass("medida_ativo2").show();
+      $medida_ativo = $medida_ativo2
     });
      $(".img_produto_hover05").hover(function(){
-      $ativo.hide();
-      $ativo2.hide();
-      $ativo2 = $slide2.find(".produto_img_05").addClass("ativo2").show();
-      $ativo = $ativo2
+      $medida_ativo.hide();
+      $medida_ativo2.hide();
+      $medida_ativo2 = $slide2.find(".produto_img_05").addClass("medida_ativo2").show();
+      $medida_ativo = $medida_ativo2
     });
      $(".img_produto_hover06").hover(function(){
-      $ativo.hide();
-      $ativo2.hide();
-      $ativo2 = $slide2.find(".produto_img_06").addClass("ativo2").show();
-      $ativo = $ativo2
+      $medida_ativo.hide();
+      $medida_ativo2.hide();
+      $medida_ativo2 = $slide2.find(".produto_img_06").addClass("medida_ativo2").show();
+      $medida_ativo = $medida_ativo2
     });
 
 
@@ -231,42 +231,10 @@ $(".produto_img_02").mouseout(function(e){
 })
 */
 
-$(".rs").css("background-color","#fff")
-  $(".kg").css("background-color","#fff")
-  $(".und").css("background-color","#000")
-  $(".rs").css("color","#000")
-  $(".kg").css("color","#000")
-  $(".und").css("color","#fff")
 
-$(".rs").click(function(){
-  $(".rs").css("background-color","#000")
-  $(".kg").css("background-color","#fff")
-  $(".und").css("background-color","#fff")
-  $(".rs").css("color","#fff")
-  $(".kg").css("color","#000")
-  $(".und").css("color","#000")
-})
-
-$(".kg").click(function(){
-  $(".rs").css("background-color","#fff")
-  $(".kg").css("background-color","#000")
-  $(".und").css("background-color","#fff")
-  $(".rs").css("color","#000")
-  $(".kg").css("color","#fff")
-  $(".und").css("color","#000")
-})
-
-$(".und").click(function(){
-  $(".rs").css("background-color","#fff")
-  $(".kg").css("background-color","#fff")
-  $(".und").css("background-color","#000")
-  $(".rs").css("color","#000")
-  $(".kg").css("color","#000")
-  $(".und").css("color","#fff")
-})
 
 //Animação de alerta ao adicionar produto no carrinho
-
+/*
 $(".cont_add_produto").hide()
 var cont_add_produto=0
 $(".add-carrinho").click(function(){
@@ -297,8 +265,291 @@ $(".add-carrinho").click(function(){
          /*   } else {
             $(".background_login").fadeIn();
             }
-          */
+          
 })
+*/
+
+//AJAx
+
+$('[name=add-carrinho]').click(function() {
+           // var cont_pacientes = $('#consulta_pacientes').serialize();
+           // alert (cont_pacientes)
+             var add_carrinho = new FormData($('#modal_produtos')[0]);
+ 
+            $.ajax({
+                type: 'POST',
+                //dataType: 'json',
+                url: '../model/Carrinho.class.php',
+                //async: true,
+                contentType: false,
+                processData: false,
+                data: add_carrinho,
+                success: function(response) {
+         
+                   if (response=='null') {
+                    //alert ('SELECIONE PACIENTES')
+                    alert(response)
+                   } else {
+                  $(".cont_add_produto").show() 
+                  $(".cont_add_produto").animate({right: "95px"},100)
+                  $(".cont_add_produto").animate({right: "85px"},100)
+                  $(".cont_add_produto").animate({right: "95px"},100)
+                  $(".cont_add_produto").animate({right: "85px"},100)
+                  $(".cont_add_produto").animate({right: "95px"},100)
+                  $(".cont_add_produto").animate({right: "85px"},100)
+                  $(".cont_add_produto").animate({right: "95px"},100)
+                  $(".cont_add_produto").animate({right: "85px"},100)
+                  $(".cont_add_produto").animate({right: "95px"},100)
+                  $(".cont_add_produto").animate({right: "85px"},100)
+                  $(".cont_add_produto").animate({right: "95px"},100)
+                  $(".cont_add_produto").animate({right: "85px"},100)
+                  $(".cont_add_produto").animate({right: "95px"},100)
+                  $(".cont_add_produto").animate({right: "85px"},100)
+                  $(".cont_add_produto").animate({right: "95px"},100)
+                  $(".cont_add_produto").animate({right: "90px"},100)
+                  $(".cont_add_produto").text(response)
+                if (response==1) {
+               // alert ("ok")
+
+        } else {
+               // alert ("erro")
+             }
+
+                 }
+
+                 },
+                 error: function(response){
+                    alert ('erro')
+                 }
+            });
+            
+        
+            return false;
+        });
+
+//================REMOVER CARRINHO========================
+
+
+// Ajax recept
+/*
+$(".qtd-produto19").keyup(function() {
+           // var cont_pacientes = $('#consulta_pacientes').serialize();
+           //alert ("ok")
+             var add_carrinho = new FormData($('#carrinho_produtos')[0]);
+ 
+            $.ajax({
+                type: 'POST',
+                //dataType: 'json',
+                url: '../controller/ajaxcarrinhoController2.php',
+                //async: true,
+                contentType: false,
+                processData: false,
+                data: add_carrinho,
+                success: function(dados) {
+               
+                 id=0
+                  valor_produtos=1
+                  valor_total=2
+                  qtd_total=3
+
+                for (var i = 0; i < dados.length; i++) {                        
+
+                if (i==id){
+                  //var qtd = $(".carrinho-qtd-produto").val()
+                  //alert (qtd)
+//alert (qtd)
+               //   $(".valor-produto"+dados[id]).text(qtd)
+                  //$("body").css("background-color","red")
+                  
+                 //alert(dados[id+2])
+
+                  id+=2
+                }  
+
+                }
+
+                
+
+                 },
+                 error: function(response){
+                    alert ('erro')
+                 }
+            });
+            
+        
+            return false;
+        });
+*/
+
+//==========================CONSULTA DEPENDEnTES=======================
+//$(".qtd-produto").keyup(function(){
+//        alert("ok")
+//      })
+consulta_carrinho()
+function consulta_carrinho(){
+
+    $.post('../model/Carrinho.class.php',function(dados) {
+//alert (dados)
+      id=0
+      valor_produtos=1
+      valor_total=2
+      qtd_total=3
+
+    for (var i = 0; i < dados.length; i++) {                        
+
+    if (i==id){
+     //alert (dados[i+1])
+      var qtd = $(".qtd-produto"+dados[id]).val()
+      
+      $(".valor-produto"+dados[id]).text("R$ "+qtd*dados[id+valor_produtos])
+      $(".carrinho-valor-total").text("R$ "+dados[id+2])
+      $(".carrinho-compra-alert").text(dados[id+3])
+      $(".cont_add_produto").show() 
+
+      //=======================
+      
+      $(".add-carrinho"+dados[id]).hide()
+      $(".remover-produto"+dados[id]).show()
+      
+      /*
+      $("[name=remover-produto]").hide()
+      if ($("[name=remover-produto]").hasClass("produto-adicionado")){
+      $("[name=add-produto]").hide()
+      $("[name=remover-produto]").show()
+      } else {
+      $("[name=add-produto]").show()
+      $("[name=remover-produto]").hide()
+      }
+      */
+ //    alert(dados[id])
+//var qtd = $(".carrinho-qtd-produto").val()
+              //    alert (qtd)
+              // R$
+//var rs = $(".modal-qtd-produto").val()  
+//$(".valor").text("R$ "+rs)               
+// Kg
+
+//UND
+//var teste = $(".modal-qtd-produto").val()  
+//$(".valor").text("R$ "+teste)    
+
+     
+      id+=4
+
+    }  
+
+    }
+
+
+//alert (id+1)
+// $('.dependente-registro-atual').val(id+1)
+        
+
+    }, 'JSON');
+
+
+}
+setInterval(consulta_carrinho, 100)
+
+
+
+  $(".rs").css("background-color","#fff")
+  $(".kg").css("background-color","#fff")
+  $(".und").css("background-color","#000")
+  $(".rs").css("color","#000")
+  $(".kg").css("color","#000")
+  $(".und").css("color","#fff")
+  $(".und").addClass("medida_ativo")
+
+consulta_medida()
+function consulta_medida(){
+
+    $.post('../parts/medida.php',function(dados) {
+//alert (dados)
+      id=0
+
+    for (var i = 0; i < dados.length; i++) {                        
+
+    if (i==id){
+//====================
+
+
+$(".rs").click(function(){
+  $(".rs").css("background-color","#000")
+  $(".kg").css("background-color","#fff")
+  $(".und").css("background-color","#fff")
+  $(".rs").css("color","#fff")
+  $(".kg").css("color","#000")
+  $(".und").css("color","#000")
+  $(".rs").addClass("medida_ativo")
+  $(".kg").removeClass("medida_ativo")
+  $(".und").removeClass("medida_ativo")
+  $(".opcao-medida").val("rs")
+})
+
+$(".kg").click(function(){
+  $(".rs").css("background-color","#fff")
+  $(".kg").css("background-color","#000")
+  $(".und").css("background-color","#fff")
+  $(".rs").css("color","#000")
+  $(".kg").css("color","#fff")
+  $(".und").css("color","#000")
+  $(".rs").removeClass("medida_ativo")
+  $(".kg").addClass("medida_ativo")
+  $(".und").removeClass("medida_ativo")
+  $(".opcao-medida").val("kg")
+})
+
+$(".und").click(function(){
+  $(".rs").css("background-color","#fff")
+  $(".kg").css("background-color","#fff")
+  $(".und").css("background-color","#000")
+  $(".rs").css("color","#000")
+  $(".kg").css("color","#000")
+  $(".und").css("color","#fff")
+  $(".rs").removeClass("medida_ativo")
+  $(".kg").removeClass("medida_ativo")
+  $(".und").addClass("medida_ativo")
+  $(".opcao-medida").val("und")
+})
+
+//====================
+if ($(".rs").hasClass("medida_ativo")) {
+// R$
+var rs = $(".modal-qtd-produto").val()  
+$(".valor").text("R$ "+rs)
+}
+if ($(".kg").hasClass("medida_ativo")) {               
+// Kg
+var kg = $(".modal-qtd-produto").val() 
+total = (kg*dados[id+1])/dados[id+2]
+$(".valor"+dados[id]).text("R$ "+total) 
+}   
+if ($(".und").hasClass("medida_ativo")) { 
+//UND
+var und = $(".modal-qtd-produto").val()  
+total = und*dados[id+1]
+$(".valor"+dados[id]).text("R$ "+total)  
+}
+      id+=3
+
+    }  
+
+    }
+
+
+//alert (id+1)
+// $('.dependente-registro-atual').val(id+1)
+        
+
+    }, 'JSON');
+
+
+}
+setInterval(consulta_medida, 100)
+
+
+
 
 
 }); //fim do jquery
