@@ -14,7 +14,8 @@ include '../parts/scriptmodal.php';
 <div class="background_modal">
 
 <!--=============INÍCIO MODAL=============-->
-<div class="modal">
+<form method="POST" id="modal_produtos" enctype="multipart/form-data">
+<div class="modal"><input type="hidden" name="form-produto-id" class="form-produto-id" value="">
   <div class="header_modal"><div class="fechar_modal">X</div></div>
       <div class="body_modal_pai">
         <div class="body_modal_filho">
@@ -110,20 +111,29 @@ include '../parts/scriptmodal.php';
               <td class="item-medida kg">Kg</td>
               <td class="item-medida und">Und</td>
               <td class="qtd-medida rm-medida">-</td>
-              <td class="valor-medida"><input type="number" class="form-control" value='1' min="1"></td>
+              <td class="valor-medida">
+                <input type="number" class="form-control modal-qtd-produto" value='1' min="1">
+                <input type="hidden" class="opcao-medida" name="opcao-medida[]" value="und">
+              <!--  <input type="number" class="form-control modal-qtd-produto" value='1' min="1">
+                <input type="number" class="form-control modal-qtd-produto" value='1' min="1">
+                <input type="number" name="carrinho-qtd-produto[<?=$listaEspecifica['id_produto']?>]" class="form-control qtd-produto<?=$listaEspecifica['id_produto']?>"  min="1" value="<?=$qtd?>" required>-->
+              </td>
               <td class="qtd-medida add-medida">+</td>
           </tr>
           </table>
-
+          
           <!--====COMPRAR PRODUTO====-->
           <?php echo "<div class='btn-action-modal comprar-produto'>Comprar<i class='fas fa-cash-register dnone'></i></div>"; ?>
 
           <!--====ADICIONAR AO CARRINHO====-->
-          <?php echo "<div class='btn-action-modal add-carrinho dnone'>Adicionar ao Carrinho<i class='fas fa-shopping-cart'></i></div>"; ?>
+          <?php echo "<button name='add-carrinho' class='btn-action-modal add-carrinho dnone'>Adicionar ao Carrinho<i class='fas fa-shopping-cart'></i></button>"; ?>
 
+          <!--====REMOVER PRODUTO====-->
+          <?php echo "<button name='rm-produto' class='btn-action-modal remover-produto dnone'>Remover do Carrinho<i class='fas fa-times'></i></button>"; ?>
+          
           <!--====ADICIONAR LISTA====-->
           <?php echo "<div class='btn-action-modal dnone'>Adicionar a lista de Compras<i class='fas fa-clipboard-list'></i></div>"; ?>
-
+          
         </div><!--fim de "informação"-->
 
       </div><!--fim de "body_modal_filho"-->
@@ -131,7 +141,7 @@ include '../parts/scriptmodal.php';
     </div> <!--fim de "body_modal_pai"-->
 
   </div> <!--fim do "modal"-->
-
+</form>
 </div>
 
  
