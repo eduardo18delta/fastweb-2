@@ -181,7 +181,67 @@ $("#input-img-produto-06").on('change', function () {
 
 });
 
+$(".rs").css("background-color","#fff")
+$(".rs").css("color","#000")
+$(".kg").css("background-color","#fff")
+$(".kg").css("color","#000")
+$(".und").css("background-color","#fff")
+$(".und").css("color","#000")
 
+$(".rs").click(function(){
+  if ($(".rs").hasClass("ativo")) {
+  $(".rs").val("")
+  $(".rs").css("background-color","#fff")
+  $(".rs").css("color","#000")
+  $(".rs").removeClass("ativo")
+  var teste = $(".medida").val()
+  teste2 = parseInt(teste) - 1
+  $(".medida").val(teste2)
+  } else {
+  $(".rs").css("background-color","#000")
+  $(".rs").css("color","#fff")
+  $(".rs").addClass("ativo")
+  var teste = $(".medida").val() 
+  teste2 =parseInt(teste) + 1
+  $(".medida").val(teste2)
+  }
+})
+
+$(".kg").click(function(){
+  if ($(".kg").hasClass("ativo")) {
+  $(".kg").css("background-color","#fff")
+  $(".kg").css("color","#000")
+  $(".kg").removeClass("ativo")
+  var teste = $(".medida").val()
+  teste2 = parseInt(teste) - 2
+  $(".medida").val(teste2)
+  } else {
+  $(".kg").css("background-color","#000")
+  $(".kg").css("color","#fff")
+  $(".kg").addClass("ativo")
+  var teste = $(".medida").val()
+  teste2 = parseInt(teste) + 2
+  $(".medida").val(teste2)
+  }
+})
+
+$(".und").click(function(){
+  if ($(".und").hasClass("ativo")) {
+  $(".und").css("background-color","#fff")
+  $(".und").css("color","#000")
+  $(".und").removeClass("ativo")
+  var teste = $(".medida").val()
+  teste2 = parseInt(teste) - 4
+  $(".medida").val(teste2)
+  } else {
+  $(".und").css("background-color","#000")
+  $(".und").css("color","#fff")
+  $(".und").addClass("ativo")
+  var teste = $(".medida").val()
+  teste2 = parseInt(teste) + 4
+  $(".medida").val(teste2)
+  }
+})
 
 
 });
