@@ -92,7 +92,7 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
   <div class="col-md-7 col mt-4">
     <div>Quantidade de Produtos (<?=$qtd_produtos?>)</div>
     <div>Endereço de Entrega</div>
-    <div>Rua Sucupira, 244, Ipê | <span class="carrinho-endereco">Alterar endereço de entrega</span></div>
+    <div>Rua Sucupira, 244, Ipê | <a class="carrinho-endereco" href="../view/list-enderecoclienteView.php">Alterar endereço de entrega</a></div>
   </div>    
     <div class="col-md-3 col mt-4">
     <div class="btn btn-danger form-control">FINALIZAR COMPRA</div>
@@ -102,8 +102,6 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
         <h2 class="carrinho-valor-total">R$ <?=$total_produtos?></h2>
     </div>  
 </div>       
-
-
 
 <?php
 } // Fim do IF
