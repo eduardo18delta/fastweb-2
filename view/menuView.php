@@ -1,6 +1,3 @@
-<?php
-include '../view/modalprodutosView.php';
-?>
 <html>
   <head>        
     <title>FastWeb - Supermercado Online</title>
@@ -93,3 +90,9 @@ include '../view/modalprodutosView.php';
             </a>
         </div>
     </div>
+
+    <!-- Script de notificação do carrinho-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="../assets/js/carrinho.js"></script>
