@@ -14,10 +14,10 @@ class Endereco extends Conexao
 	public $ibge;
 	public $cliente_fk;
 
-	public function listar()
+	public function listaEnderecos($idusuario)
     {       
         $conexao = Conexao::conectarBanco();
-        $query = "SELECT * FROM  endereco ";
+        $query = "SELECT * FROM endereco where cliente_fk = $idusuario";
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
         return $lista;

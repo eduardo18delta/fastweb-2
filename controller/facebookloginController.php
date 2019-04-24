@@ -1,6 +1,6 @@
 <?php 
 session_start();
-//unset($_SESSION['face_access_token']);
+unset($_SESSION['face_access_token']);
 
 # Arquivos necessários para autenticação via facebook
 require_once '../assets/lib/Facebook/autoload.php';
@@ -10,7 +10,7 @@ $fb = new \Facebook\Facebook([
   'app_id' => '2162318747411837',
   'app_secret' => '7c3a67d23a9aa3807033f9b330046572',
   'default_graph_version' => 'v2.9',
-  //'default_access_token' => '{access-token}', // optional
+  'default_access_token' => '{access-token}', // optional
 ]);
 
 $helper = $fb->getRedirectLoginHelper();

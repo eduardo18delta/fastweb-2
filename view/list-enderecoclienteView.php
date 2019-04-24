@@ -1,5 +1,15 @@
 <?php  session_start(); include '../view/menuView.php'; if(isset($_SESSION['id'])) { ?>
 
+<?php 
+
+require_once '../model/autoload.php'; 
+
+$endereco = new Endereco(); 
+$idusuario = $_SESSION['id'];
+
+$listadeenderecos = $endereco->listaEnderecos($idusuario); 
+
+?>
    <!-- Adicionando JQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -138,23 +148,47 @@
 					<div class="alert alert-primary resumo">
 						<b>Endereços cadastrados</b>	
 					</div>
+                        <?php
+                            if(isset($_SESSION['msgcadastro']))
+                            {
+                                echo $_SESSION['msgcadastro'];
+                                unset($_SESSION['msgcadastro']);
+                            }
+                        ?>
 
-          <?php
-              if(isset($_SESSION['msgcadastro']))
-              {
-                echo $_SESSION['msgcadastro'];
-                unset($_SESSION['msgcadastro']);
-              }
-          ?>
+                            <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Cadastrar novo endereço</a>
 
-          <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Cadastrar novo endereço</a>
+                    <div class="col mt-4">
+                        <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Rua</th>
+                                    <th>Número</th>
+                                    <th>Bairro</th>
+                                    <th>Cidade</th>
+                                    <th>Estado</th>
+                                    <th>CEP</th>
+                                </tr>
+                            </thead>                    
 
-          <div class="col">
-              dados do endereço
-          </div>
+                            <tbody>
+                                <?php foreach ($listadeenderecos as $lista):?>
+                                <tr>
+                                    <td><?= $lista['rua']?></td>  
+                                    <td><?= $lista['numero']?></td>  
+                                    <td><?= $lista['bairro']?></td>  
+                                    <td><?= $lista['cidade']?></td>  
+                                    <td><?= $lista['estado']?></td>  
+                                    <td><?= $lista['cep']?></td>                     
+                                </tr>
+                                <?php endforeach?>  
+                            </tbody>
+                        </table>
+                        </div>            
+                    </div>
 
 				</div>   
-
 			</div>
 		</div>
 	</div>
@@ -178,3 +212,4 @@ else
 include_once '../view/footerView.php';
 
 ?>
+
