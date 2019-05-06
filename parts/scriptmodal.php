@@ -9,6 +9,10 @@ if(!isset($_SESSION['carrinho'])){
    $_SESSION['carrinho'] = array();
 }
 
+if(!isset($_SESSION['teste2'])){
+   $_SESSION['teste2'] = array();
+}
+
 //REMOVER PRODUTO DO CARRINHO
 
 if(isset($_POST['rm-produto'])){
@@ -36,21 +40,22 @@ $listar_produtos=$produtos_modal->listarDestaque();
       $(document).ready(function(){
      
       $(".produto'.$modal['id_produto'].'").click(function(){ 
+      $(".remover-produto").addClass("remover-produto'.$modal['id_produto'].'")
+      $(".add-carrinho").addClass("add-carrinho'.$modal['id_produto'].'")
+      $(".remover-produto'.$modal['id_produto'].'").hide()
+      $(".add-carrinho'.$modal['id_produto'].'").show()
 
       $(".form-produto-id").val('.$modal['id_produto'].');
       $(".modal-qtd-produto").attr("name","qtd-produto['.$modal['id_produto'].']")
+      $(".modal-qtd-produto").addClass("modal-qtd-produto'.$modal['id_produto'].'")
+      $(".modal-qtd-produto").val('.$modal['quantidade'].')
       $(".background_modal").fadeIn();
       $(".produto'.$modal['id_produto'].'").addClass("addproduto'.$modal['id_produto'].'")
       $(".nome").text("'.$modal['nome'].'")
       $(".valor").text("R$ '.$modal['valor'].',00")
       $(".descricao").text("'.$modal['descricao'].'")
       $(".desconto-icon").text("'.$modal['desconto'].'%")
-      $(".qtd-produto'.$modal['id_produto'].'").val()
       $(".valor").addClass("valor'.$modal['id_produto'].'")
-      $(".remover-produto").addClass("remover-produto'.$modal['id_produto'].'")
-      $(".add-carrinho").addClass("add-carrinho'.$modal['id_produto'].'")
-      $(".remover-produto'.$modal['id_produto'].'").hide()
-      $(".add-carrinho'.$modal['id_produto'].'").show()
       
 
       if ("'.$modal['medida'].'"==1){
@@ -88,7 +93,35 @@ $listar_produtos=$produtos_modal->listarDestaque();
         $(".kg").show()
         $(".und").show()
       }
-      
+
+      $(".modal-qtd-produto'.$modal['id_produto'].'").keyup(function() {
+      qtd = $(".modal-qtd-produto'.$modal['id_produto'].'").val()
+      $(".qtd-produto'.$modal['id_produto'].'").val(qtd)
+
+             var add_carrinho = new FormData($("#modal_produtos")[0]);
+ 
+            $.ajax({
+                type: "POST",
+                //dataType: "json",
+                url: "../model/Carrinho.class.php",
+                //async: true,
+                contentType: false,
+                processData: false,
+                data: add_carrinho,
+                success: function(dados) {
+
+                 },
+                 error: function(response){
+                    alert ("erro")
+                 }
+            });
+            
+        
+            return false;
+        });
+
+       
+              
 $(".desfocar").css("filter", "blur(10px)");
 
       $(".img_produto_hover01").attr("src","../assets/img/upload_produtos/'.$modal['img_01'].'")
@@ -118,7 +151,8 @@ $(".desfocar").css("filter", "blur(10px)");
         $(".background_modal").fadeOut();
         $(".produto'.$modal['id_produto'].'").removeClass("addproduto'.$modal['id_produto'].'")
         $(".remover-produto").removeClass("remover-produto'.$modal['id_produto'].'")
-         $(".add-carrinho").removeClass("add-carrinho'.$modal['id_produto'].'")
+        $(".add-carrinho").removeClass("add-carrinho'.$modal['id_produto'].'")
+        $(".modal-qtd-produto").removeClass("modal-qtd-produto'.$modal['id_produto'].'")
         $(".desfocar").css("filter", "blur(0px)");
       })
       
@@ -131,12 +165,15 @@ $(".desfocar").css("filter", "blur(10px)");
       $(".add-carrinho").click(function(){
         $(".background_modal").fadeOut();
         $(".produto'.$modal['id_produto'].'").removeClass("addproduto'.$modal['id_produto'].'")
+        $(".remover-produto").removeClass("remover-produto'.$modal['id_produto'].'")
+        $(".add-carrinho").removeClass("add-carrinho'.$modal['id_produto'].'")
+        $(".modal-qtd-produto").removeClass("modal-qtd-produto'.$modal['id_produto'].'")
         $(".desfocar").css("filter", "blur(0px)");
       })
       
 
       $(".qtd-produto'.$modal['id_produto'].'").keyup(function() {
-
+      
              var add_carrinho = new FormData($("#carrinho_produtos'.$modal['id_produto'].'")[0]);
  
             $.ajax({
@@ -158,6 +195,154 @@ $(".desfocar").css("filter", "blur(10px)");
         
             return false;
         });
+
+if ("'.$modal['medida'].'"==1){
+        $(".rs'.$modal['id_produto'].'").show()
+        $(".kg'.$modal['id_produto'].'").hide()
+        $(".und'.$modal['id_produto'].'").hide()
+      }
+      if ("'.$modal['medida'].'"==2){
+        $(".rs'.$modal['id_produto'].'").hide()
+        $(".kg'.$modal['id_produto'].'").show()
+        $(".und'.$modal['id_produto'].'").hide()
+      }
+      if ("'.$modal['medida'].'"==3){
+        $(".rs'.$modal['id_produto'].'").show()
+        $(".kg'.$modal['id_produto'].'").show()
+        $(".und'.$modal['id_produto'].'").hide()
+      }
+      if ("'.$modal['medida'].'"==4){
+        $(".rs'.$modal['id_produto'].'").hide()
+        $(".kg'.$modal['id_produto'].'").hide()
+        $(".und'.$modal['id_produto'].'").show()
+      }    
+      if ("'.$modal['medida'].'"==5){
+        $(".rs'.$modal['id_produto'].'").show()
+        $(".kg'.$modal['id_produto'].'").hide()
+        $(".und'.$modal['id_produto'].'").show()
+      }
+      if ("'.$modal['medida'].'"==6){
+        $(".rs'.$modal['id_produto'].'").hide()
+        $(".kg'.$modal['id_produto'].'").show()
+        $(".und'.$modal['id_produto'].'").show()
+      }
+      if ("'.$modal['medida'].'"==7){
+        $(".rs'.$modal['id_produto'].'").show()
+        $(".kg'.$modal['id_produto'].'").show()
+        $(".und'.$modal['id_produto'].'").show()
+      }
+      
+$(".rs'.$modal['id_produto'].'").click(function() {
+    $("[name=opcao-medidaa]").val("rs")
+    $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
+    $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+    $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
+    $(".rs'.$modal['id_produto'].'").css("background-color","#000")
+    $(".kg'.$modal['id_produto'].'").css("background-color","#fff")
+    $(".und'.$modal['id_produto'].'").css("background-color","#fff")
+    $(".rs'.$modal['id_produto'].'").css("color","#fff")
+    $(".kg'.$modal['id_produto'].'").css("color","#000")
+    $(".und'.$modal['id_produto'].'").css("color","#000")
+    $(".rs'.$modal['id_produto'].'").addClass("medida_ativo")
+    $(".kg'.$modal['id_produto'].'").removeClass("medida_ativo")
+    $(".und'.$modal['id_produto'].'").removeClass("medida_ativo")
+
+
+          var add_medida = new FormData($("#carrinho_produtos'.$modal['id_produto'].'")[0]);
+ 
+            $.ajax({
+                type: "POST",
+                //dataType: "json",
+                url: "../model/teste2.php",
+                //async: true,
+                contentType: false,
+                processData: false,
+                data: add_medida,
+                success: function(dados) {
+//alert (dados)
+                 },
+                 error: function(response){
+                    alert ("erro")
+                 }
+            });
+
+            return false;
+        });  
+
+$(".kg'.$modal['id_produto'].'").click(function() {
+  $("[name=opcao-medidaa]").val("kg")
+  $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
+  $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+  $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
+  $(".rs'.$modal['id_produto'].'").css("background-color","#fff")
+  $(".kg'.$modal['id_produto'].'").css("background-color","#000")
+  $(".und'.$modal['id_produto'].'").css("background-color","#fff")
+  $(".rs'.$modal['id_produto'].'").css("color","#000")
+  $(".kg'.$modal['id_produto'].'").css("color","#fff")
+  $(".und'.$modal['id_produto'].'").css("color","#000")
+  $(".rs'.$modal['id_produto'].'").removeClass("medida_ativo")
+  $(".kg'.$modal['id_produto'].'").addClass("medida_ativo")
+  $(".und'.$modal['id_produto'].'").removeClass("medida_ativo")
+
+
+          var add_medida = new FormData($("#carrinho_produtos'.$modal['id_produto'].'")[0]);
+ 
+            $.ajax({
+                type: "POST",
+                //dataType: "json",
+                url: "../model/teste2.php",
+                //async: true,
+                contentType: false,
+                processData: false,
+                data: add_medida,
+                success: function(dados) {
+//alert (dados)
+                 },
+                 error: function(response){
+                    alert ("erro")
+                 }
+            });
+
+            return false;
+        });  
+  
+$(".und'.$modal['id_produto'].'").click(function() {
+  $("[name=opcao-medidaa]").val("und")
+  $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
+  $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+  $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
+  $(".rs'.$modal['id_produto'].'").css("background-color","#fff")
+  $(".kg'.$modal['id_produto'].'").css("background-color","#fff")
+  $(".und'.$modal['id_produto'].'").css("background-color","#000")
+  $(".rs'.$modal['id_produto'].'").css("color","#000")
+  $(".kg'.$modal['id_produto'].'").css("color","#000")
+  $(".und'.$modal['id_produto'].'").css("color","#fff")
+  $(".rs'.$modal['id_produto'].'").removeClass("medida_ativo")
+  $(".kg'.$modal['id_produto'].'").removeClass("medida_ativo")
+  $(".und'.$modal['id_produto'].'").addClass("medida_ativo")
+
+
+          var add_medida = new FormData($("#carrinho_produtos'.$modal['id_produto'].'")[0]);
+ 
+            $.ajax({
+                type: "POST",
+                //dataType: "json",
+                url: "../model/teste2.php",
+                //async: true,
+                contentType: false,
+                processData: false,
+                data: add_medida,
+                success: function(dados) {
+//alert (dados)
+                 },
+                 error: function(response){
+                    alert ("erro")
+                 }
+            });
+
+            return false;
+        });      
+
 
 
 

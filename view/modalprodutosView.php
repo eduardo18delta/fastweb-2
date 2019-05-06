@@ -113,7 +113,7 @@ include '../parts/scriptmodal.php';
               <td class="qtd-medida rm-medida">-</td>
               <td class="valor-medida">
                 <input type="number" class="form-control modal-qtd-produto" value='1' min="1">
-                <input type="hidden" class="opcao-medida" name="opcao-medida[]" value="und">
+                <input type="hidden" class="opcao-medida" name="opcao-medida" value="und">
               <!--  <input type="number" class="form-control modal-qtd-produto" value='1' min="1">
                 <input type="number" class="form-control modal-qtd-produto" value='1' min="1">
                 <input type="number" name="carrinho-qtd-produto[<?=$listaEspecifica['id_produto']?>]" class="form-control qtd-produto<?=$listaEspecifica['id_produto']?>"  min="1" value="<?=$qtd?>" required>-->

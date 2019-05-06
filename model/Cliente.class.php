@@ -14,6 +14,7 @@ Class Cliente extends Conexao{
 	public $senha;
 	public $senha2;
 	public $ofertas;
+    public $endereco_fk;
 
 	public function listar()
     {       
@@ -48,6 +49,16 @@ Class Cliente extends Conexao{
         $this->cadastrarCliente->execute();
     }
 
+    public function atualizarCliente()
+    {
+        $conexao = Conexao::conectarBanco();
+        $this->atualizarCliente = $conexao->prepare("UPDATE clientes SET endereco_fk=:endereco_fk WHERE id=:id;");
+        $this->atualizarCliente->bindValue(":endereco_fk", $this->endereco_fk, PDO::PARAM_STR);   
+        $this->atualizarCliente->bindValue(":id", $this->id, PDO::PARAM_STR);   
+        $this->atualizarCliente->execute();
+
+    }
+
     public function deletar()
     {
     	$conexao = Conexao::conectarBanco();
@@ -73,9 +84,11 @@ Class Cliente extends Conexao{
 		$id = $sql['id'];
 		$email = $sql['email'];
         $nome = $sql['nome'];
+        $endereco_fk = $sql['endereco_fk'];
 		$_SESSION['id'] = $id;
 		$_SESSION['email'] = $email;
         $_SESSION['nome'] = $nome;
+        $_SESSION['endereco_fk'] = $endereco_fk;
 		header("Location: ../view/perfilclienteView.php");
 	} 
 	else

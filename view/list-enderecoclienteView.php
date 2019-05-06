@@ -80,7 +80,48 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                     limpa_formulário_cep();
                 }
             });
-        });
+
+                $('.endereco'+<?= $_SESSION['endereco_fk'] ?>).prop('checked', true)
+      
+                    $('.endereco').click(function() {
+                            
+                        //var endereco = $('#form_endereco').serialize();
+                       // alert (cont_pacientes)
+                         var endereco = new FormData($('#form_endereco')[0]);
+             
+                        $.ajax({
+                            type: 'POST',
+                            //dataType: 'json',
+                            url: '../model/teste.php',
+                            //async: true,
+                            contentType: false,
+                            processData: false,
+                            data: endereco,
+                            success: function(id) {
+
+                     $('.endereco'+id).prop('checked', true)
+                     window.location.href = "../view/carrinhoView.php";
+                               if (response=='null') {
+                                //alert ('SELECIONE PACIENTES')
+                                alert(id)
+                               } else {
+                       alert(id)
+
+                             }
+
+                             },
+                             error: function(response){
+                                alert ('erro')
+                             }
+                        });
+                        
+                    
+                        return false;
+                    }); 
+                               
+                                                         
+
+        }); // FIm do Jquery
 
     </script>
 
@@ -163,26 +204,70 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
+                                    <th></th>
                                     <th>Rua</th>
                                     <th>Número</th>
                                     <th>Bairro</th>
                                     <th>Cidade</th>
                                     <th>Estado</th>
                                     <th>CEP</th>
+                                    <th></th>
                                 </tr>
                             </thead>                    
+                            <style type="text/css">
+                           
+label {
 
+    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+}
+input[type=radio] {
+    display: none;
+}
+label:before {
+    content: "";
+
+    width: 16px;
+    height: 16px;
+ 
+ 
+    position: absolute;
+
+    background-color: #fff;
+    border: 2px solid green;
+}
+label:before {
+    border-radius: 2px;
+}
+input[type=radio]:checked + label:before {
+    content: "\2713";
+    color: #fff;
+    background-color: green;
+                            </style>
                             <tbody>
+                                <form method="POST" id="form_endereco" enctype="multipart/form-data">
                                 <?php foreach ($listadeenderecos as $lista):?>
-                                <tr>
+                                
+                                <tr><td>
+                                    <style type="text/css"></style>
+                                    <input type="radio" name="endereco" class="endereco endereco<?= $lista['id']?>" value="<?= $lista['id']?>" id="<?= $lista['id']?>">
+                                    <label for="<?= $lista['id']?>"></label>                 
+                                    </td>
                                     <td><?= $lista['rua']?></td>  
                                     <td><?= $lista['numero']?></td>  
                                     <td><?= $lista['bairro']?></td>  
                                     <td><?= $lista['cidade']?></td>  
                                     <td><?= $lista['estado']?></td>  
-                                    <td><?= $lista['cep']?></td>                     
+                                    <td><?= $lista['cep']?></td>   
+                                    <td><i class="fas fa-edit"></i></td>                  
                                 </tr>
+                                  
+
+                                
                                 <?php endforeach?>  
+                                </form> 
+                                              
                             </tbody>
                         </table>
                         </div>            

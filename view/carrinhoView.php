@@ -21,6 +21,9 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
             $subtotal_produtos = $listaEspecifica['valor'] * $qtd; //Armazenando o subtotal dos valores 
             $total_produtos += $listaEspecifica['valor'] * $qtd; //Armazenando o TOTAL dos valores
             $qtd_produtos++; //Armazenando a quantidade de produtos
+            //$_SESSION['teste2'][$id_produto] = $qtd;
+            //$_SESSION['teste2'][$id_produto] = "testeE";
+          //echo $_SESSION['teste2'][$id_produto]; 
         ?>
 
 <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
@@ -70,17 +73,32 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
     </div>
   <!--===========================QUANTIDADE/VALOR/SUBTOTAL=======================-->
     <div class="col-md-2 col mt-2">
-      <div class="carrinho-titulo-info">Quantidade (UND.)</div>
-      <input type="number" name="carrinho-qtd-produto[<?=$listaEspecifica['id_produto']?>]" class="form-control carrinho-qtd-produto qtd-produto<?=$listaEspecifica['id_produto']?>"  min="1" value="<?=$qtd?>" required>
-      <div><?=$listaEspecifica['quantidade']?> Unidades</div>
+      <div class="carrinho-titulo-info carrinho-add-valor<?=$listaEspecifica['id_produto']?>">Quantidade (UND.)</div>
+      <input type="hidden" class="carrinho-requisicao" value="">
+        
+        <table class="table-medida">
+          <tr>
+              <td class="item-medida item-medida<?=$listaEspecifica['id_produto']?> rs<?=$listaEspecifica['id_produto']?>">R$</td>
+              <td class="item-medida item-medida<?=$listaEspecifica['id_produto']?> kg<?=$listaEspecifica['id_produto']?>">Kg</td>
+              <td class="item-medida item-medida<?=$listaEspecifica['id_produto']?> und<?=$listaEspecifica['id_produto']?>">Und</td>
+     
+              <td class="valor-medida">
+                <input type="number" name="carrinho-qtd-produto[<?=$listaEspecifica['id_produto']?>]" class="form-control carrinho-qtd-produto qtd-produto<?=$listaEspecifica['id_produto']?>"  min="1" value="<?=$qtd?>" required>
+                <input type="hidden" name="opcao-medidaa" value="<?=$_SESSION['teste2'][$id_produto]?>">
+              </td>
+
+          </tr>
+          </table>
+
+      <div style="display: none;"><?=$listaEspecifica['quantidade']?> Unidades</div>
     </div>
     <div class="col-md-2 col mt-4"> 
-          <div class="carrinho-titulo-info">Valor (UND.)</div>
-          <div>R$ <?=$listaEspecifica['valor']?></div> 
+          <div class="carrinho-titulo-info carrinho-valor<?=$listaEspecifica['id_produto']?>">Valor (UND.)</div>
+          <div class="valor-carrinho<?=$listaEspecifica['id_produto']?>">R$ <?=$listaEspecifica['valor']?>,00</div> 
     </div>
     <div class="col-md-2 col mt-4"> 
-        <div class="carrinho-titulo-info">Sub Total (UND.)</div>
-          <div class="fofo valor-produto<?=$listaEspecifica['id_produto']?>"><?=$subtotal_produtos?></div>
+        <div class="carrinho-titulo-info carrinho-subtotal<?=$listaEspecifica['id_produto']?>">Sub Total (UND.)</div>
+          <div class="fofo valor-produto<?=$listaEspecifica['id_produto']?>"><?=$subtotal_produtos?>,00</div>
     </div>
   </div>
 </div>
@@ -92,20 +110,89 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
   <div class="col-md-7 col mt-4">
     <div>Quantidade de Produtos (<?=$qtd_produtos?>)</div>
     <div>Endereço de Entrega</div>
-    <div>Rua Sucupira, 244, Ipê | <a class="carrinho-endereco" href="../view/list-enderecoclienteView.php">Alterar endereço de entrega</a></div>
+    <div>
+
+<?php  if(isset($_SESSION['id'])) { 
+
+require_once '../model/autoload.php'; 
+
+$endereco = new Endereco(); 
+$idusuario = $_SESSION['id'];
+
+$listadeenderecos = $endereco->listaEnderecos($idusuario); 
+?>
+
+ <?php foreach ($listadeenderecos as $lista):?>
+
+
+<?php
+
+if ($lista['id']==$_SESSION['endereco_fk']) {
+ echo $lista['rua'].", nº ".$lista['numero'].", ".$lista['bairro'].", ".$lista['cidade']."-".$lista['estado'];
+}
+
+?>
+
+<?php endforeach?>
+
+<?php  
+} 
+else 
+{ 
+  echo "Faça login para novos endereços"; 
+} 
+
+?>
+
+     | <a class="carrinho-endereco" href="../view/list-enderecoclienteView.php">Alterar endereço de entrega</a></div>
   </div>    
-    <div class="col-md-3 col mt-4">
-    <div class="btn btn-danger form-control">FINALIZAR COMPRA</div>
-    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+<script>
+
+function enviaPagseguro(){
+
+$.post('../controller/pagseguroController.php','',function(data){
+  //alert (data)
+$('#code').val(data);
+$('#comprar').submit();
+//window.location.href='https://pagseguro.uol.com.br/v2/checkout/payment.html?code'+data;
+})
+}
+
+</script>
+
+
+<div class="col-md-3 col mt-4">
+    <button onclick="enviaPagseguro()" class="btn btn-danger form-control">FINALIZAR COMPRA</button>
+</div>
+
+<form id="comprar" action="https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
+<!--
+<form id="comprar" action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
+-->
+
+<input type="hidden" name="code" id="code" value="" />
+
+</form>
+<!--
+<script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
+-->
+<script type="text/javascript" src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
     <div class="col-md-2 col mt-4">
       <h2>Total</h2>
-        <h2 class="carrinho-valor-total">R$ <?=$total_produtos?></h2>
+        <h2 class="carrinho-valor-total">R$ <?=$total_produtos?>,00</h2>
     </div>  
 </div>       
 
 <?php
 } // Fim do IF
 ?>
+
+
+
+
 
 <!--=======Esse container levanta os produtos para que não seja ocultado no footer======-->
 <div class="bk-footer">

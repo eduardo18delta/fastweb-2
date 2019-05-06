@@ -8,7 +8,9 @@ if (!isset($_SESSION)) {
 if(!isset($_SESSION['carrinho'])){
      $_SESSION['carrinho'] = array();
   }
-
+//if(!isset($_SESSION['teste2'])){
+     //$_SESSION['teste2'] = array();
+//  }
 //--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 //--+++++++++++++++++++++BEM VINDO A CLASSE DE CONTROLLE CARRINHO+++++++++++++++++++++++++++++-->
 //--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
@@ -21,7 +23,7 @@ public function adicionarProduto(){
        $_SESSION['carrinho'][$id_produto] = 1;
     }else{ 
        $_SESSION['carrinho'][$id_produto] += 1;
-    }
+    } 
 }
 
 //===================================ALTERAR VALOR CARRINHO==========================================
@@ -57,12 +59,12 @@ public function alterarValores(){
                   }
                }
             }
-        
+     
     //  }               
   
            
 require_once '../model/autoload.php'; $produtos = new Produtos(); 
-
+//$_SESSION['teste2'][$id_produto] = 1;
            
 $valor_total = 0;
 $qtd_produtos = 0;
@@ -73,15 +75,48 @@ $qtd_produtos = 0;
         foreach($_SESSION['carrinho'] as $id_produto => $qtd){ 
         $listaEspecifica=$produtos->setId($id_produto);
         $listaEspecifica=$produtos->listaEspecifica();
+        
+        if ($_SESSION['teste2'][$id_produto]=="rs") {
+        $valor_produtos = $qtd;  
+        $valor_total += $qtd; 
+        $qtd_produtos++;
+        $teste[]=$listaEspecifica['id_produto']; // ID do Produto
+        $teste[]=number_format($valor_produtos,2,",","."); //Valor da soma de cada produtos
+        $teste[]=number_format($valor_total,2,",","."); //Valor total do cliente
+        $teste[]=$qtd_produtos; //Quantidade dos produtos no carrinho
+        $teste[]=$_SESSION['teste2'][$id_produto]; //Medida
+        $teste[]=$listaEspecifica['peso'];
+        //$teste[]=$qtd; //Quantidade por produto
+        } 
+
+        else if ($_SESSION['teste2'][$id_produto]=="kg") {
+        $valor_produtos = $listaEspecifica['valor']*$qtd/$listaEspecifica['peso']; 
+        $valor_total += $valor_produtos;
+        $qtd_produtos++;
+        $teste[]=$listaEspecifica['id_produto']; // ID do Produto
+        $teste[]=number_format($valor_produtos,2,",","."); //Valor da soma de cada produtos
+        $teste[]=number_format($valor_total,2,",","."); //Valor total do cliente
+        $teste[]=$qtd_produtos; //Quantidade dos produtos no carrinho
+        $teste[]=$_SESSION['teste2'][$id_produto]; //Medida
+        $teste[]=$listaEspecifica['peso'];
+        //$teste[]=$qtd; //Quantidade por produto
+        }   
+
+        else if ($_SESSION['teste2'][$id_produto]=="und") {
         $valor_produtos = $listaEspecifica['valor'] * $qtd;  
         $valor_total += $listaEspecifica['valor'] * $qtd;
-        $qtd_produtos++;
-        
+        $qtd_produtos++;     
         $teste[]=$listaEspecifica['id_produto']; // ID do Produto
-        $teste[]=$listaEspecifica['valor']; //Valor da soma de cada produtos
-        $teste[]=$valor_total; //Valor total do cliente
+        $teste[]=number_format($valor_produtos,2,",","."); //Valor da soma de cada produtos
+        $teste[]=number_format($valor_total,2,",","."); //Valor total do cliente
         $teste[]=$qtd_produtos; //Quantidade dos produtos no carrinho
+        $teste[]=$_SESSION['teste2'][$id_produto]; //Medida
+        $teste[]=$listaEspecifica['peso'];
         //$teste[]=$qtd; //Quantidade por produto
+        }
+
+        
+        
         
 
 }
@@ -108,7 +143,9 @@ public function removerCarrinho(){
             if(isset($_SESSION['carrinho'][$id_produto])){
                unset($_SESSION['carrinho'][$id_produto]);
             }
-            
+            if(isset($_SESSION['teste2'][$id_produto])){
+               unset($_SESSION['teste2'][$id_produto]);
+            }
 }
 
 } //fim da classe
@@ -122,7 +159,16 @@ $carrinho->alterarQtd();
 $carrinho->alterarValores();
 if(isset($_POST['rm-produto'])){
 $carrinho->removerCarrinho();
-} 	
+} 
 
+ if(isset($_POST['opcao-medida'])){
+    $id_produto = intval($_POST['form-produto-id']);
+    $_SESSION['teste2'][$id_produto] = $_POST['opcao-medida'];
+ }
+
+//if(isset($_POST['opcao-medida'])){
+//$id_produto = intval($_POST['form-produto-id']);   
+//$_SESSION['teste2'][$id_produto] = $_POST['opcao-medidaa'];
+//}
 ?>
 
