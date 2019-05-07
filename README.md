@@ -17,7 +17,8 @@
 3. Copie e renomeie os arquivos de conexão na pasta /model - somente remova o trecho "-exemplo" do nome do arquivo sendo eles:
 	conexaoFacebook-exemplo.php e config-exemplo.php
 3. Depois de feito o passo a cima, configure nos arquivos os acessos ao banco de dados do seu servidor MySQL.
-4. Dê permissão de escrita e leitura na pasta /assets/js/produtos.
+4. Dê permissão de escrita e leitura na pasta /assets/js/produtos. Estou usando apache no Ubuntu 16.04 e o comando ficou assim:
+	- sudo chmod -R 777 /var/www/html/fastweb-2/assets/js/produtos
 
 
 - A partir de agora o sistema está funcional e rodando localmente em sua máquina.
