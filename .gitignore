@@ -1,4 +1,6 @@
-/model/config.php
-/assets/img/upload_produtos/
-/assets/js/produtos/
+model/config.php
+model/conexaofacebook.php
+assets/img/upload_produtos/
+assets/js/produtos/
+
 
