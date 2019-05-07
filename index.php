@@ -5,5 +5,5 @@
 		$uri = 'http://';
 	}
 	$uri .= $_SERVER['HTTP_HOST'];
-	header('Location: '.$uri.'/backup/tcc_fastweb_v13/view/index-site.php');
+	header('Location: '.$uri.'/fastweb-2/view/index-site.php');
 	exit;
