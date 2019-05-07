@@ -1,8 +1,8 @@
 <?php
 	$servidor = "localhost";
-	$usuario = "root";
-	$senha = "drefj508";
-	$dbname = "fastweb-2";
+	$usuario = "";
+	$senha = "";
+	$dbname = "";
 	
 	//Criar a conexao
 	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
