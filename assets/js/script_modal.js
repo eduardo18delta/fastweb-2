@@ -307,7 +307,6 @@ $('[name=add-carrinho]').click(function() {
                   $(".cont_add_produto").animate({right: "85px"},100)
                   $(".cont_add_produto").animate({right: "95px"},100)
                   $(".cont_add_produto").animate({right: "90px"},100)
-                  $(".cont_add_produto").text(response)
                 if (response==1) {
                // alert ("ok")
 
