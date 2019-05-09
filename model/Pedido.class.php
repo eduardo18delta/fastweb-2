@@ -3,7 +3,7 @@
 
 require_once "autoload.php";
 
-Class Pagseguro extends Conexao{
+Class Pedido extends Conexao{
 
     public $id;
 
@@ -12,7 +12,7 @@ Class Pagseguro extends Conexao{
     {       
         $conexao = Conexao::conectarBanco();
         $query = "
-        SELECT * FROM pedidos where id = :reference 
+        SELECT * FROM pedido where id = :reference 
         ";
         $this->atualizarCliente->bindValue(":reference",$reference);
         $resultado = $conexao->query($query);
@@ -23,7 +23,7 @@ Class Pagseguro extends Conexao{
     function listarPedidos(){
      $conexao = Conexao::conectarBanco();
      $query = "
-     SELECT pedidos.descricao, pedidos.id, status_pedido.status FROM pedidos INNER JOIN status_pedido on pedidos.status = status_pedido.id order by pedidos.id
+     SELECT pedidos.descricao, pedidos.id, status_pedido.status FROM pedido INNER JOIN status_pedido on pedidos.status = status_pedido.id order by pedidos.id
      ";
      $resultado = $conexao->query($query);
      $lista = $resultado->fetchAll();
@@ -35,7 +35,7 @@ Class Pagseguro extends Conexao{
      {
         $conexao = Conexao::conectarBanco();
         $query = "
-        SELECT * FROM pedidos order by id DESC
+        SELECT * FROM pedido
         ";
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
@@ -43,12 +43,12 @@ Class Pagseguro extends Conexao{
          
      }
 
-    public function cadastrarPedido()
+    public function salvarPedido()
     {
         $conexao = Conexao::conectarBanco();
         $this->cadastrarCliente = $conexao->prepare("
 
-        INSERT INTO pedidos (descricao, status) VALUES ('Pedido de Teste', 1)
+        INSERT INTO pedido (descricao, status_fk) VALUES ('Pedido de Teste', 1)
 
         ");
         $this->cadastrarCliente->execute();
@@ -57,9 +57,9 @@ Class Pagseguro extends Conexao{
     public function atualizarPedido()
     {
         $conexao = Conexao::conectarBanco();
-        $this->atualizarCliente = $conexao->prepare("UPDATE pedidos SET status = :status where id = :reference");
+        $this->atualizarCliente = $conexao->prepare("UPDATE pedido SET status = :status where id = :reference");
         $this->atualizarCliente->bindValue(":reference",$reference);
-        $this->atualizarCliente->bindValue(":status",$status); 
+        $this->atualizarCliente->bindValue(":status_fk",$status_fk); 
         $this->atualizarCliente->execute();
 
     }

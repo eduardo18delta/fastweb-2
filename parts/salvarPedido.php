@@ -1,13 +1,17 @@
 <?php
  
- include_once 'conecta.php';
- $conn = new conecta();
- 
- $conn->salvarPedido();
+ require_once '../model/autoload.php'; 
 
- $pedido = $conn->consultarUltimoPedido();
+$pedido = new Pedido(); 
  
- echo $pedido["id"];
+$pedido->salvarPedido();
+
+$result = $pedido->consultarUltimoPedido();
+
+foreach ($result as $lista){
+	
+} 
+echo $lista["id"];
 
 ?>
 

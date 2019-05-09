@@ -153,7 +153,7 @@ else
 
 function enviaPagseguro(codigo){
 
- $.post('salvarPedido.php','',function(idPedido){
+ $.post('../parts/salvarPedido.php','',function(idPedido){
  
 
 $.post('../controller/pagseguroController.php',{idPedido: idPedido},function(data){
