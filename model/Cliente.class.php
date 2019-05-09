@@ -84,10 +84,12 @@ Class Cliente extends Conexao{
 		$id = $sql['id'];
 		$email = $sql['email'];
         $nome = $sql['nome'];
+        $telefone = $sql['telefone'];
         $endereco_fk = $sql['endereco_fk'];
 		$_SESSION['id'] = $id;
 		$_SESSION['email'] = $email;
         $_SESSION['nome'] = $nome;
+        $_SESSION['telefone'] = $telefone;
         $_SESSION['endereco_fk'] = $endereco_fk;
 		header("Location: ../view/perfilclienteView.php");
 	} 
