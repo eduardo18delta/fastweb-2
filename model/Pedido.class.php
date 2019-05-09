@@ -12,9 +12,9 @@ Class Pedido extends Conexao{
     {       
         $conexao = Conexao::conectarBanco();
         $query = "
-        SELECT * FROM pedido where id = :reference 
+        SELECT * FROM pedido where id = $reference 
         ";
-        $this->atualizarCliente->bindValue(":reference",$reference);
+        //$this->atualizarCliente->bindValue(":reference",$reference);
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
         return $lista;
@@ -23,7 +23,7 @@ Class Pedido extends Conexao{
     function listarPedidos(){
      $conexao = Conexao::conectarBanco();
      $query = "
-     SELECT pedidos.descricao, pedidos.id, status_pedido.status FROM pedido INNER JOIN status_pedido on pedidos.status = status_pedido.id order by pedidos.id
+     SELECT pedido.descricao, pedido.id, status_pedido.status FROM pedido INNER JOIN status_pedido on pedido.status_fk = status_pedido.id order by pedido.id;
      ";
      $resultado = $conexao->query($query);
      $lista = $resultado->fetchAll();
@@ -54,12 +54,12 @@ Class Pedido extends Conexao{
         $this->cadastrarCliente->execute();
     }
 
-    public function atualizarPedido()
+    public function atualizarPedido($reference, $status)
     {
         $conexao = Conexao::conectarBanco();
-        $this->atualizarCliente = $conexao->prepare("UPDATE pedido SET status = :status where id = :reference");
+        $this->atualizarCliente = $conexao->prepare("UPDATE pedido SET status_fk = :status where id = :reference");
         $this->atualizarCliente->bindValue(":reference",$reference);
-        $this->atualizarCliente->bindValue(":status_fk",$status_fk); 
+        $this->atualizarCliente->bindValue(":status",$status); 
         $this->atualizarCliente->execute();
 
     }

@@ -155,7 +155,6 @@ function enviaPagseguro(codigo){
 
  $.post('../parts/salvarPedido.php','',function(idPedido){
  
-
 $.post('../controller/pagseguroController.php',{idPedido: idPedido},function(data){
   //alert (data)
 $('#code').val(data);
