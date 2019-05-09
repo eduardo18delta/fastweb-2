@@ -19,6 +19,8 @@
 3. Depois de feito o passo a cima, configure nos arquivos os acessos ao banco de dados do seu servidor MySQL.
 4. Dê permissão de escrita e leitura na pasta /assets/js/produtos. Estou usando apache no Ubuntu 16.04 e o comando ficou assim:
 	- sudo chmod -R 777 /var/www/html/fastweb-2/assets/js/produtos
+45. Dê permissão de escrita e leitura na pasta /assets/img/upload_produtos. Estou usando apache no Ubuntu 16.04 e o comando ficou assim:
+	- sudo chmod -R 777 /var/www/html/fastweb-2/assets/img/upload_produtos
 
 
 - A partir de agora o sistema está funcional e rodando localmente em sua máquina.
