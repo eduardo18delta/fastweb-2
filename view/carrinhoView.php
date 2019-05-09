@@ -151,15 +151,19 @@ else
             crossorigin="anonymous"></script>
 <script>
 
-function enviaPagseguro(){
+function enviaPagseguro(codigo){
 
-$.post('../controller/pagseguroController.php','',function(data){
+ $.post('salvarPedido.php','',function(idPedido){
+ 
+
+$.post('../controller/pagseguroController.php',{idPedido: idPedido},function(data){
   //alert (data)
 $('#code').val(data);
 $('#comprar').submit();
 //window.location.href='https://pagseguro.uol.com.br/v2/checkout/payment.html?code'+data;
-})
-}
+      })
+   })
+ }
 
 </script>
 
