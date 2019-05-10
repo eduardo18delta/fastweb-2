@@ -48,7 +48,7 @@ Class Pedido extends Conexao{
         $conexao = Conexao::conectarBanco();
         $this->salvarPedido = $conexao->prepare("
 
-        INSERT INTO pedido (cliente_fk, endereco_fk, status_fk, valor, pedido_efetuado, pagamento_autorizado, nf_emitida) VALUES (:cliente_fk, :endereco_fk, "0", :valor, :pedido_efetuado, :pagamento_autorizado, :nf_emitida);
+        INSERT INTO pedido (cliente_fk, endereco_fk, status_fk, valor, pedido_efetuado, pagamento_autorizado, nf_emitida) VALUES (:cliente_fk, :endereco_fk, 0, :valor, :pedido_efetuado, :pagamento_autorizado, :nf_emitida);
         ");
         $this->salvarPedido->bindValue(":cliente_fk",$cliente_fk);
         $this->salvarPedido->bindValue(":endereco_fk",$endereco_fk); 
