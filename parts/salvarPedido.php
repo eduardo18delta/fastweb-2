@@ -5,6 +5,8 @@ if (!isset($_SESSION)) {
  
 require_once '../model/autoload.php'; 
 
+$idusuario = $_SESSION['id'];
+
 $pedido = new Pedido(); 
  
 $pedido->salvarPedido();

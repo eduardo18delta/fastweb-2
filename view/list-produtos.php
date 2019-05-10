@@ -190,7 +190,7 @@ include_once '../parts/head.php'; ?>
 
           <div class="col-md-2 col-sm-12 form-group">
           <label>Destaque:</label>
-          <input class="form-control" type="checkbox" name="destaque" value="1" required>
+          <input class="form-control" type="checkbox" name="destaque" value="1">
           </div>
 </div>
 <div class="row">  
