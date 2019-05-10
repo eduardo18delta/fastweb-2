@@ -152,16 +152,15 @@ else
 <script>
 
 function enviaPagseguro(codigo){
-alert (codigo)
- $.post('../parts/salvarPedido.php','',function(idPedido){
+
  
-$.post('../controller/pagseguroController.php',{idPedido: idPedido},function(data){
+$.post('../controller/pagseguroController.php','',function(data){
   //alert (data)
 $('#code').val(data);
 $('#comprar').submit();
 //window.location.href='https://pagseguro.uol.com.br/v2/checkout/payment.html?code'+data;
       })
-   })
+
  }
 
 </script>
