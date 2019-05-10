@@ -18,7 +18,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
         
         <div class="row ">
           <div class="col">                                  
-            <a id="categorias-gerais" href="#">              
+            <a id="categorias-gerais" href="#!">              
             Departamentos       
             </a>  
           </div>          
@@ -75,8 +75,8 @@ $listaAlimentos=$produtos->listaAlimentos();?>
         
         <div class="row">
           <div class="col">
-            <a class=""href="#!">  
-            <i class="fas fa-tags"></i>
+            <a class=""href="produtoespView.php&id=3">  
+            <i class="fas fa-wine-bottle"></i>
             Bebidas
             <i class="fas fa-plus icon-plus"></i>
             </a> 
