@@ -9,7 +9,7 @@ $idusuario = $_SESSION['id'];
 
 $pedido = new Pedido(); 
  
-$pedido->salvarPedido();
+$pedido->salvarPedido($cliente_fk, $endereco_fk, $valor, $pedido_efetuado, $pagamento_autorizado, $nf_emitida);
 
 $result = $pedido->consultarUltimoPedido();
 
