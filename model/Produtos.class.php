@@ -101,7 +101,8 @@ class Produtos extends Conexao
 
             produtos, categoria
 
-        WHERE             
+        WHERE    
+            produtos.destaque = 1 AND          
             categoria.id_categoria = produtos.categoria_fk order by id_produto desc
             LIMIT 4";
 

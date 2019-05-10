@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Tempo de geração: 07/05/2019 às 10:19
--- Versão do servidor: 5.7.25-0ubuntu0.16.04.2
--- Versão do PHP: 7.0.33-0ubuntu0.16.04.3
+-- Tempo de geração: 10/05/2019 às 15:09
+-- Versão do servidor: 5.7.26-0ubuntu0.16.04.1
+-- Versão do PHP: 7.0.33-0ubuntu0.16.04.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -166,7 +166,7 @@ CREATE TABLE `produtos` (
   `medida` int(11) NOT NULL,
   `desconto` int(11) NOT NULL,
   `cod_barra` int(11) NOT NULL,
-  `destaque` int(11) NOT NULL,
+  `destaque` int(11) DEFAULT NULL,
   `img_01` varchar(40) DEFAULT NULL,
   `img_02` varchar(40) DEFAULT NULL,
   `img_03` varchar(40) DEFAULT NULL,
@@ -174,6 +174,13 @@ CREATE TABLE `produtos` (
   `img_05` varchar(40) DEFAULT NULL,
   `img_06` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id_produto`, `nome`, `valor`, `categoria_fk`, `fornecedor`, `validade`, `quantidade`, `marca`, `descricao`, `peso`, `medida`, `desconto`, `cod_barra`, `destaque`, `img_01`, `img_02`, `img_03`, `img_04`, `img_05`, `img_06`) VALUES
+(1, 'Coca COla', 10, 1, 'dsdsad', '2021-01-01', 1, 'dasdasd', 'dnkasjdjkahs', 1, 4, 12, 123123, 1, '40b924ff028e326e92e4485acad37e36', 'fed66fab482bdb49123c3e0eff968e85', '8f3e1bc878df65135bb54caa5f95b3c4', '67747ff343a76bf67da1c3557d85d8a8', '3bd36d2860ac7aecb72a59efc05b6fa9', 'f9fc3c0d525f5252226c963a03dfa90e');
 
 -- --------------------------------------------------------
 
@@ -283,7 +290,7 @@ ALTER TABLE `permissao`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de tabela `users`
 --
