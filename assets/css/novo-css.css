@@ -103,6 +103,7 @@ a:hover{
   margin: 5px;  
   text-align: center;
   font-size: 20px;
+  color: white !important;
 }
 
 .valor-produto{
