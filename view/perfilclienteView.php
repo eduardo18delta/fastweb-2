@@ -49,6 +49,16 @@ include '../view/menuView.php';
           			</div>          
         		</div>  
 
+            <div class="row">
+                <div class="col">                                  
+                  <a class=""href="#!">  
+                  <i class="fas fa-shopping-cart"></i>
+                  Compras
+                  <i class="fas fa-arrow-circle-right icon-plus"></i>
+                  </a>  
+                </div>          
+            </div>
+
         		<div class="row">
           			<div class="col">                                  
             			<a class=""href="../controller/logoutfacebookController.php">  
