@@ -97,25 +97,21 @@ $result = $pedido->listarPedidos($idusuario);
                             
                                 
                                 <?php foreach ($result as $lista_pedido):?>
-                        <div class="col mt-4">
+                        <div class="col mt-4 border border-secondary">
                         <div class="table-responsive">
-                        <table class="table table-striped table-hover">
+                        <table class="table table-hover">
                             <thead>
                                 <tr>
 
-                                    <th>Satus</th>
-                                    <th>valor</th>
-
+                                    <td>Pedido: <?= $lista_pedido['id']?></td> 
+                                    <td>Data: 24/02/2019</td> 
+                                    <td>Status: <?= $lista_pedido['status']?></td> 
+                                    <td>Valor Total: R$ <?= $lista_pedido['valor']?></td> 
+              
                                 </tr>
                             </thead>                    
 
                             <tbody>
-                                <tr>
-
-                                    <td><?= $lista_pedido['status']?></td> 
-                                    <td><?= $lista_pedido['id']?></td> 
-              
-                                </tr>
                                   
                                 <?php
                                 $result_item = $pedido->listaritemPedidos($lista_pedido['id']);
@@ -125,14 +121,76 @@ $result = $pedido->listarPedidos($idusuario);
 
                                 <tr>
 
-                                    <td>nome do produto<?= $lista_produto['nome']?></td> 
-                                    <td>valor do produto<?= $lista_produto['valor']?></td> 
+                                    <td><img src="../assets/img/upload_produtos/<?= $lista_produto['img_01']?>" width="100px" height="100px"></td> 
+                                    <td>valor do produto<?= $lista_produto['nome']?></td>
+                                    <td>R$ <?= $lista_produto['valor']?>,00</td> 
+                                    <td>Avaliar Produto</td> 
               
                                 </tr>
-
-                                <?php endforeach?>    
-
                                 
+                                <?php endforeach?>  
+                                <tr>    
+
+                                    <td colspan="4">
+                                        <hr class="bg-success p-1">
+                                    </td> 
+              
+                                </tr>  
+                                <tr>
+
+                                    <td>
+                                        <div align="center">Pedido efetuado</div>
+                                        <div align="center">24/02/2019</div>
+                                    </td> 
+                                    <td>
+                                        <div align="center">Pagamento autorizado</div>
+                                        <div align="center">24/02/2019</div>
+                                    </td> 
+                                    <td>
+                                        <div align="center">Nota Fiscal emitida</div>
+                                        <div align="center">24/02/2019</div>
+                                    </td> 
+                                    <td>
+                                        <div align="center">Pedido entregue</div>
+                                        <div align="center">24/02/2019</div>
+                                    </td> 
+              
+                                </tr>
+                        
+                                <tr>
+                                    <td colspan="4">
+                                    <div class="d-flex justify-content-around">
+                                    <div class="btn btn-danger">Avaliar Serviço</div> 
+                                    <div class="btn btn-primary">Gerar Nota Fiscal</div> 
+                                    </div> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                    <div class="d-flex justify-content-between">
+                                    <div>
+                                        <div>Pagamento</div>
+                                        <div>Cartão de Crédito</div>
+                                        <div>752.39####5214</div>
+                                        <div>R$ 28,75 em 1x</div>
+                                    </div> 
+                                    <div>
+                                        <div>Total Pago</div>
+                                        <div>Subtotal R$ 28,75</div>
+                                        <div>Desconto R$ 0,00</div>
+                                        <hr class="bg-success">
+                                        <div>Total R$ 28,75</div>
+                                    </div> 
+                                    <div>
+                                        <div>Endereço</div>
+                                        <div>Bren Henrrique Rodrigo Farias</div>
+                                        <div>Rua Sucupira, 244, Ipê</div>
+                                        <div>CEP, 68909034</div>
+                                    </div>
+                                </div>
+                                    </td> 
+              
+                                </tr>
                                 </tbody>
                         </table>
                         </div>            

@@ -163,7 +163,7 @@ echo $xml -> code;
 
 
 $id_ultimo_pedido = $_SESSION['referencia'];
-echo $id_ultimo_pedido;
+//echo $id_ultimo_pedido;
 $pedido->atualizarvalorPedido($id_ultimo_pedido, $valor_total);
 
 ?>
