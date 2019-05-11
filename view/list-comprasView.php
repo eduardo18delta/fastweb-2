@@ -8,7 +8,7 @@ $pedido = new Pedido();
 
 $idusuario = $_SESSION['id'];
  
-$result = $pedido->listarPedidos();
+$result = $pedido->listarPedidos($idusuario);
 
 ?>
 
@@ -94,45 +94,53 @@ $result = $pedido->listarPedidos();
                             }
                         ?>
 
-                            <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Cadastrar novo endereço</a>
-
-                    <div class="col mt-4">
+                            
+                                
+                                <?php foreach ($result as $lista_pedido):?>
+                        <div class="col mt-4">
                         <div class="table-responsive">
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th></th>
-                                    <th>Rua</th>
-                                    <th>Número</th>
-                                    <th>Bairro</th>
-                                    <th>Cidade</th>
-                                    <th>Estado</th>
-                                    <th>CEP</th>
-                                    <th></th>
+
+                                    <th>Satus</th>
+                                    <th>valor</th>
+
                                 </tr>
                             </thead>                    
 
                             <tbody>
-                                <form method="POST" id="form_pedido" enctype="multipart/form-data">
-                                <?php foreach ($result as $lista):?>
-                                
                                 <tr>
-                                    <td><?= $lista['descricao']?></td>  
-                                    <td><?= $lista['id']?></td>  
-                                    <td><?= $lista['status']?></td>  
-                                 
-                                    <td><i class="fas fa-edit"></i></td>                  
+
+                                    <td><?= $lista_pedido['status']?></td> 
+                                    <td><?= $lista_pedido['id']?></td> 
+              
                                 </tr>
                                   
+                                <?php
+                                $result_item = $pedido->listaritemPedidos($lista_pedido['id']);
+                                ?>
+
+                                <?php foreach ($result_item as $lista_produto):?>
+
+                                <tr>
+
+                                    <td>nome do produto<?= $lista_produto['nome']?></td> 
+                                    <td>valor do produto<?= $lista_produto['valor']?></td> 
+              
+                                </tr>
+
+                                <?php endforeach?>    
 
                                 
-                                <?php endforeach?>  
-                                </form> 
-                                              
-                            </tbody>
+                                </tbody>
                         </table>
                         </div>            
                     </div>
+                                <?php endforeach?>  
+                                
+                                              
+                            
 
 				</div>   
 			</div>
@@ -140,7 +148,7 @@ $result = $pedido->listarPedidos();
 	</div>
 
 <?php
-include "../parts/modal_pedido.php";
+//include "../parts/modal_pedido.php";
 ?> 
 
 </div>

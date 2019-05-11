@@ -92,6 +92,14 @@ $qtd_produtos = 0;
 		//echo $data['itemAmount'.$id];
        $id++; 
 
+//======salvar item pedido ========
+$pedido_fk = $_SESSION['referencia'];
+$pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
+
+//--------------------------------
+
+
+
 }
 
 
@@ -146,7 +154,12 @@ echo $xml -> code;
 //echo $xml; exit;
 //$xml = simplexml_load_string($xml);
 */
+//select * from pedido, status_pedido where status_pedido.id = 1 and status_pedido.id = pedido.status_fk;
 
+//select * from pedido join clientes join endereco join status_pedido on pedido.cliente_fk=clientes.id and pedido.endereco_fk=endereco.id and pedido.status_fk=status_pedido.id where clientes.id='2';
+
+
+//select * from item_pedido join produtos on item_pedido.produto_fk=produtos.id_produto where item_pedido.pedido_fk='1';
 
 
 $id_ultimo_pedido = $_SESSION['referencia'];
