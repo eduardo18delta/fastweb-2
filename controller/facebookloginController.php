@@ -3,7 +3,7 @@ session_start();
 unset($_SESSION['face_access_token']);
 
 # Arquivos necessários para autenticação via facebook
-require_once '../assets/lib/Facebook/autoload.php';
+require_once '../assets/lib/php-graph-sdk-5.x/src/Facebook/autoload.php';
 include_once '../model/conexaoFacebook.php';
 
 $fb = new \Facebook\Facebook([
