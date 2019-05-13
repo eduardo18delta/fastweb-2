@@ -4,29 +4,33 @@ session_start();
 
 require_once '../model/autoload.php';
 
-
 $nome = $_POST['nome'];
 $email = $_POST['email'];
 $telefone = $_POST['telefone'];
-$genero = $_POST['genero'];
-$senha = md5($_POST['senha']);
-$senha2 = $_POST['senha2'];
-$ofertas = $_POST['ofertas'];
+$sexo = $_POST['sexo'];
+$password = md5($_POST['password']);
+$password_again = md5($_POST['password_again']);
 
-$clientes = new Cliente();
+if ($password == $password_again) {
+	$password_correct = $password;
+} else {
+ 	echo "Password são diferentes";	
+}
 
-$clientes->nome = $nome;
-$clientes->email = $email;
-$clientes->telefone = $telefone;
-$clientes->genero = $genero;
-$clientes->senha = $senha;
-$clientes->ofertas = $ofertas;
+$cliente = new Cliente();
+
+$cliente->nome = $nome;
+$cliente->email = $email;
+$cliente->telefone = $telefone;
+$cliente->sexo = $sexo;
+$cliente->password = $password_correct;
 
 
-$clientes->cadastrarCliente();
-header("Location: ../view/login-site.php");
+$cliente->cadastrarCliente();
 
+$_SESSION['email'] = $email;
+$_SESSION['nome'] = $nome;
 
+header("Location: ../view/perfilclienteView.php");
 
- ?>
 
