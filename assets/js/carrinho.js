@@ -188,7 +188,7 @@ $(".item-medida").click(function() {
 
 
 }
-setInterval(consulta_carrinho, 1000)
+setInterval(consulta_carrinho, 100)
 
 
 
