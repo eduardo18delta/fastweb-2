@@ -95,7 +95,7 @@ $result = $pedido->listarPedidos($idusuario);
                         ?>
 
                             
-                                
+                        <div style="border: 4px solid #ccc; overflow: auto; height: 700px">     
                                 <?php foreach ($result as $lista_pedido):?>
                         <div class="col mt-4 border border-secondary">
                         <div class="table-responsive">
@@ -103,10 +103,10 @@ $result = $pedido->listarPedidos($idusuario);
                             <thead>
                                 <tr>
 
-                                    <td>Pedido: <?= $lista_pedido['id']?></td> 
-                                    <td>Data: 24/02/2019</td> 
-                                    <td>Status: <?= $lista_pedido['status']?></td> 
-                                    <td>Valor Total: R$ <?= $lista_pedido['valor']?></td> 
+                                    <td>Pedido: <strong><?= $lista_pedido['id']?></strong></td> 
+                                    <td>Data: <strong>24/02/2019</strong></td> 
+                                    <td>Status: <strong><?= $lista_pedido['status']?></strong></td> 
+                                    <td>Valor Total: <strong>R$ <?= $lista_pedido['valor']?></strong></td> 
               
                                 </tr>
                             </thead>                    
@@ -121,8 +121,8 @@ $result = $pedido->listarPedidos($idusuario);
 
                                 <tr>
 
-                                    <td><img src="../assets/img/upload_produtos/<?= $lista_produto['img_01']?>" width="100px" height="100px"></td> 
-                                    <td>valor do produto<?= $lista_produto['nome']?></td>
+                                    <td><img src="../assets/img/upload_produtos/<?= $lista_produto['img_01']?>" width="70px" height="70px"></td> 
+                                    <td><?= $lista_produto['nome']?></td>
                                     <td>R$ <?= $lista_produto['valor']?>,00</td> 
                                     <td>Avaliar Produto</td> 
               
@@ -169,23 +169,30 @@ $result = $pedido->listarPedidos($idusuario);
                                     <td colspan="4">
                                     <div class="d-flex justify-content-between">
                                     <div>
-                                        <div>Pagamento</div>
+                                        <div><strong>Pagamento</strong></div>
                                         <div>Cartão de Crédito</div>
                                         <div>752.39####5214</div>
                                         <div>R$ 28,75 em 1x</div>
                                     </div> 
                                     <div>
-                                        <div>Total Pago</div>
+                                        <div><strong>Total Pago</strong></div>
                                         <div>Subtotal R$ 28,75</div>
                                         <div>Desconto R$ 0,00</div>
                                         <hr class="bg-success">
-                                        <div>Total R$ 28,75</div>
+                                        <div class="d-flex justify-content-between"><strong>Total </strong><div>R$ 28,75</div></div>
                                     </div> 
                                     <div>
-                                        <div>Endereço</div>
-                                        <div>Bren Henrrique Rodrigo Farias</div>
-                                        <div>Rua Sucupira, 244, Ipê</div>
-                                        <div>CEP, 68909034</div>
+                                        <div><strong>Endereço</strong></div>
+                                        <div><?php
+                                         echo $lista_pedido['rua'];
+                                        ?>
+                                        </div>
+                                        <div><?php
+                                         echo "nº ".$lista_pedido['numero'].", ".$lista_pedido['bairro'].", ".$lista_pedido['cidade']."-".$lista_pedido['estado'];
+                                        ?>
+                                        </div>
+                                        <div>CEP, <?= $lista_pedido['cep']?></div>
+                                        <div><?= $lista_pedido['nome']?></div>
                                     </div>
                                 </div>
                                     </td> 
@@ -196,7 +203,7 @@ $result = $pedido->listarPedidos($idusuario);
                         </div>            
                     </div>
                                 <?php endforeach?>  
-                                
+                    </div>               
                                               
                             
 
