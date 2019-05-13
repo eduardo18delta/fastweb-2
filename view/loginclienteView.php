@@ -14,7 +14,7 @@
 								unset($_SESSION['msg']);
 							}
 						?>
-						<form method="POST" action="../controller/loginclienteController.php">				
+						<form id="logincliente" method="POST" action="../controller/loginclienteController.php">				
 							<div class="form-group">
 								<input type="text" name="email" placeholder="Digite o seu usuário" class="form-control">
 							</div>
