@@ -43,6 +43,7 @@ Class Cliente extends Conexao{
         $this->cadastrarCliente->bindValue(":sexo", $this->sexo, PDO::PARAM_STR); 
         $this->cadastrarCliente->bindValue(":password", $this->password, PDO::PARAM_STR); 
         $this->cadastrarCliente->execute();
+
     }
 
     public function atualizarCliente()
