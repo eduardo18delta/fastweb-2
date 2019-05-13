@@ -13,7 +13,7 @@
 <script src="../assets/js/cadastrouser.js"></script>
 <script src="../assets/js/cadastrocargos.js"></script>
 <script src="../assets/js/cadastroprodutos.js"></script>
-<script src="../assets/js/loginadmin.js"></script>
+<script src="../assets/js/validacoes.js"></script>
 
 </body>
 </html>
