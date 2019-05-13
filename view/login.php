@@ -9,7 +9,7 @@
   </head>
 
   <body class="text-center">
-    <form class="form-signin" method="POST" class="log" action="../controller/loginController.php" autocomplete="off">
+    <form id="loginadmin" class="form-signin" method="POST" class="log" action="../controller/loginController.php" autocomplete="off">
       <img class="mb-4" src="../assets/img/logo.png" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Login</h1>
       <label for="inputEmail" class="sr-only">Email:</label>
@@ -24,5 +24,9 @@
       <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2018</p>
     </form>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+  <script type="text/javascript" src="../assets/js/loginadmin.js"></script>
   </body>
 </html>
