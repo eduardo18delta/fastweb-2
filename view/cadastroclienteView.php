@@ -13,9 +13,9 @@
               unset($_SESSION['msg']);
             }
           ?>      
-          <form method="POST" action="">
+          <form id="cadcliente"  method="POST" action="../controller/cadclientesController.php">
             <div class="form-group">
-              <input type="text" name="nome" placeholder="Digite o nome e o sobrenome" class="form-control">
+              <input type="text" name="nome" placeholder="Digite o seu nome" class="form-control">
             </div>
 
             <div class="form-group">          
@@ -23,22 +23,23 @@
             </div>
 
             <div class="form-group">          
-              <input type="text" name="telefone" placeholder="Digite o seu telefone" class="form-control">
+              <input id="telefone" type="text" name="telefone" placeholder="Digite o seu telefone" class="form-control">
             </div>
 
             <div class="form-group">          
               <select class="form-control" name="sexo">
+                <option disable="" value="">Escolha o sexo</option>
                 <option value="Masculino">Masculino</option>
                 <option value="Feminino">Feminino</option>
               </select>
             </div>
 
             <div class="form-group">          
-              <input type="password" name="senha" placeholder="Digite a senha" class="form-control">
+              <input id="password" type="password" name="password" placeholder="Digite a senha" class="form-control">
             </div>
 
             <div class="form-group">          
-              <input type="password" name="senha" placeholder="Repita a senha" class="form-control">
+              <input type="password" name="password_again" placeholder="Repita a senha" class="form-control">
             </div>
           
             <div class="form-group">
@@ -59,3 +60,4 @@
     </div>
   </div>
    
+<?php include_once '../view/footerView.php'; ?>
