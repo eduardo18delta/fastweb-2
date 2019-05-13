@@ -16,7 +16,7 @@
 						?>
 						<form id="logincliente" method="POST" action="../controller/loginclienteController.php">				
 							<div class="form-group">
-								<input type="text" name="email" placeholder="Digite o seu usuário" class="form-control">
+								<input type="text" name="email" placeholder="Digite o seu e-mail" class="form-control">
 							</div>
 									
 							<div class="form-group">									

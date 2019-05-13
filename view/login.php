@@ -13,7 +13,7 @@
       <img class="mb-4" src="../assets/img/logo.png" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Login</h1>
       <label for="inputEmail" class="sr-only">Email:</label>
-      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Seu email" required autofocus>
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Seu e-mail" required autofocus>
       <label for="inputPassword" class="sr-only">Senha:</label>
       <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Senha" required>
       <div class="checkbox mb-3">
