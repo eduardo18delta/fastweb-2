@@ -11,6 +11,7 @@ Class Cliente extends Conexao{
 	public $nome;
 	public $telefone;
 	public $genero;
+    public $sexo;
 	public $senha;
 	public $senha2;
 	public $ofertas;
@@ -32,20 +33,15 @@ Class Cliente extends Conexao{
     {
         $conexao = Conexao::conectarBanco();
         $this->cadastrarCliente = $conexao->prepare("
-
         INSERT INTO clientes 
         (id, nome,email,telefone,sexo,senha,ofertas) 
-
         VALUES 
-
-        (NULL,:nome,:email,:telefone,:genero,:senha,:ofertas);");
-        
+        (NULL,:nome,:email,:telefone,:sexo,:password, NULL);");
         $this->cadastrarCliente->bindValue(":nome", $this->nome, PDO::PARAM_STR); 
         $this->cadastrarCliente->bindValue(":email", $this->email, PDO::PARAM_STR);  
         $this->cadastrarCliente->bindValue(":telefone", $this->telefone, PDO::PARAM_STR);  
-        $this->cadastrarCliente->bindValue(":genero", $this->genero, PDO::PARAM_STR); 
-        $this->cadastrarCliente->bindValue(":senha", $this->senha, PDO::PARAM_STR); 
-        $this->cadastrarCliente->bindValue(":ofertas", $this->ofertas, PDO::PARAM_STR); 
+        $this->cadastrarCliente->bindValue(":sexo", $this->sexo, PDO::PARAM_STR); 
+        $this->cadastrarCliente->bindValue(":password", $this->password, PDO::PARAM_STR); 
         $this->cadastrarCliente->execute();
     }
 
