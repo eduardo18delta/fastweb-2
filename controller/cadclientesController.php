@@ -1,7 +1,5 @@
 <?php 
 
-session_start();
-
 require_once '../model/autoload.php';
 
 $nome = $_POST['nome'];
@@ -28,9 +26,9 @@ $cliente->password = $password_correct;
 
 $cliente->cadastrarCliente();
 
-$_SESSION['email'] = $email;
-$_SESSION['nome'] = $nome;
+session_start();
+$_SESSION['msg'] = "<div class='alert alert-success mt-4'>Criado com sucesso! Agora faça o seu login!</div>";
 
-header("Location: ../view/perfilclienteView.php");
+header("Location: ../view/loginclienteView.php");
 
 
