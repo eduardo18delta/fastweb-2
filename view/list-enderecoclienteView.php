@@ -81,7 +81,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                 }
             });
 
-                $('.endereco'<?= $_SESSION['endereco_fk'] ?>).prop('checked', true)
+                $('.endereco'+<?= $_SESSION['endereco_fk'] ?>).prop('checked', true)
       
                     $('.endereco').click(function() {
                             
