@@ -69,8 +69,8 @@ $qtd_produtos = 0;
         $valor = number_format($valor,2,".",".");
         //echo $valor;
         //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
-        $data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
-        //$data['token'] ='7b9e4105-5146-4c8b-984a-60ea699720710c3282f4470190ffaadd8b8f6c68584295dc-1b91-43be-8806-b0f281ae4f15';
+        //$data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
+        $data['token'] ='7762809c-5f2f-4e70-be96-aba16d699bc6a596937248bc91fb6606f70861aa04f8192a-a55b-4282-9e0a-d8bf2ac619be';
 		$data['email'] = 'rosivan7qi@gmail.com';
 		$data['currency'] = 'BRL';
 		$data['itemId'.$id] = $listaEspecifica['id_produto'];
@@ -81,11 +81,19 @@ $qtd_produtos = 0;
 		$data['senderAreaCode'] = '96';
 		//  $data['senderPhone'] = $_SESSION['telefone'];
     $data['senderPhone'] = '988095018';
-    //$data['senderEmail'] = $_SESSION['email'];
-		$data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
+    $data['senderEmail'] = $_SESSION['email'];
+		//$data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
 		$data['senderCPF'] = '01927015251';
     $data['reference'] = intval($_SESSION['referencia']);
-		//$data['shippingAddressPostalCode'] = '68909844';
+    //$data['shippingAddressStreet']     = "avenida 8";
+    //$data['shippingAddressNumber']     = "2156";
+    //$data['shippingAddressComplement'] = "igreja";
+    //$data['shippingAddressDistrict']   = "Marabaixo 2";
+    //$data['shippingAddressPostalCode'] = '68.909-844';
+    //$data['shippingAddressCity']       = "Macapá";
+    //$data['shippingAddressState']      = "ap";
+   // $data['shippingAddressCountry']    = 'BRA';
+		//$data['shippingAddressPostalCode'] = "68.909-844";
 		//$data['billingAddressPostalCode'] = '68909844';
 		//$data['receiverEmail'] = 'rosivan7qi@gmail.com';
 		//$data['senderEmail'] = 'teste@sandbox.pagseguro.com.br';
@@ -105,8 +113,8 @@ $pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
 
 }
 
-$url = 'https://ws.sandbox.pagseguro.uol.com.br/v2/checkout';;
-//$url = 'https://ws.pagseguro.uol.com.br/v2/checkout';
+//$url = 'https://ws.sandbox.pagseguro.uol.com.br/v2/checkout';;
+$url = 'https://ws.pagseguro.uol.com.br/v2/checkout';
 
 $data = http_build_query($data);
 $curl = curl_init($url);
