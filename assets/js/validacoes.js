@@ -58,7 +58,7 @@ $(document).ready( function() {
         required: true, email: true
       },
       telefone:{    
-        required: true, minlength: 6
+        required: true, minlength: 15
       },
       sexo:{    
         required: true
@@ -80,7 +80,8 @@ $(document).ready( function() {
         email: "<div style='color: red;'>Digite um e-mail válido</div>"
       },
       telefone:{
-        required: "<div style='color: red;'>Digite o telefone</div",        
+        required:  "<div style='color: red;'>Digite o telefone</div",        
+        minlength: "<div style='color: red;'>Insira um número de telefone válido</div>"
       },
       sexo:{
         required: "<div style='color: red;'>Escolha o sexo</div",        
@@ -91,7 +92,7 @@ $(document).ready( function() {
       },
       password_again:{
         required: "<div style='color: red;'>Digite a confirmacão da senha</div",
-        equalTo: "<div style='color: red;'>O valor deve ser identico ao campo Senha</div",
+        equalTo: "<div style='color: red;'>O valor deve ser identico ao campo anterior</div",
         minlength: "<div style='color: red;'>A senha de confirmação deve conter, no minimo, 6 caracteres</div>"     
       }
     }
