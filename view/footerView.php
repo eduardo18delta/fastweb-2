@@ -14,6 +14,7 @@
 <script src="../assets/js/cadastrocargos.js"></script>
 <script src="../assets/js/cadastroprodutos.js"></script>
 <script src="../assets/js/validacoes.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
 
 </body>
 </html>
