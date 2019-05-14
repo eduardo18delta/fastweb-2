@@ -76,23 +76,23 @@ $(document).ready( function() {
         minlength: "<div style='color: red;'>O nome deve conter, no minimo, 6 caracteres</div>"
       },
       email:{
-        required: "<div style='color: red;'>Digite o e-mail</div",
+        required: "<div style='color: red;'>Digite o e-mail</div>",
         email: "<div style='color: red;'>Digite um e-mail válido</div>"
       },
       telefone:{
-        required:  "<div style='color: red;'>Digite o telefone</div",        
+        required:  "<div style='color: red;'>Digite o telefone</div>",        
         minlength: "<div style='color: red;'>Insira um número de telefone válido</div>"
       },
       sexo:{
-        required: "<div style='color: red;'>Escolha o sexo</div",        
+        required: "<div style='color: red;'>Escolha o sexo</div>",        
       },
       password:{
-        required: "<div style='color: red;'>Digite a senha</div"  ,
+        required: "<div style='color: red;'>Digite a senha</div>"  ,
         minlength: "<div style='color: red;'>A senha deve conter, no minimo, 6 caracteres</div>"     
       },
       password_again:{
-        required: "<div style='color: red;'>Digite a confirmacão da senha</div",
-        equalTo: "<div style='color: red;'>O valor deve ser identico ao campo anterior</div",
+        required: "<div style='color: red;'>Digite a confirmacão da senha</div>",
+        equalTo: "<div style='color: red;'>O valor deve ser identico ao campo anterior</div>",
         minlength: "<div style='color: red;'>A senha de confirmação deve conter, no minimo, 6 caracteres</div>"     
       }
     }
