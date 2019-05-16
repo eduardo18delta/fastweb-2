@@ -86,7 +86,7 @@ $qtd_produtos = 0;
         $teste[]=$qtd_produtos; //Quantidade dos produtos no carrinho
         $teste[]=$_SESSION['teste2'][$id_produto]; //Medida
         $teste[]=$listaEspecifica['peso'];
-        //$teste[]=$qtd; //Quantidade por produto
+        $teste[]=$qtd; //Quantidade por produto
         } 
 
         else if ($_SESSION['teste2'][$id_produto]=="kg") {
@@ -99,7 +99,7 @@ $qtd_produtos = 0;
         $teste[]=$qtd_produtos; //Quantidade dos produtos no carrinho
         $teste[]=$_SESSION['teste2'][$id_produto]; //Medida
         $teste[]=$listaEspecifica['peso'];
-        //$teste[]=$qtd; //Quantidade por produto
+        $teste[]=$qtd; //Quantidade por produto
         }   
 
         else if ($_SESSION['teste2'][$id_produto]=="und") {
@@ -112,7 +112,7 @@ $qtd_produtos = 0;
         $teste[]=$qtd_produtos; //Quantidade dos produtos no carrinho
         $teste[]=$_SESSION['teste2'][$id_produto]; //Medida
         $teste[]=$listaEspecifica['peso'];
-        //$teste[]=$qtd; //Quantidade por produto
+        $teste[]=$qtd; //Quantidade por produto
         }
 
         

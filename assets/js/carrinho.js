@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-listar_medida()
+//listar_medida()
 function listar_medida(){
 
     $.post('../model/Carrinho.class.php',function(dados) {
@@ -102,7 +102,7 @@ function listar_medida(){
           }         
 */
      
-      id+=6
+      id+=7
 
     }  
 
@@ -145,9 +145,10 @@ function consulta_carrinho(){
       
       $(".add-carrinho"+dados[id]).hide()
       $(".remover-produto"+dados[id]).show()
+      //$(".item-medida").prop('disabled', false)
       
             
-
+/*
 $(".item-medida").click(function() {
      
              var add_pdt_modal = new FormData($("#modal_produtos")[0]);
@@ -171,9 +172,9 @@ $(".item-medida").click(function() {
 
             return false;
         });           
-
+*/
      
-      id+=6
+      id+=7
 
     }  
 

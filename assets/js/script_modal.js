@@ -386,7 +386,7 @@ $(".qtd-produto19").keyup(function() {
 //      })
 
 
-
+/*
 
   $(".rs").css("background-color","#fff")
   $(".kg").css("background-color","#fff")
@@ -396,7 +396,7 @@ $(".qtd-produto19").keyup(function() {
   $(".und").css("color","#fff")
   $(".und").addClass("medida_ativo")
 
-
+*/
 
 
 

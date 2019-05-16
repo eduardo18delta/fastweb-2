@@ -42,6 +42,7 @@ $listar_produtos=$produtos_modal->listarDestaque();
       $(".produto'.$modal['id_produto'].'").click(function(){ 
       $(".remover-produto").addClass("remover-produto'.$modal['id_produto'].'")
       $(".add-carrinho").addClass("add-carrinho'.$modal['id_produto'].'")
+      $(".item-medida").addClass("item-medida'.$modal['id_produto'].'")
       $(".remover-produto'.$modal['id_produto'].'").hide()
       $(".add-carrinho'.$modal['id_produto'].'").show()
 
@@ -173,11 +174,30 @@ $listar_produtos=$produtos_modal->listarDestaque();
         $(".opcao-medida").val("und")
       }
 
-      $(".modal-qtd-produto'.$modal['id_produto'].'").keyup(function() {
-      qtd = $(".modal-qtd-produto'.$modal['id_produto'].'").val()
-      $(".qtd-produto'.$modal['id_produto'].'").val(qtd)
+      //Lista as medidas de forma atualizada
+      listar_medida()
 
-             var add_carrinho = new FormData($("#modal_produtos")[0]);
+      
+
+consulta_medida()
+
+$(".rs'.$modal['id_produto'].'").click(function() {
+    $("[name=opcao-medida]").val("rs")
+    $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
+    $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+    $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
+    $(".rs'.$modal['id_produto'].'").css("background-color","#000")
+    $(".kg'.$modal['id_produto'].'").css("background-color","#fff")
+    $(".und'.$modal['id_produto'].'").css("background-color","#fff")
+    $(".rs'.$modal['id_produto'].'").css("color","#fff")
+    $(".kg'.$modal['id_produto'].'").css("color","#000")
+    $(".und'.$modal['id_produto'].'").css("color","#000")
+    $(".rs'.$modal['id_produto'].'").addClass("medida_ativo")
+    $(".kg'.$modal['id_produto'].'").removeClass("medida_ativo")
+    $(".und'.$modal['id_produto'].'").removeClass("medida_ativo")
+    consulta_medida()
+
+          var add_medida = new FormData($("#carrinho_produtos'.$modal['id_produto'].'")[0]);
  
             $.ajax({
                 type: "POST",
@@ -186,60 +206,91 @@ $listar_produtos=$produtos_modal->listarDestaque();
                 //async: true,
                 contentType: false,
                 processData: false,
-                data: add_carrinho,
+                data: add_medida,
                 success: function(dados) {
-
+//alert (dados)
                  },
                  error: function(response){
                     alert ("erro")
                  }
             });
-            
-        
+
+            return false;
+        });  
+
+$(".kg'.$modal['id_produto'].'").click(function() {
+  $("[name=opcao-medida]").val("kg")
+  $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
+  $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+  $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
+  $(".rs'.$modal['id_produto'].'").css("background-color","#fff")
+  $(".kg'.$modal['id_produto'].'").css("background-color","#000")
+  $(".und'.$modal['id_produto'].'").css("background-color","#fff")
+  $(".rs'.$modal['id_produto'].'").css("color","#000")
+  $(".kg'.$modal['id_produto'].'").css("color","#fff")
+  $(".und'.$modal['id_produto'].'").css("color","#000")
+  $(".rs'.$modal['id_produto'].'").removeClass("medida_ativo")
+  $(".kg'.$modal['id_produto'].'").addClass("medida_ativo")
+  $(".und'.$modal['id_produto'].'").removeClass("medida_ativo")
+  consulta_medida()
+
+          var add_medida = new FormData($("#carrinho_produtos'.$modal['id_produto'].'")[0]);
+ 
+            $.ajax({
+                type: "POST",
+                //dataType: "json",
+                url: "../model/Carrinho.class.php",
+                //async: true,
+                contentType: false,
+                processData: false,
+                data: add_medida,
+                success: function(dados) {
+//alert (dados)
+                 },
+                 error: function(response){
+                    alert ("erro")
+                 }
+            });
+
+            return false;
+        });  
+  
+$(".und'.$modal['id_produto'].'").click(function() {
+  $("[name=opcao-medida]").val("und")
+  $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
+  $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+  $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
+  $(".rs'.$modal['id_produto'].'").css("background-color","#fff")
+  $(".kg'.$modal['id_produto'].'").css("background-color","#fff")
+  $(".und'.$modal['id_produto'].'").css("background-color","#000")
+  $(".rs'.$modal['id_produto'].'").css("color","#000")
+  $(".kg'.$modal['id_produto'].'").css("color","#000")
+  $(".und'.$modal['id_produto'].'").css("color","#fff")
+  $(".rs'.$modal['id_produto'].'").removeClass("medida_ativo")
+  $(".kg'.$modal['id_produto'].'").removeClass("medida_ativo")
+  $(".und'.$modal['id_produto'].'").addClass("medida_ativo")
+  consulta_medida()
+
+          var add_medida = new FormData($("#carrinho_produtos'.$modal['id_produto'].'")[0]);
+ 
+            $.ajax({
+                type: "POST",
+                //dataType: "json",
+                url: "../model/Carrinho.class.php",
+                //async: true,
+                contentType: false,
+                processData: false,
+                data: add_medida,
+                success: function(dados) {
+//alert (dados)
+                 },
+                 error: function(response){
+                    alert ("erro")
+                 }
+            });
+
             return false;
         });
-
-$(".rs").click(function(){
-  $(".rs").css("background-color","#000")
-  $(".kg").css("background-color","#fff")
-  $(".und").css("background-color","#fff")
-  $(".rs").css("color","#fff")
-  $(".kg").css("color","#000")
-  $(".und").css("color","#000")
-  $(".rs").addClass("medida_ativo")
-  $(".kg").removeClass("medida_ativo")
-  $(".und").removeClass("medida_ativo")
-  $(".opcao-medida").val("rs")
-  consulta_medida()
-})
-
-$(".kg").click(function(){
-  $(".rs").css("background-color","#fff")
-  $(".kg").css("background-color","#000")
-  $(".und").css("background-color","#fff")
-  $(".rs").css("color","#000")
-  $(".kg").css("color","#fff")
-  $(".und").css("color","#000")
-  $(".rs").removeClass("medida_ativo")
-  $(".kg").addClass("medida_ativo")
-  $(".und").removeClass("medida_ativo")
-  $(".opcao-medida").val("kg")
-  consulta_medida()
-})
-
-$(".und").click(function(){
-  $(".rs").css("background-color","#fff")
-  $(".kg").css("background-color","#fff")
-  $(".und").css("background-color","#000")
-  $(".rs").css("color","#000")
-  $(".kg").css("color","#000")
-  $(".und").css("color","#fff")
-  $(".rs").removeClass("medida_ativo")
-  $(".kg").removeClass("medida_ativo")
-  $(".und").addClass("medida_ativo")
-  $(".opcao-medida").val("und")
-  consulta_medida()
-})
 
 $(".modal-qtd-produto").keyup(function() {
 consulta_medida()
@@ -254,12 +305,7 @@ function consulta_medida(){
     for (var i = 0; i < dados.length; i++) {                        
 
     if (i==id){
-//====================
 
-
-
-
-//====================
 if ($(".rs").hasClass("medida_ativo")) {
 // R$
 var rs = $(".modal-qtd-produto").val()  
@@ -293,7 +339,8 @@ $(".valor"+dados[id]).text("R$ "+total)
 
 }
 //setInterval(consulta_medida, 100)
-              
+      
+
 $(".desfocar").css("filter", "blur(10px)");
 
       $(".img_produto_hover01").attr("src","../assets/img/upload_produtos/'.$modal['img_01'].'")
@@ -325,6 +372,7 @@ $(".desfocar").css("filter", "blur(10px)");
         $(".remover-produto").removeClass("remover-produto'.$modal['id_produto'].'")
         $(".add-carrinho").removeClass("add-carrinho'.$modal['id_produto'].'")
         $(".modal-qtd-produto").removeClass("modal-qtd-produto'.$modal['id_produto'].'")
+        $(".item-medida").removeClass("item-medida'.$modal['id_produto'].'")
         $(".desfocar").css("filter", "blur(0px)");
       })
       
@@ -483,7 +531,6 @@ if ("'.$modal['medida'].'"==1){
 
       
 $(".rs'.$modal['id_produto'].'").click(function() {
-  alert ("ok")
     $("[name=opcao-medida]").val("rs")
     $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
     $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
@@ -504,7 +551,7 @@ $(".rs'.$modal['id_produto'].'").click(function() {
             $.ajax({
                 type: "POST",
                 //dataType: "json",
-                url: "../model/teste2.php",
+                url: "../model/Carrinho.class.php",
                 //async: true,
                 contentType: false,
                 processData: false,
@@ -541,7 +588,7 @@ $(".kg'.$modal['id_produto'].'").click(function() {
             $.ajax({
                 type: "POST",
                 //dataType: "json",
-                url: "../model/teste2.php",
+                url: "../model/Carrinho.class.php",
                 //async: true,
                 contentType: false,
                 processData: false,
@@ -578,7 +625,7 @@ $(".und'.$modal['id_produto'].'").click(function() {
             $.ajax({
                 type: "POST",
                 //dataType: "json",
-                url: "../model/teste2.php",
+                url: "../model/Carrinho.class.php",
                 //async: true,
                 contentType: false,
                 processData: false,
@@ -594,6 +641,177 @@ $(".und'.$modal['id_produto'].'").click(function() {
             return false;
         });      
 
+listar_medida()
+function listar_medida(){
+
+    $.post("../model/Carrinho.class.php",function(dados) {
+
+      id=0
+
+    for (var i = 0; i < dados.length; i++) {                        
+
+    if (i==id){
+
+            $(".rs"+dados[id]).css("background-color","#000")
+            $(".kg"+dados[id]).css("background-color","#fff")
+            $(".und"+dados[id]).css("background-color","#fff")
+            $(".rs"+dados[id]).css("color","#fff")
+            $(".kg"+dados[id]).css("color","#000")
+            $(".und"+dados[id]).css("color","#000")
+            $(".rs"+dados[id]).addClass("medida_ativo")
+            $(".kg"+dados[id]).removeClass("medida_ativo")
+            $(".und"+dados[id]).removeClass("medida_ativo")
+
+
+            if (dados[id+4]=="rs"){
+              $(".carrinho-add-valor"+dados[id]).text("Valor (R$)")
+              $(".carrinho-valor"+dados[id]).text("Valor (UND)")
+              $(".carrinho-subtotal"+dados[id]).text("Subtotal (R$)")
+              $(".rs"+dados[id]).css("background-color","#000")
+              $(".kg"+dados[id]).css("background-color","#fff")
+              $(".und"+dados[id]).css("background-color","#fff")
+              $(".rs"+dados[id]).css("color","#fff")
+              $(".kg"+dados[id]).css("color","#000")
+              $(".und"+dados[id]).css("color","#000")
+              $(".rs"+dados[id]).addClass("medida_ativo")
+              $(".kg"+dados[id]).removeClass("medida_ativo")
+              $(".und"+dados[id]).removeClass("medida_ativo")
+            } else if (dados[id+4]=="kg"){   
+              $(".carrinho-add-valor"+dados[id]).text("Peso (Kg)")
+              $(".carrinho-valor"+dados[id]).text("Valor (UND)")
+              $(".carrinho-subtotal"+dados[id]).text("Subtotal em (Kg)")
+              $(".rs"+dados[id]).css("background-color","#fff")
+              $(".kg"+dados[id]).css("background-color","#000")
+              $(".und"+dados[id]).css("background-color","#fff")
+              $(".rs"+dados[id]).css("color","#000")
+              $(".kg"+dados[id]).css("color","#fff")
+              $(".und"+dados[id]).css("color","#000")
+              $(".rs"+dados[id]).removeClass("medida_ativo")
+              $(".kg"+dados[id]).addClass("medida_ativo")
+              $(".und"+dados[id]).removeClass("medida_ativo")
+            } else if (dados[id+4]=="und"){       
+              $(".carrinho-add-valor"+dados[id]).text("Quantidade (UND)")
+              $(".carrinho-valor"+dados[id]).text("Valor (UND)")
+              $(".carrinho-subtotal"+dados[id]).text("Subtotal (UND)")
+              $(".rs"+dados[id]).css("background-color","#fff")
+              $(".kg"+dados[id]).css("background-color","#fff")
+              $(".und"+dados[id]).css("background-color","#000")
+              $(".rs"+dados[id]).css("color","#000")
+              $(".kg"+dados[id]).css("color","#000")
+              $(".und"+dados[id]).css("color","#fff")
+              $(".rs"+dados[id]).removeClass("medida_ativo")
+              $(".kg"+dados[id]).removeClass("medida_ativo")
+              $(".und"+dados[id]).addClass("medida_ativo")
+            } 
+
+/*
+            if (dados[id+4]=="rs"){
+            $(".rs").css("background-color","#000")
+            $(".kg").css("background-color","#fff")
+            $(".und").css("background-color","#fff")
+            $(".rs").css("color","#fff")
+            $(".kg").css("color","#000")
+            $(".und").css("color","#000")
+            $(".rs").addClass("medida_ativo")
+            $(".kg").removeClass("medida_ativo")
+            $(".und").removeClass("medida_ativo")
+            $(".opcao-medida").val("rs")
+
+          } else if (dados[id+4]=="kg"){
+            $(".rs").css("background-color","#fff")
+            $(".kg").css("background-color","#000")
+            $(".und").css("background-color","#fff")
+            $(".rs").css("color","#000")
+            $(".kg").css("color","#fff")
+            $(".und").css("color","#000")
+            $(".rs").removeClass("medida_ativo")
+            $(".kg").addClass("medida_ativo")
+            $(".und").removeClass("medida_ativo")
+            $(".opcao-medida").val("kg")
+
+          } else if (dados[id+4]=="und"){
+            $(".rs").css("background-color","#fff")
+            $(".kg").css("background-color","#fff")
+            $(".und").css("background-color","#000")
+            $(".rs").css("color","#000")
+            $(".kg").css("color","#000")
+            $(".und").css("color","#fff")
+            $(".rs").removeClass("medida_ativo")
+            $(".kg").removeClass("medida_ativo")
+            $(".und").addClass("medida_ativo")
+            $(".opcao-medida").val("und")
+          }         
+*/
+          $(".item-medida"+dados[id]).addClass("item-medida-modal"+dados[id]) 
+
+
+          $(".item-medida-modal"+dados[id]).click(function() {
+               
+                       var add_pdt_modal = new FormData($("#modal_produtos")[0]);
+           
+                      $.ajax({
+                          type: "POST",
+                          //dataType: "json",
+                          url: "../model/Carrinho.class.php",
+                          //async: true,
+                          contentType: false,
+                          processData: false,
+                          data: add_pdt_modal,
+                          success: function(dados) {
+
+                           },
+                           error: function(response){
+                              alert ("erro")
+                           }
+                      });
+                      
+
+                      return false;
+                  }); 
+            $(".modal-qtd-produto"+dados[id]).val(dados[id+6])
+            $(".modal-qtd-produto"+dados[id]).addClass("modal-qtd-produto-ativo"+dados[id])
+            $(".modal-qtd-produto-ativo"+dados[id]).keyup(function() {
+            qtd = $(".modal-qtd-produto'.$modal['id_produto'].'").val()
+            $(".qtd-produto'.$modal['id_produto'].'").val(qtd)
+            
+                   var add_carrinho = new FormData($("#modal_produtos")[0]);
+       
+                  $.ajax({
+                      type: "POST",
+                      //dataType: "json",
+                      url: "../model/Carrinho.class.php",
+                      //async: true,
+                      contentType: false,
+                      processData: false,
+                      data: add_carrinho,
+                      success: function(dados) {
+
+                       },
+                       error: function(response){
+                          alert ("erro")
+                       }
+                  });
+                  
+              
+                  return false;
+              });
+          
+     
+      id+=7
+
+    }  
+
+    }
+
+
+//alert (id+1)
+// $(".dependente-registro-atual").val(id+1)
+        
+
+    }, "JSON");
+
+
+}
 
 
 
