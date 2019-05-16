@@ -199,7 +199,100 @@ $listar_produtos=$produtos_modal->listarDestaque();
             return false;
         });
 
-       
+$(".rs").click(function(){
+  $(".rs").css("background-color","#000")
+  $(".kg").css("background-color","#fff")
+  $(".und").css("background-color","#fff")
+  $(".rs").css("color","#fff")
+  $(".kg").css("color","#000")
+  $(".und").css("color","#000")
+  $(".rs").addClass("medida_ativo")
+  $(".kg").removeClass("medida_ativo")
+  $(".und").removeClass("medida_ativo")
+  $(".opcao-medida").val("rs")
+  consulta_medida()
+})
+
+$(".kg").click(function(){
+  $(".rs").css("background-color","#fff")
+  $(".kg").css("background-color","#000")
+  $(".und").css("background-color","#fff")
+  $(".rs").css("color","#000")
+  $(".kg").css("color","#fff")
+  $(".und").css("color","#000")
+  $(".rs").removeClass("medida_ativo")
+  $(".kg").addClass("medida_ativo")
+  $(".und").removeClass("medida_ativo")
+  $(".opcao-medida").val("kg")
+  consulta_medida()
+})
+
+$(".und").click(function(){
+  $(".rs").css("background-color","#fff")
+  $(".kg").css("background-color","#fff")
+  $(".und").css("background-color","#000")
+  $(".rs").css("color","#000")
+  $(".kg").css("color","#000")
+  $(".und").css("color","#fff")
+  $(".rs").removeClass("medida_ativo")
+  $(".kg").removeClass("medida_ativo")
+  $(".und").addClass("medida_ativo")
+  $(".opcao-medida").val("und")
+  consulta_medida()
+})
+
+$(".modal-qtd-produto").keyup(function() {
+consulta_medida()
+})
+
+function consulta_medida(){
+
+    $.post("../parts/medida.php",function(dados) {
+//alert (dados)
+      id=0
+
+    for (var i = 0; i < dados.length; i++) {                        
+
+    if (i==id){
+//====================
+
+
+
+
+//====================
+if ($(".rs").hasClass("medida_ativo")) {
+// R$
+var rs = $(".modal-qtd-produto").val()  
+$(".valor").text("R$ "+rs)
+}
+if ($(".kg").hasClass("medida_ativo")) {               
+// Kg
+var kg = $(".modal-qtd-produto").val() 
+total = (kg*dados[id+1])/dados[id+2]
+$(".valor"+dados[id]).text("R$ "+total) 
+}   
+if ($(".und").hasClass("medida_ativo")) { 
+//UND
+var und = $(".modal-qtd-produto").val()  
+total = und*dados[id+1]
+$(".valor"+dados[id]).text("R$ "+total)  
+}
+      id+=3
+
+    }  
+
+    }
+
+
+//alert (id+1)
+// $(".dependente-registro-atual").val(id+1)
+        
+
+    }, "JSON");
+
+
+}
+//setInterval(consulta_medida, 100)
               
 $(".desfocar").css("filter", "blur(10px)");
 
@@ -390,7 +483,8 @@ if ("'.$modal['medida'].'"==1){
 
       
 $(".rs'.$modal['id_produto'].'").click(function() {
-    $("[name=opcao-medidaa]").val("rs")
+  alert ("ok")
+    $("[name=opcao-medida]").val("rs")
     $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
     $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
     $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
@@ -427,7 +521,7 @@ $(".rs'.$modal['id_produto'].'").click(function() {
         });  
 
 $(".kg'.$modal['id_produto'].'").click(function() {
-  $("[name=opcao-medidaa]").val("kg")
+  $("[name=opcao-medida]").val("kg")
   $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
   $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
   $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
@@ -464,7 +558,7 @@ $(".kg'.$modal['id_produto'].'").click(function() {
         });  
   
 $(".und'.$modal['id_produto'].'").click(function() {
-  $("[name=opcao-medidaa]").val("und")
+  $("[name=opcao-medida]").val("und")
   $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
   $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
   $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")

@@ -11,7 +11,7 @@ if(!isset($_SESSION['carrinho'])){
 //if(isset($_POST['opcao-medida5'])){
     $id_produto = intval($_POST['form-produto-id']);
     
-    $_SESSION['teste2'][$id_produto] = $_POST['opcao-medidaa'];
+    $_SESSION['teste2'][$id_produto] = $_POST['opcao-medida'];
     echo $_SESSION['teste2'][$id_produto];
     
  //}

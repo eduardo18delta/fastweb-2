@@ -84,7 +84,7 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
      
               <td class="valor-medida">
                 <input type="number" name="carrinho-qtd-produto[<?=$listaEspecifica['id_produto']?>]" class="form-control carrinho-qtd-produto qtd-produto<?=$listaEspecifica['id_produto']?>"  min="1" value="<?=$qtd?>" required>
-                <input type="hidden" name="opcao-medidaa" value="<?=$_SESSION['teste2'][$id_produto]?>">
+                <input type="hidden" name="opcao-medida" value="<?=$_SESSION['teste2'][$id_produto]?>">
               </td>
 
           </tr>
