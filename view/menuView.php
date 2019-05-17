@@ -43,7 +43,7 @@
         </div>
         
         <div class="d-flex justify-content-center" id="campo-busca">
-            <form method="post" class="h-100 w-100 esconder" id="form-busca" action="../controller/buscaController.php">
+            <form method="post" class="h-100 w-100 esconder" id="form-busca" action="../view/buscaView.php">
                 <div class="input-group input-group-sm h-100">                    
                     <input name="busca" class="form-control input rounded-0 h-100" type="text" placeholder="Buscar podutos...">
                     <div class="input-group-prepend">
