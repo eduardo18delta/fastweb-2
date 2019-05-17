@@ -34,7 +34,8 @@ $listar_produtos=$produtos_modal->listarDestaque();
 
  $w="'"; //Variável que armazena uma aspa simples para ser usado no script abaixo
 
-
+$peso = $modal['peso'];
+$valor = number_format($peso,2,".",".");
  //=============Abaixo, a variável "$conteudo" recebe todo o script do funcionamento do modal=============>
  $conteudo = '
       $(document).ready(function(){
@@ -53,7 +54,7 @@ $listar_produtos=$produtos_modal->listarDestaque();
       $(".background_modal").fadeIn();
       $(".produto'.$modal['id_produto'].'").addClass("addproduto'.$modal['id_produto'].'")
       $(".nome").text("'.$modal['nome'].'")
-      $(".valor").text("R$ '.$modal['valor'].',00")
+      $(".valor").text("R$ '.$valor.'")
       $(".descricao").text("'.$modal['descricao'].'")
       $(".desconto-icon").text("'.$modal['desconto'].'%")
       $(".valor").addClass("valor'.$modal['id_produto'].'")
@@ -309,19 +310,21 @@ function consulta_medida(){
 if ($(".rs").hasClass("medida_ativo")) {
 // R$
 var rs = $(".modal-qtd-produto").val()  
-$(".valor").text("R$ "+rs)
+$(".valor").text("R$ "+rs+".00")
 }
 if ($(".kg").hasClass("medida_ativo")) {               
 // Kg
 var kg = $(".modal-qtd-produto").val() 
 total = (kg*dados[id+1])/dados[id+2]
+
+total = Math.round(total*100)/100
 $(".valor"+dados[id]).text("R$ "+total) 
 }   
 if ($(".und").hasClass("medida_ativo")) { 
 //UND
 var und = $(".modal-qtd-produto").val()  
 total = und*dados[id+1]
-$(".valor"+dados[id]).text("R$ "+total)  
+$(".valor"+dados[id]).text("R$ "+total+".00")  
 }
       id+=3
 
