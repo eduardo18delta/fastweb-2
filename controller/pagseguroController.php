@@ -54,6 +54,14 @@ $_SESSION['referencia'] = $lista["id"];
 $id = 1;           
 $valor_total = 0;
 $qtd_produtos = 0;
+function telefone($str) {
+            return preg_replace("/[^0-9]/", "", $str);
+        }
+
+$telefone = telefone($_SESSION['telefone']);
+$telefone_numero = substr($telefone, 2);
+$telefone_ddd = substr($telefone, 0, -9);
+
  if(count($_SESSION['carrinho']) == 0){
                      //echo json_encode("0");
                      }else{   
@@ -80,16 +88,6 @@ $qtd_produtos = 0;
         $teste[]=$qtd; //Quantidade por produto
         */
         
-       
-        function telefone($str) {
-            return preg_replace("/[^0-9]/", "", $str);
-        }
-
-        $telefone = telefone($_SESSION['telefone']);
-        $telefone_numero = substr($telefone, 2);
-        $telefone_ddd = substr($telefone, 0, -9);
-
-
         $valor_produtos = $qtd;  
         $valor_total += $qtd;
         $qtd_produtos++;
@@ -104,6 +102,7 @@ $qtd_produtos = 0;
         $data['currency'] = 'BRL';
         $data['itemId'.$id] = $listaEspecifica['id_produto'];
         $data['itemQuantity'.$id] = 1;
+        $data['itemWeight'.$id] = $listaEspecifica['peso'];
         $data['itemDescription'.$id] = $listaEspecifica['nome'];
         $data['itemAmount'.$id] = $valor;
         $data['senderName'] = $_SESSION['nome']; //nome do usuário deve conter nome e sobrenome
@@ -122,7 +121,7 @@ $qtd_produtos = 0;
         //$data['shippingAddressCity']       = "Macapá";
         //$data['shippingAddressState']      = "ap";
        // $data['shippingAddressCountry']    = 'BRA';
-        //$data['shippingAddressPostalCode'] = "68.909-844";
+        //$data['shippingAddressPostalCode'] = "68909844";
         //$data['billingAddressPostalCode'] = '68909844';
         //$data['receiverEmail'] = 'rosivan7qi@gmail.com';
         //$data['senderEmail'] = 'teste@sandbox.pagseguro.com.br';
@@ -157,8 +156,10 @@ $qtd_produtos = 0;
         $valor_total += $listaEspecifica['valor'] * $qtd;
         $qtd_produtos++;
         //$id = $listaEspecifica['id_produto'];
-        $valor = $listaEspecifica['valor']*$qtd/$listaEspecifica['peso'];
-        $valor = number_format($valor,2,".",".");
+        $peso = $listaEspecifica['valor']*$qtd/$listaEspecifica['peso'];
+        $kg = number_format($peso,0);
+        $valor = number_format($peso,2,".",".");
+        $peso = number_format($peso,2,".",".");
         //echo $valor;
         //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
         $data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
@@ -167,14 +168,15 @@ $qtd_produtos = 0;
         $data['currency'] = 'BRL';
         $data['itemId'.$id] = $listaEspecifica['id_produto'];
         $data['itemQuantity'.$id] = 1;
+        $data['itemWeight'.$id] = $kg;
         $data['itemDescription'.$id] = $listaEspecifica['nome'];
         $data['itemAmount'.$id] = $valor;
         $data['senderName'] = $_SESSION['nome']; //nome do usuário deve conter nome e sobrenome
         $data['senderAreaCode'] = $telefone_ddd;
         //  $data['senderPhone'] = $_SESSION['telefone'];
         $data['senderPhone'] = $telefone_numero;
-        $data['senderEmail'] = $_SESSION['email'];
-        //$data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
+        //$data['senderEmail'] = $_SESSION['email'];
+        $data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
         $data['senderCPF'] = '01927015251';
         $data['reference'] = intval($_SESSION['referencia']);
         //$data['shippingAddressStreet']     = "avenida 8";
@@ -234,8 +236,8 @@ $qtd_produtos = 0;
         $data['senderAreaCode'] = $telefone_ddd;
         //  $data['senderPhone'] = $_SESSION['telefone'];
         $data['senderPhone'] = $telefone_numero;
-        $data['senderEmail'] = $_SESSION['email'];
-        //$data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
+        //$data['senderEmail'] = $_SESSION['email'];
+        $data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
         $data['senderCPF'] = '01927015251';
         $data['reference'] = intval($_SESSION['referencia']);
         //$data['shippingAddressStreet']     = "avenida 8";
