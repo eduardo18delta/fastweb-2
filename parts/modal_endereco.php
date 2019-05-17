@@ -15,37 +15,37 @@
 
           <div class="form-group">            
             Cep:
-            <input class="form-control" name="cep" type="text" id="cep" value=""/>
+            <input required="" class="form-control" name="cep" type="text" id="cep" value=""/>
           </div>
 
           <div class="form-group">
             Rua:
-            <input class="form-control" name="rua" type="text" id="rua">
+            <input required="" class="form-control" name="rua" type="text" id="rua">
           </div>
 
           <div class="form-group">      
            Número:
-            <input class="form-control" name="numero" type="text" id="numero"/>
+            <input required="" class="form-control" name="numero" type="text" id="numero"/>
           </div>
 
           <div class="form-group">      
            Bairro:
-            <input class="form-control" name="bairro" type="text" id="bairro"/>
+            <input required="" class="form-control" name="bairro" type="text" id="bairro"/>
           </div>
 
           <div class="form-group">
             Cidade:
-            <input class="form-control" name="cidade" type="text" id="cidade"/>
+            <input required="" class="form-control" name="cidade" type="text" id="cidade"/>
           </div>
 
           <div class="form-group">
            Estado:
-            <input class="form-control" name="uf" type="text" id="uf"/>
+            <input class="form-control" name="uf" type="text" id="uf"/ required="">
           </div>
 
           <div class="form-group">
             IBGE:
-            <input class="form-control" name="ibge" type="text" id="ibge"/>
+            <input class="form-control" name="ibge" type="hidden" id="ibge"/>
           </div>
 
           <div class="form-group">
