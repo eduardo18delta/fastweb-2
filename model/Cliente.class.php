@@ -69,7 +69,23 @@ Class Cliente extends Conexao{
 	{
 	  $conexao = Conexao::conectarBanco();
       $this->login = $conexao->prepare("
-        SELECT * FROM clientes WHERE email = :email AND senha = :senha
+        SELECT 
+
+        clientes.id,
+        clientes.nome,
+        clientes.email,
+        clientes.telefone,
+        clientes.sexo,
+        clientes.senha,
+        clientes.ofertas,
+        endereco.cep,
+        endereco.rua,
+        endereco.numero,
+        endereco.bairro,
+        endereco.cidade,
+        endereco.estado
+
+        FROM clientes JOIN endereco on clientes.endereco_fk=endereco.id WHERE email = :email AND senha = :senha
         ");
       $this->login->bindValue(":email", $this->email, PDO::PARAM_STR);
       $this->login->bindValue(":senha", $this->password, PDO::PARAM_STR);
@@ -82,11 +98,15 @@ Class Cliente extends Conexao{
 		$email = $sql['email'];
         $nome = $sql['nome'];
         $telefone = $sql['telefone'];
+        $cep = $sql['cep'];
+        $numero = $sql['numero'];
         $endereco_fk = $sql['endereco_fk'];
 		$_SESSION['id'] = $id;
 		$_SESSION['email'] = $email;
         $_SESSION['nome'] = $nome;
         $_SESSION['telefone'] = $telefone;
+        $_SESSION['cep'] = $cep;
+        $_SESSION['numero'] = $numero;
         $_SESSION['endereco_fk'] = $endereco_fk;
 		header("Location: ../view/perfilclienteView.php");
 	} 
