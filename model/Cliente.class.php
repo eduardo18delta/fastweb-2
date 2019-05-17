@@ -78,6 +78,7 @@ Class Cliente extends Conexao{
         clientes.sexo,
         clientes.senha,
         clientes.ofertas,
+        clientes.endereco_fk,
         endereco.cep,
         endereco.rua,
         endereco.numero,

@@ -128,6 +128,8 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
 <?php
 
 if ($lista['id']==$_SESSION['endereco_fk']) {
+$_SESSION['cep'] = $lista['cep'];
+$_SESSION['numero'] = $lista['numero'];
  echo $lista['rua'].", nº ".$lista['numero'].", ".$lista['bairro'].", ".$lista['cidade']."-".$lista['estado'];
 }
 
