@@ -80,11 +80,11 @@ $qtd_produtos = 0;
         $teste[]=$qtd; //Quantidade por produto
         */
 
-        $valor_produtos = $listaEspecifica['valor'] * $qtd;  
-        $valor_total += $listaEspecifica['valor'] * $qtd;
+        $valor_produtos = $qtd;  
+        $valor_total += $qtd;
         $qtd_produtos++;
         //$id = $listaEspecifica['id_produto'];
-        $valor = $listaEspecifica['valor'];
+        $valor = $qtd;
         $valor = number_format($valor,2,".",".");
         //echo $valor;
         //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
@@ -93,7 +93,7 @@ $qtd_produtos = 0;
         $data['email'] = 'rosivan7qi@gmail.com';
         $data['currency'] = 'BRL';
         $data['itemId'.$id] = $listaEspecifica['id_produto'];
-        $data['itemQuantity'.$id] = $qtd;
+        $data['itemQuantity'.$id] = 1;
         $data['itemDescription'.$id] = $listaEspecifica['nome'];
         $data['itemAmount'.$id] = $valor;
         $data['senderName'] = $_SESSION['nome']; //nome do usuário deve conter nome e sobrenome
@@ -248,7 +248,7 @@ $qtd_produtos = 0;
         $pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
 
         //--------------------------------
-        
+
         }
 
 
