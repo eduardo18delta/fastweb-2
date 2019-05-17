@@ -43,13 +43,13 @@
         </div>
         
         <div class="d-flex justify-content-center" id="campo-busca">
-            <form class="h-100 w-100 esconder" id="form-busca">
-                <div class="input-group input-group-sm h-100">
-                    <input class="form-control input rounded-0 h-100" type="text" placeholder="Buscar podutos...">
+            <form method="post" class="h-100 w-100 esconder" id="form-busca" action="../controller/buscaController.php">
+                <div class="input-group input-group-sm h-100">                    
+                    <input name="busca" class="form-control input rounded-0 h-100" type="text" placeholder="Buscar podutos...">
                     <div class="input-group-prepend">
-                        <button class="btn bg-white">
+                        <button type="submit" class="btn bg-white">
                         <i class="fas fa-search"></i>
-                        </button>
+                        </button>                        
                     </div>
                 </div>
             </form>
