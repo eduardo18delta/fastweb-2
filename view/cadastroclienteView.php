@@ -43,7 +43,7 @@
             </div>
           
             <div class="form-group">
-                <input type="submit" name="btnCadUsuario" value="Cadastrar" class="btn btn-success">
+                <input type="submit" name="btnCadUsuario" value="Cadastrar" class="btn btn-success btn-block">
             </div>
           
             <div class="form-group">
