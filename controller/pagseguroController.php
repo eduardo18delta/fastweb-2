@@ -79,6 +79,16 @@ $qtd_produtos = 0;
         $teste[]=$listaEspecifica['peso'];
         $teste[]=$qtd; //Quantidade por produto
         */
+        
+       
+        function telefone($str) {
+            return preg_replace("/[^0-9]/", "", $str);
+        }
+
+        $telefone = telefone($_SESSION['telefone']);
+        $telefone_numero = substr($telefone, 2);
+        $telefone_ddd = substr($telefone, 0, -9);
+
 
         $valor_produtos = $qtd;  
         $valor_total += $qtd;
@@ -88,8 +98,8 @@ $qtd_produtos = 0;
         $valor = number_format($valor,2,".",".");
         //echo $valor;
         //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
-        //$data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
-        $data['token'] ='7762809c-5f2f-4e70-be96-aba16d699bc6a596937248bc91fb6606f70861aa04f8192a-a55b-4282-9e0a-d8bf2ac619be';
+        $data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
+        //$data['token'] ='7762809c-5f2f-4e70-be96-aba16d699bc6a596937248bc91fb6606f70861aa04f8192a-a55b-4282-9e0a-d8bf2ac619be';
         $data['email'] = 'rosivan7qi@gmail.com';
         $data['currency'] = 'BRL';
         $data['itemId'.$id] = $listaEspecifica['id_produto'];
@@ -97,12 +107,12 @@ $qtd_produtos = 0;
         $data['itemDescription'.$id] = $listaEspecifica['nome'];
         $data['itemAmount'.$id] = $valor;
         $data['senderName'] = $_SESSION['nome']; //nome do usuário deve conter nome e sobrenome
-        $data['senderAreaCode'] = '96';
+        $data['senderAreaCode'] = $telefone_ddd;
         //  $data['senderPhone'] = $_SESSION['telefone'];
-        $data['senderPhone'] = '988095018';
-        $data['senderEmail'] = $_SESSION['email'];
-        //$data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
-        $data['senderCPF'] = '01927015251';
+        $data['senderPhone'] = $telefone_numero;
+        //$data['senderEmail'] = $_SESSION['email'];
+        $data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
+        //$data['senderCPF'] = '01927015251';
         $data['reference'] = intval($_SESSION['referencia']);
         //$data['shippingAddressStreet']     = "avenida 8";
         //$data['shippingAddressNumber']     = "2156";
@@ -151,8 +161,8 @@ $qtd_produtos = 0;
         $valor = number_format($valor,2,".",".");
         //echo $valor;
         //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
-        //$data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
-        $data['token'] ='7762809c-5f2f-4e70-be96-aba16d699bc6a596937248bc91fb6606f70861aa04f8192a-a55b-4282-9e0a-d8bf2ac619be';
+        $data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
+        //$data['token'] ='7762809c-5f2f-4e70-be96-aba16d699bc6a596937248bc91fb6606f70861aa04f8192a-a55b-4282-9e0a-d8bf2ac619be';
         $data['email'] = 'rosivan7qi@gmail.com';
         $data['currency'] = 'BRL';
         $data['itemId'.$id] = $listaEspecifica['id_produto'];
@@ -160,9 +170,9 @@ $qtd_produtos = 0;
         $data['itemDescription'.$id] = $listaEspecifica['nome'];
         $data['itemAmount'.$id] = $valor;
         $data['senderName'] = $_SESSION['nome']; //nome do usuário deve conter nome e sobrenome
-        $data['senderAreaCode'] = '96';
+        $data['senderAreaCode'] = $telefone_ddd;
         //  $data['senderPhone'] = $_SESSION['telefone'];
-        $data['senderPhone'] = '988095018';
+        $data['senderPhone'] = $telefone_numero;
         $data['senderEmail'] = $_SESSION['email'];
         //$data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
         $data['senderCPF'] = '01927015251';
@@ -212,8 +222,8 @@ $qtd_produtos = 0;
         $valor = number_format($valor,2,".",".");
         //echo $valor;
         //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
-        //$data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
-        $data['token'] ='7762809c-5f2f-4e70-be96-aba16d699bc6a596937248bc91fb6606f70861aa04f8192a-a55b-4282-9e0a-d8bf2ac619be';
+        $data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
+        //$data['token'] ='7762809c-5f2f-4e70-be96-aba16d699bc6a596937248bc91fb6606f70861aa04f8192a-a55b-4282-9e0a-d8bf2ac619be';
         $data['email'] = 'rosivan7qi@gmail.com';
         $data['currency'] = 'BRL';
         $data['itemId'.$id] = $listaEspecifica['id_produto'];
@@ -221,9 +231,9 @@ $qtd_produtos = 0;
         $data['itemDescription'.$id] = $listaEspecifica['nome'];
         $data['itemAmount'.$id] = $valor;
         $data['senderName'] = $_SESSION['nome']; //nome do usuário deve conter nome e sobrenome
-        $data['senderAreaCode'] = '96';
+        $data['senderAreaCode'] = $telefone_ddd;
         //  $data['senderPhone'] = $_SESSION['telefone'];
-        $data['senderPhone'] = '988095018';
+        $data['senderPhone'] = $telefone_numero;
         $data['senderEmail'] = $_SESSION['email'];
         //$data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
         $data['senderCPF'] = '01927015251';
@@ -262,8 +272,8 @@ $qtd_produtos = 0;
 
 }
 
-//$url = 'https://ws.sandbox.pagseguro.uol.com.br/v2/checkout';;
-$url = 'https://ws.pagseguro.uol.com.br/v2/checkout';
+$url = 'https://ws.sandbox.pagseguro.uol.com.br/v2/checkout';;
+//$url = 'https://ws.pagseguro.uol.com.br/v2/checkout';
 
 $data = http_build_query($data);
 $curl = curl_init($url);
