@@ -61,6 +61,25 @@ $qtd_produtos = 0;
         foreach($_SESSION['carrinho'] as $id_produto => $qtd){ 
         $listaEspecifica=$produtos->setId($id_produto);
         $listaEspecifica=$produtos->listaEspecifica();
+
+
+
+
+
+        if ($_SESSION['teste2'][$id_produto]=="rs") {
+        /*
+        $valor_produtos = $qtd;  
+        $valor_total += $qtd; 
+        $qtd_produtos++;
+        $teste[]=$listaEspecifica['id_produto']; // ID do Produto
+        $teste[]=number_format($valor_produtos,2,",","."); //Valor da soma de cada produtos
+        $teste[]=number_format($valor_total,2,",","."); //Valor total do cliente
+        $teste[]=$qtd_produtos; //Quantidade dos produtos no carrinho
+        $teste[]=$_SESSION['teste2'][$id_produto]; //Medida
+        $teste[]=$listaEspecifica['peso'];
+        $teste[]=$qtd; //Quantidade por produto
+        */
+
         $valor_produtos = $listaEspecifica['valor'] * $qtd;  
         $valor_total += $listaEspecifica['valor'] * $qtd;
         $qtd_produtos++;
@@ -71,41 +90,171 @@ $qtd_produtos = 0;
         //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
         //$data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
         $data['token'] ='7762809c-5f2f-4e70-be96-aba16d699bc6a596937248bc91fb6606f70861aa04f8192a-a55b-4282-9e0a-d8bf2ac619be';
-		$data['email'] = 'rosivan7qi@gmail.com';
-		$data['currency'] = 'BRL';
-		$data['itemId'.$id] = $listaEspecifica['id_produto'];
-		$data['itemQuantity'.$id] = $qtd;
-		$data['itemDescription'.$id] = $listaEspecifica['nome'];
-		$data['itemAmount'.$id] = $valor;
-		$data['senderName'] = $_SESSION['nome']; //nome do usuário deve conter nome e sobrenome
-		$data['senderAreaCode'] = '96';
-		//  $data['senderPhone'] = $_SESSION['telefone'];
-    $data['senderPhone'] = '988095018';
-    $data['senderEmail'] = $_SESSION['email'];
-		//$data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
-		$data['senderCPF'] = '01927015251';
-    $data['reference'] = intval($_SESSION['referencia']);
-    //$data['shippingAddressStreet']     = "avenida 8";
-    //$data['shippingAddressNumber']     = "2156";
-    //$data['shippingAddressComplement'] = "igreja";
-    //$data['shippingAddressDistrict']   = "Marabaixo 2";
-    //$data['shippingAddressPostalCode'] = '68.909-844';
-    //$data['shippingAddressCity']       = "Macapá";
-    //$data['shippingAddressState']      = "ap";
-   // $data['shippingAddressCountry']    = 'BRA';
-		//$data['shippingAddressPostalCode'] = "68.909-844";
-		//$data['billingAddressPostalCode'] = '68909844';
-		//$data['receiverEmail'] = 'rosivan7qi@gmail.com';
-		//$data['senderEmail'] = 'teste@sandbox.pagseguro.com.br';
-		//echo $data['itemAmount'.$id];
-       $id++; 
+        $data['email'] = 'rosivan7qi@gmail.com';
+        $data['currency'] = 'BRL';
+        $data['itemId'.$id] = $listaEspecifica['id_produto'];
+        $data['itemQuantity'.$id] = $qtd;
+        $data['itemDescription'.$id] = $listaEspecifica['nome'];
+        $data['itemAmount'.$id] = $valor;
+        $data['senderName'] = $_SESSION['nome']; //nome do usuário deve conter nome e sobrenome
+        $data['senderAreaCode'] = '96';
+        //  $data['senderPhone'] = $_SESSION['telefone'];
+        $data['senderPhone'] = '988095018';
+        $data['senderEmail'] = $_SESSION['email'];
+        //$data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
+        $data['senderCPF'] = '01927015251';
+        $data['reference'] = intval($_SESSION['referencia']);
+        //$data['shippingAddressStreet']     = "avenida 8";
+        //$data['shippingAddressNumber']     = "2156";
+        //$data['shippingAddressComplement'] = "igreja";
+        //$data['shippingAddressDistrict']   = "Marabaixo 2";
+        //$data['shippingAddressPostalCode'] = '68.909-844';
+        //$data['shippingAddressCity']       = "Macapá";
+        //$data['shippingAddressState']      = "ap";
+       // $data['shippingAddressCountry']    = 'BRA';
+        //$data['shippingAddressPostalCode'] = "68.909-844";
+        //$data['billingAddressPostalCode'] = '68909844';
+        //$data['receiverEmail'] = 'rosivan7qi@gmail.com';
+        //$data['senderEmail'] = 'teste@sandbox.pagseguro.com.br';
+        //echo $data['itemAmount'.$id];
+           $id++; 
 
-//======salvar item pedido ========
-$pedido_fk = $_SESSION['referencia'];
-$pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
+    //======salvar item pedido ========
+    $pedido_fk = $_SESSION['referencia'];
+    $pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
 
-//--------------------------------
+    //--------------------------------
 
+
+
+        } 
+
+        else if ($_SESSION['teste2'][$id_produto]=="kg") {
+        /*
+        $valor_produtos = $listaEspecifica['valor']*$qtd/$listaEspecifica['peso']; 
+        $valor_total += $valor_produtos;
+        $qtd_produtos++;
+        $teste[]=$listaEspecifica['id_produto']; // ID do Produto
+        $teste[]=number_format($valor_produtos,2,",","."); //Valor da soma de cada produtos
+        $teste[]=number_format($valor_total,2,",","."); //Valor total do cliente
+        $teste[]=$qtd_produtos; //Quantidade dos produtos no carrinho
+        $teste[]=$_SESSION['teste2'][$id_produto]; //Medida
+        $teste[]=$listaEspecifica['peso'];
+        $teste[]=$qtd; //Quantidade por produto
+        */
+
+        $valor_produtos = $listaEspecifica['valor'] * $qtd;  
+        $valor_total += $listaEspecifica['valor'] * $qtd;
+        $qtd_produtos++;
+        //$id = $listaEspecifica['id_produto'];
+        $valor = $listaEspecifica['valor'];
+        $valor = number_format($valor,2,".",".");
+        //echo $valor;
+        //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
+        //$data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
+        $data['token'] ='7762809c-5f2f-4e70-be96-aba16d699bc6a596937248bc91fb6606f70861aa04f8192a-a55b-4282-9e0a-d8bf2ac619be';
+        $data['email'] = 'rosivan7qi@gmail.com';
+        $data['currency'] = 'BRL';
+        $data['itemId'.$id] = $listaEspecifica['id_produto'];
+        $data['itemQuantity'.$id] = $qtd;
+        $data['itemDescription'.$id] = $listaEspecifica['nome'];
+        $data['itemAmount'.$id] = $valor;
+        $data['senderName'] = $_SESSION['nome']; //nome do usuário deve conter nome e sobrenome
+        $data['senderAreaCode'] = '96';
+        //  $data['senderPhone'] = $_SESSION['telefone'];
+        $data['senderPhone'] = '988095018';
+        $data['senderEmail'] = $_SESSION['email'];
+        //$data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
+        $data['senderCPF'] = '01927015251';
+        $data['reference'] = intval($_SESSION['referencia']);
+        //$data['shippingAddressStreet']     = "avenida 8";
+        //$data['shippingAddressNumber']     = "2156";
+        //$data['shippingAddressComplement'] = "igreja";
+        //$data['shippingAddressDistrict']   = "Marabaixo 2";
+        //$data['shippingAddressPostalCode'] = '68.909-844';
+        //$data['shippingAddressCity']       = "Macapá";
+        //$data['shippingAddressState']      = "ap";
+       // $data['shippingAddressCountry']    = 'BRA';
+        //$data['shippingAddressPostalCode'] = "68.909-844";
+        //$data['billingAddressPostalCode'] = '68909844';
+        //$data['receiverEmail'] = 'rosivan7qi@gmail.com';
+        //$data['senderEmail'] = 'teste@sandbox.pagseguro.com.br';
+        //echo $data['itemAmount'.$id];
+           $id++; 
+
+    //======salvar item pedido ========
+    $pedido_fk = $_SESSION['referencia'];
+    $pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
+
+    //--------------------------------
+
+        }   
+
+        else if ($_SESSION['teste2'][$id_produto]=="und") {
+        /*
+        $valor_produtos = $listaEspecifica['valor'] * $qtd;  
+        $valor_total += $listaEspecifica['valor'] * $qtd;
+        $qtd_produtos++;     
+        $teste[]=$listaEspecifica['id_produto']; // ID do Produto
+        $teste[]=number_format($valor_produtos,2,",","."); //Valor da soma de cada produtos
+        $teste[]=number_format($valor_total,2,",","."); //Valor total do cliente
+        $teste[]=$qtd_produtos; //Quantidade dos produtos no carrinho
+        $teste[]=$_SESSION['teste2'][$id_produto]; //Medida
+        $teste[]=$listaEspecifica['peso'];
+        $teste[]=$qtd; //Quantidade por produto
+        */
+
+        $valor_produtos = $listaEspecifica['valor'] * $qtd;  
+        $valor_total += $listaEspecifica['valor'] * $qtd;
+        $qtd_produtos++;
+        //$id = $listaEspecifica['id_produto'];
+        $valor = $listaEspecifica['valor'];
+        $valor = number_format($valor,2,".",".");
+        //echo $valor;
+        //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
+        //$data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
+        $data['token'] ='7762809c-5f2f-4e70-be96-aba16d699bc6a596937248bc91fb6606f70861aa04f8192a-a55b-4282-9e0a-d8bf2ac619be';
+        $data['email'] = 'rosivan7qi@gmail.com';
+        $data['currency'] = 'BRL';
+        $data['itemId'.$id] = $listaEspecifica['id_produto'];
+        $data['itemQuantity'.$id] = $qtd;
+        $data['itemDescription'.$id] = $listaEspecifica['nome'];
+        $data['itemAmount'.$id] = $valor;
+        $data['senderName'] = $_SESSION['nome']; //nome do usuário deve conter nome e sobrenome
+        $data['senderAreaCode'] = '96';
+        //  $data['senderPhone'] = $_SESSION['telefone'];
+        $data['senderPhone'] = '988095018';
+        $data['senderEmail'] = $_SESSION['email'];
+        //$data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
+        $data['senderCPF'] = '01927015251';
+        $data['reference'] = intval($_SESSION['referencia']);
+        //$data['shippingAddressStreet']     = "avenida 8";
+        //$data['shippingAddressNumber']     = "2156";
+        //$data['shippingAddressComplement'] = "igreja";
+        //$data['shippingAddressDistrict']   = "Marabaixo 2";
+        //$data['shippingAddressPostalCode'] = '68.909-844';
+        //$data['shippingAddressCity']       = "Macapá";
+        //$data['shippingAddressState']      = "ap";
+       // $data['shippingAddressCountry']    = 'BRA';
+        //$data['shippingAddressPostalCode'] = "68.909-844";
+        //$data['billingAddressPostalCode'] = '68909844';
+        //$data['receiverEmail'] = 'rosivan7qi@gmail.com';
+        //$data['senderEmail'] = 'teste@sandbox.pagseguro.com.br';
+        //echo $data['itemAmount'.$id];
+           $id++; 
+
+        //======salvar item pedido ========
+        $pedido_fk = $_SESSION['referencia'];
+        $pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
+
+        //--------------------------------
+        
+        }
+
+
+
+
+        
 
 
 }
