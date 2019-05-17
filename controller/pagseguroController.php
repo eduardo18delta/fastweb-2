@@ -147,7 +147,7 @@ $qtd_produtos = 0;
         $valor_total += $listaEspecifica['valor'] * $qtd;
         $qtd_produtos++;
         //$id = $listaEspecifica['id_produto'];
-        $valor = $listaEspecifica['valor'];
+        $valor = $listaEspecifica['valor']*$qtd/$listaEspecifica['peso'];
         $valor = number_format($valor,2,".",".");
         //echo $valor;
         //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
@@ -156,7 +156,7 @@ $qtd_produtos = 0;
         $data['email'] = 'rosivan7qi@gmail.com';
         $data['currency'] = 'BRL';
         $data['itemId'.$id] = $listaEspecifica['id_produto'];
-        $data['itemQuantity'.$id] = $qtd;
+        $data['itemQuantity'.$id] = 1;
         $data['itemDescription'.$id] = $listaEspecifica['nome'];
         $data['itemAmount'.$id] = $valor;
         $data['senderName'] = $_SESSION['nome']; //nome do usuário deve conter nome e sobrenome
