@@ -34,8 +34,10 @@ $listar_produtos=$produtos_modal->listarDestaque();
 
  $w="'"; //Variável que armazena uma aspa simples para ser usado no script abaixo
 
-$peso = $modal['peso'];
-$valor = number_format($peso,2,".",".");
+$valor_com_desconto = $modal['valor']-($modal['desconto']*0.1);
+$valor_com_desconto = number_format($modal['valor'],2,",",".");
+$modal['valor'] = number_format($modal['valor'],2,",",".");
+
  //=============Abaixo, a variável "$conteudo" recebe todo o script do funcionamento do modal=============>
  $conteudo = '
       $(document).ready(function(){
@@ -50,11 +52,11 @@ $valor = number_format($peso,2,".",".");
       $(".form-produto-id").val('.$modal['id_produto'].');
       $(".modal-qtd-produto").attr("name","qtd-produto['.$modal['id_produto'].']")
       $(".modal-qtd-produto").addClass("modal-qtd-produto'.$modal['id_produto'].'")
-      $(".modal-qtd-produto").val('.$modal['quantidade'].')
       $(".background_modal").fadeIn();
       $(".produto'.$modal['id_produto'].'").addClass("addproduto'.$modal['id_produto'].'")
       $(".nome").text("'.$modal['nome'].'")
-      $(".valor").text("R$ '.$valor.'")
+      $(".valor-sem-desconto").html("R$ <strike>'.$modal['valor'].'</strike>")
+      $(".valor").html("R$ '.$valor_com_desconto.'")
       $(".descricao").text("'.$modal['descricao'].'")
       $(".desconto-icon").text("'.$modal['desconto'].'%")
       $(".valor").addClass("valor'.$modal['id_produto'].'")
@@ -80,6 +82,7 @@ $valor = number_format($peso,2,".",".");
         $(".kg'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".und'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".opcao-medida").val("rs")
+        $(".modal-qtd-produto").val('.$modal['valor'].')
       }
       if ("'.$modal['medida'].'"==2){
         $(".rs'.$modal['id_produto'].'").hide()
@@ -98,6 +101,7 @@ $valor = number_format($peso,2,".",".");
         $(".kg'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".und'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".opcao-medida").val("kg")
+        $(".modal-qtd-produto").val('.$modal['peso'].')
       }
       if ("'.$modal['medida'].'"==3){
         $(".rs'.$modal['id_produto'].'").show()
@@ -113,6 +117,7 @@ $valor = number_format($peso,2,".",".");
         $(".kg'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".und'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".opcao-medida").val("kg")
+        $(".modal-qtd-produto").val('.$modal['peso'].')
       }
       if ("'.$modal['medida'].'"==4){
         $(".rs'.$modal['id_produto'].'").hide()
@@ -128,6 +133,7 @@ $valor = number_format($peso,2,".",".");
         $(".kg'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".und'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".opcao-medida").val("und")
+        $(".modal-qtd-produto").val(1)
       }    
       if ("'.$modal['medida'].'"==5){
         $(".rs'.$modal['id_produto'].'").show()
@@ -143,6 +149,7 @@ $valor = number_format($peso,2,".",".");
         $(".kg'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".und'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".opcao-medida").val("und")
+        $(".modal-qtd-produto").val(1)
       }
       if ("'.$modal['medida'].'"==6){
         $(".rs'.$modal['id_produto'].'").hide()
@@ -158,6 +165,7 @@ $valor = number_format($peso,2,".",".");
         $(".kg'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".und'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".opcao-medida").val("und")
+        $(".modal-qtd-produto").val(1)
       }
       if ("'.$modal['medida'].'"==7){
         $(".rs'.$modal['id_produto'].'").show()
@@ -173,6 +181,7 @@ $valor = number_format($peso,2,".",".");
         $(".kg'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".und'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".opcao-medida").val("und")
+        $(".modal-qtd-produto").val(1)
       }
 
       //Lista as medidas de forma atualizada
@@ -310,23 +319,27 @@ function consulta_medida(){
 if ($(".rs").hasClass("medida_ativo")) {
 // R$
 var rs = $(".modal-qtd-produto").val()  
+rs = dados[id+1]-(dados[id+3]*0.1) 
+rs = Math.round(rs*100)/100
 $(".valor").text("R$ "+rs+".00")
 }
 if ($(".kg").hasClass("medida_ativo")) {               
 // Kg
 var kg = $(".modal-qtd-produto").val() 
 total = (kg*dados[id+1])/dados[id+2]
-
+total = dados[id+1]-(dados[id+3]*0.1) 
 total = Math.round(total*100)/100
 $(".valor"+dados[id]).text("R$ "+total) 
 }   
 if ($(".und").hasClass("medida_ativo")) { 
 //UND
-var und = $(".modal-qtd-produto").val()  
+var und = $(".modal-qtd-produto").val() 
 total = und*dados[id+1]
-$(".valor"+dados[id]).text("R$ "+total+".00")  
+total = dados[id+1]-(dados[id+3]*0.1) 
+total = Math.round(total*100)/100
+$(".valor"+dados[id]).html("R$ "+total)  
 }
-      id+=3
+      id+=4
 
     }  
 

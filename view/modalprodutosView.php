@@ -86,7 +86,7 @@ include '../parts/scriptmodal.php';
 
               <!--====DESCONTO====-->
               <div>
-                <div class="desconto">
+                <div class="valor-sem-desconto">
                   <strike>R$ 25,00</strike>
                 </div>
                 <h1 class="valor">Aqui fica o Preço</h1>
