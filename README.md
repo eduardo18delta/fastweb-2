@@ -2,11 +2,11 @@
 
 - Sistema feito completamente orientado a objetos para o Projeti do 4º Semestre do Curso de Sistemas para Internet.
 
-## Models 
+## Models
 
-- Toda e qualquer classe criada dentro da pasta /model deve ser inserida no arquivo "/model/autoload.php" via include. 
+- Toda e qualquer classe criada dentro da pasta /model deve ser inserida no arquivo "/model/autoload.php" via include.
 
-## Controller's 
+## Controller's
 
 - Os Controller's devem incluir o arquivo <b>include_once '../model/autoload.php'</b> para utilizar as classes do sistema.
 
@@ -23,6 +23,4 @@
 	- sudo chmod -R 777 /var/www/html/fastweb-2/assets/img/upload_produtos
 
 
-- A partir de agora o sistema está funcional e rodando localmente em sua máquina.
-
-
+- A partir de agora o sistema está funcional e rodando localmente em sua máquina
