@@ -18,8 +18,12 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
         foreach($_SESSION['carrinho'] as $id_produto => $qtd): //Listando valores da sessão "carrinho"
             $listaEspecifica=$produtos->setId($id_produto); //Setando o ID dos produtos da sessão 
             $listaEspecifica=$produtos->listaEspecifica(); //Em seguida lista específicamente o setado
-            $subtotal_produtos = $listaEspecifica['valor'] * $qtd; //Armazenando o subtotal dos valores 
-            $total_produtos += $listaEspecifica['valor'] * $qtd; //Armazenando o TOTAL dos valores
+            $valor_com_desconto = $listaEspecifica['valor'];
+            $listaEspecifica['valor'] = number_format($listaEspecifica['valor'],2,",",".");
+            $valor_com_desconto = $valor_com_desconto-($listaEspecifica['desconto']*0.1);
+            $valor_com_desconto = number_format($valor_com_desconto,2,",",".");
+            //$subtotal_produtos = $valor_com_desconto * $qtd; //Armazenando o subtotal dos valores 
+            //$total_produtos += $valor_com_desconto * $qtd; //Armazenando o TOTAL dos valores
             $qtd_produtos++; //Armazenando a quantidade de produtos
             //$_SESSION['teste2'][$id_produto] = $qtd;
             //$_SESSION['teste2'][$id_produto] = "testeE";
@@ -73,7 +77,7 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
     </div>
   <!--===========================QUANTIDADE/VALOR/SUBTOTAL=======================-->
     <div class="col-md-2 col mt-2">
-      <div class="carrinho-titulo-info carrinho-add-valor<?=$listaEspecifica['id_produto']?>">Quantidade (UND.)</div>
+      <div class="carrinho-titulo-info carrinho-add-valor<?=$listaEspecifica['id_produto']?>">Quantidade (UND)</div>
       <input type="hidden" class="carrinho-requisicao" value="">
         
         <table class="table-medida">
@@ -93,12 +97,15 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
       <div style="display: none;"><?=$listaEspecifica['quantidade']?> Unidades</div>
     </div>
     <div class="col-md-2 col mt-4"> 
-          <div class="carrinho-titulo-info carrinho-valor<?=$listaEspecifica['id_produto']?>">Valor (UND.)</div>
-          <div class="valor-carrinho<?=$listaEspecifica['id_produto']?>">R$ <?=$listaEspecifica['valor']?>,00</div> 
+          <div class="carrinho-titulo-info carrinho-valor<?=$listaEspecifica['id_produto']?>">Valor (UND)</div>
+          <div class="valor-carrinho<?=$listaEspecifica['id_produto']?>">
+            <span class="valor-sem-desconto text-danger">R$ <strike><?=$listaEspecifica['valor']?></strike></span>
+            <span>R$ <?=$valor_com_desconto?></span>       
+            </div> 
     </div>
     <div class="col-md-2 col mt-4"> 
-        <div class="carrinho-titulo-info carrinho-subtotal<?=$listaEspecifica['id_produto']?>">Sub Total (UND.)</div>
-          <div class="fofo valor-produto<?=$listaEspecifica['id_produto']?>"><?=$subtotal_produtos?>,00</div>
+        <div class="carrinho-titulo-info carrinho-subtotal<?=$listaEspecifica['id_produto']?>">Subtotal (UND)</div>
+          <div class="fofo valor-produto<?=$listaEspecifica['id_produto']?>">R$ 00,00</div>
     </div>
   </div>
 </div>
@@ -187,7 +194,7 @@ $('#comprar').submit();
 
     <div class="col-md-2 col mt-4">
       <h2>Total</h2>
-        <h2 class="carrinho-valor-total">R$ <?=$total_produtos?>,00</h2>
+        <h2 class="carrinho-valor-total">R$ 00,00</h2>
     </div>  
 </div>       
 
