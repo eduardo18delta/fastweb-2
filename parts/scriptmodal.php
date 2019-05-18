@@ -375,6 +375,7 @@ $(".desfocar").css("filter", "blur(10px)");
         $(".remover-produto").removeClass("remover-produto'.$modal['id_produto'].'")
         $(".add-carrinho").removeClass("add-carrinho'.$modal['id_produto'].'")
         $(".modal-qtd-produto").removeClass("modal-qtd-produto'.$modal['id_produto'].'")
+        $(".valor").removeClass("valor'.$modal['id_produto'].'")
         $(".item-medida").removeClass("item-medida'.$modal['id_produto'].'")
         $(".desfocar").css("filter", "blur(0px)");
       })
