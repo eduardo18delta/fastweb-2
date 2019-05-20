@@ -71,7 +71,7 @@ $modal['valor'] = number_format($modal['valor'],2,",",".");
         $(".kg'.$modal['id_produto'].'").hide()
         $(".und'.$modal['id_produto'].'").hide()
         $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
-        $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+        $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (Und)")
         $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
         $(".rs'.$modal['id_produto'].'").css("background-color","#000")
         $(".kg'.$modal['id_produto'].'").css("background-color","#fff")
@@ -90,7 +90,7 @@ $modal['valor'] = number_format($modal['valor'],2,",",".");
         $(".kg'.$modal['id_produto'].'").show()
         $(".und'.$modal['id_produto'].'").hide()
         $(".carrinho-add-valor'.$modal['id_produto'].'").text("Peso (Kg)")
-        $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+        $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (Und)")
         $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal em (Kg)")
         $(".rs'.$modal['id_produto'].'").css("background-color","#fff")
         $(".kg'.$modal['id_produto'].'").css("background-color","#000")
@@ -195,7 +195,7 @@ consulta_medida()
 $(".rs'.$modal['id_produto'].'").click(function() {
     $("[name=opcao-medida]").val("rs")
     $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
-    $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+    $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (Und)")
     $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
     $(".rs'.$modal['id_produto'].'").css("background-color","#000")
     $(".kg'.$modal['id_produto'].'").css("background-color","#fff")
@@ -232,7 +232,7 @@ $(".rs'.$modal['id_produto'].'").click(function() {
 $(".kg'.$modal['id_produto'].'").click(function() {
   $("[name=opcao-medida]").val("kg")
   $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
-  $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+  $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (Und)")
   $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
   $(".rs'.$modal['id_produto'].'").css("background-color","#fff")
   $(".kg'.$modal['id_produto'].'").css("background-color","#000")
@@ -269,7 +269,7 @@ $(".kg'.$modal['id_produto'].'").click(function() {
 $(".und'.$modal['id_produto'].'").click(function() {
   $("[name=opcao-medida]").val("und")
   $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
-  $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+  $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (Und)")
   $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
   $(".rs'.$modal['id_produto'].'").css("background-color","#fff")
   $(".kg'.$modal['id_produto'].'").css("background-color","#fff")
@@ -444,7 +444,7 @@ if ("'.$modal['medida'].'"==1){
         $(".kg'.$modal['id_produto'].'").hide()
         $(".und'.$modal['id_produto'].'").hide()
         $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
-        $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+        $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (Und)")
         $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
         $(".rs'.$modal['id_produto'].'").css("background-color","#000")
         $(".kg'.$modal['id_produto'].'").css("background-color","#fff")
@@ -456,13 +456,14 @@ if ("'.$modal['medida'].'"==1){
         $(".kg'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".und'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".opcao-medida").val("rs")
+        $(".unidade-produto'.$modal['id_produto'].'").text("(R$)")
       }
       if ("'.$modal['medida'].'"==2){
         $(".rs'.$modal['id_produto'].'").hide()
         $(".kg'.$modal['id_produto'].'").show()
         $(".und'.$modal['id_produto'].'").hide()
         $(".carrinho-add-valor'.$modal['id_produto'].'").text("Peso (Kg)")
-        $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+        $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (Und)")
         $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal em (Kg)")
         $(".rs'.$modal['id_produto'].'").css("background-color","#fff")
         $(".kg'.$modal['id_produto'].'").css("background-color","#000")
@@ -474,6 +475,7 @@ if ("'.$modal['medida'].'"==1){
         $(".kg'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".und'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".opcao-medida").val("kg")
+        $(".unidade-produto'.$modal['id_produto'].'").text("(Kg)")
       }
       if ("'.$modal['medida'].'"==3){
         $(".rs'.$modal['id_produto'].'").show()
@@ -489,6 +491,7 @@ if ("'.$modal['medida'].'"==1){
         $(".kg'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".und'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".opcao-medida").val("kg")
+        $(".unidade-produto'.$modal['id_produto'].'").text("(Kg)")
       }
       if ("'.$modal['medida'].'"==4){
         $(".rs'.$modal['id_produto'].'").hide()
@@ -504,6 +507,7 @@ if ("'.$modal['medida'].'"==1){
         $(".kg'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".und'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".opcao-medida").val("und")
+        $(".unidade-produto'.$modal['id_produto'].'").text("(Und)")
       }    
       if ("'.$modal['medida'].'"==5){
         $(".rs'.$modal['id_produto'].'").show()
@@ -519,6 +523,7 @@ if ("'.$modal['medida'].'"==1){
         $(".kg'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".und'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".opcao-medida").val("und")
+        $(".unidade-produto'.$modal['id_produto'].'").text("(Und)")
       }
       if ("'.$modal['medida'].'"==6){
         $(".rs'.$modal['id_produto'].'").hide()
@@ -534,6 +539,7 @@ if ("'.$modal['medida'].'"==1){
         $(".kg'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".und'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".opcao-medida").val("und")
+        $(".unidade-produto'.$modal['id_produto'].'").text("(Und)")
       }
       if ("'.$modal['medida'].'"==7){
         $(".rs'.$modal['id_produto'].'").show()
@@ -549,13 +555,14 @@ if ("'.$modal['medida'].'"==1){
         $(".kg'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".und'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".opcao-medida").val("und")
+        $(".unidade-produto'.$modal['id_produto'].'").text("(Und)")
       }
 
       
 $(".rs'.$modal['id_produto'].'").click(function() {
     $("[name=opcao-medida]").val("rs")
     $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
-    $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+    $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (Und)")
     $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
     $(".rs'.$modal['id_produto'].'").css("background-color","#000")
     $(".kg'.$modal['id_produto'].'").css("background-color","#fff")
@@ -592,7 +599,7 @@ $(".rs'.$modal['id_produto'].'").click(function() {
 $(".kg'.$modal['id_produto'].'").click(function() {
   $("[name=opcao-medida]").val("kg")
   $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
-  $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+  $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (Und)")
   $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
   $(".rs'.$modal['id_produto'].'").css("background-color","#fff")
   $(".kg'.$modal['id_produto'].'").css("background-color","#000")
@@ -629,7 +636,7 @@ $(".kg'.$modal['id_produto'].'").click(function() {
 $(".und'.$modal['id_produto'].'").click(function() {
   $("[name=opcao-medida]").val("und")
   $(".carrinho-add-valor'.$modal['id_produto'].'").text("Valor (R$)")
-  $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (UND)")
+  $(".carrinho-valor'.$modal['id_produto'].'").text("Valor (Und)")
   $(".carrinho-subtotal'.$modal['id_produto'].'").text("Subtotal (R$)")
   $(".rs'.$modal['id_produto'].'").css("background-color","#fff")
   $(".kg'.$modal['id_produto'].'").css("background-color","#fff")
@@ -687,7 +694,7 @@ function listar_medida(){
 
             if (dados[id+4]=="rs"){
               $(".carrinho-add-valor"+dados[id]).text("Valor (R$)")
-              $(".carrinho-valor"+dados[id]).text("Valor (UND)")
+              $(".carrinho-valor"+dados[id]).text("Valor (Und)")
               $(".carrinho-subtotal"+dados[id]).text("Subtotal (R$)")
               $(".rs"+dados[id]).css("background-color","#000")
               $(".kg"+dados[id]).css("background-color","#fff")
@@ -700,7 +707,7 @@ function listar_medida(){
               $(".und"+dados[id]).removeClass("medida_ativo")
             } else if (dados[id+4]=="kg"){   
               $(".carrinho-add-valor"+dados[id]).text("Peso (Kg)")
-              $(".carrinho-valor"+dados[id]).text("Valor (UND)")
+              $(".carrinho-valor"+dados[id]).text("Valor (Und)")
               $(".carrinho-subtotal"+dados[id]).text("Subtotal em (Kg)")
               $(".rs"+dados[id]).css("background-color","#fff")
               $(".kg"+dados[id]).css("background-color","#000")
@@ -712,9 +719,9 @@ function listar_medida(){
               $(".kg"+dados[id]).addClass("medida_ativo")
               $(".und"+dados[id]).removeClass("medida_ativo")
             } else if (dados[id+4]=="und"){       
-              $(".carrinho-add-valor"+dados[id]).text("Quantidade (UND)")
-              $(".carrinho-valor"+dados[id]).text("Valor (UND)")
-              $(".carrinho-subtotal"+dados[id]).text("Subtotal (UND)")
+              $(".carrinho-add-valor"+dados[id]).text("Quantidade (Und)")
+              $(".carrinho-valor"+dados[id]).text("Valor (Und)")
+              $(".carrinho-subtotal"+dados[id]).text("Subtotal (Und)")
               $(".rs"+dados[id]).css("background-color","#fff")
               $(".kg"+dados[id]).css("background-color","#fff")
               $(".und"+dados[id]).css("background-color","#000")

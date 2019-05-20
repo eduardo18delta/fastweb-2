@@ -112,7 +112,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
             <div> 
               <div class="valor-produto"><strike>R$ <?=$destaque['valor']?></strike></div>
               <div class="valor-produto-desconto">R$ <?= ($destaque['valor']*(100-$destaque['desconto']))/100?></div>
-              <div class="unidade-produto">(Uni)</div>
+              <div class="unidade-produto<?=$destaque['id_produto']?>">(Uni)</div>
             </div>  
             <div class="estrelas">
               <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
@@ -158,7 +158,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
             <div> 
               <div class="valor-produto"><strike>R$ <?=$destaque['valor']?></strike></div>
               <div class="valor-produto-desconto">R$ <?= ($destaque['valor']*(100-$destaque['desconto']))/100?></div>
-              <div class="unidade-produto">(Uni)</div>
+              <div class="unidade-produto<?=$produtos['id_produto']?>">(Uni)</div>
             </div>  
             <div class="estrelas">
               <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
@@ -204,7 +204,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
             <div> 
               <div class="valor-produto"><strike>R$ <?=$destaque['valor']?></strike></div>
               <div class="valor-produto-desconto">R$ <?= ($destaque['valor']*(100-$destaque['desconto']))/100?></div>
-              <div class="unidade-produto">(Uni)</div>
+              <div class="unidade-produto<?=$produtos['id_produto']?>">(Uni)</div>
             </div>  
             <div class="estrelas">
               <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
