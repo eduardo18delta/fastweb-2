@@ -75,9 +75,11 @@ $qtd_produtos = 0;
         foreach($_SESSION['carrinho'] as $id_produto => $qtd){ 
         $listaEspecifica=$produtos->setId($id_produto);
         $listaEspecifica=$produtos->listaEspecifica();
-        $listaEspecifica['valor'] = $listaEspecifica['valor']-($listaEspecifica['desconto']*0.1);
+        $listaEspecifica['desconto'] = 100-$listaEspecifica['desconto'];
+        $listaEspecifica['valor'] = ($listaEspecifica['valor']*$listaEspecifica['desconto'])/100;
 
         if ($_SESSION['teste2'][$id_produto]=="rs") {
+        $qtd = ($qtd*$listaEspecifica['desconto'])/100;
         $valor_produtos = $qtd;  
         $valor_total += $qtd; 
         $qtd_produtos++;

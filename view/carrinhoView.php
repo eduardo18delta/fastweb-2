@@ -18,10 +18,11 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
         foreach($_SESSION['carrinho'] as $id_produto => $qtd): //Listando valores da sessão "carrinho"
             $listaEspecifica=$produtos->setId($id_produto); //Setando o ID dos produtos da sessão 
             $listaEspecifica=$produtos->listaEspecifica(); //Em seguida lista específicamente o setado
+            $listaEspecifica['desconto'] = 100-$listaEspecifica['desconto'];
             $valor_com_desconto = $listaEspecifica['valor'];
-            $listaEspecifica['valor'] = number_format($listaEspecifica['valor'],2,",",".");
-            $valor_com_desconto = $valor_com_desconto-($listaEspecifica['desconto']*0.1);
+            $valor_com_desconto = ($listaEspecifica['valor']*$listaEspecifica['desconto'])/100;
             $valor_com_desconto = number_format($valor_com_desconto,2,",",".");
+            $listaEspecifica['valor'] = number_format($listaEspecifica['valor'],2,",",".");
             //$subtotal_produtos = $valor_com_desconto * $qtd; //Armazenando o subtotal dos valores 
             //$total_produtos += $valor_com_desconto * $qtd; //Armazenando o TOTAL dos valores
             $qtd_produtos++; //Armazenando a quantidade de produtos

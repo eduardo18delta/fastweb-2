@@ -319,23 +319,26 @@ function consulta_medida(){
 if ($(".rs").hasClass("medida_ativo")) {
 // R$
 var rs = $(".modal-qtd-produto").val()  
-rs = dados[id+1]-(dados[id+3]*0.1) 
+var desconto = 100-dados[id+3]
+rs = rs*desconto/100
 rs = Math.round(rs*100)/100
-$(".valor").text("R$ "+rs+".00")
+$(".valor"+dados[id]).text("R$ "+rs)
 }
 if ($(".kg").hasClass("medida_ativo")) {               
 // Kg
 var kg = $(".modal-qtd-produto").val() 
 total = (kg*dados[id+1])/dados[id+2]
-total = dados[id+1]-(dados[id+3]*0.1) 
+var desconto = 100-dados[id+3]
+total = total*desconto/100
 total = Math.round(total*100)/100
 $(".valor"+dados[id]).text("R$ "+total) 
 }   
 if ($(".und").hasClass("medida_ativo")) { 
 //UND
 var und = $(".modal-qtd-produto").val() 
-total = und*dados[id+1]
-total = dados[id+1]-(dados[id+3]*0.1) 
+//total = und*dados[id+1]
+var desconto = 100-dados[id+3]
+total = (und*dados[id+1])*desconto/100
 total = Math.round(total*100)/100
 $(".valor"+dados[id]).html("R$ "+total)  
 }
@@ -388,6 +391,7 @@ $(".desfocar").css("filter", "blur(10px)");
         $(".remover-produto").removeClass("remover-produto'.$modal['id_produto'].'")
         $(".add-carrinho").removeClass("add-carrinho'.$modal['id_produto'].'")
         $(".modal-qtd-produto").removeClass("modal-qtd-produto'.$modal['id_produto'].'")
+        $(".modal-qtd-produto").removeClass("modal-qtd-produto-ativo'.$modal['id_produto'].'")
         $(".valor").removeClass("valor'.$modal['id_produto'].'")
         $(".item-medida").removeClass("item-medida'.$modal['id_produto'].'")
         $(".desfocar").css("filter", "blur(0px)");
