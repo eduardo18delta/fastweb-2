@@ -43,8 +43,7 @@
             <input class="form-control" name="uf" type="text" id="uf"/ required="">
           </div>
 
-          <div class="form-group">
-            IBGE:
+          <div class="form-group">            
             <input class="form-control" name="ibge" type="hidden" id="ibge"/>
           </div>
 
