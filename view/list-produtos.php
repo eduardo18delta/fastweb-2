@@ -242,7 +242,7 @@ include_once '../parts/head.php'; ?>
         </button>
       </div>
       <div class="modal-body">      
-        <form id="cadastroproduto" method="post" action="../controller/cadprodutosController.php" autocomplete="off" enctype="multipart/form-data">
+        <form id="atualizarproduto<?=$produtos['id_produto']?>" method="post" action="../controller/updateprodutosController.php" autocomplete="off" enctype="multipart/form-data">
 <div class="row">  
 <div class="col-md-12 col-sm-12 form-group produtos-selecionados">
     <label for='input-img-produto-01' class="produtos-adicionados add-produto-principal" id="add-img-produto-01">
@@ -335,7 +335,7 @@ include_once '../parts/head.php'; ?>
 
           <div class="col-md-2 col-sm-12 form-group">
           <label>Destaque:</label>
-          <input class="form-control" type="checkbox" name="destaque" value="<?=$produtos['destaque']?>" value="1">
+          <input class="form-control" type="checkbox" name="destaque" value="<?=$produtos['destaque']?>">
           </div>
 </div>
 <div class="row">  
@@ -360,7 +360,7 @@ include_once '../parts/head.php'; ?>
           </div>
 </div>
           <div class="form-group">
-            <input class="btn btn-success btn-block" type="submit" name="Cadastrar">
+            <input class="btn btn-success btn-block" type="submit" name="Atualizar" value="Atualizar">
           </div>
 
         </form>

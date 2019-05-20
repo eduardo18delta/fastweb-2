@@ -51,7 +51,7 @@ class Produtos extends Conexao
             produtos.desconto,
             produtos.cod_barra,
             produtos.destaque,
-			categoria.descricao,
+			categoria.descricao as descricao_categoria,
             produtos.img_01,
             produtos.img_02,
             produtos.img_03,
@@ -295,7 +295,7 @@ class Produtos extends Conexao
     	$this->updateProduto = $conexao->prepare("
 
         UPDATE produtos SET nome = :nome,valor = :valor,categoria_fk = :categoria,fornecedor = :fornecedor,
-        validade = :validade,quantidade = :quantidade,marca = :marca,descricao = :descricao,peso = :peso,medida = :medida,desconto = :desconto,cod_barra = :cod_barra,destaque = :destaque,img_01 = :ima_01,img_02 = :img_02,img_03 = :ima_03,img_04 = :img_04,img_05 = :ima_05,img_06 = :img_06
+        validade = :validade,quantidade = :quantidade,marca = :marca,descricao = :descricao,peso = :peso,medida = :medida,desconto = :desconto,cod_barra = :cod_barra,destaque = :destaque,img_01 = :img_01,img_02 = :img_02,img_03 = :img_03,img_04 = :img_04,img_05 = :img_05,img_06 = :img_06
 
         WHERE id_produto = :id ");
       
@@ -307,18 +307,18 @@ class Produtos extends Conexao
         $this->updateProduto->bindValue(":validade", $this->validade, PDO::PARAM_STR); 
         $this->updateProduto->bindValue(":quantidade", $this->quantidade, PDO::PARAM_STR); 
         $this->updateProduto->bindValue(":marca", $this->marca, PDO::PARAM_STR); 
-        $this->cadastrarProduto->bindValue(":descricao", $this->descricao, PDO::PARAM_STR);
-        $this->cadastrarProduto->bindValue(":peso", $this->peso, PDO::PARAM_STR);
-        $this->cadastrarProduto->bindValue(":medida", $this->medida, PDO::PARAM_STR);
-        $this->cadastrarProduto->bindValue(":desconto", $this->desconto, PDO::PARAM_STR);
-        $this->cadastrarProduto->bindValue(":cod_barra", $this->cod_barra, PDO::PARAM_STR);
-        $this->cadastrarProduto->bindValue(":destaque", $this->destaque, PDO::PARAM_STR);
-        $this->cadastrarProduto->bindValue(":img_01", $this->img_01, PDO::PARAM_STR); 
-        $this->cadastrarProduto->bindValue(":img_02", $this->img_02, PDO::PARAM_STR); 
-        $this->cadastrarProduto->bindValue(":img_03", $this->img_03, PDO::PARAM_STR); 
-        $this->cadastrarProduto->bindValue(":img_04", $this->img_04, PDO::PARAM_STR); 
-        $this->cadastrarProduto->bindValue(":img_05", $this->img_05, PDO::PARAM_STR); 
-        $this->cadastrarProduto->bindValue(":img_06", $this->img_06, PDO::PARAM_STR); 
+        $this->updateProduto->bindValue(":descricao", $this->descricao, PDO::PARAM_STR);
+        $this->updateProduto->bindValue(":peso", $this->peso, PDO::PARAM_STR);
+        $this->updateProduto->bindValue(":medida", $this->medida, PDO::PARAM_STR);
+        $this->updateProduto->bindValue(":desconto", $this->desconto, PDO::PARAM_STR);
+        $this->updateProduto->bindValue(":cod_barra", $this->cod_barra, PDO::PARAM_STR);
+        $this->updateProduto->bindValue(":destaque", $this->destaque, PDO::PARAM_STR);
+        $this->updateProduto->bindValue(":img_01", $this->img_01, PDO::PARAM_STR); 
+        $this->updateProduto->bindValue(":img_02", $this->img_02, PDO::PARAM_STR); 
+        $this->updateProduto->bindValue(":img_03", $this->img_03, PDO::PARAM_STR); 
+        $this->updateProduto->bindValue(":img_04", $this->img_04, PDO::PARAM_STR); 
+        $this->updateProduto->bindValue(":img_05", $this->img_05, PDO::PARAM_STR); 
+        $this->updateProduto->bindValue(":img_06", $this->img_06, PDO::PARAM_STR); 
     	$this->updateProduto->execute();
     }
 

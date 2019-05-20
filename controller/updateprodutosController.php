@@ -53,7 +53,7 @@ $produtos->img_05 = $img_05;
 $produtos->img_06 = $img_06;
 
 $produtos->atualizar();
-header("Location: ../view/list-produtos.php");
+//header("Location: ../view/list-produtos.php");
 
 
 
