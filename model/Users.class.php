@@ -42,9 +42,10 @@ class Users extends Conexao {
 
 	public function Logout()
 	{
-		unset($_SESSION['user']);
+        session_start();
+        unset($_SESSION['user']);
         unset($_SESSION['nome']);  
-		unset($_SESSION['email']);	
+        unset($_SESSION['email']);	        
 
 	}
 
