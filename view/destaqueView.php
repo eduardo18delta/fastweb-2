@@ -110,7 +110,8 @@ $listaAlimentos=$produtos->listaAlimentos();?>
           </div>        
             <div class="nome-produto"><?=$destaque['nome']?></div>
             <div> 
-              <div class="valor-produto">R$ <?= $destaque['valor']-($destaque['desconto']*0.1)?></div>
+              <div class="valor-produto"><strike>R$ <?=$destaque['valor']?></strike></div>
+              <div class="valor-produto-desconto">R$ <?= ($destaque['valor']*(100-$destaque['desconto']))/100?></div>
               <div class="unidade-produto">(Uni)</div>
             </div>  
             <div class="estrelas">
@@ -155,7 +156,8 @@ $listaAlimentos=$produtos->listaAlimentos();?>
           </div>        
             <div class="nome-produto"><?=$produtos['nome']?></div>
             <div> 
-              <div class="valor-produto">R$ <?= $produtos['valor']?></div>
+              <div class="valor-produto"><strike>R$ <?=$destaque['valor']?></strike></div>
+              <div class="valor-produto-desconto">R$ <?= ($destaque['valor']*(100-$destaque['desconto']))/100?></div>
               <div class="unidade-produto">(Uni)</div>
             </div>  
             <div class="estrelas">
@@ -200,7 +202,8 @@ $listaAlimentos=$produtos->listaAlimentos();?>
           </div>        
             <div class="nome-produto"><?=$produtos['nome']?></div>
             <div> 
-              <div class="valor-produto">R$ <?= $produtos['valor']?></div>
+              <div class="valor-produto"><strike>R$ <?=$destaque['valor']?></strike></div>
+              <div class="valor-produto-desconto">R$ <?= ($destaque['valor']*(100-$destaque['desconto']))/100?></div>
               <div class="unidade-produto">(Uni)</div>
             </div>  
             <div class="estrelas">

@@ -110,8 +110,16 @@ a:hover{
   margin: 5px;  
   margin-left: 5px;
   text-align: left !important;;  
-  font-size: 20px;
   color: tomato;  
+  float: left;
+}
+
+.valor-produto-desconto{
+  margin: 5px;  
+  margin-left: 5px;
+  text-align: left !important;;  
+  font-size: 20px;
+  color: #000;  
   float: left;
 }
 

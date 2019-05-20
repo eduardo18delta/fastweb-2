@@ -234,7 +234,8 @@
 
     .valor-sem-desconto{
       margin-top: -15px; 
-      color: #ccc;
+      color: #e04f5f;
+      font-size: 14px;
     }
 
 
@@ -591,7 +592,8 @@
 
     .valor-sem-desconto{
       margin-top: 15px; 
-      color: #ccc;
+      color: #e04f5f;
+      font-size: 14px;
     }
 
 
