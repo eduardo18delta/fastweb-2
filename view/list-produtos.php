@@ -153,20 +153,16 @@ include_once '../parts/head.php'; ?>
 </div>
 <div class="row"> 
 
-          <div class="col-md-3 col-sm-12 form-group">
+          <div class="col-md-4 col-sm-12 form-group">
           <label>QTD:</label>
           <input class="form-control" type="number" name="quantidade" required>
           </div>
-          <div class="col-md-3 col-sm-12 form-group">
+          <div class="col-md-4 col-sm-12 form-group">
           <label>Peso (Kg):</label>
           <input class="form-control"  type="number" name="peso" required>
           </div>
-          <div class="col-md-3 col-sm-12 form-group">
-          <label>UND:</label>
-          <input class="form-control"  type="number" name="peso" required>
-          </div>
           
-          <div class="col-md-3 col-sm-12 form-group">
+          <div class="col-md-4 col-sm-12 form-group">
             <div>MEDIDAS</div>
             <label class="item-medida rs">R$</label>
             <label class="item-medida kg">Kg</label>
@@ -301,20 +297,16 @@ include_once '../parts/head.php'; ?>
 </div>
 <div class="row"> 
 
-          <div class="col-md-3 col-sm-12 form-group">
+          <div class="col-md-4 col-sm-12 form-group">
           <label>QTD:</label>
           <input class="form-control" type="number" name="quantidade" value="<?=$produtos['quantidade']?>" required>
           </div>
-          <div class="col-md-3 col-sm-12 form-group">
+          <div class="col-md-4 col-sm-12 form-group">
           <label>Peso (Kg):</label>
           <input class="form-control"  type="number" name="peso" value="<?=$produtos['peso']?>" required>
           </div>
-          <div class="col-md-3 col-sm-12 form-group">
-          <label>UND:</label>
-          <input class="form-control"  type="number" name="peso" required>
-          </div>
           
-          <div class="col-md-3 col-sm-12 form-group">
+          <div class="col-md-4 col-sm-12 form-group">
             <div>MEDIDAS</div>
             <label class="item-medida rs">R$</label>
             <label class="item-medida kg">Kg</label>
