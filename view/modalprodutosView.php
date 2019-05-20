@@ -84,6 +84,13 @@ include '../parts/scriptmodal.php';
                 <i class="fa"></i>
               </p>
 
+              <span class="container_categoria">
+                <span>
+                  <strong>Categoria: </strong>
+                </span>
+                <span class="categoria">Aqui fica a categoria</span>
+              </span> 
+
               <!--====DESCONTO====-->
               <div>
                 <div class="valor-sem-desconto">

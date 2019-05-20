@@ -58,6 +58,7 @@ $modal['valor'] = number_format($modal['valor'],2,",",".");
       $(".valor-sem-desconto").html("R$ <strike>'.$modal['valor'].'</strike>")
       $(".valor").html("R$ '.$valor_com_desconto.'")
       $(".descricao").text("'.$modal['descricao'].'")
+      $(".categoria").text("'.$modal['descricao_categoria'].'")
       $(".desconto-icon").text("'.$modal['desconto'].'%")
       $(".valor").addClass("valor'.$modal['id_produto'].'")
       

@@ -259,6 +259,18 @@
       margin-bottom: 20px;
     }
 
+    .container_categoria{
+      display: flex; 
+      margin-bottom: 0px;
+    }
+
+    .container_categoria span{
+      color: #888;
+      display: flex; 
+      margin-bottom: 0px;
+      font-size: 12px;
+    }
+
     .aviso-medida{
       font-size: 7px; 
       font-family: sans-serif;
@@ -625,6 +637,18 @@
     .container_descricao{
       display: flex; 
       margin-bottom: 20px;
+    }
+
+    .container_categoria{
+      display: flex; 
+      margin-bottom: 0px;
+    }
+
+    .container_categoria span{
+      color: #888;
+      display: flex; 
+      margin-bottom: 0px;
+      font-size: 12px;
     }
 
     .aviso-medida{
