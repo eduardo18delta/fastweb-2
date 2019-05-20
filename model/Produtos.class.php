@@ -295,7 +295,7 @@ class Produtos extends Conexao
     	$this->updateProduto = $conexao->prepare("
 
         UPDATE produtos SET nome = :nome,valor = :valor,categoria_fk = :categoria,fornecedor = :fornecedor,
-        validade = :validade,quantidade = :quantidade,marca = :marca,descricao = :descricao,peso = :peso,medida = :medida,desconto = :desconto,cod_barra = :cod_barra,destaque = :destaque,img_01 = :img_01,img_02 = :img_02,img_03 = :img_03,img_04 = :img_04,img_05 = :img_05,img_06 = :img_06
+        validade = :validade,quantidade = :quantidade,marca = :marca,descricao = :descricao,peso = :peso,medida = :medida,desconto = :desconto,cod_barra = :cod_barra,destaque = :destaque
 
         WHERE id_produto = :id ");
       
@@ -313,13 +313,21 @@ class Produtos extends Conexao
         $this->updateProduto->bindValue(":desconto", $this->desconto, PDO::PARAM_STR);
         $this->updateProduto->bindValue(":cod_barra", $this->cod_barra, PDO::PARAM_STR);
         $this->updateProduto->bindValue(":destaque", $this->destaque, PDO::PARAM_STR);
-        $this->updateProduto->bindValue(":img_01", $this->img_01, PDO::PARAM_STR); 
-        $this->updateProduto->bindValue(":img_02", $this->img_02, PDO::PARAM_STR); 
-        $this->updateProduto->bindValue(":img_03", $this->img_03, PDO::PARAM_STR); 
-        $this->updateProduto->bindValue(":img_04", $this->img_04, PDO::PARAM_STR); 
-        $this->updateProduto->bindValue(":img_05", $this->img_05, PDO::PARAM_STR); 
-        $this->updateProduto->bindValue(":img_06", $this->img_06, PDO::PARAM_STR); 
     	$this->updateProduto->execute();
+    }
+
+    public function atualizarImg($img)
+    {
+        $conexao = Conexao::conectarBanco();
+        $this->updateProduto = $conexao->prepare("
+
+        UPDATE produtos SET $img
+
+        WHERE id_produto = :id ");
+
+        //$this->updateProduto->bindValue(":img_01", $this->img_01, PDO::PARAM_STR);
+        $this->updateProduto->bindValue(":id", $this->id, PDO::PARAM_STR);
+        $this->updateProduto->execute();
     }
 
 }

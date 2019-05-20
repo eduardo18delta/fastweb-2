@@ -181,6 +181,146 @@ $("#input-img-produto-06").on('change', function () {
 
 });
 
+
+
+
+$("#upd-input-img-produto-01").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $("#upd-img-produto-01");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-img-produto"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+
+});
+
+$("#upd-input-img-produto-02").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $("#upd-img-produto-02");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-img-produto"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+
+});
+
+
+$("#upd-input-img-produto-03").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $("#upd-img-produto-03");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-img-produto"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+
+});
+
+
+$("#upd-input-img-produto-04").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $("#upd-img-produto-04");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-img-produto"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+
+});
+
+$("#upd-input-img-produto-05").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $("#upd-img-produto-05");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-img-produto"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+
+});
+
+$("#upd-input-img-produto-06").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $("#upd-img-produto-06");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-img-produto"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+
+});
+
+
+
+
 $(".rs").css("background-color","#fff")
 $(".rs").css("color","#000")
 $(".kg").css("background-color","#fff")
