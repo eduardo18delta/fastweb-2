@@ -295,7 +295,7 @@ class Produtos extends Conexao
     	$this->updateProduto = $conexao->prepare("
 
         UPDATE produtos SET nome = :nome,valor = :valor,categoria_fk = :categoria,fornecedor = :fornecedor,
-        validade = :validade,quantidade = :quantidade,marca = :marca
+        validade = :validade,quantidade = :quantidade,marca = :marca,descricao = :descricao,peso = :peso,medida = :medida,desconto = :desconto,cod_barra = :cod_barra,destaque = :destaque,img_01 = :ima_01,img_02 = :img_02,img_03 = :ima_03,img_04 = :img_04,img_05 = :ima_05,img_06 = :img_06
 
         WHERE id_produto = :id ");
       

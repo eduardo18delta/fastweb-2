@@ -31,23 +31,23 @@ include_once '../parts/head.php';
 		<div class="row">  
 		<div class="col-md-12 col-sm-12 form-group produtos-selecionados">
 		    <label for='input-img-produto-01' class="produtos-adicionados add-produto-principal" id="add-img-produto-01">
-		    <img src="../assets/img/img-add-produto.png" width="100%" height="100%">
+		    <img src="../assets/img/upload_produtos/<?= $lista['img_01']?>" width="100%" height="100%">
 		    <span>PRINCIPAL</span> 
 		    </label>
 		    <label for='input-img-produto-02' class="produtos-adicionados" id="add-img-produto-02">
-		    <img src="../assets/img/img-add-produto.png" width="100%" height="100%" class="teste"> 
+		    <img src="../assets/img/upload_produtos/<?= $lista['img_02']?>" width="100%" height="100%" class="teste"> 
 		    </label>
 		    <label for='input-img-produto-03' class="produtos-adicionados" id="add-img-produto-03">
-		    <img src="../assets/img/img-add-produto.png" width="100%" height="100%"> 
+		    <img src="../assets/img/upload_produtos/<?= $lista['img_03']?>" width="100%" height="100%"> 
 		    </label>
 		    <label for='input-img-produto-04' class="produtos-adicionados" id="add-img-produto-04">
-		    <img src="../assets/img/img-add-produto.png" width="100%" height="100%"> 
+		    <img src="../assets/img/upload_produtos/<?= $lista['img_04']?>" width="100%" height="100%"> 
 		    </label>
 		    <label for='input-img-produto-05' class="produtos-adicionados" id="add-img-produto-05">
-		    <img src="../assets/img/img-add-produto.png" width="100%" height="100%"> 
+		    <img src="../assets/img/upload_produtos/<?= $lista['img_05']?>" width="100%" height="100%"> 
 		    </label>
 		    <label for='input-img-produto-06' class="produtos-adicionados" id="add-img-produto-06">
-		    <img src="../assets/img/img-add-produto.png" width="100%" height="100%"> 
+		    <img src="../assets/img/upload_produtos/<?= $lista['img_06']?>" width="100%" height="100%"> 
 		    </label>
 		 
 
