@@ -69,10 +69,8 @@ $telefone_ddd = substr($telefone, 0, -9);
         foreach($_SESSION['carrinho'] as $id_produto => $qtd){ 
         $listaEspecifica=$produtos->setId($id_produto);
         $listaEspecifica=$produtos->listaEspecifica();
-
-
-
-
+        $listaEspecifica['desconto'] = 100-$listaEspecifica['desconto'];
+        
 
         if ($_SESSION['teste2'][$id_produto]=="rs") {
         /*
@@ -92,7 +90,7 @@ $telefone_ddd = substr($telefone, 0, -9);
         $valor_total += $qtd;
         $qtd_produtos++;
         //$id = $listaEspecifica['id_produto'];
-        $valor = $qtd;
+        $valor = ($qtd*$listaEspecifica['desconto'])/100;
         $valor = number_format($valor,2,".",".");
         //echo $valor;
         //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
@@ -158,6 +156,7 @@ $telefone_ddd = substr($telefone, 0, -9);
         $qtd_produtos++;
         //$id = $listaEspecifica['id_produto'];
         $peso = $listaEspecifica['valor']*$qtd/$listaEspecifica['peso'];
+        $peso = ($peso*$listaEspecifica['desconto'])/100;
         $kg = number_format($peso,0);
         $valor = number_format($peso,2,".",".");
         $peso = number_format($peso,2,".",".");
@@ -222,7 +221,7 @@ $telefone_ddd = substr($telefone, 0, -9);
         $valor_total += $listaEspecifica['valor'] * $qtd;
         $qtd_produtos++;
         //$id = $listaEspecifica['id_produto'];
-        $valor = $listaEspecifica['valor'];
+        $valor = ($listaEspecifica['valor']*$listaEspecifica['desconto'])/100;
         $valor = number_format($valor,2,".",".");
         //echo $valor;
         //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
