@@ -246,33 +246,33 @@ include_once '../parts/head.php'; ?>
         <input type="hidden" name="id_produto" class="id_produto" value="<?=$produtos['id_produto']?>">
 <div class="row">  
 <div class="col-md-12 col-sm-12 form-group produtos-selecionados">
-    <label for='upd-input-img-produto-01' class="produtos-adicionados add-produto-principal upd-img-produto-01">
+    <label for='upd<?=$produtos['id_produto']?>-input-img-produto-1' class="produtos-adicionados add-produto-principal upd<?=$produtos['id_produto']?>-img-produto-1">
     <img src="../assets/img/upload_produtos/<?= $produtos['img_01']?>" onerror="this.src='../assets/img/img-add-produto.png'" width="100%" height="100%">
     <span>PRINCIPAL</span> 
     </label>
-    <label for='upd-input-img-produto-02' class="produtos-adicionados upd-img-produto-02">
+    <label for='upd<?=$produtos['id_produto']?>-input-img-produto-2' class="produtos-adicionados upd<?=$produtos['id_produto']?>-img-produto-2">
     <img src="../assets/img/upload_produtos/<?= $produtos['img_02']?>" onerror="this.src='../assets/img/img-add-produto.png'" width="100%" height="100%" class="teste"> 
     </label>
-    <label for='upd-input-img-produto-03' class="produtos-adicionados upd-img-produto-03">
+    <label for='upd<?=$produtos['id_produto']?>-input-img-produto-3' class="produtos-adicionados upd<?=$produtos['id_produto']?>-img-produto-3">
     <img src="../assets/img/upload_produtos/<?= $produtos['img_03']?>" onerror="this.src='../assets/img/img-add-produto.png'" width="100%" height="100%"> 
     </label>
-    <label for='upd-input-img-produto-04' class="produtos-adicionados upd-img-produto-04">
+    <label for='upd<?=$produtos['id_produto']?>-input-img-produto-4' class="produtos-adicionados upd<?=$produtos['id_produto']?>-img-produto-4">
     <img src="../assets/img/upload_produtos/<?= $produtos['img_04']?>" onerror="this.src='../assets/img/img-add-produto.png'" width="100%" height="100%"> 
     </label>
-    <label for='upd-input-img-produto-05' class="produtos-adicionados upd-img-produto-05">
+    <label for='upd<?=$produtos['id_produto']?>-input-img-produto-5' class="produtos-adicionados upd<?=$produtos['id_produto']?>-img-produto-5">
     <img src="../assets/img/upload_produtos/<?= $produtos['img_05']?>" onerror="this.src='../assets/img/img-add-produto.png'" width="100%" height="100%"> 
     </label>
-    <label for='upd-input-img-produto-06' class="produtos-adicionados upd-img-produto-06">
+    <label for='upd<?=$produtos['id_produto']?>-input-img-produto-6' class="produtos-adicionados upd<?=$produtos['id_produto']?>-img-produto-6">
     <img src="../assets/img/upload_produtos/<?= $produtos['img_06']?>" onerror="this.src='../assets/img/img-add-produto.png'" width="100%" height="100%"> 
     </label>
  
 
-    <input type="file" name="img<?=$produtos['id_produto']?>_01" id='upd-input-img-produto-01' class="dnone">
-    <input type="file" name="img<?=$produtos['id_produto']?>_02" id='upd-input-img-produto-02' class="dnone">
-    <input type="file" name="img<?=$produtos['id_produto']?>_03" id='upd-input-img-produto-03' class="dnone">
-    <input type="file" name="img<?=$produtos['id_produto']?>_04" id='upd-input-img-produto-04' class="dnone">
-    <input type="file" name="img<?=$produtos['id_produto']?>_05" id='upd-input-img-produto-05' class="dnone">
-    <input type="file" name="img<?=$produtos['id_produto']?>_06" id='upd-input-img-produto-06' class="dnone">
+    <input type="file" name="img_01" id='upd<?=$produtos['id_produto']?>-input-img-produto-1' class="dnone">
+    <input type="file" name="img_02" id='upd<?=$produtos['id_produto']?>-input-img-produto-2' class="dnone">
+    <input type="file" name="img_03" id='upd<?=$produtos['id_produto']?>-input-img-produto-3' class="dnone">
+    <input type="file" name="img_04" id='upd<?=$produtos['id_produto']?>-input-img-produto-4' class="dnone">
+    <input type="file" name="img_05" id='upd<?=$produtos['id_produto']?>-input-img-produto-5' class="dnone">
+    <input type="file" name="img_06" id='upd<?=$produtos['id_produto']?>-input-img-produto-6' class="dnone">
 
   </div>
  
@@ -373,6 +373,150 @@ include_once '../parts/head.php'; ?>
     </div>
   </div>
 </div>
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+$(document).ready( function() {
+  $("#upd<?=$produtos['id_produto']?>-input-img-produto-1").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $(".upd<?=$produtos['id_produto']?>-img-produto-1");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-img-produto"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+
+});
+
+$("#upd<?=$produtos['id_produto']?>-input-img-produto-2").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $(".upd<?=$produtos['id_produto']?>-img-produto-2");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-img-produto"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+
+});
+
+$("#upd<?=$produtos['id_produto']?>-input-img-produto-3").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $(".upd<?=$produtos['id_produto']?>-img-produto-3");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-img-produto"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+
+});
+
+$("#upd<?=$produtos['id_produto']?>-input-img-produto-4").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $(".upd<?=$produtos['id_produto']?>-img-produto-4");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-img-produto"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+
+});
+
+$("#upd<?=$produtos['id_produto']?>-input-img-produto-5").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $(".upd<?=$produtos['id_produto']?>-img-produto-5");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-img-produto"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+
+});
+
+$("#upd<?=$produtos['id_produto']?>-input-img-produto-6").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $(".upd<?=$produtos['id_produto']?>-img-produto-6");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-img-produto"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+
+});
+
+
+}); //fim do jquery
+</script>
+
 <?php endforeach?>
 
 <!-- Modal -->

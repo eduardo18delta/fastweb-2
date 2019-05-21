@@ -182,8 +182,8 @@ $("#input-img-produto-06").on('change', function () {
 });
 
 
-for (var i = 0; i < 6; i++) {
-
+//for (var i = 0; i < 6; i++) {
+/*
 
 $("#upd-input-img-produto-01").on('change', function () {
  
@@ -320,8 +320,8 @@ $("#upd-input-img-produto-06").on('change', function () {
 });
 
 //alert (i)
-}
-
+//}
+*/
 
 $(".rs").css("background-color","#fff")
 $(".rs").css("color","#000")
