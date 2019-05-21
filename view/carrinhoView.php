@@ -180,11 +180,21 @@ $('#comprar').submit();
 
 </script>
 
-
+<?php 
+if (isset($lista['id'])) {
+echo '
 <div class="col-md-3 col mt-4">
     <button onclick="enviaPagseguro()" class="btn btn-danger form-control">FINALIZAR COMPRA</button>
 </div>
-
+';
+} else {
+echo '
+<div class="col-md-3 col mt-4">
+    <a href="../view/loginclienteView.php" class="btn btn-danger form-control">FINALIZAR COMPRA</a>
+</div>
+';  
+}
+?>
 <form id="comprar" action="https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
 <!--
 <form id="comprar" action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
