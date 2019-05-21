@@ -24,7 +24,7 @@ if(isset($_POST['rm-produto'])){
 
 //<!--++++++++++++++++++++++++++++++++ESTANCIAMENTO+++++++++++++++++++++++++++++++++++++-->
 require_once '../model/autoload.php'; $produtos_modal = new Produtos(); 
-$listar_produtos=$produtos_modal->listarDestaque();
+$listar_produtos=$produtos_modal->listar();
 
 
          //<!--+++++++++++++++++++++++++++++BEM VINDO SCRIPT MODAL+++++++++++++++++++++++++++++++++-->
