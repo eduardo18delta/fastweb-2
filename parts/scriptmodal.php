@@ -34,7 +34,7 @@ $listar_produtos=$produtos_modal->listarDestaque();
 
  $w="'"; //Variável que armazena uma aspa simples para ser usado no script abaixo
 
-$valor_com_desconto = $modal['valor']-($modal['desconto']*0.1);
+$valor_com_desconto = ($modal['valor']*(100-$modal['desconto']))/100;
 $valor_com_desconto = number_format($modal['valor'],2,",",".");
 $modal['valor'] = number_format($modal['valor'],2,",",".");
 
