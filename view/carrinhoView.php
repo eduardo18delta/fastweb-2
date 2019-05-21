@@ -118,7 +118,6 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
 <div class="row mt-4 desfocar carrinho-footer">       
   <div class="col-md-7 col mt-4">
     <div>Quantidade de Produtos (<?=$qtd_produtos?>)</div>
-    <div>Endereço de Entrega</div>
     <div>
 
 <?php  if(isset($_SESSION['id'])) { 
@@ -139,7 +138,12 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
 if ($lista['id']==$_SESSION['endereco_fk']) {
 $_SESSION['cep'] = $lista['cep'];
 $_SESSION['numero'] = $lista['numero'];
- echo $lista['rua'].", nº ".$lista['numero'].", ".$lista['bairro'].", ".$lista['cidade']."-".$lista['estado'];
+ echo 
+ "<div>Endereço de Entrega</div>"
+
+ .$lista['rua'].", nº ".$lista['numero'].", ".$lista['bairro'].", ".$lista['cidade']."-".$lista['estado']
+
+ ."| <a class='carrinho-endereco' href='../view/list-enderecoclienteView.php'>Alterar endereço de entrega</a>";
 }
 
 ?>
@@ -150,12 +154,12 @@ $_SESSION['numero'] = $lista['numero'];
 } 
 else 
 { 
-  echo "Faça login para novos endereços"; 
+  //echo "Faça login para novos endereços"; 
 } 
 
 ?>
 
-     | <a class="carrinho-endereco" href="../view/list-enderecoclienteView.php">Alterar endereço de entrega</a></div>
+     </div>
   </div>    
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
