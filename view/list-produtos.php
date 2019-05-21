@@ -243,36 +243,36 @@ include_once '../parts/head.php'; ?>
       </div>
       <div class="modal-body">      
         <form id="atualizarproduto<?=$produtos['id_produto']?>" method="post" action="../controller/updateprodutosController.php" autocomplete="off" enctype="multipart/form-data">
-        <input type="hidden" name="id_produto" value="<?=$produtos['id_produto']?>">
+        <input type="hidden" name="id_produto" class="id_produto" value="<?=$produtos['id_produto']?>">
 <div class="row">  
 <div class="col-md-12 col-sm-12 form-group produtos-selecionados">
-    <label for='upd-input-img-produto-01' class="produtos-adicionados add-produto-principal" id="upd-img-produto-01">
+    <label for='upd-input-img-produto-01' class="produtos-adicionados add-produto-principal upd-img-produto-01">
     <img src="../assets/img/upload_produtos/<?= $produtos['img_01']?>" onerror="this.src='../assets/img/img-add-produto.png'" width="100%" height="100%">
     <span>PRINCIPAL</span> 
     </label>
-    <label for='upd-input-img-produto-02' class="produtos-adicionados" id="upd-img-produto-02">
+    <label for='upd-input-img-produto-02' class="produtos-adicionados upd-img-produto-02">
     <img src="../assets/img/upload_produtos/<?= $produtos['img_02']?>" onerror="this.src='../assets/img/img-add-produto.png'" width="100%" height="100%" class="teste"> 
     </label>
-    <label for='upd-input-img-produto-03' class="produtos-adicionados" id="upd-img-produto-03">
+    <label for='upd-input-img-produto-03' class="produtos-adicionados upd-img-produto-03">
     <img src="../assets/img/upload_produtos/<?= $produtos['img_03']?>" onerror="this.src='../assets/img/img-add-produto.png'" width="100%" height="100%"> 
     </label>
-    <label for='upd-input-img-produto-04' class="produtos-adicionados" id="upd-img-produto-04">
+    <label for='upd-input-img-produto-04' class="produtos-adicionados upd-img-produto-04">
     <img src="../assets/img/upload_produtos/<?= $produtos['img_04']?>" onerror="this.src='../assets/img/img-add-produto.png'" width="100%" height="100%"> 
     </label>
-    <label for='upd-input-img-produto-05' class="produtos-adicionados" id="upd-img-produto-05">
+    <label for='upd-input-img-produto-05' class="produtos-adicionados upd-img-produto-05">
     <img src="../assets/img/upload_produtos/<?= $produtos['img_05']?>" onerror="this.src='../assets/img/img-add-produto.png'" width="100%" height="100%"> 
     </label>
-    <label for='upd-input-img-produto-06' class="produtos-adicionados" id="upd-img-produto-06">
+    <label for='upd-input-img-produto-06' class="produtos-adicionados upd-img-produto-06">
     <img src="../assets/img/upload_produtos/<?= $produtos['img_06']?>" onerror="this.src='../assets/img/img-add-produto.png'" width="100%" height="100%"> 
     </label>
  
 
-    <input type="file" name="img_01" id='upd-input-img-produto-01' class="dnone">
-    <input type="file" name="img_02" id='upd-input-img-produto-02' class="dnone">
-    <input type="file" name="img_03" id='upd-input-img-produto-03' class="dnone">
-    <input type="file" name="img_04" id='upd-input-img-produto-04' class="dnone">
-    <input type="file" name="img_05" id='upd-input-img-produto-05' class="dnone">
-    <input type="file" name="img_06" id='upd-input-img-produto-06' class="dnone">
+    <input type="file" name="img<?=$produtos['id_produto']?>_01" id='upd-input-img-produto-01' class="dnone">
+    <input type="file" name="img<?=$produtos['id_produto']?>_02" id='upd-input-img-produto-02' class="dnone">
+    <input type="file" name="img<?=$produtos['id_produto']?>_03" id='upd-input-img-produto-03' class="dnone">
+    <input type="file" name="img<?=$produtos['id_produto']?>_04" id='upd-input-img-produto-04' class="dnone">
+    <input type="file" name="img<?=$produtos['id_produto']?>_05" id='upd-input-img-produto-05' class="dnone">
+    <input type="file" name="img<?=$produtos['id_produto']?>_06" id='upd-input-img-produto-06' class="dnone">
 
   </div>
  

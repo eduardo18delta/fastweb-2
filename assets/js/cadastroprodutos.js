@@ -182,13 +182,14 @@ $("#input-img-produto-06").on('change', function () {
 });
 
 
+for (var i = 0; i < 6; i++) {
 
 
 $("#upd-input-img-produto-01").on('change', function () {
  
     if (typeof (FileReader) != "undefined") {
  
-        var image_holder = $("#upd-img-produto-01");
+        var image_holder = $(".upd-img-produto-01");
         image_holder.empty();
  
         var reader = new FileReader();
@@ -318,7 +319,8 @@ $("#upd-input-img-produto-06").on('change', function () {
 
 });
 
-
+//alert (i)
+}
 
 
 $(".rs").css("background-color","#fff")

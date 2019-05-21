@@ -46,7 +46,8 @@ $produtos->medida = $medida;
 $produtos->desconto = $desconto;
 $produtos->cod_barra = $cod_barra;
 $produtos->destaque = $destaque;
-
+$produtos->setId($id);
+$produtos->atualizar();
 
 if ($_FILES["img_01"]["tmp_name"]!=""){
 
@@ -55,54 +56,48 @@ $produtos->setId($id);
 $produtos->atualizarImg("img_01='$produtos->img_01'");
 
 } 
-/*
+
 if ($_FILES["img_02"]["tmp_name"]!=""){
 
 $produtos->img_02 = $img_02;
-
 $produtos->setId($id);
-$produtos->atualizar();
+$produtos->atualizarImg("img_02='$produtos->img_02'");
 
 } 
 
 if ($_FILES["img_03"]["tmp_name"]!=""){
 
 $produtos->img_03 = $img_03;
-
 $produtos->setId($id);
-$produtos->atualizar();
+$produtos->atualizarImg("img_03='$produtos->img_03'");
 
 } 
 
 if ($_FILES["img_04"]["tmp_name"]!=""){
 
 $produtos->img_04 = $img_04;
-
 $produtos->setId($id);
-$produtos->atualizar();
+$produtos->atualizarImg("img_04='$produtos->img_04'");
 
 } 
 
 if ($_FILES["img_05"]["tmp_name"]!=""){
 
 $produtos->img_05 = $img_05;
-
 $produtos->setId($id);
-$produtos->atualizar();
+$produtos->atualizarImg("img_05='$produtos->img_05'");
 
 } 
 
 if ($_FILES["img_06"]["tmp_name"]!=""){
 
 $produtos->img_06 = $img_06;
-
 $produtos->setId($id);
-$produtos->atualizar();
+$produtos->atualizarImg("img_06='$produtos->img_06'");
 
-} 
-*/
-$produtos->setId($id);
-$produtos->atualizar();
+}  
+
+
 
 header("Location: ../view/list-produtos.php");
 
