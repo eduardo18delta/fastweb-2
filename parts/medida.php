@@ -8,7 +8,7 @@ public function calcularMedida(){
 
 require_once '../model/autoload.php'; 
 $produtos = new Produtos(); 
-$listadestaque=$produtos->listarDestaque();
+$listadestaque=$produtos->listar();
 
         foreach($listadestaque as $destaque){
 

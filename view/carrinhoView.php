@@ -154,7 +154,7 @@ $_SESSION['numero'] = $lista['numero'];
 } 
 else 
 { 
-  //echo "Faça login para novos endereços"; 
+  echo "Cadastre-se ou faça login. Aproveite os benefícios oferecidos pela Fastwebstore. "; 
 } 
 
 ?>
