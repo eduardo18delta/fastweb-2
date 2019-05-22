@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 22/05/2019 às 18:29
+-- Tempo de geração: 22/05/2019 às 18:32
 -- Versão do servidor: 5.7.26-0ubuntu0.19.04.1
 -- Versão do PHP: 7.2.17-0ubuntu0.19.04.1
 
@@ -23,53 +23,45 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `pedido`
+-- Estrutura para tabela `clientes`
 --
 
-CREATE TABLE `pedido` (
+CREATE TABLE `clientes` (
   `id` int(11) NOT NULL,
-  `cliente_fk` int(11) DEFAULT NULL,
-  `endereco_fk` int(11) DEFAULT NULL,
-  `status_fk` int(11) DEFAULT NULL,
-  `valor` int(11) NOT NULL,
-  `pedido_efetuado` varchar(40) DEFAULT NULL,
-  `pagamento_autorizado` varchar(40) DEFAULT NULL,
-  `nf_emitida` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `telefone` varchar(20) NOT NULL,
+  `sexo` varchar(15) NOT NULL,
+  `senha` varchar(100) NOT NULL,
+  `ofertas` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `nome`, `email`, `telefone`, `sexo`, `senha`, `ofertas`) VALUES
+(2, 'Cliente teste', 'cliente@gmail.com', '(96)99175-5811', 'Masculino', 'e10adc3949ba59abbe56e057f20f883e', 1);
 
 --
 -- Índices de tabelas apagadas
 --
 
 --
--- Índices de tabela `pedido`
+-- Índices de tabela `clientes`
 --
-ALTER TABLE `pedido`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `status_fk` (`status_fk`),
-  ADD KEY `cliente_fk` (`cliente_fk`),
-  ADD KEY `produto_fk` (`endereco_fk`);
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
--- AUTO_INCREMENT de tabela `pedido`
+-- AUTO_INCREMENT de tabela `clientes`
 --
-ALTER TABLE `pedido`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- Restrições para dumps de tabelas
---
-
---
--- Restrições para tabelas `pedido`
---
-ALTER TABLE `pedido`
-  ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`status_fk`) REFERENCES `status_pedido` (`id`),
-  ADD CONSTRAINT `pedido_ibfk_3` FOREIGN KEY (`endereco_fk`) REFERENCES `produtos` (`id_produto`);
-
+ALTER TABLE `clientes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
