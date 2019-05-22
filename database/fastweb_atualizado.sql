@@ -326,3 +326,7 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2019-05-11 17:04:05
+/*==============ALTERAÇÕES QUE FORAM FEITAS NO BD ORGANIZAR AS TABELAS CLIENTES, ENDERECO...=============*/
+ALTER TABLE endereco add principal int NOT NULL;
+ALTER TABLE tabela drop FOREIGN KEY clientes_ibfk_1;
+ALTER TABLE clientes drop column endereco_fk;
