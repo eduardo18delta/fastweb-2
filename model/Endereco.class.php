@@ -4,7 +4,7 @@ require_once "autoload.php";
 
 class Endereco extends Conexao
 {
-
+    public $cliente_fk ;
 	public $cep;
 	public $rua;
 	public $numero;
@@ -29,8 +29,8 @@ class Endereco extends Conexao
         $this->cadastrarEndereco = $conexao->prepare("
 
         INSERT INTO endereco 
-        (id, cep, rua, numero, bairro, cidade, estado, ibge, principal) VALUES 
-        (NULL, :cep , :rua , :numero, :bairro, :cidade , :estado, :ibge, :principal);");
+        (id, cep, rua, numero, bairro, cidade, estado, ibge,cliente_fk, principal) VALUES 
+        (NULL, :cep , :rua , :numero, :bairro, :cidade , :estado, :ibge, :cliente_fk, :principal);");
         
         $this->cadastrarEndereco->bindValue(":cep", $this->cep, PDO::PARAM_STR); 
         $this->cadastrarEndereco->bindValue(":rua", $this->rua, PDO::PARAM_STR);  
@@ -39,6 +39,7 @@ class Endereco extends Conexao
         $this->cadastrarEndereco->bindValue(":cidade", $this->cidade, PDO::PARAM_STR); 
         $this->cadastrarEndereco->bindValue(":estado", $this->estado, PDO::PARAM_STR); 
         $this->cadastrarEndereco->bindValue(":ibge", $this->ibge, PDO::PARAM_STR); 
+        $this->cadastrarEndereco->bindValue(":cliente_fk", $this->cliente_fk, PDO::PARAM_STR); 
         $this->cadastrarEndereco->bindValue(":principal", $this->principal, PDO::PARAM_STR); 
         $this->cadastrarEndereco->execute();
         $_SESSION['msgcadastro'] = "

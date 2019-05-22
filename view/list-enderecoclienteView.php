@@ -154,7 +154,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
           			<div class="col">                         			
             			<a id="nome-cliente" href="perfilclienteView.php">              
             			<i class="fas fa-bars"></i>
-            			Minha conta - Olá  <?=$_SESSION['nome'] ?>    
+            			Minha conta - Olá  <?=$_SESSION['nome'] ?>  
             			</a>  
           			</div>          
         		</div>
