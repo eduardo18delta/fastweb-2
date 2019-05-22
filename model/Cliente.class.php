@@ -45,7 +45,7 @@ Class Cliente extends Conexao{
         $this->cadastrarCliente->execute();
 
     }
-
+/*
     public function atualizarCliente()
     {
         $conexao = Conexao::conectarBanco();
@@ -55,7 +55,7 @@ Class Cliente extends Conexao{
         $this->atualizarCliente->execute();
 
     }
-
+*/
     public function deletar()
     {
     	$conexao = Conexao::conectarBanco();
@@ -77,16 +77,9 @@ Class Cliente extends Conexao{
         clientes.telefone,
         clientes.sexo,
         clientes.senha,
-        clientes.ofertas,
-        clientes.endereco_fk,
-        endereco.cep,
-        endereco.rua,
-        endereco.numero,
-        endereco.bairro,
-        endereco.cidade,
-        endereco.estado
+        clientes.ofertas
 
-        FROM clientes JOIN endereco on clientes.endereco_fk=endereco.id WHERE email = :email AND senha = :senha
+        FROM clientes WHERE email = :email AND senha = :senha
         ");
       $this->login->bindValue(":email", $this->email, PDO::PARAM_STR);
       $this->login->bindValue(":senha", $this->password, PDO::PARAM_STR);
@@ -99,16 +92,10 @@ Class Cliente extends Conexao{
 		$email = $sql['email'];
         $nome = $sql['nome'];
         $telefone = $sql['telefone'];
-        $cep = $sql['cep'];
-        $numero = $sql['numero'];
-        $endereco_fk = $sql['endereco_fk'];
 		$_SESSION['id'] = $id;
 		$_SESSION['email'] = $email;
         $_SESSION['nome'] = $nome;
         $_SESSION['telefone'] = $telefone;
-        $_SESSION['cep'] = $cep;
-        $_SESSION['numero'] = $numero;
-        $_SESSION['endereco_fk'] = $endereco_fk;
 		header("Location: ../view/perfilclienteView.php");
 	} 
 	else

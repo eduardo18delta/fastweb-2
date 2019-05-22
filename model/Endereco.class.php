@@ -12,12 +12,12 @@ class Endereco extends Conexao
 	public $cidade;
 	public $estado;
 	public $ibge;
-	public $cliente_fk;
+	public $principal;
 
-	public function listaEnderecos($idusuario)
+	public function listaEnderecos($principal)
     {       
         $conexao = Conexao::conectarBanco();
-        $query = "SELECT * FROM endereco where cliente_fk = $idusuario";
+        $query = "SELECT * FROM endereco where principal = $principal";
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
         return $lista;
@@ -29,8 +29,8 @@ class Endereco extends Conexao
         $this->cadastrarEndereco = $conexao->prepare("
 
         INSERT INTO endereco 
-        (id, cep, rua, numero, bairro, cidade, estado, ibge, cliente_fk) VALUES 
-        (NULL, :cep , :rua , :numero, :bairro, :cidade , :estado, :ibge, :cliente_fk);");
+        (id, cep, rua, numero, bairro, cidade, estado, ibge, principal) VALUES 
+        (NULL, :cep , :rua , :numero, :bairro, :cidade , :estado, :ibge, :principal);");
         
         $this->cadastrarEndereco->bindValue(":cep", $this->cep, PDO::PARAM_STR); 
         $this->cadastrarEndereco->bindValue(":rua", $this->rua, PDO::PARAM_STR);  
@@ -39,7 +39,7 @@ class Endereco extends Conexao
         $this->cadastrarEndereco->bindValue(":cidade", $this->cidade, PDO::PARAM_STR); 
         $this->cadastrarEndereco->bindValue(":estado", $this->estado, PDO::PARAM_STR); 
         $this->cadastrarEndereco->bindValue(":ibge", $this->ibge, PDO::PARAM_STR); 
-        $this->cadastrarEndereco->bindValue(":cliente_fk", $this->cliente_fk, PDO::PARAM_STR); 
+        $this->cadastrarEndereco->bindValue(":principal", $this->principal, PDO::PARAM_STR); 
         $this->cadastrarEndereco->execute();
         $_SESSION['msgcadastro'] = "
         <div class='alert alert-success mt-4'>
@@ -49,6 +49,15 @@ class Endereco extends Conexao
         </div>";
     }
 
+public function principalEndereco()
+    {
+        $conexao = Conexao::conectarBanco();
+        $this->atualizarCliente = $conexao->prepare("UPDATE endereco SET principal=:principal WHERE id=:id;");
+        $this->atualizarCliente->bindValue(":principal", $this->principal, PDO::PARAM_STR);   
+        $this->atualizarCliente->bindValue(":id", $this->id, PDO::PARAM_STR);   
+        $this->atualizarCliente->execute();
+
+    }
 
 }
 
