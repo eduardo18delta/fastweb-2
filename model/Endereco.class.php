@@ -14,10 +14,10 @@ class Endereco extends Conexao
 	public $ibge;
 	public $principal;
 
-	public function listaEnderecos($principal)
+	public function listaEnderecos($idusuario)
     {       
         $conexao = Conexao::conectarBanco();
-        $query = "SELECT * FROM endereco where principal = $principal";
+        $query = "SELECT * FROM endereco where cliente_fk = $idusuario";
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
         return $lista;
@@ -49,15 +49,20 @@ class Endereco extends Conexao
         </div>";
     }
 
-public function principalEndereco()
+
+    
+    public function principalEndereco()
     {
         $conexao = Conexao::conectarBanco();
-        $this->atualizarCliente = $conexao->prepare("UPDATE endereco SET principal=:principal WHERE id=:id;");
-        $this->atualizarCliente->bindValue(":principal", $this->principal, PDO::PARAM_STR);   
+        $this->atualizarCliente = $conexao->prepare("UPDATE endereco SET principal='0' WHERE principal=1;");
+        $this->atualizarCliente->execute();
+        $this->atualizarCliente = $conexao->prepare("UPDATE endereco SET principal='1' WHERE id=:id;");
+        //$this->atualizarCliente->bindValue(":principal", $this->principal, PDO::PARAM_STR);   
         $this->atualizarCliente->bindValue(":id", $this->id, PDO::PARAM_STR);   
         $this->atualizarCliente->execute();
 
     }
+
 
 }
 

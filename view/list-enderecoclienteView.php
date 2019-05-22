@@ -81,10 +81,18 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                 }
             });
 
-                $('.endereco'+<?= $_SESSION['endereco_fk'] ?>).prop('checked', true)
+            <?php foreach ($listadeenderecos as $lista):?>
+            if (<?= $lista['principal']?>==1) {
+            
+                $('.endereco'+<?= $lista['id']?>).prop('checked', true)
+
+            }
+                                      
+             <?php endforeach?> 
+
+                //$('.endereco1').prop('checked', true)
       
-                    $('.endereco').click(function() {
-                            
+                    $('.endereco').click(function() {   
                         //var endereco = $('#form_endereco').serialize();
                        // alert (cont_pacientes)
                          var endereco = new FormData($('#form_endereco')[0]);

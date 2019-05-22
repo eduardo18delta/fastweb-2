@@ -6,18 +6,18 @@ session_start();  if(isset($_SESSION['id'])) {
 require_once '../model/autoload.php'; 
 
 
-$idcliente = $_SESSION['id'];
-$endereco_fk = $_POST['endereco'];
+//$idcliente = $_SESSION['id'];
+$idendereco = $_POST['endereco'];
 
 
-$clientes = new Cliente();
+$enderecos = new Endereco();
 
-$clientes->endereco_fk = intval($endereco_fk);
-$clientes->id = intval($idcliente);
+$enderecos->id = intval($idendereco);
+//$enderecos->cliente_fk = intval($idcliente);
 
-$clientes->atualizarCliente();
-$_SESSION['endereco_fk'] = $endereco_fk;
-echo json_encode(intval($endereco_fk));
+$enderecos->principalEndereco();
+//$_SESSION['principal'] = $idendereco;
+echo json_encode(intval($idendereco));
 
 
 }

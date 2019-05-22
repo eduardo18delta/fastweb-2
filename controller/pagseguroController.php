@@ -31,7 +31,7 @@ if(!isset($_SESSION['carrinho'])){
 require_once '../model/autoload.php'; $produtos = new Produtos(); $pedido = new Pedido();  
 
 //===============================================
-
+/*++
 $cliente_fk = $_SESSION['id'];
 $endereco_fk = $_SESSION['endereco_fk'];
 $valor = 0; 
@@ -48,6 +48,7 @@ foreach ($result as $lista){
 } 
 
 $_SESSION['referencia'] = $lista["id"];
+++*/
 //===============================================
 
 
@@ -128,8 +129,8 @@ $telefone_ddd = substr($telefone, 0, -9);
            $id++; 
 
     //======salvar item pedido ========
-    $pedido_fk = $_SESSION['referencia'];
-    $pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
+    //++$pedido_fk = $_SESSION['referencia'];
+    //++$pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
 
     //--------------------------------
 
@@ -196,8 +197,8 @@ $telefone_ddd = substr($telefone, 0, -9);
            $id++; 
 
     //======salvar item pedido ========
-    $pedido_fk = $_SESSION['referencia'];
-    $pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
+    //++$pedido_fk = $_SESSION['referencia'];
+    //++$pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
 
     //--------------------------------
 
@@ -258,8 +259,8 @@ $telefone_ddd = substr($telefone, 0, -9);
            $id++; 
 
         //======salvar item pedido ========
-        $pedido_fk = $_SESSION['referencia'];
-        $pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
+        $pedido_fk = 1;//$_SESSION['referencia'];
+        //++$pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
 
         //--------------------------------
 

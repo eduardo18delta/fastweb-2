@@ -12,6 +12,7 @@ $bairro = $_GET['bairro'];
 $cidade = $_GET['cidade'];
 $estado = $_GET['uf'];
 $ibge = $_GET['ibge'];
+$principal = $_GET['principal'];
 
 $endereco = new Endereco();
 
@@ -23,6 +24,7 @@ $endereco->bairro = $bairro;
 $endereco->cidade = $cidade;
 $endereco->estado = $estado;
 $endereco->ibge = $ibge;
+$endereco->principal = $principal;
 
 
 $endereco->cadastrarEndereco();

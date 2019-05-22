@@ -47,6 +47,10 @@
             <input class="form-control" name="ibge" type="hidden" id="ibge"/>
           </div>
 
+          <div class="form-group">            
+            <input class="form-control" name="principal" type="hidden" id="ibge" value="0" />
+          </div>
+
           <div class="form-group">
             <input type="submit" class="btn btn-success btn-block" name="enviar">
           </div>

@@ -135,7 +135,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
 
 <?php
 
-if ($lista['id']==$_SESSION['endereco_fk']) {
+if ($lista['principal']==1) {
 $_SESSION['cep'] = $lista['cep'];
 $_SESSION['numero'] = $lista['numero'];
  echo 
@@ -151,7 +151,7 @@ $_SESSION['numero'] = $lista['numero'];
 <?php endforeach?>
 
 <?php  
-} 
+}
 else 
 { 
   echo "Cadastre-se ou faça login. Aproveite os benefícios oferecidos pela Fastwebstore. "; 
