@@ -16,7 +16,7 @@ include_once '../parts/head.php'; ?>
 
 <div class="row mt-4">
   <div class="col-12">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cadastroprodutomodal">
+    <button type="button" class="btn btn-primary cadastroprodutomodal" data-toggle="modal" data-target="#cadastroprodutomodal">
       Cadastrar produto
     </button>
 
@@ -74,7 +74,7 @@ include_once '../parts/head.php'; ?>
           <input class="btn btn-info" onclick="return confirm('Deseja realmente editar? Produto: <?= $produtos['nome']?>');" type="submit" value="Editar">
           </form>
           -->
-          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#updateprodutomodal<?=$produtos['id_produto']?>">
+          <button type="button" class="btn btn-info updateprodutomodal<?=$produtos['id_produto']?>" data-toggle="modal" data-target="#updateprodutomodal<?=$produtos['id_produto']?>">
             Editar
           </button>
         </td>
@@ -309,12 +309,12 @@ include_once '../parts/head.php'; ?>
           
           <div class="col-md-4 col-sm-12 form-group">
             <div>MEDIDAS</div>
-            <label class="item-medida rs">R$</label>
-            <label class="item-medida kg">Kg</label>
-            <label class="item-medida und">Und</label>
+            <label class="item-medida rs rs<?=$produtos['id_produto']?>">R$</label>
+            <label class="item-medida kg kg<?=$produtos['id_produto']?>">Kg</label>
+            <label class="item-medida und und<?=$produtos['id_produto']?>">Und</label>
           </div>
           <div class="col-md-1 col-sm-12 form-group">
-          <input type="hidden" name="medida" value="0" class="medida">
+          <input type="hidden" name="medida" value="0" class="medida medida<?=$produtos['id_produto']?>">
           </div>        
 </div>
 <div class="row">  
@@ -355,7 +355,7 @@ include_once '../parts/head.php'; ?>
           <label>Categoria:</label>
           <select name="categoria" class="form-control">
           <?php foreach ($listacategorias as $categorias):?>  
-      <option value="<?=$categorias['id_categoria']?>"><?=$categorias['descricao']?></option>
+      <option class="categoria<?=$produtos['id_produto']?>" value="<?=$categorias['id_categoria']?>">Alterar para: <?=$categorias['descricao']?> / Categora Atual: <?=$produtos['descricao_categoria']?></option>
       <?php endforeach?>
           </select>
           </div>
@@ -513,7 +513,96 @@ $("#upd<?=$produtos['id_produto']?>-input-img-produto-6").on('change', function 
 
 });
 
+$(".updateprodutomodal<?=$produtos['id_produto']?>").click(function(){
+        if (<?=$produtos['medida']?>==1){
+        $(".rs<?=$produtos['id_produto']?>").css("background-color","#000")
+        $(".kg<?=$produtos['id_produto']?>").css("background-color","#fff")
+        $(".und<?=$produtos['id_produto']?>").css("background-color","#fff")
+        $(".rs<?=$produtos['id_produto']?>").css("color","#fff")
+        $(".kg<?=$produtos['id_produto']?>").css("color","#000")
+        $(".und<?=$produtos['id_produto']?>").css("color","#000")
+        $(".rs").addClass("ativo")
+        $(".kg").removeClass("ativo")
+        $(".und").removeClass("ativo")
+        $(".medida").val(<?=$produtos['medida']?>)
+      }
+      if (<?=$produtos['medida']?>==2){
+        $(".rs<?=$produtos['id_produto']?>").css("background-color","#fff")
+        $(".kg<?=$produtos['id_produto']?>").css("background-color","#000")
+        $(".und<?=$produtos['id_produto']?>").css("background-color","#fff")
+        $(".rs<?=$produtos['id_produto']?>").css("color","#000")
+        $(".kg<?=$produtos['id_produto']?>").css("color","#fff")
+        $(".und<?=$produtos['id_produto']?>").css("color","#000")
+        $(".rs").removeClass("ativo")
+        $(".kg").addClass("ativo")
+        $(".und").removeClass("ativo")
+        $(".medida").val(<?=$produtos['medida']?>)
+      }
+      if (<?=$produtos['medida']?>==3){
+        $(".rs<?=$produtos['id_produto']?>").css("background-color","#000")
+        $(".kg<?=$produtos['id_produto']?>").css("background-color","#000")
+        $(".und<?=$produtos['id_produto']?>").css("background-color","#fff")
+        $(".rs<?=$produtos['id_produto']?>").css("color","#fff")
+        $(".kg<?=$produtos['id_produto']?>").css("color","#fff")
+        $(".und<?=$produtos['id_produto']?>").css("color","#000")
+        $(".rs").addClass("ativo")
+        $(".kg").addClass("ativo")
+        $(".und").removeClass("ativo")
+        $(".medida").val(<?=$produtos['medida']?>)
+      }
+      if (<?=$produtos['medida']?>==4){
+        $(".rs<?=$produtos['id_produto']?>").css("background-color","#fff")
+        $(".kg<?=$produtos['id_produto']?>").css("background-color","#fff")
+        $(".und<?=$produtos['id_produto']?>").css("background-color","#000")
+        $(".rs<?=$produtos['id_produto']?>").css("color","#000")
+        $(".kg<?=$produtos['id_produto']?>").css("color","#000")
+        $(".und<?=$produtos['id_produto']?>").css("color","#fff")
+        $(".rs").removeClass("ativo")
+        $(".kg").removeClass("ativo")
+        $(".und").addClass("ativo")
+        $(".medida").val(<?=$produtos['medida']?>)
+      }    
+      if (<?=$produtos['medida']?>==5){
+        $(".rs<?=$produtos['id_produto']?>").css("background-color","#000")
+        $(".kg<?=$produtos['id_produto']?>").css("background-color","#fff")
+        $(".und<?=$produtos['id_produto']?>").css("background-color","#000")
+        $(".rs<?=$produtos['id_produto']?>").css("color","#fff")
+        $(".kg<?=$produtos['id_produto']?>").css("color","#000")
+        $(".und<?=$produtos['id_produto']?>").css("color","#fff")
+        $(".rs").addClass("ativo")
+        $(".kg").removeClass("ativo")
+        $(".und").addClass("ativo")
+        $(".medida").val(<?=$produtos['medida']?>)
+      }
+      if (<?=$produtos['medida']?>==6){
+        $(".rs<?=$produtos['id_produto']?>").css("background-color","#fff")
+        $(".kg<?=$produtos['id_produto']?>").css("background-color","#000")
+        $(".und<?=$produtos['id_produto']?>").css("background-color","#000")
+        $(".rs<?=$produtos['id_produto']?>").css("color","#000")
+        $(".kg<?=$produtos['id_produto']?>").css("color","#fff")
+        $(".und<?=$produtos['id_produto']?>").css("color","#fff")
+        $(".rs").removeClass("ativo")
+        $(".kg").addClass("ativo")
+        $(".und").addClass("ativo")
+        $(".medida").val(<?=$produtos['medida']?>)
+      }
+      if (<?=$produtos['medida']?>==7){
+        $(".rs<?=$produtos['id_produto']?>").css("background-color","#000")
+        $(".kg<?=$produtos['id_produto']?>").css("background-color","#000")
+        $(".und<?=$produtos['id_produto']?>").css("background-color","#000")
+        $(".rs<?=$produtos['id_produto']?>").css("color","#fff")
+        $(".kg<?=$produtos['id_produto']?>").css("color","#fff")
+        $(".und<?=$produtos['id_produto']?>").css("color","#fff")
+        $(".rs").addClass("ativo")
+        $(".kg").addClass("ativo")
+        $(".und").addClass("ativo")
+        $(".medida").val(<?=$produtos['medida']?>)
+      }
 
+  })
+
+
+      
 }); //fim do jquery
 </script>
 

@@ -330,6 +330,26 @@ $(".kg").css("color","#000")
 $(".und").css("background-color","#fff")
 $(".und").css("color","#000")
 
+
+$(".cadastroprodutomodal").click(function(){
+  if ($(".und").hasClass("ativo")) {
+  $(".und").css("background-color","#fff")
+  $(".und").css("color","#000")
+  $(".und").removeClass("ativo")
+  var teste = $(".medida").val()
+  teste2 = parseInt(teste) - 4
+  $(".medida").val(teste2)
+  } else {
+  $(".und").css("background-color","#000")
+  $(".und").css("color","#fff")
+  $(".und").addClass("ativo")
+  var teste = $(".medida").val()
+  teste2 = parseInt(teste) + 4
+  $(".medida").val(teste2)
+  }
+
+})
+
 $(".rs").click(function(){
   if ($(".rs").hasClass("ativo")) {
   $(".rs").val("")

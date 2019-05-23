@@ -111,7 +111,7 @@ $telefone_ddd = substr($telefone, 0, -9);
         //$data['senderEmail'] = $_SESSION['email'];
         $data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
         //$data['senderCPF'] = '01927015251';
-        $data['reference'] = intval($_SESSION['referencia']);
+        //$data['reference'] = intval($_SESSION['referencia']);
         //$data['shippingAddressStreet']     = "avenida 8";
         $data['shippingAddressNumber'] = $_SESSION['numero'];
         //$data['shippingAddressComplement'] = "igreja";
@@ -179,7 +179,7 @@ $telefone_ddd = substr($telefone, 0, -9);
         //$data['senderEmail'] = $_SESSION['email'];
         $data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
         //$data['senderCPF'] = '01927015251';
-        $data['reference'] = intval($_SESSION['referencia']);
+        //$data['reference'] = intval($_SESSION['referencia']);
         //$data['shippingAddressStreet']     = "avenida 8";
         $data['shippingAddressNumber'] = $_SESSION['numero'];
         //$data['shippingAddressComplement'] = "igreja";
@@ -241,7 +241,7 @@ $telefone_ddd = substr($telefone, 0, -9);
         //$data['senderEmail'] = $_SESSION['email'];
         $data['senderEmail'] = 'teste2@sandbox.pagseguro.com.br';
         //$data['senderCPF'] = '01927015251';
-        $data['reference'] = intval($_SESSION['referencia']);
+        //$data['reference'] = intval($_SESSION['referencia']);
         //$data['shippingAddressStreet']     = "avenida 8";
         $data['shippingAddressNumber'] = $_SESSION['numero'];
         //$data['shippingAddressComplement'] = "igreja";
@@ -334,8 +334,8 @@ echo $xml -> code;
 //select * from item_pedido join produtos on item_pedido.produto_fk=produtos.id_produto where item_pedido.pedido_fk='1';
 
 
-$id_ultimo_pedido = $_SESSION['referencia'];
+//$id_ultimo_pedido = $_SESSION['referencia'];
 //echo $id_ultimo_pedido;
-$pedido->atualizarvalorPedido($id_ultimo_pedido, $valor_total);
+//$pedido->atualizarvalorPedido($id_ultimo_pedido, $valor_total);
 
 ?>
