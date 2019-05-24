@@ -51,7 +51,7 @@ include '../view/menuView.php';
 
             <div class="row">
                 <div class="col">                                  
-                  <a class=""href="list-comprasView.php">  
+                  <a class=""href="list-historicocomprasView.php">  
                   <i class="fas fa-shopping-cart"></i>
                   Compras
                   <i class="fas fa-arrow-circle-right icon-plus"></i>

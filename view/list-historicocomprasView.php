@@ -60,7 +60,7 @@ $result = $pedido->listarPedidos($idusuario);
 
                 <div class="row">
                     <div class="col">                                  
-                      <a class="menu-marcado"href="list-comprasView.php">  
+                      <a class="menu-marcado"href="list-historicocomprasView.php">  
                       <i class="fas fa-shopping-cart"></i>
                       Compras
                       <i class="fas fa-arrow-circle-right icon-plus"></i>
