@@ -336,7 +336,7 @@ include_once '../parts/head.php'; ?>
 
           <div class="col-md-2 col-sm-12 form-group">
           <label>Destaque:</label>
-          <input class="form-control" type="checkbox" name="destaque" value="<?=$produtos['destaque']?>">
+          <input class="form-control destaque<?=$produtos['id_produto']?>" type="checkbox" name="destaque" value="1">
           </div>
 </div>
 <div class="row">  
@@ -609,6 +609,9 @@ $(".updateprodutomodal<?=$produtos['id_produto']?>").click(function(){
         $(".medida").val(<?=$produtos['medida']?>)
       }
 
+      if (<?=$produtos['destaque']?>==1) {
+      $(".destaque<?=$produtos['id_produto']?>").prop("checked", true)
+      }
   })
 
 

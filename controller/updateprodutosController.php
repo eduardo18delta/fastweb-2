@@ -18,6 +18,11 @@ $medida = $_POST['medida'];
 $desconto = $_POST['desconto'];
 $cod_barra = $_POST['cod_barra'];
 $destaque = $_POST['destaque'];
+if ($destaque==1){
+$destaque=1;
+} else {
+$destaque=0;
+}
 $img_01 = md5(uniqid(time()));
   move_uploaded_file($_FILES["img_01"]["tmp_name"],"../assets/img/upload_produtos/".$img_01);
 $img_02 = md5(uniqid(time()));
