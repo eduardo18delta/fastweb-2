@@ -136,6 +136,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
 <?php
 
 if ($lista['principal']==1) {
+$_SESSION['endereco_principal'] = $lista['id'];
 $_SESSION['cep'] = $lista['cep'];
 $_SESSION['numero'] = $lista['numero'];
  echo 

@@ -31,15 +31,15 @@ if(!isset($_SESSION['carrinho'])){
 require_once '../model/autoload.php'; $produtos = new Produtos(); $pedido = new Pedido();  
 
 //===============================================
-/*++
+
 $cliente_fk = $_SESSION['id'];
-$endereco_fk = $_SESSION['endereco_fk'];
+$endereco_principal = $_SESSION['endereco_principal'];
 $valor = 0; 
 $pedido_efetuado = "23-03-2019";
 $pagamento_autorizado = "23-03-2019";
 $nf_emitida = "23-03-2019";
  
-$pedido->salvarPedido($cliente_fk, $endereco_fk, $valor, $pedido_efetuado, $pagamento_autorizado, $nf_emitida);
+$pedido->salvarPedido($cliente_fk, $endereco_principal, $valor, $pedido_efetuado, $pagamento_autorizado, $nf_emitida);
 
 $result = $pedido->consultarUltimoPedido();
 
@@ -48,7 +48,7 @@ foreach ($result as $lista){
 } 
 
 $_SESSION['referencia'] = $lista["id"];
-++*/
+
 //===============================================
 
 
@@ -129,8 +129,8 @@ $telefone_ddd = substr($telefone, 0, -9);
            $id++; 
 
     //======salvar item pedido ========
-    //++$pedido_fk = $_SESSION['referencia'];
-    //++$pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
+    $pedido_fk = $_SESSION['referencia'];
+    $pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
 
     //--------------------------------
 
@@ -197,8 +197,8 @@ $telefone_ddd = substr($telefone, 0, -9);
            $id++; 
 
     //======salvar item pedido ========
-    //++$pedido_fk = $_SESSION['referencia'];
-    //++$pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
+    $pedido_fk = $_SESSION['referencia'];
+    $pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
 
     //--------------------------------
 
@@ -259,8 +259,8 @@ $telefone_ddd = substr($telefone, 0, -9);
            $id++; 
 
         //======salvar item pedido ========
-        $pedido_fk = 1;//$_SESSION['referencia'];
-        //++$pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
+        $pedido_fk = $_SESSION['referencia'];
+        $pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
 
         //--------------------------------
 
@@ -328,14 +328,14 @@ echo $xml -> code;
 */
 //select * from pedido, status_pedido where status_pedido.id = 1 and status_pedido.id = pedido.status_fk;
 
-//select * from pedido join clientes join endereco join status_pedido on pedido.cliente_fk=clientes.id and pedido.endereco_fk=endereco.id and pedido.status_fk=status_pedido.id where clientes.id='2';
+//select * from pedido join clientes join endereco join status_pedido on pedido.cliente_fk=clientes.id and pedido.endereco_principal=endereco.id and pedido.status_fk=status_pedido.id where clientes.id='2';
 
 
 //select * from item_pedido join produtos on item_pedido.produto_fk=produtos.id_produto where item_pedido.pedido_fk='1';
 
 
-//$id_ultimo_pedido = $_SESSION['referencia'];
+$id_ultimo_pedido = $_SESSION['referencia'];
 //echo $id_ultimo_pedido;
-//$pedido->atualizarvalorPedido($id_ultimo_pedido, $valor_total);
+$pedido->atualizarvalorPedido($id_ultimo_pedido, $valor_total);
 
 ?>

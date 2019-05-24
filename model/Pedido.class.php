@@ -54,15 +54,15 @@ Class Pedido extends Conexao{
          
      }
 
-    public function salvarPedido($cliente_fk, $endereco_fk, $valor, $pedido_efetuado, $pagamento_autorizado, $nf_emitida)
+    public function salvarPedido($cliente_fk, $endereco_principal, $valor, $pedido_efetuado, $pagamento_autorizado, $nf_emitida)
     {
         $conexao = Conexao::conectarBanco();
         $this->salvarPedido = $conexao->prepare("
 
-        INSERT INTO pedido (cliente_fk, endereco_fk, status_fk, valor, pedido_efetuado, pagamento_autorizado, nf_emitida) VALUES (:cliente_fk, :endereco_fk, 1, :valor, :pedido_efetuado, :pagamento_autorizado, :nf_emitida);
+        INSERT INTO pedido (cliente_fk, endereco_fk, status_fk, valor, pedido_efetuado, pagamento_autorizado, nf_emitida) VALUES (:cliente_fk, :endereco_principal, 1, :valor, :pedido_efetuado, :pagamento_autorizado, :nf_emitida);
         ");
         $this->salvarPedido->bindValue(":cliente_fk",$cliente_fk);
-        $this->salvarPedido->bindValue(":endereco_fk",$endereco_fk); 
+        $this->salvarPedido->bindValue(":endereco_principal",$endereco_principal); 
         $this->salvarPedido->bindValue(":valor",$valor);
         $this->salvarPedido->bindValue(":pedido_efetuado",$pedido_efetuado); 
         $this->salvarPedido->bindValue(":pagamento_autorizado",$pagamento_autorizado);
