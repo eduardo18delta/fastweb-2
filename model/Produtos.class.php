@@ -51,6 +51,7 @@ class Produtos extends Conexao
             produtos.desconto,
             produtos.cod_barra,
             produtos.destaque,
+            produtos.categoria_fk,
 			categoria.descricao as descricao_categoria,
             produtos.img_01,
             produtos.img_02,

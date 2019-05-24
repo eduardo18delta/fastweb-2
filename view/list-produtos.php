@@ -354,9 +354,19 @@ include_once '../parts/head.php'; ?>
           <div class="col-md-4 col-sm-12 form-group">
           <label>Categoria:</label>
           <select name="categoria" class="form-control">
-          <?php foreach ($listacategorias as $categorias):?>  
-      <option class="categoria<?=$produtos['id_produto']?>" value="<?=$categorias['id_categoria']?>">Alterar para: <?=$categorias['descricao']?> / Categora Atual: <?=$produtos['descricao_categoria']?></option>
-      <?php endforeach?>
+ 
+      <option class="categoria<?=$produtos['id_produto']?>" value="<?=$produtos['categoria_fk']?>"><?=$produtos['descricao_categoria']?></option>
+
+      <?php foreach ($listacategorias as $categorias){
+
+         if ($produtos['categoria_fk']!=$categorias['id_categoria']){
+      ?>
+      <option class="categoria<?=$produtos['id_produto']?>" value="<?=$categorias['id_categoria']?>"><?=$categorias['descricao']?></option>
+      <?php 
+         
+         } // Fim do If
+      } // Fim do Foreach
+      ?>
           </select>
           </div>
 </div>
