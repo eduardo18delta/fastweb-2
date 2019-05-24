@@ -75,8 +75,8 @@ $telefone_ddd = substr($telefone, 0, -9);
 
         if ($_SESSION['teste2'][$id_produto]=="rs") {
         /*
-        $valor_produtos = $qtd;  
-        $valor_total += $qtd; 
+        //$valor_produtos = $qtd;  
+        //$valor_total += $qtd; 
         $qtd_produtos++;
         $teste[]=$listaEspecifica['id_produto']; // ID do Produto
         $teste[]=number_format($valor_produtos,2,",","."); //Valor da soma de cada produtos
@@ -87,12 +87,13 @@ $telefone_ddd = substr($telefone, 0, -9);
         $teste[]=$qtd; //Quantidade por produto
         */
         
-        $valor_produtos = $qtd;  
-        $valor_total += $qtd;
+        //$valor_produtos = $qtd;  
+        //$valor_total += $qtd;
         $qtd_produtos++;
         //$id = $listaEspecifica['id_produto'];
         $valor = ($qtd*$listaEspecifica['desconto'])/100;
         $valor = number_format($valor,2,".",".");
+        $valor_total += $valor;
         //echo $valor;
         //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
         $data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
@@ -133,7 +134,11 @@ $telefone_ddd = substr($telefone, 0, -9);
     $pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
 
     //--------------------------------
-
+    //======salvar pedido ========
+    $id_ultimo_pedido = $_SESSION['referencia'];
+    //echo $id_ultimo_pedido;
+    $pedido->atualizarvalorPedido($id_ultimo_pedido, $valor_total);
+    //--------------------------------
 
 
         } 
@@ -152,15 +157,16 @@ $telefone_ddd = substr($telefone, 0, -9);
         $teste[]=$qtd; //Quantidade por produto
         */
 
-        $valor_produtos = $listaEspecifica['valor'] * $qtd;  
-        $valor_total += $listaEspecifica['valor'] * $qtd;
-        $qtd_produtos++;
+        //$valor_produtos = $listaEspecifica['valor'] * $qtd;  
+        //$valor_total += $listaEspecifica['valor'] * $qtd;
+        //$qtd_produtos++;
         //$id = $listaEspecifica['id_produto'];
         $peso = $listaEspecifica['valor']*$qtd/$listaEspecifica['peso'];
         $peso = ($peso*$listaEspecifica['desconto'])/100;
         $kg = number_format($peso,0);
         $valor = number_format($peso,2,".",".");
         $peso = number_format($peso,2,".",".");
+        $valor_total += $valor;
         //echo $valor;
         //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
         $data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
@@ -201,6 +207,11 @@ $telefone_ddd = substr($telefone, 0, -9);
     $pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
 
     //--------------------------------
+    //======salvar pedido ========
+    $id_ultimo_pedido = $_SESSION['referencia'];
+    //echo $id_ultimo_pedido;
+    $pedido->atualizarvalorPedido($id_ultimo_pedido, $valor_total);
+    //--------------------------------
 
         }   
 
@@ -218,12 +229,13 @@ $telefone_ddd = substr($telefone, 0, -9);
         $teste[]=$qtd; //Quantidade por produto
         */
 
-        $valor_produtos = $listaEspecifica['valor'] * $qtd;  
-        $valor_total += $listaEspecifica['valor'] * $qtd;
-        $qtd_produtos++;
+        //$valor_produtos = $listaEspecifica['valor'] * $qtd;  
+        //$valor_total += $listaEspecifica['valor'] * $qtd;
+        //$qtd_produtos++;
         //$id = $listaEspecifica['id_produto'];
         $valor = ($listaEspecifica['valor']*$listaEspecifica['desconto'])/100;
         $valor = number_format($valor,2,".",".");
+        $valor_total += $valor * $qtd;;
         //echo $valor;
         //$pedido = preg_replace('/[^[:alnum:]-]/','',$_POST["idPedido"]);
         $data['token'] ='D82D294D0618483687CCBAEB7ABFF314';
@@ -262,6 +274,11 @@ $telefone_ddd = substr($telefone, 0, -9);
         $pedido_fk = $_SESSION['referencia'];
         $pedido->salvaritemPedido($pedido_fk, $id_produto, $valor, $qtd);
 
+        //--------------------------------
+        //======salvar pedido ========
+        $id_ultimo_pedido = $_SESSION['referencia'];
+        //echo $id_ultimo_pedido;
+        $pedido->atualizarvalorPedido($id_ultimo_pedido, $valor_total);
         //--------------------------------
 
         }
@@ -334,8 +351,5 @@ echo $xml -> code;
 //select * from item_pedido join produtos on item_pedido.produto_fk=produtos.id_produto where item_pedido.pedido_fk='1';
 
 
-$id_ultimo_pedido = $_SESSION['referencia'];
-//echo $id_ultimo_pedido;
-$pedido->atualizarvalorPedido($id_ultimo_pedido, $valor_total);
 
 ?>

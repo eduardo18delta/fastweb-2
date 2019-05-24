@@ -123,7 +123,7 @@ $result = $pedido->listarPedidos($idusuario);
 
                                     <td><img src="../assets/img/upload_produtos/<?= $lista_produto['img_01']?>" width="70px" height="70px"></td> 
                                     <td><?= $lista_produto['nome']?></td>
-                                    <td>R$ <?= $lista_produto['valor']?>,00</td> 
+                                    <td>R$ <?= $lista_produto['valor']?></td> 
                                     <td>Avaliar Produto</td> 
               
                                 </tr>

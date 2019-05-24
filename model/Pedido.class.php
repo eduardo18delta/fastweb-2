@@ -34,7 +34,23 @@ Class Pedido extends Conexao{
      function listaritemPedidos($id_pedido){
      $conexao = Conexao::conectarBanco();
      $query = "
-     SELECT * FROM item_pedido JOIN produtos ON item_pedido.produto_fk=produtos.id_produto WHERE item_pedido.pedido_fk='$id_pedido';
+     SELECT 
+     produtos.id_produto,
+     produtos.nome,
+     produtos.descricao,
+     produtos.peso,
+     produtos.medida,
+     produtos.desconto,
+     produtos.cod_barra,
+     produtos.destaque,
+     produtos.categoria_fk,
+     produtos.img_01,
+     item_pedido.id,
+     item_pedido.pedido_fk,
+     item_pedido.produto_fk,
+     item_pedido.valor,
+     item_pedido.quantidade
+     FROM item_pedido JOIN produtos ON item_pedido.produto_fk=produtos.id_produto WHERE item_pedido.pedido_fk='$id_pedido';
      ";
      $resultado = $conexao->query($query);
      $lista = $resultado->fetchAll();
