@@ -148,7 +148,7 @@ CREATE TABLE `pedido` (
   `cliente_fk` int(11) DEFAULT NULL,
   `endereco_fk` int(11) DEFAULT NULL,
   `status_fk` int(11) DEFAULT NULL,
-  `valor` int(11) NOT NULL,
+  `valor` float NOT NULL,
   `pedido_efetuado` varchar(40) DEFAULT NULL,
   `pagamento_autorizado` varchar(40) DEFAULT NULL,
   `nf_emitida` varchar(40) DEFAULT NULL
