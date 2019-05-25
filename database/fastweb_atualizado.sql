@@ -418,3 +418,16 @@ ALTER TABLE `users`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+/*====================TABELA DE LISTA DE COMPRAS======================*/
+
+CREATE TABLE `lista_compras` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(40) DEFAULT NULL,
+  `cliente_fk` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `cliente_fk` (`cliente_fk`),
+  CONSTRAINT `lista_compras_ibfk_1` FOREIGN KEY (`cliente_fk`) REFERENCES `clientes` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*====================TABELA DE ITENS DA LISTA DE COMPRAS EM BREVE!!!======================*/
