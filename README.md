@@ -24,3 +24,9 @@
 
 
 - A partir de agora o sistema está funcional e rodando localmente em sua máquina
+
+## Developers
+
+- Brenno Henrique / Front-End Developer.
+- Eduardo Henrique / Back-End Developer and DBA.
+- Rosivan Santos / Back-End Developer adn DBA.
