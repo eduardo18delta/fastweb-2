@@ -62,7 +62,17 @@ $result = $pedido->listarPedidos($idusuario);
                     <div class="col">                                  
                       <a class="menu-marcado"href="list-historicocomprasView.php">  
                       <i class="fas fa-shopping-cart"></i>
-                      Compras
+                      Histórico de Compras
+                      <i class="fas fa-arrow-circle-right icon-plus"></i>
+                      </a>  
+                    </div>          
+                </div>
+
+                <div class="row">
+                    <div class="col">                                  
+                      <a class=""href="list-listadecomprasView.php">  
+                      <i class="fas fa-heart"></i>
+                      Lista de Compras
                       <i class="fas fa-arrow-circle-right icon-plus"></i>
                       </a>  
                     </div>          

@@ -161,7 +161,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
 
         		<div class="row">
           			<div class="col">                                  
-            			<a class="menu-marcado"href="list-enderecoclienteView.php">  
+            			<a class=""href="list-enderecoclienteView.php">  
             			<i class="fas fa-address-card"></i>
             			Endereços    
             			<i class="fas fa-arrow-circle-right icon-plus"></i>      
@@ -191,7 +191,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
 
                 <div class="row">
                     <div class="col">                                  
-                      <a class=""href="list-listadecomprasView.php">  
+                      <a class="menu-marcado"href="list-listadecomprasView.php">  
                       <i class="fas fa-heart"></i>
                       Lista de Compras
                       <i class="fas fa-arrow-circle-right icon-plus"></i>
@@ -215,7 +215,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
 			<div class="row">
 				<div class="col">
 					<div class="alert alert-primary resumo">
-						<b>Endereços cadastrados</b>	
+						<b>Listas de compras cadastradas</b>	
 					</div>
                         <?php
                             if(isset($_SESSION['msgcadastro']))
@@ -225,7 +225,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                             }
                         ?>
 
-                            <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Cadastrar novo endereço</a>
+                            <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Cadastrar nova lista de compra</a>
 
                     <div class="col mt-4">
                         <div class="table-responsive">
