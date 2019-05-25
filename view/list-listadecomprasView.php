@@ -7,7 +7,9 @@ require_once '../model/autoload.php';
 $listadecompras = new Listadecompras(); 
 $idusuario = $_SESSION['id'];
 
-$listadecompras = $listadecompras->listaListadecompras($idusuario); 
+$listadecompras = $listadecompras->listaListadecompras($idusuario);
+
+$produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
 
 ?>
    <!-- Adicionando JQuery -->
@@ -138,7 +140,7 @@ $listadecompras = $listadecompras->listaListadecompras($idusuario);
                                     <div class="fas fa-plus icon-plus"></div>
                                     <div><?= $lista['nome']?></div> 
                                     <div class="d-flex"> 
-                                        <div class="btn btn-success">Adicionar Produto</div>
+                                        <div data-toggle="modal" data-target="#modalprodutos" class="btn btn-success">Adicionar Produto</div>
                                         <div class="btn btn-info"><i class="fas fa-edit"></i></div>
                                         <div class="btn btn-info"><i class="fas fa-trash"></i></div>
                                              
@@ -151,6 +153,56 @@ $listadecompras = $listadecompras->listaListadecompras($idusuario);
                                 </form> 
                                               
                             </div>
+
+
+                            <!-- Modal -->
+<div class="modal fade" id="modalprodutos" tabindex="-1" role="dialog" aria-labelledby="modalprodutos" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Produtos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">      
+        
+        <table class="table table-striped table-hover table-bordered mt-4">
+          <thead>
+            <tr><input style="width: 50%; margin: 0px auto" class="form-control" id="filtro-nome" placeholder="Pesquisar..." /></tr>
+            <tr>
+                <th></th>
+                <th>Descrição</th>
+                <th>Desconto</th>
+                <th>Preço</th>
+                <th>Medida</th>
+            </tr>
+          </thead>
+
+          <tbody>
+          <?php foreach ($lista_produtos as $produtos):?>  
+      <tr>
+        <td><img src="../assets/img/upload_produtos/<?=$produtos['img_01']?>" whidth="50px" height="50px"></td>
+        <td><?=$produtos['nome']?></td>
+        <td><?=$produtos['desconto']?>%</td>
+        <td><?=$produtos['valor']?></td>
+        <td class="btn btn-success">Adicionar</td>
+      </tr>     
+      <?php endforeach?>
+      </tbody>
+    </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>     
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
                         </div>            
                     
 
