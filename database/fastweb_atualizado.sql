@@ -423,8 +423,8 @@ ALTER TABLE `users`
 
 CREATE TABLE `lista_compras` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(40) DEFAULT NULL,
-  `cliente_fk` int(11) DEFAULT NULL,
+  `nome` varchar(40) NOT NULL,
+  `cliente_fk` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `cliente_fk` (`cliente_fk`),
   CONSTRAINT `lista_compras_ibfk_1` FOREIGN KEY (`cliente_fk`) REFERENCES `clientes` (`id`)
