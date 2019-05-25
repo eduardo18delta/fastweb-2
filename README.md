@@ -29,4 +29,4 @@
 
 - Brenno Henrique / Front-End Developer.
 - Eduardo Henrique / Back-End Developer and DBA.
-- Rosivan Santos / Back-End Developer adn DBA.
+- Rosivan Santos / Back-End Developer and DBA.
