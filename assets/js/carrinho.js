@@ -189,9 +189,90 @@ $(".item-medida").click(function() {
 
 
 }
+
+
+consulta_carrinho()
+function consulta_carrinho(){
+
+    $.post('../model/Carrinho.class.php',function(dados) {
+
+      id=0
+      valor_produtos=1
+      valor_total=2
+      qtd_total=3
+
+    for (var i = 0; i < dados.length; i++) {                        
+
+    if (i==id){
+
+      var qtd = $(".qtd-produto"+dados[id]).val()
+
+      $(".valor-produto"+dados[id]).text("R$ "+dados[id+valor_produtos])
+      $(".carrinho-valor-total").text("R$ "+dados[id+2])
+      $(".carrinho-compra-alert").text(dados[id+3])
+      $(".cont_add_produto").show() 
+
+      //=======================
+      
+      $(".add-carrinho"+dados[id]).hide()
+      $(".remover-produto"+dados[id]).show()
+      //$(".item-medida").prop('disabled', false)
+      
+            
+/*
+$(".item-medida").click(function() {
+     
+             var add_pdt_modal = new FormData($("#modal_produtos")[0]);
+ 
+            $.ajax({
+                type: "POST",
+                //dataType: "json",
+                url: "../model/Carrinho.class.php",
+                //async: true,
+                contentType: false,
+                processData: false,
+                data: add_pdt_modal,
+                success: function(dados) {
+
+                 },
+                 error: function(response){
+                    alert ("erro")
+                 }
+            });
+            
+
+            return false;
+        });           
+*/
+     
+      id+=7
+
+    }  
+
+    }
+
+
+//alert (id+1)
+// $('.dependente-registro-atual').val(id+1)
+        
+
+    }, 'JSON');
+
+
+}
+
 setInterval(consulta_carrinho, 100)
 
-
+$('#filtro-nome').keyup(function() {
+    var nomeFiltro = $(this).val().toLowerCase();
+    console.log(nomeFiltro);
+    $('.listar-pacientes').find('tr').each(function() {
+        var conteudoCelula = $(this).find('td').text();
+        console.log(conteudoCelula);
+        var corresponde = conteudoCelula.toLowerCase().indexOf(nomeFiltro) >= 0;
+        $(this).css('display', corresponde ? '' : 'none');
+    });
+});
 
 
 }) //Fim do JQUERY

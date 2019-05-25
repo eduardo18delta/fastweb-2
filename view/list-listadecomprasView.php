@@ -125,29 +125,29 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
                             <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Cadastrar nova lista de compra</a>
 
                     <div class="col mt-4">
-                        <div class="row">
+                  <!--      <div class="row">
                             <div class="col">
                                     Nome da lista
                                                 
-                           </div>
+                           </div> -->
                         </div>
                            <div class="row">
                                 <div class="col">
                                 <form method="POST" id="form_endereco" enctype="multipart/form-data">
                                 <?php foreach ($listadecompras as $lista):?>
                                 
-                                <div class="btn btn-info d-flex justify-content-between">
+                                <div class="btn btn-primary d-flex justify-content-between">
                                     <div class="fas fa-plus icon-plus"></div>
                                     <div><?= $lista['nome']?></div> 
                                     <div class="d-flex"> 
                                         <div data-toggle="modal" data-target="#modalprodutos" class="btn btn-success">Adicionar Produto</div>
-                                        <div class="btn btn-info"><i class="fas fa-edit"></i></div>
-                                        <div class="btn btn-info"><i class="fas fa-trash"></i></div>
+                                        <div class="btn btn-primary"><i class="fas fa-edit"></i></div>
+                                        <div class="btn btn-primary"><i class="fas fa-trash"></i></div>
                                              
                                     </div>             
                                 </div>
                                   
-
+                                <div class="bg-default">Adicione produtos na lista</div>
                                 
                                 <?php endforeach?>  
                                 </form> 
@@ -179,7 +179,7 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
             </tr>
           </thead>
 
-          <tbody>
+          <tbody class="listar-pacientes">
           <?php foreach ($lista_produtos as $produtos):?>  
       <tr>
         <td><img src="../assets/img/upload_produtos/<?=$produtos['img_01']?>" whidth="50px" height="50px"></td>
