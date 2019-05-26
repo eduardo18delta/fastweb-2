@@ -147,7 +147,43 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
                                     </div>             
                                 </div>
                                   
-                                <div class="bg-default">Adicione produtos na lista</div>
+                                <div class="bg-default">
+                                    <?php
+
+                                    $itemlistadecompras = new Itemlistadecompras(); 
+                                    $itemlistadecompras = $itemlistadecompras->listaItemlistadecompras($idusuario, $lista['id']);
+
+                                    ?>
+                                    <table class="table table-striped table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Descrição</th>
+                                                <th>Valor</th>
+                                                <th>Quantidade</th>
+                                            </tr>
+                                            </thead>
+                                    <?php foreach ($itemlistadecompras as $itemlista):?>
+                                        
+                                            <tbody>
+                                                <td>
+                                                    <img src="../assets/img/upload_produtos/<?= $itemlista['img_01']?>" width="70px" height="70px">
+                                                </td>  
+                                                <td>
+                                                    <?= $itemlista['nome']?>
+                                                </td> 
+                                                <td>
+                                                    <?= $itemlista['valor']?>
+                                                </td>   
+                                                <td>
+                                                    <?= $itemlista['quantidade']?>
+                                                </td>                                    
+                                            </tbody>
+                                                                                
+
+                                    <?php endforeach?>  
+                                    </table>
+                                </div>
                                 
                                 <!--==================================-->
                                                         <!-- Modal -->

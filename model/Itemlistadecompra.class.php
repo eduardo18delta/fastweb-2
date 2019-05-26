@@ -9,10 +9,20 @@ class Itemlistadecompras extends Conexao
     public $produtos_fk;
 
 
-	public function listaItemlistadecompras($idusuario)
+	public function listaItemlistadecompras($idusuario, $itemlistacompras)
     {       
         $conexao = Conexao::conectarBanco();
-        $query = "SELECT * FROM item_lista_compras WHERE cliente_fk = $idusuario";
+        $query = "SELECT 
+        produtos.id_produto,
+        produtos.img_01, 
+        produtos.nome, 
+        produtos.valor,
+        produtos.quantidade 
+        FROM item_lista_compras 
+        JOIN lista_compras 
+        JOIN produtos 
+        ON item_lista_compras.lista_compras_fk=lista_compras.id AND item_lista_compras.produtos_fk=produtos.id_produto 
+        WHERE lista_compras.id = $itemlistacompras AND item_lista_compras.cliente_fk=$idusuario;";
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
         return $lista;
