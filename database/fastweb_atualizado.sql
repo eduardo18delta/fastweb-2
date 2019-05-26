@@ -430,4 +430,12 @@ CREATE TABLE `lista_compras` (
   CONSTRAINT `lista_compras_ibfk_1` FOREIGN KEY (`cliente_fk`) REFERENCES `clientes` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
-/*====================TABELA DE ITENS DA LISTA DE COMPRAS EM BREVE!!!======================*/
+/*====================TABELA DE ITENS DA LISTA DE COMPRAS======================*/
+
+CREATE TABLE `item_lista_compras` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cliente_fk` int(11) NOT NULL,
+  `lista_compras_fk` int(11) NOT NULL,
+  `produtos_fk` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
