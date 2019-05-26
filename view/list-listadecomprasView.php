@@ -181,13 +181,16 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
 
           <tbody class="listar-compras">
           <?php foreach ($lista_produtos as $produtos):?>  
+       <form action="" method="POST" id="lista_produtos">   
+       <input type="hidden" name="id_produto" value="<?=$produtos['id_produto']?>">  
       <tr>
         <td><img src="../assets/img/upload_produtos/<?=$produtos['img_01']?>" whidth="50px" height="50px"></td>
         <td><?=$produtos['nome']?></td>
         <td><?=$produtos['desconto']?>%</td>
         <td><?=$produtos['valor']?></td>
         <td class="btn btn-success">Adicionar</td>
-      </tr>     
+      </tr>  
+      </form>   
       <?php endforeach?>
       </tbody>
     </table>

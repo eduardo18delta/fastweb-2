@@ -13,5 +13,6 @@ include_once 'Permissao.class.php';
 include_once 'Cargos.class.php';
 include_once 'Endereco.class.php';
 include_once 'Listadecompra.class.php';
+include_once 'Itemlistadecompra.class.php';
 include_once 'Pedido.class.php';
 include_once 'Busca.class.php';
