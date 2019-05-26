@@ -437,5 +437,11 @@ CREATE TABLE `item_lista_compras` (
   `cliente_fk` int(11) NOT NULL,
   `lista_compras_fk` int(11) NOT NULL,
   `produtos_fk` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1
+  PRIMARY KEY (`id`),
+  KEY `cliente_fk` (`cliente_fk`),
+  KEY `lista_compras_fk` (`lista_compras_fk`),
+  KEY `produtos_fk` (`produtos_fk`),
+  CONSTRAINT `item_lista_compras_ibfk_1` FOREIGN KEY (`cliente_fk`) REFERENCES `clientes` (`id`),
+  CONSTRAINT `item_lista_compras_ibfk_2` FOREIGN KEY (`lista_compras_fk`) REFERENCES `lista_compras` (`id`),
+  CONSTRAINT `item_lista_compras_ibfk_3` FOREIGN KEY (`produtos_fk`) REFERENCES `produtos` (`id_produto`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
