@@ -140,7 +140,7 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
                                     <div class="fas fa-plus icon-plus btn btn-primary btn-sm"></div>
                                     <div class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;"><i><?= $lista['nome']?></i></div> 
                                     <div class="d-flex"> 
-                                        <div data-toggle="modal" data-target="#modalprodutos" class="btn btn-danger btn-sm">Adicionar Produto<i class="fa fa-shopping-cart"></i></div>
+                                        <div data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-danger btn-sm">Adicionar Produto<i class="fa fa-shopping-cart"></i></div>
                                         <div class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></div>
                                         <div class="btn btn-primary btn-sm"><i class="fas fa-trash"></i></div>
                                              
@@ -149,14 +149,9 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
                                   
                                 <div class="bg-default">Adicione produtos na lista</div>
                                 
-                                <?php endforeach?>  
-                                </form> 
-                                              
-                            </div>
-
-
-                            <!-- Modal -->
-<div class="modal fade" id="modalprodutos" tabindex="-1" role="dialog" aria-labelledby="modalprodutos" aria-hidden="true">
+                                <!--==================================-->
+                                                        <!-- Modal -->
+<div class="modal fade" id="modalprodutos<?= $lista['id']?>" tabindex="-1" role="dialog" aria-labelledby="modalprodutos" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -181,14 +176,16 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
 
           <tbody class="listar-compras">
           <?php foreach ($lista_produtos as $produtos):?>  
-       <form action="" method="POST" id="lista_produtos">   
-       <input type="hidden" name="id_produto" value="<?=$produtos['id_produto']?>">  
+       <form action="../controller/caditemlistadecomprasController.php" method="POST" id="lista_produtos">   
+       <input type="hidden" name="cliente_fk" value="<?=$_SESSION['id']?>">
+       <input type="hidden" name="lista_compras_fk" value="<?=$lista['id']?>">
+       <input type="hidden" name="produtos_fk" value="<?=$produtos['id_produto']?>">  
       <tr>
         <td><img src="../assets/img/upload_produtos/<?=$produtos['img_01']?>" whidth="50px" height="50px"></td>
         <td><?=$produtos['nome']?></td>
         <td><?=$produtos['desconto']?>%</td>
         <td><?=$produtos['valor']?></td>
-        <td class="btn btn-success">Adicionar</td>
+        <td><input type="submit" class="btn btn-success" name="enviar" value="Adicionar"></td>
       </tr>  
       </form>   
       <?php endforeach?>
@@ -203,8 +200,10 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
 </div>
 
 
-
-
+                                <?php endforeach?>  
+                                </form> 
+                                              
+                            </div>
 
                         </div>            
                     
