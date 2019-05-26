@@ -136,13 +136,13 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
                                 <form method="POST" id="form_endereco" enctype="multipart/form-data">
                                 <?php foreach ($listadecompras as $lista):?>
                                 
-                                <div class="btn btn-primary d-flex justify-content-between">
-                                    <div class="fas fa-plus icon-plus"></div>
-                                    <div><?= $lista['nome']?></div> 
+                                <div class="btn btn-primary btn-sm d-flex justify-content-between">
+                                    <div class="fas fa-plus icon-plus btn btn-primary btn-sm"></div>
+                                    <div class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;"><i><?= $lista['nome']?></i></div> 
                                     <div class="d-flex"> 
-                                        <div data-toggle="modal" data-target="#modalprodutos" class="btn btn-success">Adicionar Produto</div>
-                                        <div class="btn btn-primary"><i class="fas fa-edit"></i></div>
-                                        <div class="btn btn-primary"><i class="fas fa-trash"></i></div>
+                                        <div data-toggle="modal" data-target="#modalprodutos" class="btn btn-danger btn-sm">Adicionar Produto<i class="fa fa-shopping-cart"></i></div>
+                                        <div class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></div>
+                                        <div class="btn btn-primary btn-sm"><i class="fas fa-trash"></i></div>
                                              
                                     </div>             
                                 </div>
@@ -179,7 +179,7 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
             </tr>
           </thead>
 
-          <tbody class="listar-pacientes">
+          <tbody class="listar-compras">
           <?php foreach ($lista_produtos as $produtos):?>  
       <tr>
         <td><img src="../assets/img/upload_produtos/<?=$produtos['img_01']?>" whidth="50px" height="50px"></td>

@@ -266,7 +266,7 @@ setInterval(consulta_carrinho, 100)
 $('#filtro-nome').keyup(function() {
     var nomeFiltro = $(this).val().toLowerCase();
     console.log(nomeFiltro);
-    $('.listar-pacientes').find('tr').each(function() {
+    $('.listar-compras').find('tr').each(function() {
         var conteudoCelula = $(this).find('td').text();
         console.log(conteudoCelula);
         var corresponde = conteudoCelula.toLowerCase().indexOf(nomeFiltro) >= 0;
