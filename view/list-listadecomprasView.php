@@ -9,9 +9,11 @@ $idusuario = $_SESSION['id'];
 
 $listadecompras = $listadecompras->listaListadecompras($idusuario);
 
-$produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
+$produtos = new Produtos(); $lista_produtos=$produtos->listar();
 
+$itemlistadecompras = new Itemlistadecompras(); 
 
+?>
    <!-- Adicionando JQuery -->
     <script  src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -43,8 +45,23 @@ $(".expandir-minimizar<?=$lista['id']?>").click(function() {
     }
 
 });
-                               
+<?php
+$qtd_produtos_js=0;
+$itemlistadecompras_js = $itemlistadecompras->listaItemlistadecompras($idusuario, $lista['id']); 
+?>           
+<?php foreach ($itemlistadecompras_js as $itemlista):?>
+
+<?=$qtd_produtos_js++?>;
+$(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
+
+<?php endforeach?>  
+
+
+
+
 <?php endforeach?>                                                          
+
+
 
         }); // FIm do Jquery
 
@@ -158,8 +175,9 @@ $(".expandir-minimizar<?=$lista['id']?>").click(function() {
                                 
                                 <div class="btn btn-primary btn-sm d-flex justify-content-between">
                                     <div class="btn btn-primary btn-sm expandir-minimizar<?=$lista['id']?>"></div>
-                                    <div class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;"><i><?= $lista['nome']?></i></div> 
+                                    <div class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;"><i><?= $lista['nome']?></i></div>
                                     <div class="d-flex"> 
+                                        <div class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">0 Produtos</div>
                                         <div data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-danger btn-sm">Adicionar Produto<i class="fa fa-shopping-cart"></i></div>
                                         <div class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></div>
                                         <div class="btn btn-primary btn-sm"><i class="fas fa-trash"></i></div>
@@ -169,7 +187,6 @@ $(".expandir-minimizar<?=$lista['id']?>").click(function() {
                                   
                                 <div class="bg-default tabela-itens<?=$lista['id']?>">
                                     <?php
-
                                     $itemlistadecompras = new Itemlistadecompras(); 
                                     $itemlistadecompras = $itemlistadecompras->listaItemlistadecompras($idusuario, $lista['id']);
                                     $qtd_produtos=0;
