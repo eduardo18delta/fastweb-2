@@ -139,7 +139,7 @@ include '../parts/scriptmodal.php';
           <?php echo "<button name='rm-produto' class='btn-action-modal remover-produto dnone'>Remover do Carrinho<i class='fas fa-times'></i></button>"; ?>
           
           <!--====ADICIONAR LISTA====-->
-          <?php echo "<div class='btn-action-modal dnone'>Adicionar a lista de Compras<i class='fas fa-clipboard-list'></i></div>"; ?>
+          <?php echo "<div class='btn-action-modal dnone add-lista-compra'>Adicionar a lista de Compras<i class='fas fa-clipboard-list'></i></div>"; ?>
           
         </div><!--fim de "informação"-->
 
@@ -151,4 +151,3 @@ include '../parts/scriptmodal.php';
 </form>
 </div>
 
- 

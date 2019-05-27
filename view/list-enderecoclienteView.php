@@ -1,4 +1,4 @@
-<?php  session_start(); include '../view/menuView.php'; if(isset($_SESSION['id'])) { ?>
+<?php  session_start(); if(isset($_SESSION['id'])) { include '../view/menuView.php';  ?>
 
 <?php 
 
