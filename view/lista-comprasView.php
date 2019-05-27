@@ -3,10 +3,17 @@
 <?php
 require_once '../model/autoload.php'; 
 
+
 $listadecompras = new Listadecompras(); 
 $idusuario = $_SESSION['id'];
 
 $listadecompras = $listadecompras->listaListadecompras($idusuario);
+
+$produtos = new Produtos(); $lista_produtos=$produtos->listar();
+
+$itemlistadecompras = new Itemlistadecompras(); 
+
+
 ?>
 
 <!-- Adicionando JQuery -->
@@ -46,6 +53,50 @@ $listadecompras = $listadecompras->listaListadecompras($idusuario);
           })                              
                                                          
 
+          //=============================
+
+          
+
+
+            <?php foreach ($listadecompras as $lista):?>
+
+$(".tabela-itens<?=$lista['id']?>").hide()
+$(".expandir-minimizar<?=$lista['id']?>").addClass("fas fa-plus icon-plus")
+
+$(".expandir-minimizar<?=$lista['id']?>").click(function() {
+
+    if ($(".expandir-minimizar<?=$lista['id']?>").hasClass('ativo')) {
+        $(".expandir-minimizar<?=$lista['id']?>").removeClass('ativo')
+        $(".expandir-minimizar<?=$lista['id']?>").addClass("fas fa-plus icon-plus")
+        $(".expandir-minimizar<?=$lista['id']?>").removeClass("fa fa-window-minimize")
+        $(".tabela-itens<?=$lista['id']?>").hide()
+
+    }
+    else {
+        $(".expandir-minimizar<?=$lista['id']?>").addClass('ativo')
+        $(".expandir-minimizar<?=$lista['id']?>").addClass("fa fa-window-minimize")
+        $(".expandir-minimizar<?=$lista['id']?>").removeClass("fas fa-plus icon-plus")
+        $(".tabela-itens<?=$lista['id']?>").show()
+    }
+
+});
+<?php
+$qtd_produtos_js=0;
+$itemlistadecompras_js = $itemlistadecompras->listaItemlistadecompras($idusuario, $lista['id']); 
+?>           
+<?php foreach ($itemlistadecompras_js as $itemlista_js):?>
+
+<?=$qtd_produtos_js++?>;
+$(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
+
+<?php endforeach?>  
+
+
+
+
+<?php endforeach?> 
+          //============================
+
         }); // FIm do Jquery
 
     </script>
@@ -69,18 +120,19 @@ $listadecompras = $listadecompras->listaListadecompras($idusuario);
                                 <form method="POST" id="form_endereco" enctype="multipart/form-data">
                                 <?php foreach ($listadecompras as $lista):?>
                                 
-                                <div class="btn btn-primary btn-sm d-flex justify-content-between">
-                                    <div class="fas fa-plus icon-plus btn btn-primary btn-sm"></div>
-                                    <div class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;"><i><?= $lista['nome']?></i></div> 
+                                <div class="btn btn-primary btn-sm d-flex justify-content-between border border-white">
+                                    <div class="btn btn-primary btn-sm expandir-minimizar<?=$lista['id']?>"></div>
+                                    <div class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;"><i><?= $lista['nome']?></i></div>
                                     <div class="d-flex"> 
-                                        <div data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-danger btn-sm">Adicionar Produto<i class="fa fa-shopping-cart"></i></div>
+                                        <div class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">0 Produtos</div>
+                                        <div data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-success btn-sm">Adicionar Produto<i class="fa fa-shopping-cart"></i></div>
                                         <div class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></div>
                                         <div class="btn btn-primary btn-sm"><i class="fas fa-trash"></i></div>
                                              
                                     </div>             
                                 </div>
                                   
-                                <div class="bg-default">
+                                <div class="bg-default tabela-itens<?=$lista['id']?>">
                                     <?php
 
                                     $itemlistadecompras = new Itemlistadecompras(); 
