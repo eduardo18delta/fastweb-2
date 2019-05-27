@@ -21,10 +21,28 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
     <script type="text/javascript" >
 
         $(document).ready(function() {
+            <?php foreach ($listadecompras as $lista):?>
 
-           
+$(".tabela-itens<?=$lista['id']?>").hide()
+$(".expandir-minimizar<?=$lista['id']?>").html("<strong>+</strong>")
+
+$(".expandir-minimizar<?=$lista['id']?>").click(function() {
+
+    if ($(".expandir-minimizar<?=$lista['id']?>").hasClass('ativo')) {
+        $(".expandir-minimizar<?=$lista['id']?>").removeClass('ativo')
+        $(".expandir-minimizar<?=$lista['id']?>").html("<strong>+</strong>")
+        $(".tabela-itens<?=$lista['id']?>").hide()
+
+    }
+    else {
+        $(".expandir-minimizar<?=$lista['id']?>").addClass('ativo')
+        $(".expandir-minimizar<?=$lista['id']?>").html("<strong>-</strong>")
+        $(".tabela-itens<?=$lista['id']?>").show()
+    }
+
+});
                                
-                                                         
+<?php endforeach?>                                                          
 
         }); // FIm do Jquery
 
@@ -137,7 +155,7 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
                                 <?php foreach ($listadecompras as $lista):?>
                                 
                                 <div class="btn btn-primary btn-sm d-flex justify-content-between">
-                                    <div class="fas fa-plus icon-plus btn btn-primary btn-sm"></div>
+                                    <div class="btn btn-primary btn-sm expandir-minimizar<?=$lista['id']?>"></div>
                                     <div class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;"><i><?= $lista['nome']?></i></div> 
                                     <div class="d-flex"> 
                                         <div data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-danger btn-sm">Adicionar Produto<i class="fa fa-shopping-cart"></i></div>
@@ -147,7 +165,7 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
                                     </div>             
                                 </div>
                                   
-                                <div class="bg-default">
+                                <div class="bg-default tabela-itens<?=$lista['id']?>">
                                     <?php
 
                                     $itemlistadecompras = new Itemlistadecompras(); 
@@ -222,7 +240,7 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
           <?php foreach ($lista_produtos as $produtos):?>  
        <form action="../controller/caditemlistadecomprasController.php" method="POST" id="lista_produtos">   
        <input type="hidden" name="cliente_fk" value="<?=$_SESSION['id']?>">
-       <input type="hidden" name="lista_compras_fk" value="<?=$lista['id']?>">
+       <input type="hidden" name="lista_compras_fk" value="1">
        <input type="hidden" name="produtos_fk" value="<?=$produtos['id_produto']?>">  
       <tr>
         <td><img src="../assets/img/upload_produtos/<?=$produtos['img_01']?>" whidth="50px" height="50px"></td>

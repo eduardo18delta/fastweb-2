@@ -20,6 +20,7 @@ $listadecompras = $listadecompras->listaListadecompras($idusuario);
         $(document).ready(function() {
 
            $(".listadecompras").fadeOut()
+           $("#exampleModal").removeClass("modal")
 
 
 
@@ -28,6 +29,19 @@ $listadecompras = $listadecompras->listaListadecompras($idusuario);
           $(".listadecompras").addClass("modal")
           $(".listadecompras").fadeIn()
           $("#modal_produtos").css("filter", "blur(10px)");
+           
+          })     
+
+          $(".fechar_lista").click(function(){       
+          $(".listadecompras").fadeOut()
+          $(".listadecompras").addClass("modal")
+          $(".listadecompras").addClass("d-none")
+          $("#modal_produtos").css("filter", "blur(0px)");
+           
+          })   
+
+          $(".cadastrar-lista").click(function(){       
+          $("#exampleModal").addClass("modal")
            
           })                              
                                                          
@@ -41,8 +55,9 @@ $listadecompras = $listadecompras->listaListadecompras($idusuario);
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Produtos</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <!--<h5 class="modal-title" id="exampleModalLabel">Produtos</h5>-->
+        <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-11 Cadastrar-lista" href="">Cadastrar nova lista de compra</a>
+        <button type="button" class="close fechar_lista" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -129,3 +144,8 @@ $listadecompras = $listadecompras->listaListadecompras($idusuario);
     </div>
   </div>
 </div>
+
+
+<?php
+include "../parts/modal_listadecompra.php";
+?> 
