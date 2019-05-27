@@ -85,7 +85,7 @@
             <span> 
                | 
             </span>
-            <a class="mr-5 icon-white" href="#">
+            <a class="mr-5 icon-white" href="../view/list-listadecomprasView.php">
                 <i class="fas fa-heart"></i>
             </a>
         </div>

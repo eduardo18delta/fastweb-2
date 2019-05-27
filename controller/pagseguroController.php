@@ -127,6 +127,7 @@ $telefone_ddd = substr($telefone, 0, -9);
         //$data['receiverEmail'] = 'rosivan7qi@gmail.com';
         //$data['senderEmail'] = 'teste@sandbox.pagseguro.com.br';
         //echo $data['itemAmount'.$id];
+        $data['redirectURL'] = 'http://www.sounoob.com.br/paginaDeAgracedimento';
            $id++; 
 
     //======salvar item pedido ========
@@ -200,6 +201,7 @@ $telefone_ddd = substr($telefone, 0, -9);
         //$data['receiverEmail'] = 'rosivan7qi@gmail.com';
         //$data['senderEmail'] = 'teste@sandbox.pagseguro.com.br';
         //echo $data['itemAmount'.$id];
+        $data['redirectURL'] = 'http://www.sounoob.com.br/paginaDeAgracedimento';
            $id++; 
 
     //======salvar item pedido ========
@@ -268,6 +270,7 @@ $telefone_ddd = substr($telefone, 0, -9);
         //$data['receiverEmail'] = 'rosivan7qi@gmail.com';
         //$data['senderEmail'] = 'teste@sandbox.pagseguro.com.br';
         //echo $data['itemAmount'.$id];
+        $data['redirectURL'] = 'http://www.sounoob.com.br/paginaDeAgracedimento';
            $id++; 
 
         //======salvar item pedido ========
