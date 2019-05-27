@@ -24,19 +24,21 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
             <?php foreach ($listadecompras as $lista):?>
 
 $(".tabela-itens<?=$lista['id']?>").hide()
-$(".expandir-minimizar<?=$lista['id']?>").html("<strong>+</strong>")
+$(".expandir-minimizar<?=$lista['id']?>").addClass("fas fa-plus icon-plus")
 
 $(".expandir-minimizar<?=$lista['id']?>").click(function() {
 
     if ($(".expandir-minimizar<?=$lista['id']?>").hasClass('ativo')) {
         $(".expandir-minimizar<?=$lista['id']?>").removeClass('ativo')
-        $(".expandir-minimizar<?=$lista['id']?>").html("<strong>+</strong>")
+        $(".expandir-minimizar<?=$lista['id']?>").addClass("fas fa-plus icon-plus")
+        $(".expandir-minimizar<?=$lista['id']?>").removeClass("fa fa-window-minimize")
         $(".tabela-itens<?=$lista['id']?>").hide()
 
     }
     else {
         $(".expandir-minimizar<?=$lista['id']?>").addClass('ativo')
-        $(".expandir-minimizar<?=$lista['id']?>").html("<strong>-</strong>")
+        $(".expandir-minimizar<?=$lista['id']?>").addClass("fa fa-window-minimize")
+        $(".expandir-minimizar<?=$lista['id']?>").removeClass("fas fa-plus icon-plus")
         $(".tabela-itens<?=$lista['id']?>").show()
     }
 
