@@ -173,12 +173,12 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                 <form method="POST" id="form_endereco" enctype="multipart/form-data">
                                 <?php foreach ($listadecompras as $lista):?>
                                 
-                                <div class="btn btn-primary btn-sm d-flex justify-content-between">
+                                <div class="btn btn-primary btn-sm d-flex justify-content-between border border-white">
                                     <div class="btn btn-primary btn-sm expandir-minimizar<?=$lista['id']?>"></div>
                                     <div class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;"><i><?= $lista['nome']?></i></div>
                                     <div class="d-flex"> 
                                         <div class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">0 Produtos</div>
-                                        <div data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-danger btn-sm">Adicionar Produto<i class="fa fa-shopping-cart"></i></div>
+                                        <div data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-success btn-sm">Adicionar Produto<i class="fa fa-shopping-cart"></i></div>
                                         <div class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></div>
                                         <div class="btn btn-primary btn-sm"><i class="fas fa-trash"></i></div>
                                              
@@ -233,7 +233,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                 <!--==================================-->
                                                         <!-- Modal -->
 <div class="modal fade" id="modalprodutos<?= $lista['id']?>" tabindex="-1" role="dialog" aria-labelledby="modalprodutos" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog mx-auto" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Produtos</h5>

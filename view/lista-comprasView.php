@@ -147,5 +147,5 @@ $listadecompras = $listadecompras->listaListadecompras($idusuario);
 
 
 <?php
-include "../parts/modal_listadecompra.php";
+//include "../parts/modal_listadecompra.php";
 ?> 
