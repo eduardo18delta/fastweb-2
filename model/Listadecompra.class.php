@@ -11,7 +11,7 @@ class Listadecompras extends Conexao
 	public function listaListadecompras($idusuario)
     {       
         $conexao = Conexao::conectarBanco();
-        $query = "SELECT * FROM lista_compras where cliente_fk = $idusuario";
+        $query = "SELECT * FROM lista_compras where cliente_fk = $idusuario ORDER BY lista_compras.id DESC";
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
         return $lista;
