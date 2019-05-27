@@ -11,7 +11,7 @@ $listadecompras = $listadecompras->listaListadecompras($idusuario);
 
 $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
 
-?>
+
    <!-- Adicionando JQuery -->
     <script  src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
