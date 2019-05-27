@@ -152,7 +152,7 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
 
                                     $itemlistadecompras = new Itemlistadecompras(); 
                                     $itemlistadecompras = $itemlistadecompras->listaItemlistadecompras($idusuario, $lista['id']);
-
+                                    $qtd_produtos=0;
                                     ?>
                                     <table class="table table-striped table-hover">
                                             <thead>
@@ -163,8 +163,8 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
                                                 <th>Quantidade</th>
                                             </tr>
                                             </thead>
-                                    <?php foreach ($itemlistadecompras as $itemlista):?>
-                                        
+                              <?php foreach ($itemlistadecompras as $itemlista):?>
+                                    
                                             <tbody>
                                                 <td>
                                                     <img src="../assets/img/upload_produtos/<?= $itemlista['img_01']?>" width="70px" height="70px">
@@ -179,10 +179,18 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
                                                     <?= $itemlista['quantidade']?>
                                                 </td>                                    
                                             </tbody>
-                                                                                
+                                            <?php
+                                                $qtd_produtos++;
+                                                ?>                             
 
                                     <?php endforeach?>  
                                     </table>
+                                <?php
+                                if ($qtd_produtos) {
+                                } else {
+                                    echo "<div class='text-secondary d-flex justify-content-center'>Adicione produtos na lista de compras</div>";
+                                }
+                                ?>
                                 </div>
                                 
                                 <!--==================================-->
@@ -206,7 +214,7 @@ $produtos = new Produtos(); $lista_produtos=$produtos->listar();?>
                 <th>Descrição</th>
                 <th>Desconto</th>
                 <th>Preço</th>
-                <th>Medida</th>
+                <th></th>
             </tr>
           </thead>
 
