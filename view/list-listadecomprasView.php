@@ -49,7 +49,7 @@ $(".expandir-minimizar<?=$lista['id']?>").click(function() {
 $qtd_produtos_js=0;
 $itemlistadecompras_js = $itemlistadecompras->listaItemlistadecompras($idusuario, $lista['id']); 
 ?>           
-<?php foreach ($itemlistadecompras_js as $itemlista):?>
+<?php foreach ($itemlistadecompras_js as $itemlista_js):?>
 
 <?=$qtd_produtos_js++?>;
 $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
@@ -259,7 +259,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
           <?php foreach ($lista_produtos as $produtos):?>  
        <form action="../controller/caditemlistadecomprasController.php" method="POST" id="lista_produtos">   
        <input type="hidden" name="cliente_fk" value="<?=$_SESSION['id']?>">
-       <input type="hidden" name="lista_compras_fk" value="1">
+       <input type="hidden" name="lista_compras_fk" value="<?=$lista['id']?>">
        <input type="hidden" name="produtos_fk" value="<?=$produtos['id_produto']?>">  
       <tr>
         <td><img src="../assets/img/upload_produtos/<?=$produtos['img_01']?>" whidth="50px" height="50px"></td>
