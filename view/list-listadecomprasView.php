@@ -234,8 +234,13 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                                 </td> 
                                                 <td>
                                                     <div class="btn btn-success">Comprar</div>
-                                                    <div class="btn btn-info">Adicionar no Carrinho</div>          
-                                                    <input id="apagar-lista<?=$itemlista['id']?>" type="submit" name="id" value="<?=$itemlista['id']?>">         
+                                                    <div class="btn btn-info">Adicionar no Carrinho</div> 
+                                                            
+                                                    <label class="btn btn-danger mt-2" for="apagar-item-lista<?=$itemlista['id']?>">
+                                                    Remover
+                                                    </label> 
+                                                    <input class="d-none" id="apagar-item-lista<?=$itemlista['id']?>" type="submit" name="id" value="<?=$itemlista['id']?>">    
+                                                    
                                                     
                                                 </td>  
                                                 </form>                                  
