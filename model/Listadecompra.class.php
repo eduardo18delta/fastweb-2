@@ -46,6 +46,12 @@ class Listadecompras extends Conexao
         $this->deletar = $conexao->prepare("DELETE FROM lista_compras WHERE id = :id;");
         $this->deletar->bindValue(":id", $this->id, PDO::PARAM_STR);        
         $this->deletar->execute();
+        $_SESSION['msgcadastro'] = "
+        <div class='alert alert-danger mt-4'>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close>
+            <span aria-hidden='true'>&times;</span>
+            </button>Lista deletada com sucesso!
+        </div>";
     }
     
 

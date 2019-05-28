@@ -176,15 +176,25 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                 
                                 <div class="btn btn-primary btn-sm d-flex justify-content-between border border-white">
                                     <div class="btn btn-primary btn-sm expandir-minimizar<?=$lista['id']?>"></div>
-                                    <div class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;"><i><?= $lista['nome']?></i></div>
+                                    <div class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;">
+                                        <i><?= $lista['nome']?></i>
+                                    </div>
                                     <div class="d-flex"> 
-                                        <div class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">0 Produtos</div>
-                                        <div data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-success btn-sm">Adicionar Produto<i class="fa fa-shopping-cart"></i></div>
-                                        <div class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></div>
+                                        <div class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">
+                                        0 Produtos
+                                        </div>
+                                        <div data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-success btn-sm">
+                                            Adicionar Produto
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </div>
+                                        <div class="btn btn-primary btn-sm">
+                                            <i class="fas fa-edit"></i>
+                                        </div>
                                         <div class="btn btn-primary btn-sm">
                                         <label class="fas fa-trash" for="apagar-lista<?=$lista['id']?>">          
-          <input class="d-none" id="apagar-lista<?=$lista['id']?>" onclick="return confirm('Deseja realmente apagar a lista <?=$lista['nome']?>?');" type="submit" name="id" value="<?= $lista['id']?>">         
-                                        </label></div>
+                                        <input class="d-none" id="apagar-lista<?=$lista['id']?>" onclick="return confirm('Deseja realmente apagar a lista <?=$lista['nome']?>?');" type="submit" name="id" value="<?= $lista['id']?>">         
+                                        </label>
+                                        </div>
                                              
                                     </div>             
                                 </div>
