@@ -3,7 +3,7 @@
 <?php
 require_once '../model/autoload.php'; 
 
-
+ if(isset($_SESSION['id'])) {
 $listadecompras = new Listadecompras(); 
 $idusuario = $_SESSION['id'];
 
@@ -199,5 +199,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
 
 
 <?php
+}
+
 //include "../parts/modal_listadecompra.php";
 ?> 
