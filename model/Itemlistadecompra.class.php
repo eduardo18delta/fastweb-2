@@ -13,6 +13,7 @@ class Itemlistadecompras extends Conexao
     {       
         $conexao = Conexao::conectarBanco();
         $query = "SELECT 
+        item_lista_compras.id,
         produtos.id_produto,
         produtos.img_01, 
         produtos.nome, 
@@ -44,7 +45,19 @@ class Itemlistadecompras extends Conexao
 
     }
 
-    
+    public function deletarItemlistadecompras()
+    {
+        $conexao = Conexao::conectarBanco();
+        $this->deletaritem = $conexao->prepare("DELETE FROM item_lista_compras WHERE id = :id;");
+        $this->deletaritem->bindValue(":id", $this->id, PDO::PARAM_STR);
+        $this->deletaritem->execute();
+        $_SESSION['msgcadastro'] = "
+        <div class='alert alert-danger mt-4'>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close>
+            <span aria-hidden='true'>&times;</span>
+            </button>Produto removido da lista com sucesso!
+        </div>";
+    }    
 
 
 }

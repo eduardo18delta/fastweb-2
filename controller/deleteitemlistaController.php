@@ -4,14 +4,14 @@ session_start();
 
 require_once '../model/autoload.php';
 
-$listadecompras = new Listadecompras();
+$itemlistadecompras = new Itemlistadecompras();
 
-$listadecompras->id = $_POST['id'];
+$itemlistadecompras->id = $_POST['id'];
 
 
 if (isset($_POST['id']))
 {
-	$listadecompras->deletarListadecompras();
+	$itemlistadecompras->deletarItemlistadecompras();
 	header("Location: ../view/list-listadecomprasView.php");
 } 
 
