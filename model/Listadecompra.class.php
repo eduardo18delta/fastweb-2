@@ -5,10 +5,10 @@ require_once "autoload.php";
 class Listadecompras extends Conexao
 {
     public $cliente_fk ;
-	public $nome;
+    public $nome;
 
 
-	public function listaListadecompras($idusuario)
+    public function listaListadecompras($idusuario)
     {       
         $conexao = Conexao::conectarBanco();
         $query = "SELECT * FROM lista_compras where cliente_fk = $idusuario ORDER BY lista_compras.id DESC";
@@ -65,6 +65,12 @@ class Listadecompras extends Conexao
         $this->updateProduto->bindValue(":id", $this->id, PDO::PARAM_STR);      
         $this->updateProduto->bindValue(":nome", $this->nome, PDO::PARAM_STR); 
         $this->updateProduto->execute();
+        $_SESSION['msgcadastro'] = "
+        <div class='alert alert-success mt-4'>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close>
+            <span aria-hidden='true'>&times;</span>
+            </button>Lista alterada com sucesso!
+        </div>";
     }
 
 }
