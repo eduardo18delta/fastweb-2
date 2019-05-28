@@ -70,48 +70,48 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
 
 <div class="container-fluid">
 
-	<div class="row mt-4">
-		<div class="col">
-			<nav aria-label="breadcrumb">
-  				<ol class="breadcrumb">
-    				<li class="breadcrumb-item"><a href="perfilclienteView.php">Perfil</a></li>
-    				<li class="breadcrumb-item active" aria-current="page">Endereços</li>
-  				</ol>
-			</nav>
-		</div>	
-	</div>
+  <div class="row mt-4">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="perfilclienteView.php">Perfil</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Endereços</li>
+          </ol>
+      </nav>
+    </div>  
+  </div>
 
-	<div class="row">
-		<div class="col-md-4">
-			<div class="sidenavcliente">       
-        		<div class="row">
-          			<div class="col">                         			
-            			<a id="nome-cliente" href="perfilclienteView.php">              
-            			<i class="fas fa-bars"></i>
-            			Minha conta - Olá  <?=$_SESSION['nome'] ?>  
-            			</a>  
-          			</div>          
-        		</div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="sidenavcliente">       
+            <div class="row">
+                <div class="col">                               
+                  <a id="nome-cliente" href="perfilclienteView.php">              
+                  <i class="fas fa-bars"></i>
+                  Minha conta - Olá  <?=$_SESSION['nome'] ?>  
+                  </a>  
+                </div>          
+            </div>
 
-        		<div class="row">
-          			<div class="col">                                  
-            			<a class=""href="list-enderecoclienteView.php">  
-            			<i class="fas fa-address-card"></i>
-            			Endereços    
-            			<i class="fas fa-arrow-circle-right icon-plus"></i>      
-            			</a>  
-          			</div>          
-        		</div>    
+            <div class="row">
+                <div class="col">                                  
+                  <a class=""href="list-enderecoclienteView.php">  
+                  <i class="fas fa-address-card"></i>
+                  Endereços    
+                  <i class="fas fa-arrow-circle-right icon-plus"></i>      
+                  </a>  
+                </div>          
+            </div>    
 
-        		<div class="row">
-          			<div class="col">                                  
-            			<a class=""href="#!">  
-            			<i class="fa fa-users"></i>
-            			Dados 
-            			<i class="fas fa-arrow-circle-right icon-plus"></i>
-            			</a>  
-          			</div>          
-        		</div>  
+            <div class="row">
+                <div class="col">                                  
+                  <a class=""href="#!">  
+                  <i class="fa fa-users"></i>
+                  Dados 
+                  <i class="fas fa-arrow-circle-right icon-plus"></i>
+                  </a>  
+                </div>          
+            </div>  
 
                 <div class="row">
                     <div class="col">                                  
@@ -133,24 +133,24 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                     </div>          
                 </div>
 
-        		<div class="row">
-          			<div class="col">                                  
-            			<a class=""href="../controller/logoutfacebookController.php">  
-            			<i class="fas fa-sign-out-alt"></i>
-            			Sair
-            			<i class="fas fa-arrow-circle-right icon-plus"></i>
-            			</a>  
-          			</div>          
-        		</div>       
-      		</div>
-		</div>
+            <div class="row">
+                <div class="col">                                  
+                  <a class=""href="../controller/logoutfacebookController.php">  
+                  <i class="fas fa-sign-out-alt"></i>
+                  Sair
+                  <i class="fas fa-arrow-circle-right icon-plus"></i>
+                  </a>  
+                </div>          
+            </div>       
+          </div>
+    </div>
 
-		<div class="col-md-8">
-			<div class="row">
-				<div class="col">
-					<div class="alert alert-primary resumo">
-						<b>Listas de compras cadastradas</b>	
-					</div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col">
+          <div class="alert alert-primary resumo">
+            <b>Listas de compras cadastradas</b>  
+          </div>
                         <?php
                             if(isset($_SESSION['msgcadastro']))
                             {
@@ -170,9 +170,9 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                         </div>
                            <div class="row">
                                 <div class="col">
-                                <form method="POST" id="form_endereco" enctype="multipart/form-data" action="../controller/deletelistaController.php">
                                 
                                 <?php foreach ($listadecompras as $lista):?>
+                                <form method="POST" id="form_endereco" enctype="multipart/form-data" action="../controller/deletelistaController.php">
                                 
                                 <div class="btn btn-primary btn-sm d-flex justify-content-between border border-white">
                                     <div class="btn btn-primary btn-sm expandir-minimizar<?=$lista['id']?>"></div>
@@ -198,7 +198,8 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                              
                                     </div>             
                                 </div>
-                                  
+                                </form>   
+
                                 <div class="bg-default tabela-itens<?=$lista['id']?>">
                                     <?php
                                     $itemlistadecompras = new Itemlistadecompras(); 
@@ -212,11 +213,13 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                                 <th>Descrição</th>
                                                 <th>Valor</th>
                                                 <th>Quantidade</th>
+                                                <th></th>
                                             </tr>
                                             </thead>
                               <?php foreach ($itemlistadecompras as $itemlista):?>
                                     
                                             <tbody>
+                                                <form method="POST" action="../controller/deleteitemlistaController.php">
                                                 <td>
                                                     <img src="../assets/img/upload_produtos/<?= $itemlista['img_01']?>" width="70px" height="70px">
                                                 </td>  
@@ -228,7 +231,14 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                                 </td>   
                                                 <td>
                                                     <?= $itemlista['quantidade']?>
-                                                </td>                                    
+                                                </td> 
+                                                <td>
+                                                    <div class="btn btn-success">Comprar</div>
+                                                    <div class="btn btn-info">Adicionar no Carrinho</div>          
+                                                    <input id="apagar-lista<?=$itemlista['id']?>" type="submit" name="id" value="<?=$itemlista['id']?>">         
+                                                    
+                                                </td>  
+                                                </form>                                  
                                             </tbody>
                                             <?php
                                                 $qtd_produtos++;
@@ -296,17 +306,17 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
 
 
                                 <?php endforeach?>  
-                                </form> 
+                                
                                               
                             </div>
 
                         </div>            
                     
 
-				</div>   
-			</div>
-		</div>
-	</div>
+        </div>   
+      </div>
+    </div>
+  </div>
 
 <?php
 include "../parts/modal_listadecompra.php";
@@ -319,8 +329,8 @@ include "../parts/modal_listadecompra.php";
 } 
 else 
 { 
-	$_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita!</div>";
-	header("Location: ../view/loginclienteView.php"); 
+  $_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita!</div>";
+  header("Location: ../view/loginclienteView.php"); 
 } 
 
 
