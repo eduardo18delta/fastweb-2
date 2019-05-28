@@ -188,12 +188,12 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                             <i class="fa fa-shopping-cart"></i>
                                         </div>
                                         <div class="btn btn-primary btn-sm">
-                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-edit" data-toggle="modal" data-target="#modal_lista<?= $lista['id']?>"></i>
                                         </div>
                                         <div class="btn btn-primary btn-sm">
-                                        <label class="fas fa-trash" for="apagar-lista<?=$lista['id']?>">          
-                                        <input class="d-none" id="apagar-lista<?=$lista['id']?>" onclick="return confirm('Deseja realmente apagar a lista <?=$lista['nome']?>?');" type="submit" name="id" value="<?= $lista['id']?>">         
-                                        </label>
+                                            <label class="fas fa-trash" for="apagar-lista<?=$lista['id']?>">          
+                                            <input class="d-none" id="apagar-lista<?=$lista['id']?>" onclick="return confirm('Deseja realmente apagar a lista <?=$lista['nome']?>?');" type="submit" name="id" value="<?= $lista['id']?>">         
+                                            </label>
                                         </div>
                                              
                                     </div>             
