@@ -55,6 +55,17 @@ class Listadecompras extends Conexao
     }
     
 
+    public function atualizar()
+    {
+        $conexao = Conexao::conectarBanco();
+        $this->updateProduto = $conexao->prepare("
+
+        UPDATE lista_compras SET nome = :nome WHERE id = :id ");
+      
+        $this->updateProduto->bindValue(":id", $this->id, PDO::PARAM_STR);      
+        $this->updateProduto->bindValue(":nome", $this->nome, PDO::PARAM_STR); 
+        $this->updateProduto->execute();
+    }
 
 }
 
