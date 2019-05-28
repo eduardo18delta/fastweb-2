@@ -37,7 +37,16 @@ class Listadecompras extends Conexao
         </div>";
     }
 
-
+    public function deletarListadecompras()
+    {
+        $conexao = Conexao::conectarBanco();
+        $this->deletaritem = $conexao->prepare("DELETE FROM item_lista_compras WHERE lista_compras_fk = :id;");
+        $this->deletaritem->bindValue(":id", $this->id, PDO::PARAM_STR);
+        $this->deletaritem->execute();
+        $this->deletar = $conexao->prepare("DELETE FROM lista_compras WHERE id = :id;");
+        $this->deletar->bindValue(":id", $this->id, PDO::PARAM_STR);        
+        $this->deletar->execute();
+    }
     
 
 

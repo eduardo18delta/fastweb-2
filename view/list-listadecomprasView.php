@@ -170,7 +170,8 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                         </div>
                            <div class="row">
                                 <div class="col">
-                                <form method="POST" id="form_endereco" enctype="multipart/form-data">
+                                <form method="POST" id="form_endereco" enctype="multipart/form-data" action="../controller/deletelistaController.php">
+                                
                                 <?php foreach ($listadecompras as $lista):?>
                                 
                                 <div class="btn btn-primary btn-sm d-flex justify-content-between border border-white">
@@ -180,7 +181,10 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                         <div class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">0 Produtos</div>
                                         <div data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-success btn-sm">Adicionar Produto<i class="fa fa-shopping-cart"></i></div>
                                         <div class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></div>
-                                        <div class="btn btn-primary btn-sm"><i class="fas fa-trash"></i></div>
+                                        <div class="btn btn-primary btn-sm">
+                                        <label class="fas fa-trash" for="apagar-lista<?=$lista['id']?>">          
+          <input class="d-none" id="apagar-lista<?=$lista['id']?>" onclick="return confirm('Deseja realmente apagar a lista <?=$lista['nome']?>?');" type="submit" name="id" value="<?= $lista['id']?>">         
+                                        </label></div>
                                              
                                     </div>             
                                 </div>
