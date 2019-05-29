@@ -7,14 +7,29 @@ $(document).ready( function() {
       valor:{    
         required: true
       },
+      descricao:{
+        required: true, minlength: 6
+      },
       fornecedor:{    
         required: true, minlength: 6
       },
       validade:{
         required: true,  date: true
       },
+      cod_barra:{
+        required: true,  minlength: 10
+      },
       quantidade:{
         required: true,  minlength: 1
+      },
+      peso:{
+        required: true,  minlength: 1
+      },
+      desconto:{
+        required: true,  minlength: 1
+      },
+      categoria:{
+        required: true
       },
       marca:{
         required: true,  minlength: 6
@@ -28,17 +43,36 @@ $(document).ready( function() {
       valor:{
         required: "<div style='color: red;'>Digite o valor</div"        
       },
+      descricao:{
+        required: "<div style='color: red;'>Digite uma descrição</div>",
+        minlength: "<div style='color: red;'>Digite no minimo 6 caracteres</div>"
+      },
       fornecedor:{
         required: "<div style='color: red;'>Digite o fornecedor</div>",
         minlength: "<div style='color: red;'>O fornecedor deve conter, no minimo, 6 caracteres</div>"
       },
       validade:{
         required: "<div style='color: red;'>Digite a validade</div>",
-        date: "<div style='color: red;'>Digite uma data valida</div>"
+        date: "<div style='color: red;'>Digite uma data valida</div>",        
+      },
+      cod_barra:{
+        required: "<div style='color: red;'>Insira um Cód. de Barras</div>",
+        minlength: "<div style='color: red;'>O Cód. de Barras deve conter no minimo, 10 caracteres</div>"
       },
       quantidade:{
         required: "<div style='color: red;'>Digite a quantidade</div>",
-        minlength: "<div style='color: red;'>O quantidade deve conter, no minimo, 1 caracteres</div>"
+        minlength: "<div style='color: red;'>O quantidade deve conter, no minimo, 1 caractere</div>"
+      },
+      peso:{
+        required: "<div style='color: red;'>Digite o peso do produto</div>",
+        minlength: "<div style='color: red;'>Digite no minimo 1 caractere</div>"
+      },
+      desconto:{
+        required: "<div style='color: red;'>Digite o desconto</div>",
+        minlength: "<div style='color: red;'>Digite no minimo 1 caractere</div>"
+      },
+      categoria:{
+        required: "<div style='color: red;'>Escolha uma categoria</div>",        
       },
       marca:{
         required: "<div style='color: red;'>Digite a marca</div>",

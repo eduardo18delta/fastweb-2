@@ -173,14 +173,14 @@ include_once '../parts/head.php'; ?>
           </div>        
 </div>
 <div class="row">  
-          <div class="col-md-8 col-sm-12 form-group">
+          <div class="col-md-7 col-sm-12 form-group">
           <label>Fornecedor:</label>
           <input class="form-control" type="text" name="fornecedor" required>
           </div>
 
-          <div class="col-md-4 col-sm-12 form-group">
+          <div class="col-md-5 col-sm-12 form-group">
           <label>Validade:</label>
-          <input class="form-control" type="date" name="validade" required>
+          <input class="form-control" type="date" name="validade" min="01-01-2019" required>
           </div>
 </div>
 <div class="row">  
@@ -209,6 +209,7 @@ include_once '../parts/head.php'; ?>
           <div class="col-md-4 col-sm-12 form-group">
           <label>Categoria:</label>
           <select name="categoria" class="form-control">
+          <option selected disabled="">Escolha uma categoria</option>
           <?php foreach ($listacategorias as $categorias):?>  
       <option value="<?=$categorias['id_categoria']?>"><?=$categorias['descricao']?></option>
       <?php endforeach?>
