@@ -319,12 +319,12 @@ include_once '../parts/head.php'; ?>
           </div>        
 </div>
 <div class="row">  
-          <div class="col-md-8 col-sm-12 form-group">
+          <div class="col-md-7 col-sm-12 form-group">
           <label>Fornecedor:</label>
           <input class="form-control" type="text" name="fornecedor" value="<?=$produtos['fornecedor']?>" required>
           </div>
 
-          <div class="col-md-4 col-sm-12 form-group">
+          <div class="col-md-5 col-sm-12 form-group">
           <label>Validade:</label>
           <input class="form-control" type="date" name="validade" value="<?=$produtos['validade']?>" required>
           </div>
