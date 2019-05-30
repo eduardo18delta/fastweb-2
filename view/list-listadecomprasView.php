@@ -1,7 +1,7 @@
-<?php  session_start(); if(isset($_SESSION['id'])) { include '../view/menuView.php';  ?>
+<?php  session_start(); if(isset($_SESSION['id'])) { include '../view/modalprodutosView.php'; include '../view/menuView.php';  ?>
 
 <?php 
-//include '../view/modalprodutosView.php';
+
 require_once '../model/autoload.php'; 
 
 $listadecompras = new Listadecompras(); 

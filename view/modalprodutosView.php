@@ -15,7 +15,7 @@ include '../parts/scriptmodal.php';
 
 <!--=============INÍCIO MODAL=============-->
 <form method="POST" id="modal_produtos" enctype="multipart/form-data">
-<div class="modal"><input type="hidden" name="form-produto-id" class="form-produto-id" value="">
+<div class="modal_produto"><input type="hidden" name="form-produto-id" class="form-produto-id" value="">
   <div class="header_modal"><div class="fechar_modal">X</div></div>
       <div class="body_modal_pai">
         <div class="body_modal_filho">

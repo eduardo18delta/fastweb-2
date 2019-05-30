@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
 $(".background_modal").fadeOut("fast"); 
-$(".modal").css("display", "block"); 
+$(".modal_produto").css("display", "block"); 
 
 $(".rm-medida").click(function(){
   $add = $(".valor-medida input").val()

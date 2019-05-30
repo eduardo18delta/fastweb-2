@@ -9,7 +9,7 @@
       display: none;
     } 
 
-.modal {
+.modal_produto {
       margin: 0 auto;
       width: 95%;
       height: 580px;
@@ -481,12 +481,12 @@
       z-index: 1000;
       display: none;
     } 
-.modal {
+.modal_produto {
       margin: 0 auto;
       width: 65%;
       height: 570px;
       position: absolute;
-      left: 60px;
+      left: 250px;
       margin-top: 0px; 
       z-index: 3;
       display: block;
