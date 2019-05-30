@@ -183,15 +183,170 @@
 }
 
 
+
 .detalhes {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 150px;
+  height: 210px;
   justify-content: space-around;
-  margin: 10px 10px 0 0;
+  margin: 30px 30px 0 0;
 }
+
+.valor{
+  font-size: 20px;
+}
+
+
+    .slide_controle {
+      text-decoration: none;
+      color: #000;
+      cursor: pointer;
+    }
+   
+
+
+
+   
+    .container_zoom{
+      width:30%; 
+      height:250px; 
+      position: absolute; 
+      overflow:hidden; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      background-color: #000000; 
+      margin-top: 20px;
+      display: none;
+    }
+    #container_image{
+      position: relative;  
+      width:100%; 
+      height: 100%; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      bottom: 0%;
+    }
+
+    #container_image img{
+     position: absolute; 
+     left:0; 
+     top:0;
+    }
+
+    .container_desconto{
+      position: absolute; 
+      margin-left: 20px;
+    }
+
+    .valor-sem-desconto{
+      margin-top: 15px; 
+      color: #e04f5f;
+      font-size: 14px;
+    }
+
+
+    .desconto-icon{
+      position: absolute; 
+      color: #fff; 
+      font-size: 15px; 
+      height: 50px; 
+      width: 40px; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center;"
+    }
+
+    .container_desconto i {
+      font-size: 50px; 
+      left: 10px;
+    }
+
+
+    /* css do desconto */
+    .desconto-site{
+      position: absolute; 
+      margin-left: 5px;
+    }
+    .desconto-site i {
+      font-size: 35px; 
+      left: 10px;
+      height: 30px;
+    }
+    .desconto-texto-site{
+      position: absolute; 
+      color: #fff; 
+      font-size: 10px; 
+      height: 30px; 
+      width: 25px; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center;"
+      font-weight: bold;
+    }
+
+    .container_descricao{
+      display: flex; 
+      margin-bottom: 20px;
+    }
+
+    .container_categoria{
+      display: flex; 
+      margin-bottom: 0px;
+    }
+
+    .container_categoria span{
+      color: #888;
+      display: flex; 
+      margin-bottom: 0px;
+      font-size: 12px;
+    }
+
+    .aviso-medida{
+      font-size: 7px; 
+      font-family: sans-serif;
+    }
+
+    .table-medida{
+      box-shadow:  0 0 10px; 
+      border-radius:3px; 
+      width: 100%; 
+      position: relative; 
+      margin-bottom: 15px;
+    }
+
+    .item-medida{
+      border: 1px solid #ccc; 
+      background-color: #fff;
+      font-size: 11px; 
+      width: 15%; 
+      text-align: center; 
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .qtd-medida{
+      background-color: #fff; 
+      width: 6%; 
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold; 
+      cursor: pointer;
+    }
+
+    .valor-medida{
+      background-color: #fff; 
+      font-size: 11px;
+      width: 45%; 
+      text-align: center;
+    }
+
+    .valor-medida input{
+      text-align: center;
+    }
 
 .valor{
   font-size: 25px;

@@ -1,7 +1,7 @@
 <?php  session_start(); if(isset($_SESSION['id'])) { include '../view/menuView.php';  ?>
 
 <?php 
-
+//include '../view/modalprodutosView.php';
 require_once '../model/autoload.php'; 
 
 $listadecompras = new Listadecompras(); 
@@ -235,7 +235,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                                 <td>
                                                     <div class="btn btn-success">Comprar</div>
                                                     <div class="btn btn-info">Adicionar no Carrinho</div> 
-                                                            
+                                                            <a class="item btn btn-danger produto<?=$itemlista['id_produto']?>">Comprar</a>
                                                     <label class="btn btn-danger mt-2" for="apagar-item-lista<?=$itemlista['id']?>">
                                                     Remover
                                                     </label> 
@@ -325,6 +325,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
 
 <?php
 include "../parts/modal_listadecompra.php";
+//include '../view/modalprodutosView.php';
 ?> 
 
 </div>
