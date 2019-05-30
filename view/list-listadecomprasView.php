@@ -233,9 +233,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                                     <?= $itemlista['quantidade']?>
                                                 </td> 
                                                 <td>
-                                                    <div class="btn btn-success">Comprar</div>
-                                                    <div class="btn btn-info">Adicionar no Carrinho</div> 
-                                                            <a class="item btn btn-danger produto<?=$itemlista['id_produto']?>">Comprar</a>
+                                                   <a class="item btn btn-info produto<?=$itemlista['id_produto']?>">Mais de detalhes...</a>
                                                     <label class="btn btn-danger mt-2" for="apagar-item-lista<?=$itemlista['id']?>">
                                                     Remover
                                                     </label> 
