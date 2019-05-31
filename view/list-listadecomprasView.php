@@ -249,11 +249,14 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                                     <?= $itemlista['nome']?>
                                                 </td> 
                                                 <td>
-                                                     <span class="valor-sem-desconto text-danger"><strike>
-                                                      R$ <?=$itemlista['valor']?></strike>
+                                                     <span class="valor-sem-desconto text-danger">
+                                                      <strike>
+                                                      R$ <?=number_format($itemlista['valor'],2,",",".")?>
+                                                        
+                                                      </strike>
                                                     </span>
                                                     <h4>
-                                                      R$ <?= ($itemlista['valor']*(100-$itemlista['desconto']))/100?>
+                                                      R$ <?= number_format(($itemlista['valor']*(100-$itemlista['desconto']))/100,2,",",".")?>
                                                     </h4>
                                                 </td>   
                                                 <td>
