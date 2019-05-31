@@ -19,12 +19,25 @@ include '../view/menuView.php';
 
 
 
+<img src="../assets/img/carrinho-vazio.jpg" width="100%" height="100%" class="bk-carrinho">
+<div class="container-fluid desfocar">
+      <div class="row d-flex justify-content-center">        
+        <?php 
+        $qtd = 0;
+        foreach($buscaconcluida as $destaque) {   
+        $qtd++;
+        }
+        if ($qtd<=1) {
+          echo "<span class='alert alert-danger col-12 text-center'>".$qtd." Resultado encontrado</span>";
+        } else {
+          echo "<span class='alert alert-success col-12 text-center'>".$qtd." Resultados encontrados</span>";
+        }
 
-<div class="container-fluid">
- 
-      <div class="row">        
+        ?>
+      </div>
+      <div class="row d-flex justify-content-center">        
         <?php foreach($buscaconcluida as $destaque): ?>               
-        <div class="col-md-3 col mt-4">
+        <div class="col-md-2 col mt-4">
         <section class="card-principal">
           <div class="desconto-site">
                <div class="desconto-texto-site"><?=$destaque['desconto']?>%</div>
@@ -35,8 +48,9 @@ include '../view/menuView.php';
           </div>        
             <div class="nome-produto"><?=$destaque['nome']?></div>
             <div> 
-              <div class="valor-produto">R$ <?= $destaque['valor']?></div>
-              <div class="unidade-produto">(Uni)</div>
+              <div class="valor-produto"><strike>R$ <?=number_format($destaque['valor'],2,",",".")?></strike></div>
+              <div class="valor-produto-desconto">R$ <?= number_format(($destaque['valor']*(100-$destaque['desconto']))/100,2,",",".")?></div>
+              <div class="unidade-produto<?=$destaque['id_produto']?>">(Uni)</div>
             </div>  
             <div class="estrelas">
               <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
