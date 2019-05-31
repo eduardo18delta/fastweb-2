@@ -224,7 +224,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
 
 
       <div class="desconto-site">
-           <div class="desconto-texto-site"><?=10?>%</div>
+           <div class="desconto-texto-site"><?=$itemlista['desconto']?>%</div>
            <i class="fas fa-bookmark"></i>
       </div>
       <div class="item-carrinho">
