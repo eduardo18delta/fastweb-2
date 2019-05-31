@@ -97,6 +97,45 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
 <?php endforeach?> 
           //============================
 
+
+$('.add-lista-compras').click(function() {
+ // var cont_pacientes = $('#consulta_pacientes').serialize();
+   var lista_compras = new FormData($('#form_produtos')[0]);
+
+  $.ajax({
+      type: 'POST',
+      //dataType: 'json',
+      url: '../controller/controlecaditemlistadecomprasController.php',
+      //async: true,
+      contentType: false,
+      processData: false,
+      data: lista_compras,
+      success: function(response) {
+
+         if (response=='null') {
+          //alert ('SELECIONE PACIENTES')
+          alert(response)
+         } else {
+       
+      if (response==1) {
+     // alert ("ok")
+
+} else {
+     // alert ("erro")
+   }
+
+       }
+
+       },
+       error: function(response){
+          alert ('erro')
+       }
+  });
+  
+
+  return false;
+});
+
         }); // FIm do Jquery
 
     </script>
@@ -107,7 +146,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
     <div class="modal-content">
       <div class="modal-header">
         <!--<h5 class="modal-title" id="exampleModalLabel">Produtos</h5>-->
-        <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-11 Cadastrar-lista" href="">Cadastrar nova lista de compra</a>
+        <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-11 Cadastrar-lista" href="">Criar lista de compra</a>
         <button type="button" class="close fechar_lista" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -117,24 +156,37 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
 
         <div class="row">
                                 <div class="col">
-                                <form method="POST" id="form_endereco" enctype="multipart/form-data">
                                 <?php foreach ($listadecompras as $lista):?>
-                                
+                                <form method="GET" id="form_lista_compras" enctype="multipart/form-data">
+                                <input type="hidden" name="cliente_fk" value="<?=$_SESSION['id']?>">
                                 <div class="btn btn-primary btn-sm d-flex justify-content-between border border-white">
                                     <div class="btn btn-primary btn-sm expandir-minimizar<?=$lista['id']?>"></div>
-                                    <div class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;"><i><?= $lista['nome']?></i></div>
+                                    <div class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;">
+                                        <i><?= $lista['nome']?></i>
+                                    </div>
                                     <div class="d-flex"> 
-                                        <div class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">0 Produtos</div>
-                                        <div data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-success btn-sm">Adicionar Produto<i class="fa fa-shopping-cart"></i></div>
-                                        <div class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></div>
-                                        <div class="btn btn-primary btn-sm"><i class="fas fa-trash"></i></div>
+                                        <div class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">
+                                        0 Produtos
+                                        </div>
+                                        <div class="btn btn-success btn-sm">
+                                            Adicionar Produto
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </div>
+                                        <div class="btn btn-primary btn-sm">
+                                            <i class="fas fa-edit" data-toggle="modal" data-target="#modal_lista<?= $lista['id']?>"></i>
+                                        </div>
+                                        <div class="btn btn-primary btn-sm">
+                                            <label class="fas fa-trash" for="apagar-lista<?=$lista['id']?>">          
+                                            <input class="d-none" id="apagar-lista<?=$lista['id']?>" onclick="return confirm('Deseja realmente apagar a lista <?=$lista['nome']?>?');" type="submit" name="id" value="<?= $lista['id']?>">         
+                                            </label>
+                                        </div>
                                              
                                     </div>             
                                 </div>
+                                </form>  
                                   
                                 <div class="bg-default tabela-itens<?=$lista['id']?>">
                                     <?php
-
                                     $itemlistadecompras = new Itemlistadecompras(); 
                                     $itemlistadecompras = $itemlistadecompras->listaItemlistadecompras($idusuario, $lista['id']);
                                     $qtd_produtos=0;
@@ -145,24 +197,65 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                                 <th></th>
                                                 <th>Descrição</th>
                                                 <th>Valor</th>
-                                                <th>Quantidade</th>
+                                                <th></th>
                                             </tr>
                                             </thead>
                               <?php foreach ($itemlistadecompras as $itemlista):?>
                                     
                                             <tbody>
+                                                <form method="POST" id="form_produtos">
                                                 <td>
-                                                    <img src="../assets/img/upload_produtos/<?= $itemlista['img_01']?>" width="70px" height="70px">
+
+<form method="POST" id="lista_produtos">   
+       <input type="hidden" name="cliente_fk" value="<?=$_SESSION['id']?>">
+       <input type="hidden" name="lista_compras_fk" value="<?=$lista['id']?>">
+       <input type="hidden" name="produtos_fk" value="<?=$itemlista['id_produto']?>"> 
+
+      <div class="desconto-site">
+           <div class="desconto-texto-site"><?=$itemlista['desconto']?>%</div>
+           <i class="fas fa-bookmark"></i>
+      </div>
+      <div class="item-carrinho">
+      <img width="70" height="70px" src="../assets/img/upload_produtos/<?= $itemlista['img_01']?>">
+      </div>         
+      <div class="estrelas">
+          <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+          <label for="cm_star-1"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-1" name="fb" value="1"/>
+          <label for="cm_star-2"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-2" name="fb" value="2"/>
+          <label for="cm_star-3"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-3" name="fb" value="3"/>
+          <label for="cm_star-4"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-4" name="fb" value="4"/>
+          <label for="cm_star-5"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-5" name="fb" value="5"/>
+        </div>
+
                                                 </td>  
                                                 <td>
                                                     <?= $itemlista['nome']?>
                                                 </td> 
                                                 <td>
-                                                    <?= $itemlista['valor']?>
+                                                     <span class="text-danger">
+                                                      <strike>
+                                                      R$ <?=number_format($itemlista['valor'],2,",",".")?>
+                                                        
+                                                      </strike>
+                                                    </span>
+                                                    <h6>
+                                                      R$ <?= number_format(($itemlista['valor']*(100-$itemlista['desconto']))/100,2,",",".")?>
+                                                    </h6>
                                                 </td>   
                                                 <td>
-                                                    <?= $itemlista['quantidade']?>
-                                                </td>                                    
+                                                    <label class="btn btn-danger mt-2" for="apagar-item-lista<?=$itemlista['id']?>">
+                                                    Remover
+                                                    </label> 
+                                                    <input class="d-none" id="apagar-item-lista<?=$itemlista['id']?>" type="submit" name="id" value="<?=$itemlista['id']?>">    
+                                                    
+                                                    
+                                                </td>  
+                                                </form>                                  
                                             </tbody>
                                             <?php
                                                 $qtd_produtos++;
@@ -178,11 +271,12 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                 ?>
                                 </div>
                                 
+                                
                                 <!--==================================-->
                                                         <!-- Modal -->
 
                                 <?php endforeach?>  
-                                </form> 
+                                
                                               
                             </div>
 
@@ -191,6 +285,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
 
       </div>
       <div class="modal-footer">
+        <a class="btn btn-default col-10 text-center" href="../view/list-listadecomprasView.php" target="_blank">Acessar minha lista de compras</a>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>     
       </div>
     </div>

@@ -46,10 +46,14 @@
             <form method="post" class="h-100 w-100 esconder" id="form-busca" action="../view/buscaView.php">
                 <div class="input-group input-group-sm h-100">                    
                     <input name="busca" class="form-control input rounded-0 h-100" type="text" placeholder="Buscar podutos...">
+                    <input name="busca-cod-barra" class="d-none form-control input rounded-0 h-100" type="text" placeholder="Digite o código de barra ou use o leitor...">
                     <div class="input-group-prepend">
                         <button type="submit" class="btn bg-white">
                         <i class="fas fa-search"></i>
-                        </button>                        
+                        </button>  
+                        <button class="btn bg-white busca_cod_barra">
+                        <i class="fas fa-barcode"></i>
+                        </button>                                         
                     </div>
                 </div>
             </form>

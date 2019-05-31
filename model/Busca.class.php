@@ -15,5 +15,13 @@ class Busca extends Conexao
         return $lista;
     }
 
+    public function buscarprodutoscod_barra($busca)
+    {       
+        $conexao = Conexao::conectarBanco();
+        $query = "SELECT * FROM produtos WHERE cod_barra LIKE '%$busca%'";
+        $resultado = $conexao->query($query);
+        $lista = $resultado->fetchAll();
+        return $lista;
+    }
 }
 
