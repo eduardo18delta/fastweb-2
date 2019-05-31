@@ -159,7 +159,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                             }
                         ?>
 
-                            <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Cadastrar nova lista de compra</a>
+                            <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Criar lista de compra</a>
 
                     <div class="col mt-4">
                   <!--      <div class="row">
