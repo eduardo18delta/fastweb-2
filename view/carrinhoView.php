@@ -130,7 +130,7 @@ $idusuario = $_SESSION['id'];
 $listadeenderecos = $endereco->listaEnderecos($idusuario); 
 ?>
 
- <?php foreach ($listadeenderecos as $lista):?>
+ <?php $cont=0; foreach ($listadeenderecos as $lista):?>
 
 
 <?php
@@ -145,6 +145,11 @@ $_SESSION['numero'] = $lista['numero'];
  .$lista['rua'].", nº ".$lista['numero'].", ".$lista['bairro'].", ".$lista['cidade']."-".$lista['estado']
 
  ."| <a class='carrinho-endereco' href='../view/list-enderecoclienteView.php'>Alterar endereço de entrega</a>";
+ $cont++;
+} else if ($cont<1) {
+  echo "Para finalizar a compra <a class='carrinho-endereco' href='../view/list-enderecoclienteView.php'>adicione o endereço de entrega</a>";
+$_SESSION['endereço'] = "ativo";
+$cont++;
 }
 
 ?>
@@ -183,15 +188,44 @@ $('#comprar').submit();
 
 <?php 
 if (isset($lista['id'])) {
-echo '
-<div class="col-md-3 col mt-4">
-    <button onclick="enviaPagseguro()" class="btn btn-danger form-control">FINALIZAR COMPRA</button>
-</div>
-';
+
+$cont_=0; 
+foreach ($listadeenderecos as $lista){
+
+    if ($lista['principal']==1) {
+
+        echo '
+        <div class="col-md-3 col mt-4">
+            <button onclick="enviaPagseguro()" class="btn btn-danger form-control">FINALIZAR COMPRA</button>
+        </div>
+        ';
+        $cont++;
+    } else if ($cont<1) {
+        echo '
+        <div class="col-md-3 col mt-4">
+            <a href="../view/list-enderecoclienteView.php" class="btn btn-danger form-control">FINALIZAR COMPRA</a>
+        </div>
+        ';
+
+        $_SESSION['msgcadastro'] = "
+        <div class='alert alert-danger mt-4'>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close>
+            <span aria-hidden='true'>&times;</span>
+            </button>Você precisa informar um endereço pra finalizar a compra!
+        </div>";
+
+        $cont++;
+    }
+
+
+}
+
+
+
 } else {
 echo '
 <div class="col-md-3 col mt-4">
-    <a href="../view/loginclienteView.php" class="btn btn-danger form-control">FINALIZAR COMPRA</a>
+    <a href="../view/list-enderecoclienteView.php" class="btn btn-danger form-control">FINALIZAR COMPRA</a>
 </div>
 ';  
 }
