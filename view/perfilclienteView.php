@@ -62,7 +62,7 @@ include '../view/menuView.php';
             <div class="row">
                 <div class="col">                                  
                   <a class=""href="list-listadecomprasView.php">  
-                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-list"></i>
                   Lista de Compras
                   <i class="fas fa-arrow-circle-right icon-plus"></i>
                   </a>  

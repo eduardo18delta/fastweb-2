@@ -126,7 +126,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                 <div class="row">
                     <div class="col">                                  
                       <a class="menu-marcado"href="list-listadecomprasView.php">  
-                      <i class="fas fa-heart"></i>
+                      <i class="fas fa-list"></i>
                       Lista de Compras
                       <i class="fas fa-arrow-circle-right icon-plus"></i>
                       </a>  
