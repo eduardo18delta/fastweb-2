@@ -323,7 +323,7 @@ var rs = $(".modal-qtd-produto").val()
 var desconto = 100-dados[id+3]
 rs = rs*desconto/100
 rs = Math.round(rs*100)/100
-$(".valor"+dados[id]).text("R$ "+rs)
+$(".valor"+dados[id]).text("R$ "+rs.toFixed(2).replace(".", ","))
 }
 if ($(".kg").hasClass("medida_ativo")) {               
 // Kg
@@ -332,7 +332,7 @@ total = (kg*dados[id+1])/dados[id+2]
 var desconto = 100-dados[id+3]
 total = total*desconto/100
 total = Math.round(total*100)/100
-$(".valor"+dados[id]).text("R$ "+total) 
+$(".valor"+dados[id]).text("R$ "+total.toFixed(2).replace(".", ",")) 
 }   
 if ($(".und").hasClass("medida_ativo")) { 
 //UND
@@ -341,7 +341,7 @@ var und = $(".modal-qtd-produto").val()
 var desconto = 100-dados[id+3]
 total = (und*dados[id+1])*desconto/100
 total = Math.round(total*100)/100
-$(".valor"+dados[id]).html("R$ "+total)  
+$(".valor"+dados[id]).html("R$ "+total.toFixed(2).replace(".", ","))  
 }
       id+=4
 

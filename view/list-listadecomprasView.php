@@ -249,7 +249,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                                     <?= $itemlista['nome']?>
                                                 </td> 
                                                 <td>
-                                                     <span class="valor-sem-desconto text-danger">
+                                                     <span class="text-danger">
                                                       <strike>
                                                       R$ <?=number_format($itemlista['valor'],2,",",".")?>
                                                         
