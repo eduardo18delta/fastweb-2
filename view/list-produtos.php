@@ -186,7 +186,7 @@ include_once '../parts/head.php'; ?>
 <div class="row">  
           <div class="col-md-10 col-sm-12 form-group">
           <label>Código de Barra:</label>
-          <input class="form-control" type="text" name="cod_barra" required>
+          <input class="form-control" type="number" name="cod_barra" required>
           </div>
 
           <div class="col-md-2 col-sm-12 form-group">
@@ -332,7 +332,7 @@ include_once '../parts/head.php'; ?>
 <div class="row">  
           <div class="col-md-10 col-sm-12 form-group">
           <label>Código de Barra:</label>
-          <input class="form-control" type="text" name="cod_barra" value="<?=$produtos['cod_barra']?>" required>
+          <input class="form-control" type="number" name="cod_barra" value="<?=$produtos['cod_barra']?>" required>
           </div>
 
           <div class="col-md-2 col-sm-12 form-group">

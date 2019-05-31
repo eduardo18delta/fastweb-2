@@ -53,7 +53,9 @@
                         </button>  
                         <button class="btn bg-white busca_cod_barra">
                         <i class="fas fa-barcode"></i>
-                        </button>                                         
+                        </button>    
+                        <button class="d-none enviar-cod-barra" type="submit">
+                        </button>                                      
                     </div>
                 </div>
             </form>

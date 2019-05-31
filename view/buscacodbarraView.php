@@ -1,6 +1,6 @@
 <?php 
 
-$busca = $_POST['busca'];
+$busca = $_POST['busca-cod-barra'];
 
 require_once '../model/autoload.php';
 
