@@ -18,6 +18,8 @@ class Itemlistadecompras extends Conexao
         produtos.img_01, 
         produtos.nome, 
         produtos.valor,
+        produtos.desconto,
+        produtos.medida,
         produtos.quantidade 
         FROM item_lista_compras 
         JOIN lista_compras 

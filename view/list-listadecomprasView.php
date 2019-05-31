@@ -212,7 +212,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                                 <th></th>
                                                 <th>Descrição</th>
                                                 <th>Valor</th>
-                                                <th>Quantidade</th>
+                                                <th>Medida</th>
                                                 <th></th>
                                             </tr>
                                             </thead>
@@ -221,16 +221,43 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                             <tbody>
                                                 <form method="POST" action="../controller/deleteitemlistaController.php">
                                                 <td>
-                                                    <img src="../assets/img/upload_produtos/<?= $itemlista['img_01']?>" width="70px" height="70px">
+
+
+      <div class="desconto-site">
+           <div class="desconto-texto-site"><?=10?>%</div>
+           <i class="fas fa-bookmark"></i>
+      </div>
+      <div class="item-carrinho">
+      <img width="70" height="70px" src="../assets/img/upload_produtos/<?= $itemlista['img_01']?>">
+      </div>         
+      <div class="estrelas">
+          <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+          <label for="cm_star-1"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-1" name="fb" value="1"/>
+          <label for="cm_star-2"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-2" name="fb" value="2"/>
+          <label for="cm_star-3"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-3" name="fb" value="3"/>
+          <label for="cm_star-4"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-4" name="fb" value="4"/>
+          <label for="cm_star-5"><i class="fa"></i></label>
+          <input type="radio" id="cm_star-5" name="fb" value="5"/>
+        </div>
+
                                                 </td>  
                                                 <td>
                                                     <?= $itemlista['nome']?>
                                                 </td> 
                                                 <td>
-                                                    <?= $itemlista['valor']?>
+                                                     <span class="valor-sem-desconto text-danger"><strike>
+                                                      R$ <?=$itemlista['valor']?></strike>
+                                                    </span>
+                                                    <h4>
+                                                      R$ <?= ($itemlista['valor']*(100-$itemlista['desconto']))/100?>
+                                                    </h4>
                                                 </td>   
                                                 <td>
-                                                    <?= $itemlista['quantidade']?>
+                                                    <?= $itemlista['medida']?>
                                                 </td> 
                                                 <td>
                                                    <a class="item btn btn-info produto<?=$itemlista['id_produto']?>">Mais de detalhes...</a>
