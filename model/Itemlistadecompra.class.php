@@ -25,7 +25,7 @@ class Itemlistadecompras extends Conexao
         JOIN lista_compras 
         JOIN produtos 
         ON item_lista_compras.lista_compras_fk=lista_compras.id AND item_lista_compras.produtos_fk=produtos.id_produto 
-        WHERE lista_compras.id = $itemlistacompras AND item_lista_compras.cliente_fk=$idusuario;";
+        WHERE lista_compras.id = $itemlistacompras AND item_lista_compras.cliente_fk=$idusuario ORDER BY id DESC;";
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
         return $lista;
