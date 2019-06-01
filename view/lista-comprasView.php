@@ -32,6 +32,8 @@ $itemlistadecompras = new Itemlistadecompras();
 
 
           $(".add-lista-compra").click(function(){
+          var produto_id = $(".form-produto-id").val()
+          $("[name=produtos_fk]").val(produto_id)
           $(".listadecompras").removeClass("d-none")
           $(".listadecompras").addClass("modal")
           $(".listadecompras").fadeIn()
@@ -98,14 +100,14 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
           //============================
 
 
-$('.add-lista-compras').click(function() {
+$('.add-itemlista-compra').click(function() {
  // var cont_pacientes = $('#consulta_pacientes').serialize();
    var lista_compras = new FormData($('#form_produtos')[0]);
 
   $.ajax({
       type: 'POST',
       //dataType: 'json',
-      url: '../controller/controlecaditemlistadecomprasController.php',
+      url: '../controller/caditemlistadecomprasController.php',
       //async: true,
       contentType: false,
       processData: false,
@@ -168,7 +170,7 @@ $('.add-lista-compras').click(function() {
                                         <div class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">
                                         0 Produtos
                                         </div>
-                                        <div class="btn btn-success btn-sm">
+                                        <div class="btn btn-success btn-sm add-itemlista-compra">
                                             Adicionar Produto
                                             <i class="fa fa-shopping-cart"></i>
                                         </div>
