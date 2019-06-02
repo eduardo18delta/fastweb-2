@@ -204,8 +204,8 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
                                               <tr>
                                                   <th></th>
                                                   <th>Descrição</th>
-                                                  <th>Desconto</th>
-                                                  <th>Preço</th>
+                                                  <th>Valor</th>
+                                                  <th>Medida</th>
                                                   <th></th>
                                               </tr>
                                             </thead>
@@ -257,7 +257,6 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
                                                     <?= $itemlista['medida']?>
                                                 </td> 
                                                 <td>
-                                                   <a class="item btn btn-info produto<?=$itemlista['id_produto']?>">Mais de detalhes...</a>
                                                     <label class="btn btn-danger mt-2" for="apagar-item-lista<?=$itemlista['id']?>">
                                                     Remover
                                                     </label> 

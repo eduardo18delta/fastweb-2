@@ -556,6 +556,7 @@ if ("'.$modal['medida'].'"==1){
         $(".und'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".opcao-medida").val("und")
         $(".unidade-produto'.$modal['id_produto'].'").text("(Und)")
+        $(".lista-unidade-produto'.$modal['id_produto'].'").text("(Und)")
       }
 
       
@@ -841,6 +842,7 @@ function listar_medida(){
 
 
 }
+
 
 
 

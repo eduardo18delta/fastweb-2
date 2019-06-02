@@ -26,6 +26,7 @@ $itemlistadecompras = new Itemlistadecompras();
             <?php foreach ($listadecompras as $lista):?>
 
 $(".tabela-itens<?=$lista['id']?>").hide()
+$(".mais-detalhes").removeClass("d-none")
 $(".expandir-minimizar<?=$lista['id']?>").addClass("fas fa-plus icon-plus")
 
 $(".expandir-minimizar<?=$lista['id']?>").click(function() {
@@ -259,11 +260,11 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                                       R$ <?= number_format(($itemlista['valor']*(100-$itemlista['desconto']))/100,2,",",".")?>
                                                     </h4>
                                                 </td>   
-                                                <td>
-                                                    <?= $itemlista['medida']?>
+                                                <td class="lista-unidade-produto<?=$itemlista['id_produto']?>">
+                                                    
                                                 </td> 
                                                 <td>
-                                                   <a class="item btn btn-info produto<?=$itemlista['id_produto']?>">Mais de detalhes...</a>
+                                                   <a class="item btn btn-info mais-detalhes produto<?=$itemlista['id_produto']?> d-none">Mais de detalhes...</a>
                                                     <label class="btn btn-danger mt-2" for="apagar-item-lista<?=$itemlista['id']?>">
                                                     Remover
                                                     </label> 
