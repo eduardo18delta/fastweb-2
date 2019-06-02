@@ -95,14 +95,9 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
 
 
 
-
-<?php endforeach?> 
-          //============================
-
-
-$('.add-itemlista-compra').click(function() {
+$('.add-itemlista-compra<?=$lista['id']?>').click(function() {
  // var cont_pacientes = $('#consulta_pacientes').serialize();
-   var lista_compras = new FormData($('#form_produtos')[0]);
+   var lista_compras = new FormData($('#form_produtos<?=$lista['id']?>')[0]);
 
   $.ajax({
       type: 'POST',
@@ -119,12 +114,7 @@ $('.add-itemlista-compra').click(function() {
           alert(response)
          } else {
        
-      if (response==1) {
-     // alert ("ok")
-
-} else {
-     // alert ("erro")
-   }
+      $("#lista-itens-produtos<?=$lista['id']?>").load("../view/list-listadecomprasView.php #lista-itens-produtos<?=$lista['id']?>")
 
        }
 
@@ -138,13 +128,23 @@ $('.add-itemlista-compra').click(function() {
   return false;
 });
 
+
+
+
+
+<?php endforeach?> 
+          //============================
+
+
+          
+
         }); // FIm do Jquery
 
     </script>
 
 
  <div class="listadecompras d-none">
-  <div class="modal-dialog" role="document">
+  <div style="width: 70%; margin: 0 auto; margin-top: 70px">
     <div class="modal-content">
       <div class="modal-header">
         <!--<h5 class="modal-title" id="exampleModalLabel">Produtos</h5>-->
@@ -170,7 +170,7 @@ $('.add-itemlista-compra').click(function() {
                                         <div class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">
                                         0 Produtos
                                         </div>
-                                        <div class="btn btn-success btn-sm add-itemlista-compra">
+                                        <div class="btn btn-success btn-sm add-itemlista-compra<?=$lista['id']?>">
                                             Adicionar Produto
                                             <i class="fa fa-shopping-cart"></i>
                                         </div>
@@ -193,25 +193,29 @@ $('.add-itemlista-compra').click(function() {
                                     $itemlistadecompras = $itemlistadecompras->listaItemlistadecompras($idusuario, $lista['id']);
                                     $qtd_produtos=0;
                                     ?>
-                                    <table class="table table-striped table-hover">
+                                     <form method="POST" id="form_produtos<?=$lista['id']?>">
+                                             <input type="hidden" name="cliente_fk" value="<?=$_SESSION['id']?>">
+                                             <input type="hidden" name="lista_compras_fk" value="<?=$lista['id']?>">
+                                             <input type="hidden" name="produtos_fk" value=""> 
+                                             </form> 
+                                    <table class="table table-striped table-hover" id="lista-itens-produtos<?=$lista['id']?>">
                                             <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>Descrição</th>
-                                                <th>Valor</th>
-                                                <th></th>
-                                            </tr>
+                                              <tr><input style="width: 50%; margin: 0px auto" class="form-control" id="filtro-nome" placeholder="Pesquisar..." /></tr>
+                                              <tr>
+                                                  <th></th>
+                                                  <th>Descrição</th>
+                                                  <th>Desconto</th>
+                                                  <th>Preço</th>
+                                                  <th></th>
+                                              </tr>
                                             </thead>
+                                        
                               <?php foreach ($itemlistadecompras as $itemlista):?>
                                     
                                             <tbody>
-                                                <form method="POST" id="form_produtos">
+                                                <form method="POST" action="../controller/deleteitemlistaController.php">
                                                 <td>
 
-<form method="POST" id="lista_produtos">   
-       <input type="hidden" name="cliente_fk" value="<?=$_SESSION['id']?>">
-       <input type="hidden" name="lista_compras_fk" value="<?=$lista['id']?>">
-       <input type="hidden" name="produtos_fk" value="<?=$itemlista['id_produto']?>"> 
 
       <div class="desconto-site">
            <div class="desconto-texto-site"><?=$itemlista['desconto']?>%</div>
@@ -245,11 +249,15 @@ $('.add-itemlista-compra').click(function() {
                                                         
                                                       </strike>
                                                     </span>
-                                                    <h6>
+                                                    <h4>
                                                       R$ <?= number_format(($itemlista['valor']*(100-$itemlista['desconto']))/100,2,",",".")?>
-                                                    </h6>
+                                                    </h4>
                                                 </td>   
                                                 <td>
+                                                    <?= $itemlista['medida']?>
+                                                </td> 
+                                                <td>
+                                                   <a class="item btn btn-info produto<?=$itemlista['id_produto']?>">Mais de detalhes...</a>
                                                     <label class="btn btn-danger mt-2" for="apagar-item-lista<?=$itemlista['id']?>">
                                                     Remover
                                                     </label> 

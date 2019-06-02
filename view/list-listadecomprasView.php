@@ -206,7 +206,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                     $itemlistadecompras = $itemlistadecompras->listaItemlistadecompras($idusuario, $lista['id']);
                                     $qtd_produtos=0;
                                     ?>
-                                    <table class="table table-striped table-hover">
+                                    <table class="table table-striped table-hover" id="lista-itens-produtos<?=$lista['id']?>">
                                             <thead>
                                             <tr>
                                                 <th></th>
