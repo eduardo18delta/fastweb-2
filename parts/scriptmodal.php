@@ -457,6 +457,7 @@ if ("'.$modal['medida'].'"==1){
         $(".und'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".opcao-medida").val("rs")
         $(".unidade-produto'.$modal['id_produto'].'").text("(R$)")
+        $(".lista-unidade-produto'.$modal['id_produto'].'").text("(R$)")
       }
       if ("'.$modal['medida'].'"==2){
         $(".rs'.$modal['id_produto'].'").hide()
@@ -476,6 +477,7 @@ if ("'.$modal['medida'].'"==1){
         $(".und'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".opcao-medida").val("kg")
         $(".unidade-produto'.$modal['id_produto'].'").text("(Kg)")
+        $(".lista-unidade-produto'.$modal['id_produto'].'").text("(Kg)")
       }
       if ("'.$modal['medida'].'"==3){
         $(".rs'.$modal['id_produto'].'").show()
@@ -492,6 +494,7 @@ if ("'.$modal['medida'].'"==1){
         $(".und'.$modal['id_produto'].'").removeClass("medida_ativo")
         $(".opcao-medida").val("kg")
         $(".unidade-produto'.$modal['id_produto'].'").text("(Kg)")
+        $(".lista-unidade-produto'.$modal['id_produto'].'").text("(Kg)")
       }
       if ("'.$modal['medida'].'"==4){
         $(".rs'.$modal['id_produto'].'").hide()
@@ -508,6 +511,7 @@ if ("'.$modal['medida'].'"==1){
         $(".und'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".opcao-medida").val("und")
         $(".unidade-produto'.$modal['id_produto'].'").text("(Und)")
+        $(".lista-unidade-produto'.$modal['id_produto'].'").text("(Und)")
       }    
       if ("'.$modal['medida'].'"==5){
         $(".rs'.$modal['id_produto'].'").show()
@@ -524,6 +528,7 @@ if ("'.$modal['medida'].'"==1){
         $(".und'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".opcao-medida").val("und")
         $(".unidade-produto'.$modal['id_produto'].'").text("(Und)")
+        $(".lista-unidade-produto'.$modal['id_produto'].'").text("(Und)")
       }
       if ("'.$modal['medida'].'"==6){
         $(".rs'.$modal['id_produto'].'").hide()
@@ -540,6 +545,7 @@ if ("'.$modal['medida'].'"==1){
         $(".und'.$modal['id_produto'].'").addClass("medida_ativo")
         $(".opcao-medida").val("und")
         $(".unidade-produto'.$modal['id_produto'].'").text("(Und)")
+        $(".lista-unidade-produto'.$modal['id_produto'].'").text("(Und)")
       }
       if ("'.$modal['medida'].'"==7){
         $(".rs'.$modal['id_produto'].'").show()
