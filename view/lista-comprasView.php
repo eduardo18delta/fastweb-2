@@ -170,7 +170,12 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
     <div class="modal-content">
       <div class="modal-header">
         <!--<h5 class="modal-title" id="exampleModalLabel">Produtos</h5>-->
-        <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-11 Cadastrar-lista" href="">Criar lista de compra</a>
+      <!--  <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-11 Cadastrar-lista" href="">Criar lista de compra</a> -->
+      
+      <div class="text-center text-white col-11">
+        <strong><i  class="text-secondary">ADICIONE ESTE ITEM NA SUA LISTA DE COMPRA</i></strong>
+      </div>
+
         <button type="button" class="close fechar_lista" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -196,6 +201,7 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
                                             Adicionar Produto
                                             <i class="fa fa-shopping-cart"></i>
                                         </div>
+                                        <!--
                                         <div class="btn btn-primary btn-sm">
                                             <i class="fas fa-edit" data-toggle="modal" data-target="#modal_lista<?= $lista['id']?>"></i>
                                         </div>
@@ -204,7 +210,7 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
                                             <input class="d-none" id="apagar-lista<?=$lista['id']?>" onclick="return confirm('Deseja realmente apagar a lista <?=$lista['nome']?>?');" type="submit" name="id" value="<?= $lista['id']?>">         
                                             </label>
                                         </div>
-                                             
+                                         -->      
                                     </div>             
                                 </div>
                                 </form>  
@@ -316,7 +322,7 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
 
       </div>
       <div class="modal-footer">
-        <a class="btn btn-default col-10 text-center" href="../view/list-listadecomprasView.php" target="_blank">Acessar minha lista de compras</a>
+        <a class="btn btn-success col-11 text-center" href="../view/list-listadecomprasView.php">Gerenciar minha lista de compras   <i class="fas fa-arrow-circle-right icon-plus"></i></a>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>     
       </div>
     </div>
@@ -327,5 +333,5 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
 <?php
 }
 
-include "../parts/modal_listadecompra.php";
+//include "../parts/modal_listadecompra.php";
 ?> 
