@@ -127,6 +127,41 @@ if ("<?=$itemlista_js['medida']?>"==1){
         $(".lista-unidade-produto<?=$itemlista_js['id_produto']?>").text("(Und)")
       }
 
+
+
+$('.remove-itemlista-compra<?=$itemlista_js['id_produto']?>').click(function() {
+ // var cont_pacientes = $('#consulta_pacientes').serialize();
+   var lista_compras = new FormData($('#form_item_lista<?=$itemlista_js['id_produto']?>')[0]);
+
+  $.ajax({
+      type: 'POST',
+      //dataType: 'json',
+      url: '../controller/deleteitemlistaController.php',
+      //async: true,
+      contentType: false,
+      processData: false,
+      data: lista_compras,
+      success: function(response) {
+
+         if (response=='null') {
+          //alert ('SELECIONE PACIENTES')
+          alert(response)
+         } else {
+       
+          $("#lista-itens-produtos<?=$lista['id']?>").load("../view/list-listadecomprasView.php #lista-itens-produtos<?=$lista['id']?>")
+
+       }
+
+       },
+       error: function(response){
+          alert ('erro')
+       }
+  });
+  
+
+  return false;
+});
+
 <?php endforeach?>  
 
 
@@ -300,12 +335,14 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
                                                     
                                                 </td> 
                                                 <td>
-                                                    <label class="btn btn-danger mt-2" for="apagar-item-lista<?=$itemlista['id']?>">
+                                                   <form method="POST" id="form_item_lista<?=$itemlista['id_produto']?>">
+                                                                                        
+                                                    <div class="btn btn-danger mt-2" id="remove-itemlista-compra<?=$itemlista['id_produto']?>">
                                                     Remover
-                                                    </label> 
-                                                    <input class="d-none" id="apagar-item-lista<?=$itemlista['id']?>" type="submit" name="id" value="<?=$itemlista['id']?>">    
+                                                    </div> 
+                                                    <input type="hidden" name="id" value="<?=$itemlista['id_produto']?>">    
                                                     
-                                                    
+                                                  </form>
                                                 </td>
                                                 </tr>  
                                                 </form>                                  
