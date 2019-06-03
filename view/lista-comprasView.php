@@ -91,6 +91,28 @@ $itemlistadecompras_js = $itemlistadecompras->listaItemlistadecompras($idusuario
 <?=$qtd_produtos_js++?>;
 $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
 
+if ("<?=$itemlista_js['medida']?>"==1){
+        $(".lista-unidade-produto<?=$itemlista_js['id_produto']?>").text("(R$)")
+      }
+      if ("<?=$itemlista_js['medida']?>"==2){
+        $(".lista-unidade-produto<?=$itemlista_js['id_produto']?>").text("(Kg)")
+      }
+      if ("<?=$itemlista_js['medida']?>"==3){
+        $(".lista-unidade-produto<?=$itemlista_js['id_produto']?>").text("(Kg)")
+      }
+      if ("<?=$itemlista_js['medida']?>"==4){
+        $(".lista-unidade-produto<?=$itemlista_js['id_produto']?>").text("(Und)")
+      }    
+      if ("<?=$itemlista_js['medida']?>"==5){
+        $(".lista-unidade-produto<?=$itemlista_js['id_produto']?>").text("(Und)")
+      }
+      if ("<?=$itemlista_js['medida']?>"==6){
+        $(".lista-unidade-produto<?=$itemlista_js['id_produto']?>").text("(Und)")
+      }
+      if ("<?=$itemlista_js['medida']?>"==7){
+        $(".lista-unidade-produto<?=$itemlista_js['id_produto']?>").text("(Und)")
+      }
+
 <?php endforeach?>  
 
 
@@ -253,8 +275,8 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
                                                       R$ <?= number_format(($itemlista['valor']*(100-$itemlista['desconto']))/100,2,",",".")?>
                                                     </h4>
                                                 </td>   
-                                                <td>
-                                                    <?= $itemlista['medida']?>
+                                                <td class="lista-unidade-produto<?= $itemlista['id_produto']?>">
+                                                    
                                                 </td> 
                                                 <td>
                                                     <label class="btn btn-danger mt-2" for="apagar-item-lista<?=$itemlista['id']?>">
