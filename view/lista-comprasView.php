@@ -82,6 +82,20 @@ $(".expandir-minimizar<?=$lista['id']?>").click(function() {
     }
 
 });
+
+
+$('#filtro-nome<?=$lista['id']?>').keyup(function() {
+    var nomeFiltro = $(this).val().toLowerCase();
+    console.log(nomeFiltro);
+    $('.listar-compras<?=$lista['id']?>').find('tr').each(function() {
+        var conteudoCelula = $(this).find('td').text();
+        console.log(conteudoCelula);
+        var corresponde = conteudoCelula.toLowerCase().indexOf(nomeFiltro) >= 0;
+        $(this).css('display', corresponde ? '' : 'none');
+    });
+});
+
+
 <?php
 $qtd_produtos_js=0;
 $itemlistadecompras_js = $itemlistadecompras->listaItemlistadecompras($idusuario, $lista['id']); 
@@ -228,7 +242,7 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
                                              </form> 
                                     <table class="table table-striped table-hover" id="lista-itens-produtos<?=$lista['id']?>">
                                             <thead>
-                                              <tr><input style="width: 50%; margin: 0px auto" class="form-control" id="filtro-nome" placeholder="Pesquisar..." /></tr>
+                                              <tr><input style="width: 50%; margin: 0px auto" class="form-control" id="filtro-nome<?=$lista['id']?>" placeholder="Pesquisar..." /></tr>
                                               <tr>
                                                   <th></th>
                                                   <th>Descrição</th>
@@ -237,11 +251,12 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
                                                   <th></th>
                                               </tr>
                                             </thead>
-                                        
+
+                              <tbody class="listar-compras<?=$lista['id']?>">         
                               <?php foreach ($itemlistadecompras as $itemlista):?>
-                                    
-                                            <tbody>
+                                                                              
                                                 <form method="POST" action="../controller/deleteitemlistaController.php">
+                                                <tr>
                                                 <td>
 
 
@@ -291,14 +306,16 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
                                                     <input class="d-none" id="apagar-item-lista<?=$itemlista['id']?>" type="submit" name="id" value="<?=$itemlista['id']?>">    
                                                     
                                                     
-                                                </td>  
+                                                </td>
+                                                </tr>  
                                                 </form>                                  
-                                            </tbody>
+                                            
                                             <?php
                                                 $qtd_produtos++;
                                                 ?>                             
 
-                                    <?php endforeach?>  
+                                    <?php endforeach?> 
+                                    </tbody> 
                                     </table>
                                 <?php
                                 if ($qtd_produtos) {
