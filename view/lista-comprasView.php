@@ -129,9 +129,9 @@ if ("<?=$itemlista_js['medida']?>"==1){
 
 
 
-$('.remove-itemlista-compra<?=$itemlista_js['id_produto']?>').click(function() {
+$('.remove-itemlista-compra<?=$itemlista_js['id']?>').click(function() {
  // var cont_pacientes = $('#consulta_pacientes').serialize();
-   var lista_compras = new FormData($('#form_item_lista<?=$itemlista_js['id_produto']?>')[0]);
+   var lista_compras = new FormData($('#form_item_lista<?=$itemlista_js['id']?>')[0]);
 
   $.ajax({
       type: 'POST',
@@ -147,8 +147,8 @@ $('.remove-itemlista-compra<?=$itemlista_js['id_produto']?>').click(function() {
           //alert ('SELECIONE PACIENTES')
           alert(response)
          } else {
-       
-          $("#lista-itens-produtos<?=$lista['id']?>").load("../view/list-listadecomprasView.php #lista-itens-produtos<?=$lista['id']?>")
+
+          $(".item<?=$itemlista_js['id']?>").hide()
 
        }
 
@@ -290,8 +290,8 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
                               <tbody class="listar-compras<?=$lista['id']?>">         
                               <?php foreach ($itemlistadecompras as $itemlista):?>
                                                                               
-                                                <form method="POST" action="../controller/deleteitemlistaController.php">
-                                                <tr>
+                                               
+                                                <tr class="item<?=$itemlista['id']?>">
                                                 <td>
 
 
@@ -335,17 +335,17 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
                                                     
                                                 </td> 
                                                 <td>
-                                                   <form method="POST" id="form_item_lista<?=$itemlista['id_produto']?>">
+                                                   <form method="POST" id="form_item_lista<?=$itemlista['id']?>">
                                                                                         
-                                                    <div class="btn btn-danger mt-2" id="remove-itemlista-compra<?=$itemlista['id_produto']?>">
+                                                    <div class="btn btn-danger mt-2 remove-itemlista-compra<?=$itemlista['id']?>">
                                                     Remover
                                                     </div> 
-                                                    <input type="hidden" name="id" value="<?=$itemlista['id_produto']?>">    
+                                                    <input type="hidden" name="id" value="<?=$itemlista['id']?>">    
                                                     
                                                   </form>
                                                 </td>
                                                 </tr>  
-                                                </form>                                  
+                                                                              
                                             
                                             <?php
                                                 $qtd_produtos++;

@@ -69,6 +69,39 @@ $itemlistadecompras_js = $itemlistadecompras->listaItemlistadecompras($idusuario
 <?=$qtd_produtos_js++?>;
 $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
 
+$('.remove-itemlista-compra<?=$itemlista_js['id']?>').click(function() {
+ // var cont_pacientes = $('#consulta_pacientes').serialize();
+   var lista_compras = new FormData($('#form_item_lista<?=$itemlista_js['id']?>')[0]);
+
+  $.ajax({
+      type: 'POST',
+      //dataType: 'json',
+      url: '../controller/deleteitemlistaController.php',
+      //async: true,
+      contentType: false,
+      processData: false,
+      data: lista_compras,
+      success: function(response) {
+
+         if (response=='null') {
+          //alert ('SELECIONE PACIENTES')
+          alert(response)
+         } else {
+   
+          $(".item<?=$itemlista_js['id']?>").hide()
+
+       }
+
+       },
+       error: function(response){
+          alert ('erro')
+       }
+  });
+  
+
+  return false;
+});
+
 <?php endforeach?>  
 
 
@@ -302,8 +335,8 @@ function consulta_medida(){
                                             <tbody class="listar-compras<?=$lista['id']?>">
                               <?php foreach ($itemlistadecompras as $itemlista):?>
                                                        
-                                                <form method="POST" action="../controller/deleteitemlistaController.php">
-                                                <tr>
+                                                
+                                                <tr class="item<?=$itemlista['id']?>">
                                                 <td>
 
 
@@ -348,15 +381,19 @@ function consulta_medida(){
                                                 </td> 
                                                 <td>
                                                    <a class="item btn btn-info mais-detalhes produto<?=$itemlista['id_produto']?> d-none">Mais de detalhes...</a>
-                                                    <label class="btn btn-danger mt-2" for="apagar-item-lista<?=$itemlista['id']?>">
+                                                    <form method="POST" id="form_item_lista<?=$itemlista['id']?>">
+                                                                                        
+                                                    <div class="btn btn-danger mt-2 remove-itemlista-compra<?=$itemlista['id']?>">
                                                     Remover
-                                                    </label> 
-                                                    <input class="d-none" id="apagar-item-lista<?=$itemlista['id']?>" type="submit" name="id" value="<?=$itemlista['id']?>">    
+                                                    </div> 
+                                                    <input type="hidden" name="id" value="<?=$itemlista['id']?>">    
+                                                    
+                                                  </form>    
                                                     
                                                     
                                                 </td> 
                                                 </tr> 
-                                                </form>                                  
+                                                                               
                                             
                                             <?php
                                                 $qtd_produtos++;
