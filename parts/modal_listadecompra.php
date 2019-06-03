@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="get" action="../controller/cadlistadecomprasController.php">
+        <form method="POST" action="../controller/cadlistadecomprasController.php">
 
           <input type="hidden" name="cliente_fk" value="<?=$_SESSION['id']?>">
 

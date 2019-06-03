@@ -4,8 +4,8 @@ session_start();
 
 require_once '../model/autoload.php';
 
-$cliente_fk = $_GET['cliente_fk'];
-$nome = $_GET['nome'];
+$cliente_fk = $_POST['cliente_fk'];
+$nome = $_POST['nome'];
 
 $endereco = new Listadecompras();
 

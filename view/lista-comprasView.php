@@ -327,5 +327,5 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
 <?php
 }
 
-//include "../parts/modal_listadecompra.php";
+include "../parts/modal_listadecompra.php";
 ?> 

@@ -28,7 +28,7 @@ $itemlistadecompras = new Itemlistadecompras();
 $(".tabela-itens<?=$lista['id']?>").hide()
 $(".mais-detalhes").removeClass("d-none")
 $(".expandir-minimizar<?=$lista['id']?>").addClass("fas fa-plus icon-plus")
-
+$(".tabela-itens<?=$lista['id']?>").removeClass("d-none")
 $(".expandir-minimizar<?=$lista['id']?>").click(function() {
 
     if ($(".expandir-minimizar<?=$lista['id']?>").hasClass('ativo')) {
@@ -46,6 +46,11 @@ $(".expandir-minimizar<?=$lista['id']?>").click(function() {
     }
 
 });
+
+
+
+
+
 <?php
 $qtd_produtos_js=0;
 $itemlistadecompras_js = $itemlistadecompras->listaItemlistadecompras($idusuario, $lista['id']); 
@@ -61,6 +66,72 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
 
 
 <?php endforeach?>                                                          
+
+/*
+$('[name=cad-lista-compras]').click(function() {
+ // var cont_pacientes = $('#consulta_pacientes').serialize();
+   var lista_compras = new FormData($('#form_lista_produtos')[0]);
+
+  $.ajax({
+      type: 'POST',
+      //dataType: 'json',
+      url: '../controller/cadlistadecomprasController.php',
+      //async: true,
+      contentType: false,
+      processData: false,
+      data: lista_compras,
+      success: function(response) {
+
+         if (response=='null') {
+          //alert ('SELECIONE PACIENTES')
+          alert(response)
+         } else {
+       
+      $("#form_endereco").load("../view/list-listadecomprasView.php #form_endereco")
+
+       }
+
+       },
+       error: function(response){
+          alert ('erro')
+       }
+  });
+  
+
+  return false;
+});
+
+*/
+
+//consulta_medida()
+
+
+function consulta_medida(){
+
+    $.post("../controller/consultalistadecomprasController.php",function(dados) {
+//alert (dados)
+      id=0
+
+    for (var i = 0; i < dados.length; i++) {                        
+
+    if (i==id){
+
+
+      id+=2
+
+    }  
+
+    }
+
+
+//alert (id+1)
+// $(".dependente-registro-atual").val(id+1)
+        
+
+    }, "JSON");
+
+
+}
 
 
 
@@ -201,7 +272,7 @@ $(".cont-produtos<?=$lista['id']?>").text("<?=$qtd_produtos_js?> Produtos")
                                 </div>
                                 </form>   
 
-                                <div class="bg-default tabela-itens<?=$lista['id']?>">
+                                <div class="bg-default tabela-itens<?=$lista['id']?> d-none">
                                     <?php
                                     $itemlistadecompras = new Itemlistadecompras(); 
                                     $itemlistadecompras = $itemlistadecompras->listaItemlistadecompras($idusuario, $lista['id']);
