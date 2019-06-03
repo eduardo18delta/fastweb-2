@@ -173,7 +173,7 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
       <!--  <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-11 Cadastrar-lista" href="">Criar lista de compra</a> -->
       
       <div class="text-center text-white col-11">
-        <strong><i  class="text-secondary">ADICIONE ESTE ITEM NA SUA LISTA DE COMPRA</i></strong>
+        <strong><i  class="text-secondary"><i class="fas fa-clipboard-list"></i> ADICIONE ESTE ITEM NA SUA LISTA DE COMPRA</i></strong>
       </div>
 
         <button type="button" class="close fechar_lista" data-dismiss="modal" aria-label="Close">

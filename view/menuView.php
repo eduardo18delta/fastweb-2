@@ -92,7 +92,7 @@
                | 
             </span>
             <a class="mr-5 icon-white" href="../view/list-listadecomprasView.php">
-                <i class="fas fa-list"></i>
+                <i class="fas fa-clipboard-list"></i>
             </a>
         </div>
     </div>
