@@ -140,7 +140,7 @@ function consulta_medida(){
     </script>
 
 
-<div class="container-fluid">
+<div class="container-fluid desfocar">
 
   <div class="row mt-4">
     <div class="col">
