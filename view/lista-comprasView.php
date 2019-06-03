@@ -166,7 +166,7 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
 
 
  <div class="listadecompras d-none">
-  <div style="width: 70%; margin: 0 auto; margin-top: 70px">
+  <div style="width: 70%; margin: 0 auto; margin-top: 70px; height: 500px; overflow-y: auto;">
     <div class="modal-content">
       <div class="modal-header">
         <!--<h5 class="modal-title" id="exampleModalLabel">Produtos</h5>-->
