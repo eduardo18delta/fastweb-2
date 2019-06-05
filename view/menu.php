@@ -118,7 +118,7 @@ $numeroclientes = $menu->listarclientes();
                             </div>
                             </a>
                         </div>
-                         <div class="col-lg-3 col-sm-6">
+                         <!--<div class="col-lg-3 col-sm-6">
                             <div class="card bg-warning text-white">
                                 <div class="card-body">
                                     <i class="fas fa-handshake fa-3x"></i>
@@ -126,7 +126,18 @@ $numeroclientes = $menu->listarclientes();
                                     <h2 class="lead">13</h2>
                                 </div>
                             </div>
-                        </div> 
+                        </div> -->
+                        <div class="col-lg-3 col-sm-6">
+                            <a href="list-cargos.php">
+                            <div class="card bg-secondary text-white">
+                                <div class="card-body">
+                                    <i class="fas fa-address-card fa-3x"></i>
+                                    <h6 class="card-title">Cargos </h6>
+                                    <h2 class="lead"><?=$numerocargos;?></h2>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
                     </div>
 
                 <div class="row mb-3">
@@ -141,18 +152,7 @@ $numeroclientes = $menu->listarclientes();
                             </div>
                             </a>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <a href="list-cargos.php">
-                            <div class="card bg-secondary text-white">
-                                <div class="card-body">
-                                    <i class="fas fa-address-card fa-3x"></i>
-                                    <h6 class="card-title">Cargos </h6>
-                                    <h2 class="lead"><?=$numerocargos;?></h2>
-                                </div>
-                            </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
+                          <!--<div class="col-lg-3 col-sm-6">
                             <a href="list-cargos.php">
                             <div class="card bg-secondary text-white">
                                 <div class="card-body">
@@ -162,9 +162,7 @@ $numeroclientes = $menu->listarclientes();
                                 </div>
                             </div>
                             </a>
-                        </div>
-   
-                        
+                        </div>-->                        
                     </div>
 
                 </div>
