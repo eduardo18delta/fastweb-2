@@ -31,6 +31,26 @@ include_once '../parts/head.php'; ?>
   <table class="table table-striped table-hover table-bordered mt-4">
     <thead>
       <tr>
+        <div class="d-flex justify-content-center" id="campo-busca">
+            <form method="post" class="h-100 w-100 esconder" id="form-busca" action="../view/buscaView.php">
+                <div class="input-group input-group-sm h-100">                    
+                    <input name="busca" class="form-control input rounded-0 h-100" type="text" placeholder="Buscar podutos..." id="filtro-nome-produto">
+                    <input name="busca-cod-barra" class="d-none form-control input rounded-0 h-100" type="text" placeholder="Digite o código de barra ou use o leitor...">
+                    <div class="input-group-prepend">
+                        <button type="submit" class="btn bg-white">
+                        <i class="fas fa-search"></i>
+                        </button>  
+                        <button class="btn bg-white busca_cod_barra">
+                        <i class="fas fa-barcode"></i>
+                        </button>    
+                        <button class="d-none enviar-cod-barra" type="submit">
+                        </button>                                      
+                    </div>
+                </div>
+            </form>
+        </div>
+      </tr>
+      <tr>
         <th><input type="checkbox" name="delete"></th>
         <th>Produto:</th>
         <th>Código:</th>
@@ -45,7 +65,7 @@ include_once '../parts/head.php'; ?>
         <th>Apagar:</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="lista-produtos">
 
     <?php foreach($lista as $produtos):?>   
       <tr>
@@ -615,6 +635,59 @@ $(".updateprodutomodal<?=$produtos['id_produto']?>").click(function(){
       }
   })
 
+$('#filtro-nome-produto').keyup(function() {
+    var nomeFiltro = $(this).val().toLowerCase();
+    console.log(nomeFiltro);
+    $('.lista-produtos').find('tr').each(function() {
+        var conteudoCelula = $(this).find('td').text();
+        console.log(conteudoCelula);
+        var corresponde = conteudoCelula.toLowerCase().indexOf(nomeFiltro) >= 0;
+        $(this).css('display', corresponde ? '' : 'none');
+    });
+});
+
+
+$("[name=busca-cod-barra]").removeClass("d-none")
+$("[name=busca-cod-barra]").hide()
+
+$(".busca_cod_barra").click(function(){
+
+  if ($(".busca_cod_barra").hasClass('ativo')) {
+    $(".busca_cod_barra").addClass("bg-white")
+    $(".busca_cod_barra").addClass("text-dark")
+    $(".busca_cod_barra").removeClass("bg-primary")
+    $(".busca_cod_barra").removeClass("text-white")
+  //$(".busca_cod_barra").css("background-color","#fff")
+  //$(".busca_cod_barra i").css("background-color","#000")
+  $("[name=busca-cod-barra]").hide()
+  $("[name=busca]").show()
+  $("#form-busca").attr("action","../view/buscaView.php")
+  $(".busca_cod_barra").removeClass("ativo")
+  return false;
+  } else {
+    $(".busca_cod_barra").addClass("bg-primary")
+    $(".busca_cod_barra").addClass("text-white")
+    $(".busca_cod_barra").removeClass("bg-white")
+    $(".busca_cod_barra").removeClass("text-dark")
+  //$(".busca_cod_barra").css("background-color","red")
+  //$(".busca_cod_barra i").css("background-color","#fff")
+  $("[name=busca-cod-barra]").focus();
+  $("[name=busca-cod-barra]").show()
+  $("[name=busca]").hide()
+  $("#form-busca").attr("action","../view/buscacodbarraView.php")
+$("[name=busca-cod-barra]").select()
+  $("[name=busca-cod-barra]").keyup(function() {
+        
+      $(".enviar-cod-barra").focus()
+      
+      return true;
+  });
+
+  $(".busca_cod_barra").addClass("ativo")
+  return false; 
+  }
+  
+})
 
       
 }); //fim do jquery
