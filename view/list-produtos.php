@@ -72,7 +72,7 @@ include_once '../parts/head.php'; ?>
         <th><input type="checkbox" name="delete"></th>
         <th><img src="../assets/img/upload_produtos/<?= $produtos['img_01']?>" width="70px" height="70px"></th>
         <td><?= $produtos['id_produto']?></td>  
-        <td><?= $produtos['nome']?></td>
+        <th><?= $produtos['nome']?></th>
         <td><?= "R$ ".$produtos['valor']?></td>         
         <td><?= $produtos['fornecedor']?></td>
         <td><?= $produtos['validade']?></td>
@@ -639,7 +639,7 @@ $('#filtro-nome-produto').keyup(function() {
     var nomeFiltro = $(this).val().toLowerCase();
     console.log(nomeFiltro);
     $('.lista-produtos').find('tr').each(function() {
-        var conteudoCelula = $(this).find('td').text();
+        var conteudoCelula = $(this).find('th').text();
         console.log(conteudoCelula);
         var corresponde = conteudoCelula.toLowerCase().indexOf(nomeFiltro) >= 0;
         $(this).css('display', corresponde ? '' : 'none');
