@@ -19,8 +19,8 @@ include_once '../parts/head.php'; ?>
 				<th>Email:</th>				
 				<th>Telefone:</th>
 				<th>Genero</th>
-				<th>Oferta:</th>
-				<th>Apagar:</th>						
+				<!--<th>Oferta:</th>-->
+				<!--<th>Apagar:</th>-->
 			</tr>
 		</thead>
 		<tbody>
@@ -31,14 +31,13 @@ include_once '../parts/head.php'; ?>
 				<td><?= $clientes['email']?></td> 				
 				<td><?= $clientes['telefone']?></td>
 				<td><?= $clientes['sexo']?></td>
-				<td><?= $clientes['ofertas']?></td>
-
-				<td>
+				<!--<td><?#=$clientes['ofertas']?></td>-->
+				<!--<td>
 					<form name="deleteuser" method="post" action="../controller/deleteclienteController.php">
-					<input type="hidden" name="id" value="<?=$clientes['id']?>">						
-					<input class="btn btn-danger" onclick="return confirm('Deseja realmente apagar? Cliente:<?= $clientes['nome']?>');" type="submit" value="Apagar">
+					<input type="hidden" name="id" value="<?#=$clientes['id']?>">						
+					<input class="btn btn-danger" onclick="return confirm('Deseja realmente apagar? Cliente:<?#=$clientes['nome']?>');" type="submit" value="Apagar">
 					</form>
-				</td>
+				</td>-->
 			</tr>		
 		<?php endforeach?>
 		</tbody>
