@@ -32,23 +32,23 @@ include_once '../parts/head.php'; ?>
     <thead>
       <tr>
         <div class="d-flex justify-content-center" id="campo-busca">
-            <form method="post" class="h-100 w-100 esconder" id="form-busca" action="../view/buscaView.php">
-                <div class="input-group input-group-sm h-100">                    
-                    <input name="busca" class="form-control input rounded-0 h-100" type="text" placeholder="Buscar podutos..." id="filtro-nome-produto">
-                    <input name="busca-cod-barra" class="d-none form-control input rounded-0 h-100" type="text" placeholder="Digite o código de barra ou use o leitor...">
-                    <div class="input-group-prepend">
-                        <button type="submit" class="btn bg-white">
-                        <i class="fas fa-search"></i>
-                        </button>  
-                        <button class="btn bg-white busca_cod_barra">
-                        <i class="fas fa-barcode"></i>
-                        </button>    
-                        <button class="d-none enviar-cod-barra" type="submit">
-                        </button>                                      
-                    </div>
-                </div>
-            </form>
+    <form method="post" class="h-100 w-100 esconder" id="form-busca" action="../view/buscaView.php">
+        <div class="input-group input-group-sm h-100">                    
+            <input name="busca" class="form-control input rounded h-100" type="text" placeholder="Buscar produtos..." id="filtro-nome-produto">
+            <input name="busca-cod-barra" class="d-none form-control input rounded h-100" type="text" placeholder="Digite o código de barra ou use o leitor..." id="filtro-cod-barra-produto">
+            <div class="input-group-prepend">
+                <button class="btn bg-white" onclick="return false;">
+                <i class="fas fa-search"></i>
+                </button>  
+                <button class="btn bg-white busca_cod_barra">
+                <i class="fas fa-barcode"></i>
+                </button>    
+                <button class="d-none enviar-cod-barra">
+                </button>                                      
+            </div>
         </div>
+    </form>
+</div>
       </tr>
       <tr>
         <th><input type="checkbox" name="delete"></th>
@@ -61,6 +61,7 @@ include_once '../parts/head.php'; ?>
         <th>Qtd:</th>
         <th>Marca:</th>
         <th>Categoria</th>
+        <th>Cód. Barra:</th>
         <th>Editar:</th>
         <th>Apagar:</th>
       </tr>
@@ -79,7 +80,7 @@ include_once '../parts/head.php'; ?>
         <td><?= $produtos['quantidade']?></td>
         <td><?= $produtos['marca']?></td>
         <td><?= $produtos['descricao']?></td>
-
+        <td><?=$produtos['cod_barra']?></td>
         <td>
           <form name="deleteuser" method="post" action="../controller/deleteprodutoController.php">
           
@@ -646,6 +647,16 @@ $('#filtro-nome-produto').keyup(function() {
     });
 });
 
+$('#filtro-cod-barra-produto').keyup(function() {
+    var nomeFiltro = $(this).val().toLowerCase();
+    console.log(nomeFiltro);
+    $('.lista-produtos').find('tr').each(function() {
+        var conteudoCelula = $(this).find('td').text();
+        console.log(conteudoCelula);
+        var corresponde = conteudoCelula.toLowerCase().indexOf(nomeFiltro) >= 0;
+        $(this).css('display', corresponde ? '' : 'none');
+    });
+});
 
 $("[name=busca-cod-barra]").removeClass("d-none")
 $("[name=busca-cod-barra]").hide()

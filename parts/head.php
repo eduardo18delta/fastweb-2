@@ -10,6 +10,8 @@
       <link href="../assets/css/cadastro-produto.css" rel="stylesheet">
       <link href="../assets/img/icons/dev-icon.png" rel="icon" type="image/png">            
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">  
+      <!-- Css FontAwesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   </head>
 <body>
 
