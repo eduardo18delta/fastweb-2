@@ -18,33 +18,39 @@ include_once '../parts/head.php'; ?>
 		</div>
 		<div class="col-md-6">
 			<div class="alert alert-secondary">
-				Relatórios Estoque	
+				Relatórios Gerenciais
 			</div>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-md-6">
-			<div class="card" style="width: 18rem;">
-  				<img class="card-img-top" src="..." alt="Reports Clientes">
-  					<div class="card-body">
-    					<p class="card-text">
-    					Relatório de clientes do sistema
-    					</p>
-    					<a class="btn btn-success" href="">Gerar</a>
-  					</div>
+			<div class="card">
+  				<div class="card-header">
+    			Lista de Clientes
+  				</div>
+  				<div class="card-body">
+    				<h6 class="card-title">Versão 1.0 - Em desenvolvimento</h6>
+    				<p class="card-text">
+    					Relatório com os clientes cadastrados no sistema.
+    				</p>
+    			<a href="#" class="btn btn-primary">Gerar Relatório</a>
+  				</div>
 			</div>
 		</div>		
 
 		<div class="col-md-6">
-			<div class="card" style="width: 18rem;">
-  				<img class="card-img-top" src="..." alt="Reports Admin">
-  					<div class="card-body">
-    					<p class="card-text">
-    						Relatórios de estoque
-    					</p>
-    					<a class="btn btn-success" href="">Gerar</a>
-  					</div>
+			<div class="card">
+  				<div class="card-header">
+    			Lista de Produtos
+  				</div>
+  				<div class="card-body">
+    				<h6 class="card-title">Versão 1.0 - Em desenvolvimento</h6>
+    				<p class="card-text">
+    					Relatório com os produtos cadastrados em estoque.
+    				</p>
+    			<a href="#" class="btn btn-primary">Gerar Relatório</a>
+  				</div>
 			</div>		
 		</div>
 	</div>
