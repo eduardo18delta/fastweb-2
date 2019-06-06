@@ -37,6 +37,18 @@ include_once '../parts/head.php'; ?>
     			<a href="#" class="btn btn-primary">Gerar Relatório</a>
   				</div>
 			</div>
+			<div class="card mt-2">
+  				<div class="card-header">
+    			Ultimas 10 Compras realizadas
+  				</div>
+  				<div class="card-body">
+    				<h6 class="card-title">Versão 1.0 - Em desenvolvimento</h6>
+    				<p class="card-text">
+    					Relatório das últimas 10 compras realizadas.
+    				</p>
+    			<a href="#" class="btn btn-primary">Gerar Relatório</a>
+  				</div>
+			</div>
 		</div>		
 
 		<div class="col-md-6">
@@ -51,7 +63,19 @@ include_once '../parts/head.php'; ?>
     				</p>
     			<a href="#" class="btn btn-primary">Gerar Relatório</a>
   				</div>
-			</div>		
+			</div>	
+			<div class="card mt-2">
+  				<div class="card-header">
+    			Lista de Usuários
+  				</div>
+  				<div class="card-body">
+    				<h6 class="card-title">Versão 1.0 - Em desenvolvimento</h6>
+    				<p class="card-text">
+    					Relatório com os usuários dos sistemas.
+    				</p>
+    			<a href="#" class="btn btn-primary">Gerar Relatório</a>
+  				</div>
+			</div>	
 		</div>
 	</div>
 </div>
