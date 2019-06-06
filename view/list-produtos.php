@@ -34,8 +34,8 @@ include_once '../parts/head.php'; ?>
         <div class="d-flex justify-content-center" id="campo-busca">
     <form method="post" class="h-100 w-100 esconder" id="form-busca" action="../view/buscaView.php">
         <div class="input-group input-group-sm h-100">                    
-            <input name="busca" class="form-control input rounded h-100" type="text" placeholder="Buscar produtos..." id="filtro-nome-produto">
-            <input name="busca-cod-barra" class="d-none form-control input rounded h-100" type="text" placeholder="Digite o código de barra ou use o leitor..." id="filtro-cod-barra-produto">
+            <input name="busca" class="form-control input rounded h-100" type="text" placeholder="Buscar produtos..." id="filtro-nome-produto"  onclick="return false;">
+            <input name="busca-cod-barra" class="d-none form-control input rounded h-100" type="text" placeholder="Digite o código de barra ou use o leitor..." id="filtro-cod-barra-produto"  onclick="return false;">
             <div class="input-group-prepend">
                 <button class="btn bg-white" onclick="return false;">
                 <i class="fas fa-search"></i>
@@ -49,6 +49,9 @@ include_once '../parts/head.php'; ?>
         </div>
     </form>
 </div>
+      </tr>
+      <tr>
+        <div class="msg-produto"></div>
       </tr>
       <tr>
         <th><input type="checkbox" name="delete"></th>
@@ -635,7 +638,7 @@ $(".updateprodutomodal<?=$produtos['id_produto']?>").click(function(){
       $(".destaque<?=$produtos['id_produto']?>").prop("checked", true)
       }
   })
-
+var q=0
 $('#filtro-nome-produto').keyup(function() {
     var nomeFiltro = $(this).val().toLowerCase();
     console.log(nomeFiltro);
@@ -643,8 +646,35 @@ $('#filtro-nome-produto').keyup(function() {
         var conteudoCelula = $(this).find('th').text();
         console.log(conteudoCelula);
         var corresponde = conteudoCelula.toLowerCase().indexOf(nomeFiltro) >= 0;
+        if (corresponde==true){
+          if (q==1) {
+          $(".msg-produto").html("<div class='alert alert-success mt-4'>"
+          +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
+          +"<span aria-hidden='true'>&times;</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produto em estoque!</span>"
+          +"</div>");
+          q++
+          } else
+          if (q>1) {
+          $(".msg-produto").html("<div class='alert alert-success mt-4'>"
+          +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
+          +"<span aria-hidden='true'>&times;</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produtos em estoque!</span>"
+          +"</div>");
+          q++
+          }
+          
+        }    else       if (q==0){
+          $(".msg-produto").html("<div class='alert alert-danger mt-4'>"
+          +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
+          +"<span aria-hidden='true'>&times;</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>Nenhum produto em estoque!</span>"
+          +"</div>");
+          q++
+          }
         $(this).css('display', corresponde ? '' : 'none');
     });
+    q=0
 });
 
 $('#filtro-cod-barra-produto').keyup(function() {
