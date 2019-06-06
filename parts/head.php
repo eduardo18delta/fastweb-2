@@ -6,7 +6,7 @@
       <meta name="description" content="Gestão - FastWeb">
       <meta name="author" content="Eduardo Henrique">
       <title>FastWeb</title>    
-      <link href="../assets/css/styles.css" rel="stylesheet">    
+      <!--<link href="../assets/css/styles.css" rel="stylesheet">    -->
       <link href="../assets/css/cadastro-produto.css" rel="stylesheet">
       <link href="../assets/img/icons/dev-icon.png" rel="icon" type="image/png">            
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">  
