@@ -663,6 +663,13 @@ $('#filtro-nome-produto').keyup(function() {
           +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produtos em estoque!</span>"
           +"</div>");
           q++
+          } else       if (q==""){
+          $(".msg-produto").html("<div class='alert alert-danger mt-4'>"
+          +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
+          +"<span aria-hidden='true'>&times;</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produto em estoque!</span>"
+          +"</div>");
+          q++
           }
           
         }    else       if (q==0){
@@ -672,7 +679,7 @@ $('#filtro-nome-produto').keyup(function() {
           +"</button><span class='w-90  d-flex justify-content-center'>Nenhum produto em estoque!</span>"
           +"</div>");
           q++
-          }
+          } 
         $(this).css('display', corresponde ? '' : 'none');
     });
     q=0
