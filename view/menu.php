@@ -99,6 +99,7 @@ $numeroclientes = $menu->listarclientes();
                             </a>
                         </div>
                          <div class="col-lg-3 col-sm-6">
+                            <a href="list-reportsView.php">
                             <div class="card bg-success text-white">
                                 <div class="card-body">
                                     <i class="fas fa-paste fa-3x"></i>
@@ -106,6 +107,7 @@ $numeroclientes = $menu->listarclientes();
                                     <h2 class="lead">56</h2>
                                 </div>
                             </div>
+                            </a>
                         </div> 
                         <div class="col-lg-3 col-sm-6">
                             <a href="list-produtos.php">
