@@ -83,7 +83,7 @@ include_once '../parts/head.php'; ?>
         <td><?= $produtos['quantidade']?></td>
         <td><?= $produtos['marca']?></td>
         <td><?= $produtos['descricao']?></td>
-        <td><?=$produtos['cod_barra']?></td>
+        <th><?=$produtos['cod_barra']?></th>
         <td>
           <form name="deleteuser" method="post" action="../controller/deleteprodutoController.php">
           
@@ -647,14 +647,21 @@ $('#filtro-nome-produto').keyup(function() {
         var conteudoCelula = $(this).find('th').text();
         console.log(conteudoCelula);
         var corresponde = conteudoCelula.toLowerCase().indexOf(nomeFiltro) >= 0;
+        
         if (corresponde==true){
-          if (q==1) {
+           
+          q++
+        }   
+        $(this).css('display', corresponde ? '' : 'none');
+    });
+
+    if (q==1) {
           $(".msg-produto").html("<div class='alert alert-success mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
           +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produto em estoque!</span>"
           +"</div>");
-          q++
+          
           } else
           if (q>1) {
           $(".msg-produto").html("<div class='alert alert-success mt-4'>"
@@ -662,17 +669,9 @@ $('#filtro-nome-produto').keyup(function() {
           +"<span aria-hidden='true'>&times;</span>"
           +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produtos em estoque!</span>"
           +"</div>");
-          q++
-          } else       if (q==""){
-          $(".msg-produto").html("<div class='alert alert-danger mt-4'>"
-          +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
-          +"<span aria-hidden='true'>&times;</span>"
-          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produto em estoque!</span>"
-          +"</div>");
-          q++
-          }
           
-        }    else       if (q==0){
+          }  else       
+          if (q==0){
           $(".msg-produto").html("<div class='alert alert-danger mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
@@ -680,27 +679,33 @@ $('#filtro-nome-produto').keyup(function() {
           +"</div>");
           q++
           } 
-        $(this).css('display', corresponde ? '' : 'none');
-    });
-    q=0
+    
 });
+
 
 $('#filtro-cod-barra-produto').keyup(function() {
   var q=0
     var nomeFiltro = $(this).val().toLowerCase();
     console.log(nomeFiltro);
     $('.lista-produtos').find('tr').each(function() {
-        var conteudoCelula = $(this).find('td').text();
+        var conteudoCelula = $(this).find('th').text();
         console.log(conteudoCelula);
         var corresponde = conteudoCelula.toLowerCase().indexOf(nomeFiltro) >= 0;
+        
         if (corresponde==true){
-          if (q==1) {
+           
+          q++
+        }   
+        $(this).css('display', corresponde ? '' : 'none');
+    });
+
+    if (q==1) {
           $(".msg-produto").html("<div class='alert alert-success mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
           +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produto em estoque!</span>"
           +"</div>");
-          q++
+          
           } else
           if (q>1) {
           $(".msg-produto").html("<div class='alert alert-success mt-4'>"
@@ -708,10 +713,9 @@ $('#filtro-cod-barra-produto').keyup(function() {
           +"<span aria-hidden='true'>&times;</span>"
           +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produtos em estoque!</span>"
           +"</div>");
-          q++
-          }
           
-        }    else       if (q==0){
+          }  else       
+          if (q==0){
           $(".msg-produto").html("<div class='alert alert-danger mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
@@ -719,9 +723,6 @@ $('#filtro-cod-barra-produto').keyup(function() {
           +"</div>");
           q++
           }
-        $(this).css('display', corresponde ? '' : 'none');
-    });
-    q=0
 });
 
 $("[name=busca-cod-barra]").removeClass("d-none")
