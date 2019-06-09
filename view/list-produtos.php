@@ -210,7 +210,7 @@ include_once '../parts/head.php'; ?>
 <div class="row">  
           <div class="col-md-10 col-sm-12 form-group">
           <label>Código de Barra:</label>
-          <input class="form-control" type="number" name="cod_barra" required="" maxlength="11" size="11">
+          <input class="form-control" type="number" name="cod_barra">
           </div>
 
           <div class="col-md-2 col-sm-12 form-group">
