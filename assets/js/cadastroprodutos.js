@@ -17,7 +17,7 @@ $(document).ready( function() {
         required: true,  date: true
       },
       cod_barra:{
-        required: true,  minlength: 10
+        required: true,  rangelength: [10, 25]
       },
       quantidade:{
         required: true,  minlength: 1
@@ -57,7 +57,7 @@ $(document).ready( function() {
       },
       cod_barra:{
         required: "<div style='color: red;'>Insira um Cód. de Barras</div>",
-        minlength: "<div style='color: red;'>O Cód. de Barras deve conter no minimo, 10 caracteres</div>"
+        rangelength: "<div style='color: red;'>O Cód. de Barras deve conter no minimo, 10 caracteres e no máximo 25</div>"
       },
       quantidade:{
         required: "<div style='color: red;'>Digite a quantidade</div>",
