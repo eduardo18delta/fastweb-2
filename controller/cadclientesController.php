@@ -15,6 +15,9 @@ if ($password == $password_again) {
  	echo "Password são diferentes";	
 }
 
+$foto_perfil = md5(uniqid(time()));
+move_uploaded_file($_FILES["foto-perfil"]["tmp_name"],"../assets/img/upload_perfil/".$foto_perfil);
+
 $cliente = new Cliente();
 
 $cliente->nome = $nome;
@@ -22,7 +25,7 @@ $cliente->email = $email;
 $cliente->telefone = $telefone;
 $cliente->sexo = $sexo;
 $cliente->password = $password_correct;
-
+$cliente->foto_perfil = $foto_perfil;
 
 $cliente->cadastrarCliente();
 
