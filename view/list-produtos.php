@@ -204,7 +204,7 @@ include_once '../parts/head.php'; ?>
 
           <div class="col-md-5 col-sm-12 form-group">
           <label>Validade:</label>
-          <input class="form-control" type="date" name="validade" min="01-01-2019" required>
+          <input class="form-control" type="date" name="validade" required>
           </div>
 </div>
 <div class="row">  
