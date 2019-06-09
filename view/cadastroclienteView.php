@@ -23,7 +23,7 @@
         reader.onload = function (e) {
             $("<img />", {
                 "src": e.target.result,
-                "class": "resul-img-produto"
+                "class": "resul-foto-perfil"
             }).appendTo(image_holder);
         }
         image_holder.show();
@@ -49,12 +49,12 @@
               unset($_SESSION['msg']);
             }
           ?>      
-          <form id="cadcliente"  method="POST" action="../controller/cadclientesController.php">
+          <form id="cadcliente"  method="POST" action="../controller/cadclientesController.php" enctype="multipart/form-data">
             <div class="form-group d-flex justify-content-center">
               <label for="input-foto-perfil" class="foto-perfil" id="add-foto-perfil">
                 <img src="../assets/img/perfil.jpg" width="100%" height="90%">
               </label>
-              <input type="file" name="foto" id="input-foto-perfil" class="d-none">
+              <input type="file" name="foto-perfil" id="input-foto-perfil" class="d-none">
             </div>
 
             <div class="input-group form-group">
