@@ -16,6 +16,7 @@ Class Cliente extends Conexao{
 	public $senha2;
 	public $ofertas;
     public $endereco_fk;
+    public $foto_perfil;
 
 	public function listar()
     {       
@@ -34,14 +35,15 @@ Class Cliente extends Conexao{
         $conexao = Conexao::conectarBanco();
         $this->cadastrarCliente = $conexao->prepare("
         INSERT INTO clientes 
-        (id, nome,email,telefone,sexo,senha,ofertas) 
+        (id, nome,email,telefone,sexo,senha,ofertas, foto_perfil) 
         VALUES 
-        (NULL,:nome,:email,:telefone,:sexo,:password, NULL);");
+        (NULL,:nome,:email,:telefone,:sexo,:password, :foto_perfil, NULL);");
         $this->cadastrarCliente->bindValue(":nome", $this->nome, PDO::PARAM_STR); 
         $this->cadastrarCliente->bindValue(":email", $this->email, PDO::PARAM_STR);  
         $this->cadastrarCliente->bindValue(":telefone", $this->telefone, PDO::PARAM_STR);  
         $this->cadastrarCliente->bindValue(":sexo", $this->sexo, PDO::PARAM_STR); 
-        $this->cadastrarCliente->bindValue(":password", $this->password, PDO::PARAM_STR); 
+        $this->cadastrarCliente->bindValue(":password", $this->password, PDO::PARAM_STR);
+        $this->cadastrarCliente->bindValue(":foto_perfil", $this->foto_perfil, PDO::PARAM_STR); 
         $this->cadastrarCliente->execute();
 
     }
