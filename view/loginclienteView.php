@@ -6,7 +6,6 @@
 			<div class="row justify-content-center mt-4">
 				<div class="col-md-4">
 					<div class="form-signin">
-						<h2 class="text-center">Login</h2>
 						<?php
 							if(isset($_SESSION['msg']))
 							{
@@ -16,7 +15,7 @@
 						?>
 						<form id="logincliente" method="POST" action="../controller/loginclienteController.php">			
 							<div class="form-group d-flex justify-content-center">
-								<div style="border-radius: 50%; height: 150px; width: 150px; padding: 4px; overflow: auto; border: 4px solid #ccc">
+								<div style="border-radius: 50%; height: 100px; width: 100px; padding: 4px; overflow: auto; border: 4px solid #ccc">
 									<img src="../assets/img/perfil.jpg" width="100%" height="90%">
 								</div>
 							</div>

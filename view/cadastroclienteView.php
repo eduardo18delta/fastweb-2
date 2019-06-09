@@ -5,7 +5,6 @@
     <div class="row justify-content-center mt-4">
       <div class="col-md-4">
         <div class="form-signin">
-          <h2>Cadastrar Usuário</h2>
           <?php
             if(isset($_SESSION['msg']))
             {
@@ -14,6 +13,13 @@
             }
           ?>      
           <form id="cadcliente"  method="POST" action="../controller/cadclientesController.php">
+            <div class="form-group d-flex justify-content-center">
+              <label for="input-foto-perfil" class="foto-perfil" style="border-radius: 50%; height: 100px; width: 100px; padding: 4px; overflow: auto; border: 4px solid #ccc" id="add-foto-perfil">
+                <img src="../assets/img/perfil.jpg" width="100%" height="90%">
+              </label>
+              <input type="file" name="foto" id="input-foto-perfil" class="d-none">
+            </div>
+
             <div class="form-group">
               <input type="text" name="nome" placeholder="Digite o seu nome" class="form-control">
             </div>
