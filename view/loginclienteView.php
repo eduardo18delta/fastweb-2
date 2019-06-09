@@ -14,7 +14,13 @@
 								unset($_SESSION['msg']);
 							}
 						?>
-						<form id="logincliente" method="POST" action="../controller/loginclienteController.php">				
+						<form id="logincliente" method="POST" action="../controller/loginclienteController.php">			
+							<div class="form-group d-flex justify-content-center">
+								<div style="border-radius: 50%; height: 150px; width: 150px; box-shadow: 0 0 5px; padding: 5px; overflow: auto;">
+									<img src="../assets/img/perfil.jpg" width="100%" height="90%">
+								</div>
+							</div>
+
 							<div class="form-group">
 								<input type="text" name="email" placeholder="Digite o seu e-mail" class="form-control">
 							</div>
