@@ -14,7 +14,7 @@ $(document).ready( function() {
         required: true, minlength: 6
       },
       validade:{
-        required: true,  date: true
+        required: true,  date: true, dateFormat: true
       },
       cod_barra:{
         required: true,  rangelength: [10, 25]
