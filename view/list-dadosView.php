@@ -225,16 +225,17 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                             }
                         ?>
 
-                            <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Editar meus dados cadastrados</a>
+                            <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Editar dados cadastrados</a>
 
                     <div class="col mt-4">
                         <div class="table-responsive">
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>Rua</th>
-                                    <th>Número</th>
-                                    <th>Bairro</th>
+                                    <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>Telefone</th>
+                                    <th>Sexo</th>
                                 </tr>
                             </thead>                    
                            
@@ -244,7 +245,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                                 <tr>
                                     <td>
                                         <div class="form-group">
-                                          <input type="text" name="nome" placeholder="Digite o seu nome" class="form-control">
+                                          <input type="text" name="nome" placeholder="Digite o seu nome" class="form-control" disabled="true">
                                         </div>
                                     </td>  
                                     <td>
@@ -256,59 +257,16 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                                         <div class="form-group">          
                                           <input id="telefone" type="text" name="telefone" placeholder="Digite o seu telefone" class="form-control">
                                         </div>
-                                    </td>                              
-                                </tr>
-                                <tr>                       
+                                    </td>  
                                     <td>
                                         <div class="form-group">          
                                           <select class="form-control" name="sexo">
-                                            <option disable="" value="">Escolha o sexo</option>
                                             <option value="Masculino">Masculino</option>
                                             <option value="Feminino">Feminino</option>
                                           </select>
                                         </div>
-                                    </td>  
-                                    <td>
-                                        <div class="form-group">          
-                                          <input id="password" type="password" name="password" placeholder="Digite a senha" class="form-control">
-                                        </div>
-                                    </td>  
-                                    <td>
-                                        <div class="form-group">          
-                                          <input type="password" name="password_again" placeholder="Repita a senha" class="form-control">
-                                        </div>
-                                    </td>
+                                    </td>                             
                                 </tr>
-
-<!--
-<div class="container">
-    <div class="row justify-content-center mt-4">
-      <div class="col-md-4">
-        <div class="form-signin">
-          <h2>Cadastrar Usuário</h2>
-          <?php
-            if(isset($_SESSION['msg']))
-            {
-              echo $_SESSION['msg'];
-              unset($_SESSION['msg']);
-            }
-          ?>      
-          <form id="cadcliente"  method="POST" action="../controller/cadclientesController.php">
-          
-          
-            <div class="form-group">
-                <input type="submit" name="btnCadUsuario" value="Cadastrar" class="btn btn-success btn-block">
-            </div>
-          
-           
-
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
--->
-
 
                                 </form> 
                                               
@@ -317,6 +275,48 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                         </div>            
                     </div>
 
+                    <div class="col mt-4">
+                        <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Senha Atual</th>
+                                    <th>Nova Senha</th>
+                                    <th>Confirmar senha</th>
+                                    <th></th>
+                                </tr>
+                            </thead>                    
+                           
+                            <tbody>
+                                <form method="POST" id="form_endereco" enctype="multipart/form-data">                     
+                                
+                                <tr>
+                                    <td>
+                                        <div class="form-group">
+                                          <input type="text" name="nome" placeholder="Digite o seu nome" class="form-control" disabled="true">
+                                        </div>
+                                    </td>  
+                                    <td>
+                                        <div class="form-group">          
+                                          <input type="text" name="email" placeholder="Digite o seu e-mail" class="form-control">
+                                        </div>
+                                    </td>  
+                                    <td>
+                                        <div class="form-group">          
+                                          <input id="telefone" type="text" name="telefone" placeholder="Digite o seu telefone" class="form-control">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success" href="">Alterar Senha</a>
+                                    </td>                              
+                                </tr>
+
+                                </form> 
+                                              
+                            </tbody>
+                        </table>
+                        </div>            
+                    </div>
 				</div>   
 			</div>
 		</div>
