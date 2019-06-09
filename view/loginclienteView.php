@@ -6,7 +6,7 @@
 			<div class="row justify-content-center mt-4">
 				<div class="col-md-4">
 					<div class="form-signin">
-						<h2 class="text-center">Login Cliente</h2>
+						<h2 class="text-center">Login</h2>
 						<?php
 							if(isset($_SESSION['msg']))
 							{
@@ -21,14 +21,20 @@
 								</div>
 							</div>
 
-							<div class="form-group">
-								<input type="text" name="email" placeholder="Digite o seu e-mail" class="form-control">
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+								</div>
+								<input type="text" name="email" placeholder="Digite o seu e-mail" class="form-control">	
 							</div>
-									
-							<div class="form-group">									
+
+							<div class="input-group form-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fas fa-key"></i></span>
+								</div>
 								<input type="password" name="password" placeholder="Digite a sua senha" class="form-control">
 							</div>
-					
+
 							<div class="form-group">									
 								<input type="submit" name="btnLogin" value="Acessar" class="btn btn-success btn-block">
 							</div>	
