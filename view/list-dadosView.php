@@ -225,8 +225,13 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                             }
                         ?>
 
-                            <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Editar dados cadastrados</a>
-
+                            <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-10" href="">Editar dados cadastrados</a>
+<div class="form-group d-flex justify-content-center" style="position: absolute; right: 40px; top: 20px">
+                                          <label for="input-foto-perfil" class="foto-perfil" id="add-foto-perfil">
+                                            <img src="../assets/img/upload_perfil/<?=$_SESSION['foto_perfil']?>" width="100%" height="100%" onerror="this.src='../assets/img/perfil.jpg'">
+                                          </label>
+                                          <input type="file" name="foto-perfil" id="input-foto-perfil" class="d-none">
+                                        </div>
                     <div class="col mt-4">
                         <div class="table-responsive">
                         <table class="table table-striped table-hover">
@@ -240,8 +245,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                             </thead>                    
                            
                             <tbody>
-                                <form method="POST" id="form_endereco" enctype="multipart/form-data">                       
-                                
+                                <form method="POST" id="form_endereco" enctype="multipart/form-data">                   
                                 <tr>
                                     <td>
                                         <div class="form-group">
@@ -258,6 +262,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                                           <input id="telefone" type="text" name="telefone" placeholder="Digite o seu telefone" class="form-control">
                                         </div>
                                     </td>  
+
                                     <td>
                                         <div class="form-group">          
                                           <select class="form-control" name="sexo">
@@ -265,7 +270,8 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                                             <option value="Feminino">Feminino</option>
                                           </select>
                                         </div>
-                                    </td>                             
+                                    </td>
+                          
                                 </tr>
 
                                 </form> 
