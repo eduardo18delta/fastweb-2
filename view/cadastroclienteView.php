@@ -1,6 +1,43 @@
 <?php include_once '../controller/facebookloginController.php'; ?>
 <?php include_once '../view/menuView.php'; ?>
 
+
+<!-- Adicionando JQuery -->
+    <script  src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <!-- Adicionando Javascript -->
+    <script type="text/javascript" >
+
+        $(document).ready(function() {
+            
+    $("#input-foto-perfil").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $("#add-foto-perfil");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-img-produto"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
+
+  });
+
+        }); // FIm do Jquery
+
+    </script>
+
   <div class="container">
     <div class="row justify-content-center mt-4">
       <div class="col-md-4">
