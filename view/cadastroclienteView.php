@@ -52,7 +52,7 @@
           <form id="cadcliente"  method="POST" action="../controller/cadclientesController.php" enctype="multipart/form-data">
             <div class="form-group d-flex justify-content-center">
               <label for="input-foto-perfil" class="foto-perfil" id="add-foto-perfil">
-                <img src="../assets/img/perfil.jpg" width="100%" height="90%">
+                <img src="../assets/img/perfil.jpg" width="100%" height="100%">
               </label>
               <input type="file" name="foto-perfil" id="input-foto-perfil" class="d-none">
             </div>

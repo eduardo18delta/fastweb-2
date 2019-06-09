@@ -276,7 +276,19 @@ a:hover{
   cursor: pointer;
 }
 
+.menu-foto-perfil{
+  border-radius: 50%; 
+  height: 50px; 
+  width: 50px;  
+  overflow: auto; 
+  border: 1px solid #ccc;
+  position: absolute;
+  margin-left: -60px;
+  margin-top: -10px;
+}
+
 .resul-foto-perfil{
   height: 100%; 
   width: 100%; 
+  border-radius: 50%;
 }

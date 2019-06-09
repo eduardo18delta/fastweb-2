@@ -63,11 +63,15 @@
 
         <div class="cadastros desfocar"> 
                 <?php if(!empty($_SESSION['id'])){ ?>
+                <a href="perfilclienteView.php" class="text-white menu-foto-perfil">
+                    <img src="" onerror="this.src='../assets/img/perfil.jpg'" width="100%" height="100%">
+                </a>  
+                <!--    
                 <a href="perfilclienteView.php" class="text-white">
                     <i class="fas fa-user"></i>
                     <b>Perfil</b>
                 </a>   
-                        
+                -->        
                 <?php }else{?>
                 <a href="loginclienteView.php" class="text-white">
                     <i class="fas fa-user"></i>
