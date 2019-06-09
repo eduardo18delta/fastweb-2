@@ -37,7 +37,7 @@ Class Cliente extends Conexao{
         INSERT INTO clientes 
         (id, nome,email,telefone,sexo,senha,ofertas, foto_perfil) 
         VALUES 
-        (NULL,:nome,:email,:telefone,:sexo,:password, :foto_perfil, NULL);");
+        (NULL,:nome,:email,:telefone,:sexo,:password, NULL, :foto_perfil);");
         $this->cadastrarCliente->bindValue(":nome", $this->nome, PDO::PARAM_STR); 
         $this->cadastrarCliente->bindValue(":email", $this->email, PDO::PARAM_STR);  
         $this->cadastrarCliente->bindValue(":telefone", $this->telefone, PDO::PARAM_STR);  
