@@ -79,7 +79,8 @@ Class Cliente extends Conexao{
         clientes.telefone,
         clientes.sexo,
         clientes.senha,
-        clientes.ofertas
+        clientes.ofertas,
+        clientes.foto_perfil
 
         FROM clientes WHERE email = :email AND senha = :senha
         ");
@@ -94,10 +95,12 @@ Class Cliente extends Conexao{
 		$email = $sql['email'];
         $nome = $sql['nome'];
         $telefone = $sql['telefone'];
+        $foto_perfil = $sql['foto_perfil'];
 		$_SESSION['id'] = $id;
 		$_SESSION['email'] = $email;
         $_SESSION['nome'] = $nome;
         $_SESSION['telefone'] = $telefone;
+        $_SESSION['foto_perfil'] = $foto_perfil;
 		header("Location: ../view/perfilclienteView.php");
 	} 
 	else

@@ -64,7 +64,7 @@
         <div class="cadastros desfocar"> 
                 <?php if(!empty($_SESSION['id'])){ ?>
                 <a href="perfilclienteView.php" class="text-white menu-foto-perfil">
-                    <img src="" onerror="this.src='../assets/img/perfil.jpg'" width="100%" height="100%">
+                    <img src="../assets/img/upload_perfil/<?=$_SESSION['foto_perfil']?>" onerror="this.src='../assets/img/perfil.jpg'" width="100%" height="100%">
                 </a>  
                 <!--    
                 <a href="perfilclienteView.php" class="text-white">
