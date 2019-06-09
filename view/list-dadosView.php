@@ -161,7 +161,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
 
         		<div class="row">
           			<div class="col">                                  
-            			<a class="menu-marcado"href="list-enderecoclienteView.php">  
+            			<a class=""href="list-enderecoclienteView.php">  
             			<i class="fas fa-address-card"></i>
             			Endereços    
             			<i class="fas fa-arrow-circle-right icon-plus"></i>      
@@ -171,7 +171,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
 
         		<div class="row">
           			<div class="col">                                  
-            			<a class=""href="#!">  
+            			<a class="menu-marcado"href="list-dadosView.php">  
             			<i class="fa fa-users"></i>
             			Dados 
             			<i class="fas fa-arrow-circle-right icon-plus"></i>

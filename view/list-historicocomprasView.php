@@ -49,14 +49,14 @@ $result = $pedido->listarPedidos($idusuario);
         		</div>    
 
         		<div class="row">
-          			<div class="col">                                  
-            			<a class=""href="#!">  
-            			<i class="fa fa-users"></i>
-            			Dados 
-            			<i class="fas fa-arrow-circle-right icon-plus"></i>
-            			</a>  
-          			</div>          
-        		</div>  
+                    <div class="col">                                  
+                        <a class=""href="list-dadosView.php">  
+                        <i class="fa fa-users"></i>
+                        Dados 
+                        <i class="fas fa-arrow-circle-right icon-plus"></i>
+                        </a>  
+                    </div>          
+                </div>  
 
                 <div class="row">
                     <div class="col">                                  
