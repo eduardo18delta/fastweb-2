@@ -264,3 +264,13 @@ a:hover{
 .cont_add_produto{
       display: none;
     }
+
+    /*===============Cadastro de Usuário================*/
+.foto-perfil{
+  border-radius: 50%; 
+  height: 100px; 
+  width: 100px; 
+  padding: 4px; 
+  overflow: auto; 
+  border: 4px solid #ccc
+}
