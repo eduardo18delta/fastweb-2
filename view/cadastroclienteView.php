@@ -20,19 +20,31 @@
               <input type="file" name="foto" id="input-foto-perfil" class="d-none">
             </div>
 
-            <div class="form-group">
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
               <input type="text" name="nome" placeholder="Digite o seu nome" class="form-control">
             </div>
 
-            <div class="form-group">          
+            <div class="input-group  form-group">   
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+              </div>       
               <input type="text" name="email" placeholder="Digite o seu e-mail" class="form-control">
             </div>
 
-            <div class="form-group">          
+            <div class="input-group  form-group">      
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+              </div>       
               <input id="telefone" type="text" name="telefone" placeholder="Digite o seu telefone" class="form-control">
             </div>
 
-            <div class="form-group">          
+            <div class="input-group form-group">    
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-ankh"></i></span>
+              </div>        
               <select class="form-control" name="sexo">
                 <option disable="" value="">Escolha o sexo</option>
                 <option value="Masculino">Masculino</option>
@@ -40,11 +52,17 @@
               </select>
             </div>
 
-            <div class="form-group">          
+            <div class="input-group form-group">  
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+              </div>           
               <input id="password" type="password" name="password" placeholder="Digite a senha" class="form-control">
             </div>
 
-            <div class="form-group">          
+            <div class="input-group form-group">   
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+              </div>          
               <input type="password" name="password_again" placeholder="Repita a senha" class="form-control">
             </div>
           

@@ -29,7 +29,7 @@
 
 							<div class="input-group form-group">
 								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="fas fa-key"></i></span>
+									<span class="input-group-text"><i class="fas fa-lock"></i></span>
 								</div>
 								<input type="password" name="password" placeholder="Digite a sua senha" class="form-control">
 							</div>
