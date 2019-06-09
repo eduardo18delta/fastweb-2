@@ -225,75 +225,91 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                             }
                         ?>
 
-                            <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Cadastrar novo endereço</a>
+                            <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-12" href="">Editar meus dados cadastrados</a>
 
                     <div class="col mt-4">
                         <div class="table-responsive">
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th></th>
                                     <th>Rua</th>
                                     <th>Número</th>
                                     <th>Bairro</th>
-                                    <th>Cidade</th>
-                                    <th>Estado</th>
-                                    <th>CEP</th>
-                                    <th></th>
                                 </tr>
                             </thead>                    
-                            <style type="text/css">
                            
-label {
-
-    cursor: pointer;
-    position: relative;
-    font-size: 16px;
-}
-input[type=radio] {
-    display: none;
-}
-label:before {
-    content: "";
-
-    width: 16px;
-    height: 16px;
- 
- 
-    position: absolute;
-
-    background-color: #fff;
-    border: 2px solid green;
-}
-label:before {
-    border-radius: 2px;
-}
-input[type=radio]:checked + label:before {
-    content: "\2713";
-    color: #fff;
-    background-color: green;
-                            </style>
                             <tbody>
-                                <form method="POST" id="form_endereco" enctype="multipart/form-data">
-                                <?php foreach ($listadeenderecos as $lista):?>
+                                <form method="POST" id="form_endereco" enctype="multipart/form-data">                       
                                 
-                                <tr><td>
-                                    <style type="text/css"></style>
-                                    <input type="radio" name="endereco" class="endereco endereco<?= $lista['id']?>" value="<?= $lista['id']?>" id="<?= $lista['id']?>">
-                                    <label for="<?= $lista['id']?>"></label>                 
-                                    </td>
-                                    <td><?= $lista['rua']?></td>  
-                                    <td><?= $lista['numero']?></td>  
-                                    <td><?= $lista['bairro']?></td>  
-                                    <td><?= $lista['cidade']?></td>  
-                                    <td><?= $lista['estado']?></td>  
-                                    <td><?= $lista['cep']?></td>   
-                                    <td><i class="fas fa-edit"></i></td>                  
+                                <tr>
+                                    <td>
+                                        <div class="form-group">
+                                          <input type="text" name="nome" placeholder="Digite o seu nome" class="form-control">
+                                        </div>
+                                    </td>  
+                                    <td>
+                                        <div class="form-group">          
+                                          <input type="text" name="email" placeholder="Digite o seu e-mail" class="form-control">
+                                        </div>
+                                    </td>  
+                                    <td>
+                                        <div class="form-group">          
+                                          <input id="telefone" type="text" name="telefone" placeholder="Digite o seu telefone" class="form-control">
+                                        </div>
+                                    </td>                              
                                 </tr>
-                                  
+                                <tr>                       
+                                    <td>
+                                        <div class="form-group">          
+                                          <select class="form-control" name="sexo">
+                                            <option disable="" value="">Escolha o sexo</option>
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Feminino">Feminino</option>
+                                          </select>
+                                        </div>
+                                    </td>  
+                                    <td>
+                                        <div class="form-group">          
+                                          <input id="password" type="password" name="password" placeholder="Digite a senha" class="form-control">
+                                        </div>
+                                    </td>  
+                                    <td>
+                                        <div class="form-group">          
+                                          <input type="password" name="password_again" placeholder="Repita a senha" class="form-control">
+                                        </div>
+                                    </td>
+                                </tr>
 
-                                
-                                <?php endforeach?>  
+<!--
+<div class="container">
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-4">
+        <div class="form-signin">
+          <h2>Cadastrar Usuário</h2>
+          <?php
+            if(isset($_SESSION['msg']))
+            {
+              echo $_SESSION['msg'];
+              unset($_SESSION['msg']);
+            }
+          ?>      
+          <form id="cadcliente"  method="POST" action="../controller/cadclientesController.php">
+          
+          
+            <div class="form-group">
+                <input type="submit" name="btnCadUsuario" value="Cadastrar" class="btn btn-success btn-block">
+            </div>
+          
+           
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+
+
                                 </form> 
                                               
                             </tbody>
