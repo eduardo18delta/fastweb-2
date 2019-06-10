@@ -75,7 +75,7 @@ $dadoscliente = $cliente->listar();
 
         		<div class="row">
           			<div class="col">                                  
-            			<a class=""href="list-enderecoclienteView.phpp">  
+            			<a class=""href="list-enderecoclienteView.php">  
             			<i class="fas fa-address-card"></i>
             			Endereços    
             			<i class="fas fa-arrow-circle-right icon-plus"></i>      
