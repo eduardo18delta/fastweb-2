@@ -219,8 +219,8 @@ $dadoscliente = $cliente->listar();
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>Senha Atual</th>
                                     <th>Nova Senha</th>
+                                    <th>Confimar senha</th>
                                     <th></th>
                                 </tr>
                             </thead>                    
