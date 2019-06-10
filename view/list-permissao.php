@@ -58,9 +58,7 @@ include_once '../parts/head.php'; ?>
     			<li class="mt-3">Admin&nbsp&nbsp&nbsp&nbsp- 
     				<a class="btn btn-success btn-s" href="#">Acessar info</a></li>
     			<li class="mt-3">Gerente  - 
-    				<a class="btn btn-success btn-s" href="#">Acessar info</a></li>
-    			<li class="mt-3">Auxiliar &nbsp- 
-    				<a class="btn btn-success btn-s" href="#">Acessar info</a></li>
+    				<a class="btn btn-success btn-s" href="#">Acessar info</a></li>    		
     		</ol>
 	    	</p>
   		</div>
