@@ -21,7 +21,7 @@
 	- sudo chmod -R 777 /var/www/html/fastweb-2/assets/js/produtos
 6. Dê permissão de escrita e leitura na pasta /assets/img/upload_produtos. Estou usando apache no Ubuntu 16.04 e o comando ficou assim:
 	- sudo chmod -R 777 /var/www/html/fastweb-2/assets/img/upload_produtos
-7. Dê permissão de escrita e leitura na pasta /assets/img/upload_img. Estou usando apache no Ubuntu 16.04 e o comando ficou assim:
+7. Dê permissão de escrita e leitura na pasta /assets/img/upload_perfil. Estou usando apache no Ubuntu 16.04 e o comando ficou assim:
 	- sudo chmod -R 777 /var/www/html/fastweb-2/assets/img/upload_perfil
 	
 
