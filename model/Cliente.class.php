@@ -95,11 +95,13 @@ Class Cliente extends Conexao{
 		$email = $sql['email'];
         $nome = $sql['nome'];
         $telefone = $sql['telefone'];
+        $sexo = $sql['sexo'];
         $foto_perfil = $sql['foto_perfil'];
 		$_SESSION['id'] = $id;
 		$_SESSION['email'] = $email;
         $_SESSION['nome'] = $nome;
         $_SESSION['telefone'] = $telefone;
+        $_SESSION['sexo'] = $sexo;
         $_SESSION['foto_perfil'] = $foto_perfil;
 		header("Location: ../view/perfilclienteView.php");
 	} 

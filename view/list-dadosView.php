@@ -4,10 +4,10 @@
 
 require_once '../model/autoload.php'; 
 
-$endereco = new Endereco(); 
+$cliente = new Cliente(); 
 $idusuario = $_SESSION['id'];
 
-$listadeenderecos = $endereco->listaEnderecos($idusuario); 
+$dadoscliente = $cliente->listar(); 
 
 ?>
    <!-- Adicionando JQuery -->
@@ -81,21 +81,21 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                 }
             });
 
-            <?php foreach ($listadeenderecos as $lista):?>
+            <?php foreach ($dadoscliente as $lista):?>
             if (<?= $lista['principal']?>==1) {
             
-                $('.endereco'+<?= $lista['id']?>).prop('checked', true)
+                $('.Cliente'+<?= $lista['id']?>).prop('checked', true)
 
             }
                                       
              <?php endforeach?> 
 
-                //$('.endereco1').prop('checked', true)
+                //$('.Cliente1').prop('checked', true)
       
-                    $('.endereco').click(function() {   
-                        //var endereco = $('#form_endereco').serialize();
+                    $('.Cliente').click(function() {   
+                        //var Cliente = $('#form_Cliente').serialize();
                        // alert (cont_pacientes)
-                         var endereco = new FormData($('#form_endereco')[0]);
+                         var Cliente = new FormData($('#form_Cliente')[0]);
              
                         $.ajax({
                             type: 'POST',
@@ -104,10 +104,10 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                             //async: true,
                             contentType: false,
                             processData: false,
-                            data: endereco,
+                            data: Cliente,
                             success: function(id) {
 
-                     $('.endereco'+id).prop('checked', true)
+                     $('.Cliente'+id).prop('checked', true)
                      window.location.href = "../view/carrinhoView.php";
                                if (response=='null') {
                                 //alert ('SELECIONE PACIENTES')
@@ -161,7 +161,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
 
         		<div class="row">
           			<div class="col">                                  
-            			<a class=""href="list-enderecoclienteView.php">  
+            			<a class=""href="list-ClienteclienteView.php">  
             			<i class="fas fa-address-card"></i>
             			Endereços    
             			<i class="fas fa-arrow-circle-right icon-plus"></i>      
@@ -226,6 +226,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                         ?>
 
                             <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-10" href="">Editar dados cadastrados</a>
+
 <div class="form-group d-flex justify-content-center" style="position: absolute; right: 40px; top: 20px">
                                           <label for="input-foto-perfil" class="foto-perfil" id="add-foto-perfil">
                                             <img src="../assets/img/upload_perfil/<?=$_SESSION['foto_perfil']?>" width="100%" height="100%" onerror="this.src='../assets/img/perfil.jpg'">
@@ -245,29 +246,45 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                             </thead>                    
                            
                             <tbody>
-                                <form method="POST" id="form_endereco" enctype="multipart/form-data">                   
+                                <form method="POST" id="form_Cliente" enctype="multipart/form-data">                   
                                 <tr>
                                     <td>
                                         <div class="form-group">
-                                          <input type="text" name="nome" placeholder="Digite o seu nome" class="form-control" disabled="true">
+                                          <input type="text" name="nome" placeholder="Digite o seu nome" class="form-control" disabled="true" value="<?=$_SESSION['nome']?>">
                                         </div>
                                     </td>  
                                     <td>
                                         <div class="form-group">          
-                                          <input type="text" name="email" placeholder="Digite o seu e-mail" class="form-control">
+                                          <input type="text" name="email" placeholder="Digite o seu e-mail" class="form-control" value="<?=$_SESSION['email']?>">
                                         </div>
                                     </td>  
                                     <td>
                                         <div class="form-group">          
-                                          <input id="telefone" type="text" name="telefone" placeholder="Digite o seu telefone" class="form-control">
+                                          <input id="telefone" type="text" name="telefone" placeholder="Digite o seu telefone" class="form-control" value="<?=$_SESSION['telefone']?>">
                                         </div>
                                     </td>  
 
                                     <td>
                                         <div class="form-group">          
                                           <select class="form-control" name="sexo">
-                                            <option value="Masculino">Masculino</option>
-                                            <option value="Feminino">Feminino</option>
+                                            <option value="<?=$_SESSION['sexo']?>"><?=$_SESSION['sexo']?></option>
+                                            <option value="
+                                            <?php
+                                                if ($_SESSION['sexo']=="Masculino"){
+                                                    echo "Feminino";
+                                                } else {
+                                                    echo "Masculino";
+                                                }
+                                            ?>
+                                            ">
+                                                <?php
+                                                if ($_SESSION['sexo']=="Masculino"){
+                                                    echo "Feminino";
+                                                } else {
+                                                    echo "Masculino";
+                                                }
+                                                ?>
+                                            </option>
                                           </select>
                                         </div>
                                     </td>
@@ -275,7 +292,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                                 </tr>
 
                                 </form> 
-                                              
+                 
                             </tbody>
                         </table>
                         </div>            
@@ -294,7 +311,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
                             </thead>                    
                            
                             <tbody>
-                                <form method="POST" id="form_endereco" enctype="multipart/form-data">                     
+                                <form method="POST" id="form_Cliente" enctype="multipart/form-data">                     
                                 
                                 <tr>
                                     <td>
@@ -329,7 +346,7 @@ $listadeenderecos = $endereco->listaEnderecos($idusuario);
 	</div>
 
 <?php
-include "../parts/modal_endereco.php";
+include "../parts/modal_Cliente.php";
 ?> 
 
 </div>
