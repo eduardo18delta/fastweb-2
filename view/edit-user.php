@@ -21,7 +21,7 @@ $listarcargo = $users->listarcargo();
 	Editando : <?= $lista['nome']?>
 </div>
 
-	<form method="post" action="../controller/updateusersController.php">		
+	<form id="editarusuario" method="post" action="../controller/updateusersController.php">		
 		<div class="form-group">
 		<label>Nome:</label>
 		<input class="form-control" type="text" name="nome" value="<?= $lista['nome']?>">
@@ -34,7 +34,7 @@ $listarcargo = $users->listarcargo();
 
 		<div class="form-group">
 		<label>Nova Senha:</label>
-		<input class="form-control" type="password" name="password1">
+		<input class="form-control" type="password" name="password1" id="password1">
 		</div>
 
 		<div class="form-group">
@@ -51,6 +51,7 @@ $listarcargo = $users->listarcargo();
 		<div class="form-group">
 		<label>Nova Permissão:</label>
 		<select class="form-control" name="permissao">
+		<option selected disabled="">Escolha uma permissão</option>
 		<?php foreach ($listarpermissao as $permissao):?>	
 		<option value="<?= $permissao['id_permissao']?>"><?=$permissao['descricao']?></option>
 		<?php endforeach?>
@@ -65,6 +66,7 @@ $listarcargo = $users->listarcargo();
 		<div class="form-group">
 		<label>Novo Cargo:</label>
 		<select class="form-control" name="cargo">
+		<option selected disabled="">Escolha um cargo</option>
 		<?php foreach ($listarcargo as $cargo):?>	
 		<option value="<?=$cargo['id_cargo']?>"><?=$cargo['descricao']?></option>
 		<?php endforeach?>
