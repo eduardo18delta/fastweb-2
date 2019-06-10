@@ -53,12 +53,18 @@ include_once '../parts/head.php'; ?>
   		<div class="container">
     		<h1 class="display-5">Permissões do Sistema</h1>
     		<p class="lead">
-    		Na gestão adminstrativa da @FastWeb temos três tipos de acesso:
+    		Na gestão adminstrativa da @FastWeb temos dois tipos de acesso:
     		<ol>
-    			<li class="mt-3">Admin&nbsp&nbsp&nbsp&nbsp- 
-    				<a class="btn btn-success btn-s" href="#">Acessar info</a></li>
-    			<li class="mt-3">Gerente  - 
-    				<a class="btn btn-success btn-s" href="#">Acessar info</a></li>    		
+    			<li class="mt-3">
+    				<p>
+    					Admin: Poderá cadastrar, editar e excluir produtos, acessar relatórios, usuários e clientes.
+    				</p>
+    			</li>
+    			<li class="mt-3">
+    				<p>
+    					Colaborador: Poderá criar e editar produtos, visualizar clientes e relatórios de estoque.
+    				</p>
+    			</li>    		
     		</ol>
 	    	</p>
   		</div>
