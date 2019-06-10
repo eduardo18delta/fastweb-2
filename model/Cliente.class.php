@@ -101,6 +101,32 @@ Class Cliente extends Conexao{
         $this->updateCliente->execute();
     }
 
+    /*
+    public function consultarSenha($password)
+    {
+        $conexao = Conexao::conectarBanco();
+      $this->login = $conexao->prepare("
+        SELECT 
+
+        clientes.id,
+        clientes.senha
+
+        FROM clientes WHERE email = :email AND senha = :senha
+        ");
+      $this->login->bindValue(":email", $this->email, PDO::PARAM_STR);
+      $this->login->bindValue(":senha", $this->password, PDO::PARAM_STR);
+      $this->login->execute();
+
+        if ($this->login->rowCount() > 0) 
+        {
+            $sql = $this->login->fetch();
+            $id = $sql['id'];
+
+            $_SESSION['id'] = $id;
+        }
+    }
+    */
+
     public function loginCliente()
 	{
 	  $conexao = Conexao::conectarBanco();

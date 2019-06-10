@@ -138,7 +138,7 @@ $dadoscliente = $cliente->listar();
                                 unset($_SESSION['msgupdate']);
                             }
                         ?>
-<form id="cadcliente"  method="POST" action="../controller/updateclientesController.php" enctype="multipart/form-data">
+<form method="POST" action="../controller/updateclientesController.php" enctype="multipart/form-data">
 <input type="hidden" name="id" value="<?=$_SESSION['id']?>">    
                             <input type="submit" class="btn btn-success col-10" href="" value="Atualizar dados cadastrados">
 
@@ -213,6 +213,7 @@ $dadoscliente = $cliente->listar();
                         </div>            
                     </div>
 </form>
+
                     <div class="col mt-4">
                         <div class="table-responsive">
                         <table class="table table-striped table-hover">
@@ -226,26 +227,26 @@ $dadoscliente = $cliente->listar();
                             </thead>                    
                            
                             <tbody>
-                                <form method="POST" id="form_Cliente" enctype="multipart/form-data">                     
+                                <form method="POST" action="../controller/alterarsenhaclientesController.php" enctype="multipart/form-data">                    
                                 
                                 <tr>
                                     <td>
                                         <div class="form-group">
-                                          <input type="text" name="nome" placeholder="Digite o seu nome" class="form-control">
+                                          <input id="password" type="password" name="password" placeholder="Digite a senha" class="form-control">
                                         </div>
                                     </td>  
                                     <td>
                                         <div class="form-group">          
-                                          <input type="text" name="email" placeholder="Digite o seu e-mail" class="form-control">
+                                          <input type="text" name="newpassword" placeholder="Digite a nova senha" class="form-control">
                                         </div>
                                     </td>  
                                     <td>
                                         <div class="form-group">          
-                                          <input id="telefone" type="text" name="telefone" placeholder="Digite o seu telefone" class="form-control">
+                                          <input type="password" name="password_again" placeholder="Repita a senha" class="form-control">
                                         </div>
                                     </td>
                                     <td>
-                                        <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success" href="">Alterar Senha</a>
+                                        <input type="submit" name="x" class="btn btn-success" href="" value="Alterar Senha">
                                     </td>                              
                                 </tr>
 
