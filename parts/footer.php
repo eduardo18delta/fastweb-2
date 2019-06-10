@@ -6,7 +6,7 @@
 <script src="../assets/js/cadastrouser.js"></script>
 <script src="../assets/js/cadastrocargos.js"></script>
 <script src="../assets/js/cadastroprodutos.js"></script>
-<script src="../assets/js/validacoes.js"></script>
+<script src="../assets/js/edicao-user.js"></script>
 
 </body>
 </html>
