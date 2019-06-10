@@ -221,23 +221,17 @@ $dadoscliente = $cliente->listar();
                                 <tr>
                                     <th>Senha Atual</th>
                                     <th>Nova Senha</th>
-                                    <th>Confirmar senha</th>
                                     <th></th>
                                 </tr>
                             </thead>                    
                            
                             <tbody>
                                 <form method="POST" action="../controller/alterarsenhaclientesController.php" enctype="multipart/form-data">                    
-                                
+                                <input type="hidden" name="id" value="<?=$_SESSION['id']?>">
                                 <tr>
                                     <td>
-                                        <div class="form-group">
-                                          <input id="password" type="password" name="password" placeholder="Digite a senha" class="form-control">
-                                        </div>
-                                    </td>  
-                                    <td>
                                         <div class="form-group">          
-                                          <input type="text" name="newpassword" placeholder="Digite a nova senha" class="form-control">
+                                          <input type="password" name="newpassword" placeholder="Digite a nova senha" class="form-control">
                                         </div>
                                     </td>  
                                     <td>
@@ -246,7 +240,7 @@ $dadoscliente = $cliente->listar();
                                         </div>
                                     </td>
                                     <td>
-                                        <input type="submit" name="x" class="btn btn-success" href="" value="Alterar Senha">
+                                        <input type="submit" class="btn btn-success" href="" value="Alterar Senha">
                                     </td>                              
                                 </tr>
 

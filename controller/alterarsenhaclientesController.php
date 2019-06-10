@@ -3,30 +3,23 @@ session_start();
 require_once '../model/autoload.php';
 
 $id = $_POST['id'];
-$password = md5($_POST['password']);
-$newpassword = md5($_POST['password']);
+$newpassword = md5($_POST['newpassword']);
 $password_again = md5($_POST['password_again']);
 
 $cliente = new Cliente();
-$senhaverificada = $cliente->consultarSenha($password);
 
-if ($password==$senhaverificada) {
-	if ($password == $password_again) {
-	$password_correct = $password;
-	} else {
-	 	echo "Password são diferentes";	
-	}
+if ($newpassword == $password_again) {
+$password_correct = $newpassword;
 } else {
-	echo "Password incorreto";	
+ 	echo "Password são diferentes";	
 }
-
 
 $cliente->password = $password_correct;
 
 $cliente->setId($id);
-$cliente->atualizarCliente();
+$cliente->atualizarSenha("senha='$cliente->password'");
 
-$_SESSION['msgupdate'] = "<div class='alert alert-success mt-4'>Dados atualizado com sucesso!</div>";
+$_SESSION['msgupdate'] = "<div class='alert alert-success mt-4'>Senha atualizada com sucesso!</div>";
 
 header("Location: ../view/list-dadosView.php");
 

@@ -101,6 +101,19 @@ Class Cliente extends Conexao{
         $this->updateCliente->execute();
     }
 
+    public function atualizarSenha($novasenha)
+    {
+        $conexao = Conexao::conectarBanco();
+        $this->updateCliente = $conexao->prepare("
+
+        UPDATE clientes SET $novasenha
+
+        WHERE id = :id ");
+
+        //$this->updateCliente->bindValue(":img_01", $this->img_01, PDO::PARAM_STR);
+        $this->updateCliente->bindValue(":id", $this->id, PDO::PARAM_STR);
+        $this->updateCliente->execute();
+    }
     /*
     public function consultarSenha($password)
     {
