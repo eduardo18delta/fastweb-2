@@ -20,113 +20,27 @@ $dadoscliente = $cliente->listar();
 
         $(document).ready(function() {
 
-            function limpa_formulário_cep() {
-                // Limpa valores do formulário de cep.
-                $("#rua").val("");
-                $("#bairro").val("");
-                $("#cidade").val("");
-                $("#uf").val("");
-                $("#ibge").val("");
-            }
-            
-            //Quando o campo cep perde o foco.
-            $("#cep").blur(function() {
+            $("#input-foto-perfil").on('change', function () {
+ 
+    if (typeof (FileReader) != "undefined") {
+ 
+        var image_holder = $("#add-foto-perfil");
+        image_holder.empty();
+ 
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "resul-foto-perfil"
+            }).appendTo(image_holder);
+        }
+        image_holder.show();
+        reader.readAsDataURL($(this)[0].files[0]);
+    } else{
+        alert("Este navegador nao suporta FileReader.");
+    }
 
-                //Nova variável "cep" somente com dígitos.
-                var cep = $(this).val().replace(/\D/g, '');
-
-                //Verifica se campo cep possui valor informado.
-                if (cep != "") {
-
-                    //Expressão regular para validar o CEP.
-                    var validacep = /^[0-9]{8}$/;
-
-                    //Valida o formato do CEP.
-                    if(validacep.test(cep)) {
-
-                        //Preenche os campos com "..." enquanto consulta webservice.
-                        $("#rua").val("...");
-                        $("#bairro").val("...");
-                        $("#cidade").val("...");
-                        $("#uf").val("...");
-                        $("#ibge").val("...");
-
-                        //Consulta o webservice viacep.com.br/
-                        $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
-
-                            if (!("erro" in dados)) {
-                                //Atualiza os campos com os valores da consulta.
-                                $("#rua").val(dados.logradouro);
-                                $("#bairro").val(dados.bairro);
-                                $("#cidade").val(dados.localidade);
-                                $("#uf").val(dados.uf);
-                                $("#ibge").val(dados.ibge);
-                            } //end if.
-                            else {
-                                //CEP pesquisado não foi encontrado.
-                                limpa_formulário_cep();
-                                alert("CEP não encontrado.");
-                            }
-                        });
-                    } //end if.
-                    else {
-                        //cep é inválido.
-                        limpa_formulário_cep();
-                        alert("Formato de CEP inválido.");
-                    }
-                } //end if.
-                else {
-                    //cep sem valor, limpa formulário.
-                    limpa_formulário_cep();
-                }
-            });
-
-            <?php foreach ($dadoscliente as $lista):?>
-            if (<?= $lista['principal']?>==1) {
-            
-                $('.Cliente'+<?= $lista['id']?>).prop('checked', true)
-
-            }
-                                      
-             <?php endforeach?> 
-
-                //$('.Cliente1').prop('checked', true)
-      
-                    $('.Cliente').click(function() {   
-                        //var Cliente = $('#form_Cliente').serialize();
-                       // alert (cont_pacientes)
-                         var Cliente = new FormData($('#form_Cliente')[0]);
-             
-                        $.ajax({
-                            type: 'POST',
-                            //dataType: 'json',
-                            url: '../model/teste.php',
-                            //async: true,
-                            contentType: false,
-                            processData: false,
-                            data: Cliente,
-                            success: function(id) {
-
-                     $('.Cliente'+id).prop('checked', true)
-                     window.location.href = "../view/carrinhoView.php";
-                               if (response=='null') {
-                                //alert ('SELECIONE PACIENTES')
-                                alert(id)
-                               } else {
-                       alert(id)
-
-                             }
-
-                             },
-                             error: function(response){
-                                alert ('erro')
-                             }
-                        });
-                        
-                    
-                        return false;
-                    }); 
-                               
+  });
                                                          
 
         }); // FIm do Jquery
@@ -218,20 +132,21 @@ $dadoscliente = $cliente->listar();
 						<b>Endereços cadastrados</b>	
 					</div>
                         <?php
-                            if(isset($_SESSION['msgcadastro']))
+                            if(isset($_SESSION['msgupdate']))
                             {
-                                echo $_SESSION['msgcadastro'];
-                                unset($_SESSION['msgcadastro']);
+                                echo $_SESSION['msgupdate'];
+                                unset($_SESSION['msgupdate']);
                             }
                         ?>
-
-                            <a data-toggle="modal" data-target="#exampleModal" class="btn btn-success col-10" href="">Editar dados cadastrados</a>
+<form id="cadcliente"  method="POST" action="../controller/updateclientesController.php" enctype="multipart/form-data">
+<input type="hidden" name="id" value="<?=$_SESSION['id']?>">    
+                            <input type="submit" class="btn btn-success col-10" href="" value="Atualizar dados cadastrados">
 
 <div class="form-group d-flex justify-content-center" style="position: absolute; right: 40px; top: 20px">
                                           <label for="input-foto-perfil" class="foto-perfil" id="add-foto-perfil">
                                             <img src="../assets/img/upload_perfil/<?=$_SESSION['foto_perfil']?>" width="100%" height="100%" onerror="this.src='../assets/img/perfil.jpg'">
                                           </label>
-                                          <input type="file" name="foto-perfil" id="input-foto-perfil" class="d-none">
+                                          <input type="file" name="foto_perfil" id="input-foto-perfil" class="d-none">
                                         </div>
                     <div class="col mt-4">
                         <div class="table-responsive">
@@ -245,12 +160,11 @@ $dadoscliente = $cliente->listar();
                                 </tr>
                             </thead>                    
                            
-                            <tbody>
-                                <form method="POST" id="form_Cliente" enctype="multipart/form-data">                   
+                            <tbody>                 
                                 <tr>
                                     <td>
                                         <div class="form-group">
-                                          <input type="text" name="nome" placeholder="Digite o seu nome" class="form-control" disabled="true" value="<?=$_SESSION['nome']?>">
+                                          <input type="text" name="nome" placeholder="Digite o seu nome" class="form-control" value="<?=$_SESSION['nome']?>">
                                         </div>
                                     </td>  
                                     <td>
@@ -268,15 +182,18 @@ $dadoscliente = $cliente->listar();
                                         <div class="form-group">          
                                           <select class="form-control" name="sexo">
                                             <option value="<?=$_SESSION['sexo']?>"><?=$_SESSION['sexo']?></option>
-                                            <option value="
                                             <?php
-                                                if ($_SESSION['sexo']=="Masculino"){
-                                                    echo "Feminino";
+                                            if ($_SESSION['sexo']=="Masculino"){
+                                            ?>
+                                            <option value="Feminino">
+                                            <?php
                                                 } else {
-                                                    echo "Masculino";
+                                            ?>
+                                            <option value="Masculino">
+                                            <?php
                                                 }
                                             ?>
-                                            ">
+                                            
                                                 <?php
                                                 if ($_SESSION['sexo']=="Masculino"){
                                                     echo "Feminino";
@@ -291,13 +208,11 @@ $dadoscliente = $cliente->listar();
                           
                                 </tr>
 
-                                </form> 
-                 
                             </tbody>
                         </table>
                         </div>            
                     </div>
-
+</form>
                     <div class="col mt-4">
                         <div class="table-responsive">
                         <table class="table table-striped table-hover">
@@ -316,7 +231,7 @@ $dadoscliente = $cliente->listar();
                                 <tr>
                                     <td>
                                         <div class="form-group">
-                                          <input type="text" name="nome" placeholder="Digite o seu nome" class="form-control" disabled="true">
+                                          <input type="text" name="nome" placeholder="Digite o seu nome" class="form-control">
                                         </div>
                                     </td>  
                                     <td>
@@ -345,9 +260,6 @@ $dadoscliente = $cliente->listar();
 		</div>
 	</div>
 
-<?php
-include "../parts/modal_Cliente.php";
-?> 
 
 </div>
 

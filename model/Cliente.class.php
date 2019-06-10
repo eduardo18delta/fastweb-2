@@ -18,6 +18,10 @@ Class Cliente extends Conexao{
     public $endereco_fk;
     public $foto_perfil;
 
+    public function setId($id){
+        $this->id = $id;
+    }
+
 	public function listar()
     {       
         $conexao = Conexao::conectarBanco();
@@ -66,6 +70,36 @@ Class Cliente extends Conexao{
     	$this->deletar->execute();
     }
 
+    public function atualizarCliente()
+    {
+        $conexao = Conexao::conectarBanco();
+        $this->updateCliente = $conexao->prepare("
+
+        UPDATE clientes SET nome = :nome,email = :email,telefone = :telefone,sexo = :sexo
+
+        WHERE id = :id ");
+      
+        $this->updateCliente->bindValue(":id", $this->id, PDO::PARAM_STR);      
+        $this->updateCliente->bindValue(":nome", $this->nome, PDO::PARAM_STR); 
+        $this->updateCliente->bindValue(":email", $this->email, PDO::PARAM_STR);  
+        $this->updateCliente->bindValue(":telefone", $this->telefone, PDO::PARAM_STR);  
+        $this->updateCliente->bindValue(":sexo", $this->sexo, PDO::PARAM_STR);
+        $this->updateCliente->execute();
+    }
+
+    public function atualizarFotoperfil($foto_perfil)
+    {
+        $conexao = Conexao::conectarBanco();
+        $this->updateCliente = $conexao->prepare("
+
+        UPDATE clientes SET $foto_perfil
+
+        WHERE id = :id ");
+
+        //$this->updateCliente->bindValue(":img_01", $this->img_01, PDO::PARAM_STR);
+        $this->updateCliente->bindValue(":id", $this->id, PDO::PARAM_STR);
+        $this->updateCliente->execute();
+    }
 
     public function loginCliente()
 	{
