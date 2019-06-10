@@ -16,12 +16,14 @@
 2. Use o arquivo fastweb-2.sql que está alocado na pasta /database para instalar o banco de dados do sistema.
 3. Copie e renomeie os arquivos de conexão na pasta /model - somente remova o trecho "-exemplo" do nome do arquivo sendo eles:
 	conexaoFacebook-exemplo.php e config-exemplo.php
-3. Depois de feito o passo a cima, configure nos arquivos os acessos ao banco de dados do seu servidor MySQL.
-4. Dê permissão de escrita e leitura na pasta /assets/js/produtos. Estou usando apache no Ubuntu 16.04 e o comando ficou assim:
+4. Depois de feito o passo a cima, configure nos arquivos os acessos ao banco de dados do seu servidor MySQL.
+5. Dê permissão de escrita e leitura na pasta /assets/js/produtos. Estou usando apache no Ubuntu 16.04 e o comando ficou assim:
 	- sudo chmod -R 777 /var/www/html/fastweb-2/assets/js/produtos
-45. Dê permissão de escrita e leitura na pasta /assets/img/upload_produtos. Estou usando apache no Ubuntu 16.04 e o comando ficou assim:
+6. Dê permissão de escrita e leitura na pasta /assets/img/upload_produtos. Estou usando apache no Ubuntu 16.04 e o comando ficou assim:
 	- sudo chmod -R 777 /var/www/html/fastweb-2/assets/img/upload_produtos
-
+7. Dê permissão de escrita e leitura na pasta /assets/img/upload_img. Estou usando apache no Ubuntu 16.04 e o comando ficou assim:
+	- sudo chmod -R 777 /var/www/html/fastweb-2/assets/img/upload_perfil
+	
 
 - A partir de agora o sistema está funcional e rodando localmente em sua máquina
 
