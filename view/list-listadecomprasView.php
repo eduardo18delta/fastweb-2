@@ -286,7 +286,6 @@ function consulta_medida(){
                                 <div class="col">
                                 
                                 <?php foreach ($listadecompras as $lista):?>
-                                <form method="POST" id="form_endereco" enctype="multipart/form-data" action="../controller/deletelistaController.php">
                                 
                                 <div class="btn btn-primary btn-sm d-flex justify-content-between border border-white">
                                     <div class="btn btn-primary btn-sm expandir-minimizar<?=$lista['id']?>"></div>
@@ -301,18 +300,26 @@ function consulta_medida(){
                                             Adicionar Produto
                                             <i class="fa fa-shopping-cart"></i>
                                         </div>
+                                        <form method="POST" id="form_endereco" enctype="multipart/form-data" action="../controller/addcarrinholistaController.php">
+                                        <div class="btn btn-primary btn-sm">
+                                            <label class="btn btn-success btn-sm" for="addlistacarrinho<?=$lista['id']?>">Adicionar no carrinho          
+                                            <input class="d-none" id="addlistacarrinho<?=$lista['id']?>" type="submit" name="id" value="<?= $lista['id']?>">         
+                                            </label>  
+                                        </div>
+                                        </form>
                                         <div class="btn btn-primary btn-sm">
                                             <i class="fas fa-edit" data-toggle="modal" data-target="#modal_lista<?= $lista['id']?>"></i>
                                         </div>
+                                        <form method="POST" id="form_endereco" enctype="multipart/form-data" action="../controller/deletelistaController.php">
                                         <div class="btn btn-primary btn-sm">
                                             <label class="fas fa-trash" for="apagar-lista<?=$lista['id']?>">          
                                             <input class="d-none" id="apagar-lista<?=$lista['id']?>" onclick="return confirm('Deseja realmente apagar a lista <?=$lista['nome']?>?');" type="submit" name="id" value="<?= $lista['id']?>">         
-                                            </label>
+                                            </label>  
                                         </div>
-                                             
+                                        </form>   
                                     </div>             
                                 </div>
-                                </form>   
+                                 
 
                                 <div class="bg-default tabela-itens<?=$lista['id']?> d-none">
                                     <?php

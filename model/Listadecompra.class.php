@@ -54,6 +54,24 @@ class Listadecompras extends Conexao
         </div>";
     }
     
+    public function addlistaCarrinho()
+    {
+
+       
+            $id_produto = $this->id;
+              if(!isset($_SESSION['carrinho'][$id_produto])){
+               $_SESSION['carrinho'][$id_produto] = 1;
+            }else{ 
+               $_SESSION['carrinho'][$id_produto] += 1;
+            } 
+        
+        $_SESSION['msgcadastro'] = "
+        <div class='alert alert-danger mt-4'>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close>
+            <span aria-hidden='true'>&times;</span>
+            </button>Lista adicionado no carrinho com sucesso!
+        </div>";   
+    }
 
     public function atualizar()
     {
