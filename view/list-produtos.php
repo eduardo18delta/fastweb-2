@@ -307,29 +307,29 @@ include_once '../parts/head.php'; ?>
 <div class="row">  
           <div class="col-md-8 col-sm-12 form-group">
           <label>Nome:</label>
-          <input class="form-control" type="text" name="nome" value="<?=$produtos['nome']?>" required>
+          <input class="form-control" type="text" name="nome" value="<?=$produtos['nome']?>" required="">
           </div>
 
           <div class="col-md-4 col-sm-12 form-group">
           <label>Valor:</label>
-          <input class="form-control"  type="number" step="0.01" name="valor" value="<?=$produtos['valor']?>" required>
+          <input class="form-control" type="number" step="0.01" name="valor" value="<?=$produtos['valor']?>" required="">
           </div>
 </div>
 <div class="row">  
           <div class="col-md-12 col-sm-12 form-group">
           <label>Descrição</label>
-          <input class="form-control" type="text" name="descricao" value="<?=$produtos['descricao']?>" required>
+          <input class="form-control" type="text" name="descricao" value="<?=$produtos['descricao']?>" required="">
           </div>
 </div>
 <div class="row"> 
 
           <div class="col-md-4 col-sm-12 form-group">
           <label>QTD:</label>
-          <input class="form-control" type="number" name="quantidade" value="<?=$produtos['quantidade']?>" required>
+          <input class="form-control" type="number" name="quantidade" value="<?=$produtos['quantidade']?>" required="">
           </div>
           <div class="col-md-4 col-sm-12 form-group">
           <label>Peso (Kg):</label>
-          <input class="form-control"  type="number" name="peso" value="<?=$produtos['peso']?>" required>
+          <input class="form-control"  type="number" name="peso" value="<?=$produtos['peso']?>" required="">
           </div>
           
           <div class="col-md-4 col-sm-12 form-group">
@@ -345,18 +345,18 @@ include_once '../parts/head.php'; ?>
 <div class="row">  
           <div class="col-md-7 col-sm-12 form-group">
           <label>Fornecedor:</label>
-          <input class="form-control" type="text" name="fornecedor" value="<?=$produtos['fornecedor']?>" required>
+          <input class="form-control" type="text" name="fornecedor" value="<?=$produtos['fornecedor']?>" required="">
           </div>
 
           <div class="col-md-5 col-sm-12 form-group">
           <label>Validade:</label>
-          <input class="form-control" type="date" name="validade" value="<?=$produtos['validade']?>" required>
+          <input class="form-control" type="date" name="validade" value="<?=$produtos['validade']?>" required="">
           </div>
 </div>
 <div class="row">  
           <div class="col-md-10 col-sm-12 form-group">
           <label>Código de Barra:</label>
-          <input class="form-control" type="number" name="cod_barra" value="<?=$produtos['cod_barra']?>" required>
+          <input class="form-control" type="number" name="cod_barra" value="<?=$produtos['cod_barra']?>" required="">
           </div>
 
           <div class="col-md-2 col-sm-12 form-group">
@@ -368,12 +368,12 @@ include_once '../parts/head.php'; ?>
           
           <div class="col-md-3 col-sm-12 form-group">
           <label>Desconto</label>
-          <input class="form-control"  type="number" name="desconto" value="<?=$produtos['desconto']?>" required>
+          <input class="form-control"  type="number" name="desconto" value="<?=$produtos['desconto']?>" required="">
           </div>
 
           <div class="col-md-5 col-sm-12 form-group">
           <label>Marca:</label>
-          <input class="form-control" type="text" name="marca" value="<?=$produtos['marca']?>" required>
+          <input class="form-control" type="text" name="marca" value="<?=$produtos['marca']?>" required="">
           </div>
 
           <div class="col-md-4 col-sm-12 form-group">
@@ -811,6 +811,105 @@ $("[name=busca-cod-barra]").select()
 
 </div>
 
+
+<?php foreach($lista as $produtos):?>  
+<script type="text/javascript">
+  $(document).ready( function() {
+  $("#atualizarproduto<?=$produtos['id_produto']?>").validate({
+    // Define as regras
+    rules:{
+      nome:{        
+        required: true, minlength: 6
+      },
+      valor:{    
+        required: true
+      },
+      descricao:{
+        required: true, minlength: 6
+      },
+      fornecedor:{    
+        required: true, minlength: 6
+      },
+      validade:{
+        required: true,  date: true, dateFormat: true
+      },
+      cod_barra:{
+        required: true,  rangelength: [10, 25]
+      },
+      quantidade:{
+        required: true,  minlength: 1
+      },
+      peso:{
+        required: true,  minlength: 1
+      },
+      desconto:{
+        required: true,  minlength: 1
+      },
+      categoria:{
+        required: true
+      },
+      marca:{
+        required: true,  minlength: 6
+      }
+    },
+    // Define as mensagens de erro para cada regra
+    messages:{
+     nome:{
+        required: "<div style='color: red;'>Digite o nome</div>",
+        minlength: "<div style='color: red;'>O nome deve conter, no minimo, 6 caracteres</div>"
+      },
+      valor:{
+        required: "<div style='color: red;'>Digite o valor</div>"        
+      },
+      descricao:{
+        required: "<div style='color: red;'>Digite uma descrição</div>",
+        minlength: "<div style='color: red;'>Digite no minimo 6 caracteres</div>"
+      },
+      fornecedor:{
+        required: "<div style='color: red;'>Digite o fornecedor</div>",
+        minlength: "<div style='color: red;'>O fornecedor deve conter, no minimo, 6 caracteres</div>"
+      },
+      validade:{
+        required: "<div style='color: red;'>Digite a validade</div>",
+        date: "<div style='color: red;'>Digite uma data valida</div>",        
+      },
+      cod_barra:{
+        required: "<div style='color: red;'>Insira um Cód. de Barras</div>",
+        rangelength: "<div style='color: red;'>O Cód. de Barras deve conter no minimo, 10 caracteres e no máximo 25</div>"
+      },
+      quantidade:{
+        required: "<div style='color: red;'>Digite a quantidade</div>",
+        minlength: "<div style='color: red;'>O quantidade deve conter, no minimo, 1 caractere</div>"
+      },
+      peso:{
+        required: "<div style='color: red;'>Digite o peso do produto</div>",
+        minlength: "<div style='color: red;'>Digite no minimo 1 caractere</div>"
+      },
+      desconto:{
+        required: "<div style='color: red;'>Digite o desconto</div>",
+        minlength: "<div style='color: red;'>Digite no minimo 1 caractere</div>"
+      },
+      categoria:{
+        required: "<div style='color: red;'>Escolha uma categoria</div>",        
+      },
+      marca:{
+        required: "<div style='color: red;'>Digite a marca</div>",
+        minlength: "<div style='color: red;'>O marca deve conter, no minimo, 6 caracteres</div>"
+      }
+    }
+  });
+});
+</script>
+<?php endforeach?>
+
+
+
+
+
+
 <?php } else {header("Location: ../view/login.php?acess_denied");}?>
 
 <?php include_once '../parts/footer.php'; ?>
+
+
+
