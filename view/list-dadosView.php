@@ -212,10 +212,10 @@ $dadoscliente = $cliente->listar();
         </button>
       </div>
       <div class="modal-body">
-         <form method="POST" action="../controller/alterarsenhaclientesController.php" enctype="multipart/form-data">
+         <form id="trocarsenha"method="POST" action="../controller/alterarsenhaclientesController.php" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?=$_SESSION['id']?>">
                         <div class="form-group">          
-                            <input type="password" name="newpassword" placeholder="Digite a nova senha" class="form-control">
+                            <input type="password" id="newpassword" name="newpassword" placeholder="Digite a nova senha" class="form-control">
                         </div>
                         <div class="form-group">          
                             <input type="password" name="password_again" placeholder="Repita a senha" class="form-control">
