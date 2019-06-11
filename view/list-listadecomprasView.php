@@ -287,39 +287,44 @@ function consulta_medida(){
                                 
                                 <?php foreach ($listadecompras as $lista):?>
                                 
-                                <div class="btn btn-primary btn-sm d-flex justify-content-between border border-white">
-                                    <div class="btn btn-primary btn-sm expandir-minimizar<?=$lista['id']?>"></div>
-                                    <div class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;">
+                                <div class="bg-primary btn-sm d-flex justify-content-between border border-white">
+                                    <label class="btn btn-primary btn-sm expandir-minimizar<?=$lista['id']?>"></label>
+                                    <label class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;">
                                         <i><?= $lista['nome']?></i>
-                                    </div>
+                                    </label>
                                     <div class="d-flex"> 
-                                        <div class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">
+                                        <label class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">
                                         0 Produtos
-                                        </div>
-                                        <div data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-success btn-sm">
+                                        </label>
+                                        <label data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-success btn-sm">
                                             Adicionar Produto
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </div>
-                                        <form method="POST" id="form_endereco" enctype="multipart/form-data" action="../controller/addcarrinholistaController.php">
-                                        <div class="btn btn-primary btn-sm">
-                                            <label class="btn btn-success btn-sm" for="addlistacarrinho<?=$lista['id']?>">Adicionar no carrinho          
-                                            <input class="d-none" id="addlistacarrinho<?=$lista['id']?>" type="submit" name="id" value="<?= $lista['id']?>">         
-                                            </label>  
-                                        </div>
-                                        </form>
-                                        <div class="btn btn-primary btn-sm">
+                                          <i class="fa fa-shopping-basket"></i>
+                                        </label>
+                                        
+                                        <label class="btn btn-danger btn-sm ml-2" for="addlistacarrinho<?=$lista['id']?>">
+                                          Adicionar ao carrinho    
+                                          <i class="fa fa-shopping-cart"></i>  
+                                        </label>  
+                                        
+                                        <label class="btn btn-primary btn-sm">
                                             <i class="fas fa-edit" data-toggle="modal" data-target="#modal_lista<?= $lista['id']?>"></i>
-                                        </div>
-                                        <form method="POST" id="form_endereco" enctype="multipart/form-data" action="../controller/deletelistaController.php">
-                                        <div class="btn btn-primary btn-sm">
-                                            <label class="fas fa-trash" for="apagar-lista<?=$lista['id']?>">          
-                                            <input class="d-none" id="apagar-lista<?=$lista['id']?>" onclick="return confirm('Deseja realmente apagar a lista <?=$lista['nome']?>?');" type="submit" name="id" value="<?= $lista['id']?>">         
-                                            </label>  
-                                        </div>
-                                        </form>   
+                                        </label>
+                                        
+                                        <label class="btn btn-primary btn-sm fas fa-trash" for="apagar-lista<?=$lista['id']?>"> 
+                                        </label>                                          
+                                           
                                     </div>             
                                 </div>
-                                 
+
+                                <!--========ADICIONAR LISTA AO CARRINHO========-->  
+                                <form method="POST" enctype="multipart/form-data" action="../controller/addcarrinholistaController.php">         
+                                <input class="d-none" id="addlistacarrinho<?=$lista['id']?>" type="submit" name="id" value="<?= $lista['id']?>">  
+                                </form> 
+
+                                <!--========DELETA LISTA DE COMPRAS========-->  
+                                <form method="POST" id="form_endereco" enctype="multipart/form-data" action="../controller/deletelistaController.php">         
+                                <input class="d-none" id="apagar-lista<?=$lista['id']?>" onclick="return confirm('Deseja realmente apagar a lista <?=$lista['nome']?>?');" type="submit" name="id" value="<?= $lista['id']?>">    
+                                </form> 
 
                                 <div class="bg-default tabela-itens<?=$lista['id']?> d-none">
                                     <?php
