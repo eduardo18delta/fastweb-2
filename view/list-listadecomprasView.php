@@ -380,7 +380,10 @@ function consulta_medida(){
                                                     
                                                 </td> 
                                                 <td>
+                                                  <td>
                                                    <a class="item btn btn-info mais-detalhes produto<?=$itemlista['id_produto']?> d-none">Mais de detalhes...</a>
+                                                  </td>
+                                                  <td>
                                                     <form method="POST" id="form_item_lista<?=$itemlista['id']?>">
                                                                                         
                                                     <div class="btn btn-danger mt-2 remove-itemlista-compra<?=$itemlista['id']?>">
@@ -389,7 +392,7 @@ function consulta_medida(){
                                                     <input type="hidden" name="id" value="<?=$itemlista['id']?>">    
                                                     
                                                   </form>    
-                                                    
+                                                  </td>   
                                                     
                                                 </td> 
                                                 </tr> 
