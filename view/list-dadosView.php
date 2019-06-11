@@ -150,53 +150,54 @@ $dadoscliente = $cliente->listar();
                             }
                         ?>
                 </div>  
-                
-                <div class="col-md-12" style="text-align: center;">
-                    <form method="POST" action="../controller/updateclientesController.php" enctype="multipart/form-data">
-                        <input type="hidden" name="id" value="<?=$_SESSION['id']?>">                                        
-                                <label for="input-foto-perfil" class="foto-perfil" id="add-foto-perfil">
-                                    <img title="clique para alterar" src="../assets/img/upload_perfil/<?=$_SESSION['foto_perfil']?>" width="100%" height="100%" onerror="this.src='../assets/img/perfil.jpg'">
-                                </label>            
-                                <input type="file" name="foto_perfil" id="input-foto-perfil" class="d-none">                        
-                </div>
 
-                <div class="col mt-12">                       
-                    <div class="form-group">
-                        <label>Digite seu nome: </label>
-                        <input type="text" name="nome" class="form-control" value="<?=$_SESSION['nome']?>">
-                    </div>                            
+                <div class="col-md-12">            
+                    <form id="updatecliente" method="POST" action="../controller/updateclientesController.php" enctype="multipart/form-data">
+                            <label for="input-foto-perfil" class="foto-perfil" id="add-foto-perfil">
+                                <img title="clique para alterar" src="../assets/img/upload_perfil/<?=$_SESSION['foto_perfil']?>" width="100%" height="100%" onerror="this.src='../assets/img/perfil.jpg'">
+                            </label>            
+                            <input type="file" name="foto_perfil" id="input-foto-perfil" class="d-none">                        
+               
+                            <div class="form-group">
+                                <label>Digite seu nome: </label>
+                                <input type="text" required="" name="nome" class="form-control" value="<?=$_SESSION['nome']?>">
+                            </div>
+                                  
+                            <div class="form-group">       
+                                <label>Digite seu Email:</label>
+                                <input type="text" name="email" class="form-control" value="<?=$_SESSION['email']?>">
+                            </div>
+        
+                            <div class="form-group">       
+                                <label>Digite seu telefone:</label>  
+                                <input id="telefone" type="text" name="telefone" class="form-control" value="<?=$_SESSION['telefone']?>">
+                            </div>
+      
+                            <div class="form-group">       
+                                <label>Escolha seu gênero:</label> 
+                                    <select class="form-control" name="sexo">
+                                        <option value="<?=$_SESSION['sexo']?>"><?=$_SESSION['sexo']?></option>
+                                            <?php if ($_SESSION['sexo']=="Masculino"){?>                        
+                                            <option value="Feminino">
+                                            <?php } else {?>
+                                            <option value="Masculino">
+                                            <?php } ?>
+                                            <?php if ($_SESSION['sexo']=="Masculino"){ echo "Feminino"; } else { echo "Masculino";}?>
+                                        </option>
+                                    </select>
+                            </div>
 
-                    <div class="form-group">          
-                        <label>Digite seu Email:</label>
-                        <input type="text" name="email" class="form-control" value="<?=$_SESSION['email']?>">
-                    </div>
+                            <input type="hidden" name="id" value="<?=$_SESSION['id']?>">
 
-                    <div class="form-group">        
-                        <label>Digite seu telefone:</label>  
-                        <input id="telefone" type="text" name="telefone" class="form-control" value="<?=$_SESSION['telefone']?>">
-                    </div>
-
-                    <div class="form-group">          
-                        <select class="form-control" name="sexo">
-                            <option value="<?=$_SESSION['sexo']?>"><?=$_SESSION['sexo']?></option>
-                            <?php if ($_SESSION['sexo']=="Masculino"){?>                        
-                            <option value="Feminino">
-                            <?php } else {?>
-                            <option value="Masculino">
-                            <?php } ?>
-                            <?php if ($_SESSION['sexo']=="Masculino"){ echo "Feminino"; } else { echo "Masculino";}?>
-                            </option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-success btn-block" href="" value="Atualizar dados cadastrados">                
-                    </div>
-                </div>
+                            <div class="form-group">       
+                                <input type="submit" class="btn btn-success btn-block" href="" value="Atualizar dados cadastrados">           
+                            </div>           
+                    </form>
+                </div> 
             </div>
-        </form>
- 
-
+        </div>
+    </div>
+</div>
 
 
 
@@ -212,7 +213,7 @@ $dadoscliente = $cliente->listar();
         </button>
       </div>
       <div class="modal-body">
-         <form id="trocarsenha"method="POST" action="../controller/alterarsenhaclientesController.php" enctype="multipart/form-data">
+         <form id="trocarsenha" method="POST" action="../controller/alterarsenhaclientesController.php" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?=$_SESSION['id']?>">
                         <div class="form-group">          
                             <input type="password" id="newpassword" name="newpassword" placeholder="Digite a nova senha" class="form-control">
