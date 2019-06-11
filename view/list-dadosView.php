@@ -153,27 +153,31 @@ $dadoscliente = $cliente->listar();
 
                 <div class="col-md-12">            
                     <form id="updatecliente" method="POST" action="../controller/updateclientesController.php" enctype="multipart/form-data">
+                        
+                            <div class="col-md-12 d-flex justify-content-center">
                             <label for="input-foto-perfil" class="foto-perfil" id="add-foto-perfil">
                                 <img title="clique para alterar" src="../assets/img/upload_perfil/<?=$_SESSION['foto_perfil']?>" width="100%" height="100%" onerror="this.src='../assets/img/perfil.jpg'">
-                            </label>            
+                            </label>  
+                            </div>          
                             <input type="file" name="foto_perfil" id="input-foto-perfil" class="d-none">                        
-               
-                            <div class="form-group">
+                        <div class="row">
+                            <div class="form-group col-md-6">
                                 <label>Digite seu nome: </label>
                                 <input type="text" required="" name="nome" class="form-control" value="<?=$_SESSION['nome']?>">
                             </div>
                                   
-                            <div class="form-group">       
+                            <div class="form-group col-md-6">       
                                 <label>Digite seu Email:</label>
                                 <input type="text" name="email" class="form-control" value="<?=$_SESSION['email']?>">
                             </div>
-        
-                            <div class="form-group">       
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">       
                                 <label>Digite seu telefone:</label>  
                                 <input id="telefone" type="text" name="telefone" class="form-control" value="<?=$_SESSION['telefone']?>">
                             </div>
       
-                            <div class="form-group">       
+                            <div class="form-group col-md-6">       
                                 <label>Escolha seu gênero:</label> 
                                     <select class="form-control" name="sexo">
                                         <option value="<?=$_SESSION['sexo']?>"><?=$_SESSION['sexo']?></option>
@@ -185,6 +189,7 @@ $dadoscliente = $cliente->listar();
                                             <?php if ($_SESSION['sexo']=="Masculino"){ echo "Feminino"; } else { echo "Masculino";}?>
                                         </option>
                                     </select>
+                            </div>
                             </div>
 
                             <input type="hidden" name="id" value="<?=$_SESSION['id']?>">

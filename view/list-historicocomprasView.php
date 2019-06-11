@@ -116,7 +116,7 @@ $result = $pedido->listarPedidos($idusuario);
                                     <td>Pedido: <strong><?= $lista_pedido['id']?></strong></td> 
                                     <td>Data: <strong>11/06/2019</strong></td> 
                                     <td>Status: <strong><?= $lista_pedido['status']?></strong></td> 
-                                    <td class="d-flex"><img src="../assets/img/balaoestrela.png" width="50px" style="position: absolute; right: 20px; z-index: -2; width: 220px; height: 80px; top: -20; opacity: 0.3"> Total:<h5><span class="text-danger ml-2"> R$ <?= number_format($lista_pedido['valor'],2,",",".")?></span></h5></td> 
+                                    <td class="d-flex">Total:<strong><span class="text-danger ml-2"> R$ <?= number_format($lista_pedido['valor'],2,",",".")?></span></strong></td> 
               
                                 </tr>
                             </thead>                    
