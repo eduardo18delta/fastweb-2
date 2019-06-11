@@ -354,5 +354,6 @@ echo $xml -> code;
 //select * from item_pedido join produtos on item_pedido.produto_fk=produtos.id_produto where item_pedido.pedido_fk='1';
 
 
-
+unset($_SESSION['carrinho']);
+unset($_SESSION['teste2']);
 ?>
