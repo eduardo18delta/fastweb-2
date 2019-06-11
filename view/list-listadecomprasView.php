@@ -302,7 +302,7 @@ function consulta_medida(){
                                             <i class="fa fa-shopping-cart"></i>
                                         </label>
                                         
-                                        <label class="btn btn-danger btn-sm" for="addlistacarrinho<?=$lista['id']?>">
+                                        <label class="btn btn-danger btn-sm ml-2" for="addlistacarrinho<?=$lista['id']?>">
                                           Adicionar ao carrinho      
                                         </label>  
                                         
