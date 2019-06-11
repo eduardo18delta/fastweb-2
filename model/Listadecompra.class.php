@@ -56,21 +56,57 @@ class Listadecompras extends Conexao
     
     public function addlistaCarrinho()
     {
+        $conexao = Conexao::conectarBanco();
+        $query = "SELECT 
+        item_lista_compras.id,
+        produtos.id_produto,
+        produtos.medida
+        FROM item_lista_compras 
+        JOIN lista_compras 
+        JOIN produtos 
+        ON item_lista_compras.lista_compras_fk=lista_compras.id AND item_lista_compras.produtos_fk=produtos.id_produto 
+        WHERE lista_compras.id = $this->id;";
+        $resultado = $conexao->query($query);
+        $itemlistadecompras = $resultado->fetchAll();
 
-       
-            $id_produto = $this->id;
+        foreach ($itemlistadecompras as $lista){
+            $id_produto = $lista['id_produto'];
               if(!isset($_SESSION['carrinho'][$id_produto])){
                $_SESSION['carrinho'][$id_produto] = 1;
             }else{ 
                $_SESSION['carrinho'][$id_produto] += 1;
             } 
+
+            if ($lista['medida']==1){
+        $_SESSION['teste2'][$id_produto]="rs";
+      }
+      if ($lista['medida']==2){
+        $_SESSION['teste2'][$id_produto]="kg";
+      }
+      if ($lista['medida']==3){
+        $_SESSION['teste2'][$id_produto]="kg";
+      }
+      if ($lista['medida']==4){
+        $_SESSION['teste2'][$id_produto]="und";
+      }    
+      if ($lista['medida']==5){
+        $_SESSION['teste2'][$id_produto]="und";
+      }
+      if ($lista['medida']==6){
+        $_SESSION['teste2'][$id_produto]="und";
+      }
+      if ($lista['medida']==7){
+        $_SESSION['teste2'][$id_produto]="und";
+      }
+    
         
         $_SESSION['msgcadastro'] = "
-        <div class='alert alert-danger mt-4'>
+        <div class='alert alert-success mt-4'>
             <button type='button' class='close' data-dismiss='alert' aria-label='Close>
             <span aria-hidden='true'>&times;</span>
-            </button>Lista adicionado no carrinho com sucesso!
-        </div>";   
+            </button>Lista adicionada no carrinho com sucesso!
+        </div>";  
+        } 
     }
 
     public function atualizar()
