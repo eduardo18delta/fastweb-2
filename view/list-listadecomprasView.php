@@ -27,6 +27,7 @@ $itemlistadecompras = new Itemlistadecompras();
 
 $(".tabela-itens<?=$lista['id']?>").hide()
 $(".mais-detalhes").removeClass("d-none")
+$(".remove-itemlista-compra").removeClass("d-none")
 $(".expandir-minimizar<?=$lista['id']?>").addClass("fas fa-plus icon-plus")
 $(".tabela-itens<?=$lista['id']?>").removeClass("d-none")
 $(".expandir-minimizar<?=$lista['id']?>").click(function() {
@@ -298,12 +299,11 @@ function consulta_medida(){
                                         </label>
                                         <label data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-success btn-sm">
                                             Adicionar Produto
-                                          <i class="fa fa-shopping-basket"></i>
+                                            <i class="fa fa-shopping-cart"></i>
                                         </label>
                                         
-                                        <label class="btn btn-danger btn-sm ml-2" for="addlistacarrinho<?=$lista['id']?>">
-                                          Adicionar ao carrinho    
-                                          <i class="fa fa-shopping-cart"></i>  
+                                        <label class="btn btn-danger btn-sm" for="addlistacarrinho<?=$lista['id']?>">
+                                          Adicionar ao carrinho      
                                         </label>  
                                         
                                         <label class="btn btn-primary btn-sm">
@@ -388,8 +388,31 @@ function consulta_medida(){
                                                       R$ <?= number_format(($itemlista['valor']*(100-$itemlista['desconto']))/100,2,",",".")?>
                                                     </h4>
                                                 </td>   
-                                                <td class="lista-unidade-produto<?=$itemlista['id_produto']?>">
-                                                    
+                                                <!--<td class="lista-unidade-produto<?=$itemlista['id_produto']?>">-->
+                                                <td>
+                                                  <?php
+                                                  if ($itemlista['medida']==1){
+                                                    echo "R$";
+                                                  }
+                                                  if ($itemlista['medida']==2){
+                                                    echo "Kg";
+                                                  }
+                                                  if ($itemlista['medida']==3){
+                                                    echo "Kg";
+                                                  }
+                                                  if ($itemlista['medida']==4){
+                                                    echo "Und";
+                                                  }    
+                                                  if ($itemlista['medida']==5){
+                                                    echo "Und";
+                                                  }
+                                                  if ($itemlista['medida']==6){
+                                                    echo "Und";
+                                                  }
+                                                  if ($itemlista['medida']==7){
+                                                    echo "Und";
+                                                  }
+                                                  ?>  
                                                 </td> 
                                                 <td>
                                                   <td>
@@ -398,7 +421,7 @@ function consulta_medida(){
                                                   <td>
                                                     <form method="POST" id="form_item_lista<?=$itemlista['id']?>">
                                                                                         
-                                                    <div class="btn btn-danger mt-2 remove-itemlista-compra<?=$itemlista['id']?>">
+                                                    <div class="btn btn-danger mt-2 remove-itemlista-compra remove-itemlista-compra<?=$itemlista['id']?> d-none">
                                                     Remover
                                                     </div> 
                                                     <input type="hidden" name="id" value="<?=$itemlista['id']?>">    
@@ -440,12 +463,12 @@ function consulta_medida(){
         
         <table class="table table-striped table-hover table-bordered mt-4">
           <thead>
-            <tr><input style="width: 50%; margin: 0px auto" class="form-control" id="filtro-nome" placeholder="Pesquisar..." /></tr>
+            <tr><input style="width: 50%; margin: 0px auto" class="form-control" id="filtro-nome<?=$lista['id']?>" placeholder="Pesquisar..." /></tr>
             <tr>
                 <th></th>
                 <th>Descrição</th>
-                <th>Desconto</th>
-                <th>Preço</th>
+                <th>Valor</th>
+                <th>Medida</th>
                 <th></th>
             </tr>
           </thead>

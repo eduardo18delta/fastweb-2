@@ -243,9 +243,9 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
                                         <i><?= $lista['nome']?></i>
                                     </div>
                                     <div class="d-flex"> 
-                                        <div class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">
+                                        <!--<div class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">
                                         0 Produtos
-                                        </div>
+                                        </div>-->
                                         <div class="btn btn-success btn-sm add-itemlista-compra<?=$lista['id']?>">
                                             Adicionar Produto
                                             <i class="fa fa-shopping-cart"></i>
@@ -334,7 +334,7 @@ $('.add-itemlista-compra<?=$lista['id']?>').click(function() {
                                                 <td class="lista-unidade-produto<?= $itemlista['id_produto']?>">
                                                     
                                                 </td> 
-                                                <td>
+                                                <td class="d-none">
                                                    <form method="POST" id="form_item_lista<?=$itemlista['id']?>">
                                                                                         
                                                     <div class="btn btn-danger mt-2 remove-itemlista-compra<?=$itemlista['id']?>">
