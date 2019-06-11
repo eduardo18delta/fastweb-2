@@ -27,11 +27,14 @@ include '../view/menuView.php';
         foreach($buscaconcluida as $destaque) {   
         $qtd++;
         }
+        if ($qtd<1) {
+          echo "<span class='alert alert-danger col-12 text-center'>Nenhum produto encontrado</span>";
+        } else
         if ($qtd<=1) {
-          echo "<span class='alert alert-danger col-12 text-center'>".$qtd." Resultado encontrado</span>";
+          echo "<span class='alert alert-success col-12 text-center'>".$qtd." produto encontrado</span>";
         } else {
-          echo "<span class='alert alert-success col-12 text-center'>".$qtd." Resultados encontrados</span>";
-        }
+          echo "<span class='alert alert-success col-12 text-center'>".$qtd." produtos encontrados</span>";
+        } 
 
         ?>
       </div>
