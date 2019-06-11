@@ -19,7 +19,11 @@ $cliente->password = $password_correct;
 $cliente->setId($id);
 $cliente->atualizarSenha("senha='$cliente->password'");
 
-$_SESSION['msgupdate'] = "<div class='alert alert-success mt-4'>Senha atualizada com sucesso!</div>";
+$_SESSION['msgupdate'] = "<div class='alert alert-success mt-4'>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close>
+            <span aria-hidden='true'>&times;</span>
+            </button>Senha alterada com sucesso!
+        </div>";
 
 header("Location: ../view/list-dadosView.php");
 

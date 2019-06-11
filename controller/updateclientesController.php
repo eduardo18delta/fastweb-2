@@ -36,7 +36,11 @@ $_SESSION['telefone'] = $telefone;
 $_SESSION['sexo'] = $sexo;
 
 
-$_SESSION['msgupdate'] = "<div class='alert alert-success mt-4'>Dados atualizado com sucesso!</div>";
+$_SESSION['msgupdate'] = "<div class='alert alert-success mt-4'>
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close>
+            <span aria-hidden='true'>&times;</span>
+            </button>Dados atualizados com sucesso!
+        </div>";
 
 header("Location: ../view/list-dadosView.php");
 
