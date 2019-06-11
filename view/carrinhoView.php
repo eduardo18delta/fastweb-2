@@ -146,17 +146,18 @@ $_SESSION['numero'] = $lista['numero'];
 
  ."| <a class='carrinho-endereco' href='../view/list-enderecoclienteView.php'>Alterar endereço de entrega</a>";
  $cont++;
-} else if ($cont<1) {
-  echo "Para finalizar a compra <a class='carrinho-endereco' href='../view/list-enderecoclienteView.php'>adicione o endereço de entrega</a>";
-$_SESSION['endereço'] = "ativo";
-$cont++;
-}
+}   
 
 ?>
 
 <?php endforeach?>
 
-<?php  
+<?php 
+if ($cont<1) {
+  echo "Para finalizar a compra <a class='carrinho-endereco' href='../view/list-enderecoclienteView.php'>adicione o endereço de entrega</a>";
+$_SESSION['endereço'] = "ativo";
+$cont++;
+} 
 }
 else 
 { 
