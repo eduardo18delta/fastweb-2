@@ -1,4 +1,4 @@
-<?php  session_start(); include '../view/menuView.php'; if(isset($_SESSION['id'])) { ?>
+<?php  session_start(); include '../view/modalprodutosView.php'; include '../view/menuView.php'; if(isset($_SESSION['id'])) { ?>
 
 <?php 
 
@@ -13,7 +13,7 @@ $result = $pedido->listarPedidos($idusuario);
 ?>
 
 
-<div class="container-fluid">
+<div class="container-fluid desfocar">
 
 	<div class="row mt-4">
 		<div class="col">
@@ -114,9 +114,9 @@ $result = $pedido->listarPedidos($idusuario);
                                 <tr>
 
                                     <td>Pedido: <strong><?= $lista_pedido['id']?></strong></td> 
-                                    <td>Data: <strong>24/02/2019</strong></td> 
+                                    <td>Data: <strong>11/06/2019</strong></td> 
                                     <td>Status: <strong><?= $lista_pedido['status']?></strong></td> 
-                                    <td>Valor Total: <strong>R$ <?= $lista_pedido['valor']?></strong></td> 
+                                    <td class="d-flex"><img src="../assets/img/balaoestrela.png" width="50px" style="position: absolute; right: 20px; z-index: -2; width: 220px; height: 80px; top: -20; opacity: 0.3"> Total:<h5><span class="text-danger ml-2"> R$ <?= number_format($lista_pedido['valor'],2,",",".")?></span></h5></td> 
               
                                 </tr>
                             </thead>                    
@@ -131,10 +131,47 @@ $result = $pedido->listarPedidos($idusuario);
 
                                 <tr>
 
-                                    <td><img src="../assets/img/upload_produtos/<?= $lista_produto['img_01']?>" width="70px" height="70px"></td> 
+                                    <td>
+
+
+                                      <div class="desconto-site">
+                                           <div class="desconto-texto-site"><?=$lista_produto['desconto']?>%</div>
+                                           <i class="fas fa-bookmark"></i>
+                                      </div>
+                                      <div class="item-carrinho">
+                                      <img width="70" height="70px" src="../assets/img/upload_produtos/<?= $lista_produto['img_01']?>">
+                                      </div>         
+                                      <div class="estrelas">
+                                          <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+                                          <label for="cm_star-1"><i class="fa"></i></label>
+                                          <input type="radio" id="cm_star-1" name="fb" value="1"/>
+                                          <label for="cm_star-2"><i class="fa"></i></label>
+                                          <input type="radio" id="cm_star-2" name="fb" value="2"/>
+                                          <label for="cm_star-3"><i class="fa"></i></label>
+                                          <input type="radio" id="cm_star-3" name="fb" value="3"/>
+                                          <label for="cm_star-4"><i class="fa"></i></label>
+                                          <input type="radio" id="cm_star-4" name="fb" value="4"/>
+                                          <label for="cm_star-5"><i class="fa"></i></label>
+                                          <input type="radio" id="cm_star-5" name="fb" value="5"/>
+                                        </div>
+
+                                    </td>  
                                     <td><?= $lista_produto['nome']?></td>
-                                    <td>R$ <?= $lista_produto['valor']?></td> 
-                                    <td>Avaliar Produto</td> 
+                                    <td class="text-center d-flex justify-content-around">
+                                    <span class="text-danger">
+                                      <strike>
+                                      R$ <?= number_format(($lista_produto['valor']*(101+$lista_produto['desconto']))/100,2,",",".")?>
+                                        
+                                      </strike>
+                                    </span>
+                                    <span>
+                                      R$ <?=number_format($lista_produto['valor'],2,",",".")?>
+                                    </span>
+                                    </td> 
+                                    <td>
+                                    <a class="item btn btn-info mais-detalhes produto<?=$lista_produto['id_produto']?>">Mais de detalhes...</a>
+                                    </td>
+                                    <!--<td>Avaliar Produto</td>--> 
               
                                 </tr>
                                 
@@ -150,19 +187,20 @@ $result = $pedido->listarPedidos($idusuario);
 
                                     <td>
                                         <div align="center">Pedido efetuado</div>
-                                        <div align="center">24/02/2019</div>
+                                        <div align="center">11/06/2019</div>
                                     </td> 
                                     <td>
                                         <div align="center">Pagamento autorizado</div>
-                                        <div align="center">24/02/2019</div>
+                                        <div align="center">11/06/2019</div>
                                     </td> 
                                     <td>
                                         <div align="center">Nota Fiscal emitida</div>
-                                        <div align="center">24/02/2019</div>
+                                        <div align="center">11/06/2019</div>
                                     </td> 
                                     <td>
                                         <div align="center">Pedido entregue</div>
-                                        <div align="center">24/02/2019</div>
+                                        <!--<div align="center">11/06/2019</div>-->
+                                        <div align="center">Em andamento</div>
                                     </td> 
               
                                 </tr>
@@ -182,14 +220,14 @@ $result = $pedido->listarPedidos($idusuario);
                                         <div><strong>Pagamento</strong></div>
                                         <div>Cartão de Crédito</div>
                                         <div>752.39####5214</div>
-                                        <div>R$ 28,75 em 1x</div>
+                                        <div>R$ <?= number_format($lista_pedido['valor'],2,",",".")?> em 1x</div>
                                     </div> 
                                     <div>
                                         <div><strong>Total Pago</strong></div>
-                                        <div>Subtotal R$ 28,75</div>
-                                        <div>Desconto R$ 0,00</div>
+                                        <div> R$ <?= number_format($lista_pedido['valor'],2,",",".")?></div>
+                                        <div>Desconto R$ <?= number_format(($lista_pedido['valor']*($lista_produto['desconto']))/100,2,",",".")?></div>
                                         <hr class="bg-success">
-                                        <div class="d-flex justify-content-between"><strong>Total </strong><div>R$ 28,75</div></div>
+                                        <div class="d-flex justify-content-between"><strong>Total </strong><div><?= number_format($lista_pedido['valor'],2,",",".")?></div></div>
                                     </div> 
                                     <div>
                                         <div><strong>Endereço</strong></div>

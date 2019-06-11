@@ -35,9 +35,9 @@ require_once '../model/autoload.php'; $produtos = new Produtos(); $pedido = new 
 $cliente_fk = $_SESSION['id'];
 $endereco_principal = $_SESSION['endereco_principal'];
 $valor = 0; 
-$pedido_efetuado = "23-03-2019";
-$pagamento_autorizado = "23-03-2019";
-$nf_emitida = "23-03-2019";
+$pedido_efetuado = "11-06-2019";
+$pagamento_autorizado = "11-06-2019";
+$nf_emitida = "11-06-2019";
  
 $pedido->salvarPedido($cliente_fk, $endereco_principal, $valor, $pedido_efetuado, $pagamento_autorizado, $nf_emitida);
 
