@@ -299,11 +299,12 @@ function consulta_medida(){
                                         </label>
                                         <label data-toggle="modal" data-target="#modalprodutos<?= $lista['id']?>" class="btn btn-success btn-sm">
                                             Adicionar Produto
-                                            <i class="fa fa-shopping-cart"></i>
+                                            <i class="fa fa-shopping-basket"></i>
                                         </label>
                                         
                                         <label class="btn btn-danger btn-sm ml-2" for="addlistacarrinho<?=$lista['id']?>">
-                                          Adicionar ao carrinho      
+                                          Adicionar ao carrinho    
+                                          <i class="fa fa-shopping-cart"></i>  
                                         </label>  
                                         
                                         <label class="btn btn-primary btn-sm">
