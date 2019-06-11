@@ -49,7 +49,7 @@ $(document).ready( function() {
       },
       telefone:{
         required:  "<div style='color: red;'>Digite um telefone</div><br>"  ,
-        minlength: "<div style='color: red;'>O telefone deve conter, no minimo, 14 dígitos</div>"     
+        minlength: "<div style='color: red;'>Digite um telefone válido</div>"     
       }
     }
   });
