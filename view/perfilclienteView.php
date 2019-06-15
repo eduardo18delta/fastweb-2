@@ -12,6 +12,7 @@ $numeroenderecos  = $perfil->listarenderecos($idusuario);
 
 $numerolistadecompras = $perfil->listarlistasdecompras($idusuario);
 $numerohistorico = $perfil->listarhistorico($idusuario);
+$geralhistorico = $perfil->listargeralhistorico($idusuario);
 $valorhistorico = $perfil->listarvalorhistorico($idusuario);
 $somatotal = 0;
 foreach ($valorhistorico as $valor) {
@@ -174,17 +175,18 @@ foreach ($valorhistorico as $valor) {
           <div class="alert alert-primary resumo">
             <b>Últimas compras</b> 
           </div>
-          <div class="alert alert-secondary d-flex justify-content-around">
-            <b>Pedido 70</b><br>3 produtos</br><b>Data: 11/06/2019</b> <br>R$ 3,00 o Kg</b> <b class="text-success">pagamento aprovado</b> 
-          </div>
-          <div class="alert alert-secondary d-flex justify-content-around">
-            <b>Pedido 71</b><br>3 produtos</br><b>Data: 11/06/2019</b> <br>R$ 3,00 o Kg</b> <b class="text-success">pagamento aprovado</b> 
-          </div>
-          <div class="alert alert-secondary d-flex justify-content-around">
-            <b>Pedido 70</b><br>3 produtos</br><b>Data: 11/06/2019</b> <br>R$ 3,00 o Kg</b> <b class="text-success">pagamento aprovado
-          
 
-                </div>
+
+          <div class="h-200">
+          <?php foreach ($geralhistorico as $lista):?>
+          <div class="alert alert-secondary d-flex justify-content-around">
+            <b>Pedido <?=$lista['id']?></b><br>3 produtos</br><b>Data: <?=$lista['pedido_efetuado']?></b> <br>R$ <?=number_format($lista['valor'],2,",",".")?></b> <b class="text-success">pagamento aprovado</b> 
+          </div>
+          <?php endforeach?>
+          </div>
+
+
+
             </div>
 
             <!-- End of Navbar -->

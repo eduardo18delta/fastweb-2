@@ -35,7 +35,16 @@ class Perfil extends Conexao
     public function listarvalorhistorico($idusuario)
         {       
             $conexao = Conexao::conectarBanco();
-            $query = "SELECT valor FROM pedido WHERE cliente_fk='$idusuario'";
+            $query = "SELECT * FROM pedido WHERE cliente_fk='$idusuario'";
+            $resultado = $conexao->query($query);           
+            $lista = $resultado->fetchAll();
+            return $lista;
+    }
+
+    public function listargeralhistorico($idusuario)
+        {       
+            $conexao = Conexao::conectarBanco();
+            $query = "SELECT * FROM pedido WHERE cliente_fk='$idusuario' ORDER BY id DESC LIMIT 3";
             $resultado = $conexao->query($query);           
             $lista = $resultado->fetchAll();
             return $lista;
