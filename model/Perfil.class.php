@@ -32,7 +32,7 @@ class Perfil extends Conexao
             return $numerolistadecompras;
     }
 
-    public function listarvalorhistorico($idusuario)
+    public function listarvalorpedido($idusuario)
         {       
             $conexao = Conexao::conectarBanco();
             $query = "SELECT * FROM pedido WHERE cliente_fk='$idusuario'";
@@ -40,6 +40,20 @@ class Perfil extends Conexao
             $lista = $resultado->fetchAll();
             return $lista;
     }
+
+    function listarvaloritemPedido($id_pedido){
+     $conexao = Conexao::conectarBanco();
+     $query = "
+     SELECT 
+     produtos.desconto,
+     item_pedido.valor
+     FROM item_pedido JOIN produtos ON item_pedido.produto_fk=produtos.id_produto WHERE item_pedido.pedido_fk='$id_pedido';
+     ";
+     $resultado = $conexao->query($query);
+     $lista = $resultado->fetchAll();
+     return $lista;
+     
+     }
 
     public function listargeralhistorico($idusuario)
         {       

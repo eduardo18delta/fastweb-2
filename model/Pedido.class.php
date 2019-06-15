@@ -37,6 +37,7 @@ Class Pedido extends Conexao{
      SELECT 
      produtos.id_produto,
      produtos.nome,
+     produtos.valor as valor_produto,
      produtos.descricao,
      produtos.peso,
      produtos.medida,

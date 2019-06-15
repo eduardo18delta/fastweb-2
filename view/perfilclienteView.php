@@ -13,10 +13,19 @@ $numeroenderecos  = $perfil->listarenderecos($idusuario);
 $numerolistadecompras = $perfil->listarlistasdecompras($idusuario);
 $numerohistorico = $perfil->listarhistorico($idusuario);
 $geralhistorico = $perfil->listargeralhistorico($idusuario);
-$valorhistorico = $perfil->listarvalorhistorico($idusuario);
+$valorpedido = $perfil->listarvalorpedido($idusuario);
+
 $somatotal = 0;
-foreach ($valorhistorico as $valor) {
-  $somatotal+=$valor['valor'];
+foreach ($valorpedido as $id_pedido) {
+
+  $valoritempedido = $perfil->listarvaloritemPedido($id_pedido['id']);
+
+  foreach ($valoritempedido as $lista_produto){
+    $valor_sem_desconto = ($lista_produto['valor']*(101+$lista_produto['desconto']))/100;
+    $economia = $valor_sem_desconto - $lista_produto['valor'];
+    $somatotal+=$economia;
+  }
+  
 }
 
 ?>
@@ -122,7 +131,7 @@ foreach ($valorhistorico as $valor) {
                             <a href="list-enderecoclienteView.php">
                             <div class="card bg-primary text-white">
                                 <div class="card-body">
-                                    <i class="fas fa-users fa-3x"></i>
+                                    <i class="fas fa-map-marked-alt fa-3x"></i>
                                     <h6 class="card-title">Meus Endereços</h6>
                                     <h2 class="lead"><?=$numeroenderecos?></h2>
                                 </div>
@@ -164,8 +173,8 @@ foreach ($valorhistorico as $valor) {
                             <a>
                             <div class="card bg-secondary text-white">
                                 <div class="card-body">
-                                    <i class="fas fa-address-card fa-3x"></i>
-                                    <h6 class="card-title">Investimento</h6>
+                                    <i class="fa fa-coins fa-3x"></i>
+                                    <h6 class="card-title">Economia</h6>
                                     <h2 class="lead">R$ <?=number_format($somatotal,2,",",".");?></h2>
                                 </div>
                             </div>
