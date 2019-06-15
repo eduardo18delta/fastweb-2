@@ -137,7 +137,7 @@ foreach ($valorpedido as $id_pedido) {
                             <div class="card bg-primary text-white">
                                 <div class="card-body">
                                     <i class="fas fa-map-marked-alt fa-3x"></i>
-                                    <h6 class="card-title">Meus Endereços</h6>
+                                    <h6 class="card-title">Meus endereços</h6>
                                     <h2 class="lead"><?=$numeroenderecos?></h2>
                                 </div>
                             </div>
@@ -159,7 +159,7 @@ foreach ($valorpedido as $id_pedido) {
                             <div class="card bg-danger text-white">
                                 <div class="card-body">
                                     <i class="fas fa-dolly fa-3x"></i>
-                                    <h6 class="card-title">Compras Feitas</h6>
+                                    <h6 class="card-title">Compras efetuadas</h6>
                                     <h2 class="lead"><?=$numerohistorico;?></h2>
                                 </div>
                             </div>
@@ -190,16 +190,36 @@ foreach ($valorpedido as $id_pedido) {
             <b>Últimas compras</b> 
           </div>
 
+          <?php if ($numerohistorico>0) { ?>
 
           <div class="h-200">
           <?php foreach ($geralhistorico as $lista):?>
           <div class="alert alert-secondary d-flex justify-content-around">
-            <b>Pedido <?=$lista['id']?></b><br>Produtos: <?=$qtd_produto[$lista['id']]?></br><b>Data: <?=$lista['pedido_efetuado']?></b> <br>R$ <?=number_format($lista['valor'],2,",",".")?></b> <b class="text-success">pagamento aprovado</b> 
+            <b>Pedido <?=$lista['id']?></b>
+            <span>
+            <?php
+            if ($qtd_produto[$lista['id']]=="1") {
+              echo $qtd_produto[$lista['id']]." produto";
+            } else {
+              echo $qtd_produto[$lista['id']]." produtos";
+            }
+               
+            ?> 
+              </span>
+            <span>Total de R$ <?=number_format($lista['valor'],2,",",".")?></span>
+            <span>Data: <?=$lista['pedido_efetuado']?></span>
+            <b class="text-success">pagamento aprovado</b> 
           </div>
           <?php endforeach?>
           </div>
 
+          <?php } else { ?>
 
+          <div class="alert alert-danger">
+            <b>Aqui será exibido as últimas compras realizadas</b> 
+          </div>
+
+          <?php } ?>
 
             </div>
 

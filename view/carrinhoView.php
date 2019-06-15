@@ -160,6 +160,13 @@ if ($cont<1) {
   echo "Para finalizar a compra <a class='carrinho-endereco' href='../view/list-enderecoclienteView.php'>adicione o endereço de entrega</a>";
 $_SESSION['endereço'] = "ativo";
 $cont++;
+
+$_SESSION['msgcadastro'] = "
+<div class='alert alert-danger mt-4'>
+    <button type='button' class='close' data-dismiss='alert' aria-label='Close>
+    <span aria-hidden='true'>&times;</span>
+    </button>Você precisa informar um endereço pra finalizar a compra!
+</div>";
 } 
 }
 else 
@@ -193,7 +200,7 @@ $('#comprar').submit();
 <?php 
 if (isset($lista['id'])) {
 
-$cont_=0; 
+$cont=0; 
 foreach ($listadeenderecos as $lista){
 
     if ($lista['principal']==1) {
