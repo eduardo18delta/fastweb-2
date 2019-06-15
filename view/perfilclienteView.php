@@ -147,8 +147,8 @@ include '../view/menuView.php';
                             <div class="card bg-secondary text-white">
                                 <div class="card-body">
                                     <i class="fas fa-address-card fa-3x"></i>
-                                    <h6 class="card-title">Cargos </h6>
-                                    <h2 class="lead"><?=$numerocargos;?>6</h2>
+                                    <h6 class="card-title">Investimento</h6>
+                                    <h2 class="lead"><?=$numerocargos;?>R$ 6,00</h2>
                                 </div>
                             </div>
                             </a>
