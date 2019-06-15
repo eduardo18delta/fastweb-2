@@ -14,24 +14,32 @@ class Perfil extends Conexao
             return $numeroenderecos;
     }
 
-    public function listarlistasdecompras()
+    public function listarlistasdecompras($idusuario)
         {       
             $conexao = Conexao::conectarBanco();
-            $query = "SELECT * FROM lista_compras";
+            $query = "SELECT * FROM lista_compras WHERE cliente_fk='$idusuario'";
             $resultado = $conexao->query($query);           
             $numerolistadecompras = $resultado->rowCount();
             return $numerolistadecompras;
     }
 
-    public function listarhistorico()
+    public function listarhistorico($idusuario)
         {       
             $conexao = Conexao::conectarBanco();
-            $query = "SELECT * FROM pedido";
+            $query = "SELECT * FROM pedido WHERE cliente_fk='$idusuario'";
             $resultado = $conexao->query($query);           
             $numerolistadecompras = $resultado->rowCount();
             return $numerolistadecompras;
     }
 
+    public function listarvalorhistorico($idusuario)
+        {       
+            $conexao = Conexao::conectarBanco();
+            $query = "SELECT valor FROM pedido WHERE cliente_fk='$idusuario'";
+            $resultado = $conexao->query($query);           
+            $lista = $resultado->fetchAll();
+            return $lista;
+    }
 
 }
 

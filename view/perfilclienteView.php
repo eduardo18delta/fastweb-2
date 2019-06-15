@@ -6,13 +6,17 @@ require_once '../model/autoload.php';
 
 $perfil = new Perfil();
 
-$endereco = new Endereco(); 
 $idusuario = $_SESSION['id'];
 
-$numeroenderecos  = $endereco->listarenderecos($idusuario);
+$numeroenderecos  = $perfil->listarenderecos($idusuario);
 
-$numerolistadecompras = $perfil->listarlistasdecompras();
-$numerohistorico = $perfil->listarhistorico();
+$numerolistadecompras = $perfil->listarlistasdecompras($idusuario);
+$numerohistorico = $perfil->listarhistorico($idusuario);
+$valorhistorico = $perfil->listarvalorhistorico($idusuario);
+$somatotal = 0;
+foreach ($valorhistorico as $valor) {
+  $somatotal+=$valor['valor'];
+}
 
 ?>
 
@@ -114,7 +118,7 @@ $numerohistorico = $perfil->listarhistorico();
 
                     <div class="row mb-3">
                         <div class="col-lg-3 col-sm-6">
-                            <a href="list-cliente.php">
+                            <a href="list-enderecoclienteView.php">
                             <div class="card bg-primary text-white">
                                 <div class="card-body">
                                     <i class="fas fa-users fa-3x"></i>
@@ -125,23 +129,23 @@ $numerohistorico = $perfil->listarhistorico();
                             </a>
                         </div>
                          <div class="col-lg-3 col-sm-6">
-                            <a href="list-reportsView.php">
+                            <a href="list-listadecomprasView.php">
                             <div class="card bg-success text-white">
                                 <div class="card-body">
                                     <i class="fas fa-paste fa-3x"></i>
                                     <h6 class="card-title"> Listas de compras </h6>
-                                    <h2 class="lead">56</h2>
+                                    <h2 class="lead"><?=$numerolistadecompras?></h2>
                                 </div>
                             </div>
                             </a>
                         </div> 
                         <div class="col-lg-3 col-sm-6">
-                            <a href="list-produtos.php">
+                            <a href="list-historicocomprasView.php">
                             <div class="card bg-danger text-white">
                                 <div class="card-body">
                                     <i class="fas fa-dolly fa-3x"></i>
                                     <h6 class="card-title">Compras Feitas</h6>
-                                    <h2 class="lead"><?=$numeroprodutos;?>10</h2>
+                                    <h2 class="lead"><?=$numerohistorico;?></h2>
                                 </div>
                             </div>
                             </a>
@@ -156,12 +160,12 @@ $numerohistorico = $perfil->listarhistorico();
                             </div>
                         </div> -->
                         <div class="col-lg-3 col-sm-6">
-                            <a href="list-cargos.php">
+                            <a>
                             <div class="card bg-secondary text-white">
                                 <div class="card-body">
                                     <i class="fas fa-address-card fa-3x"></i>
                                     <h6 class="card-title">Investimento</h6>
-                                    <h2 class="lead"><?=$numerocargos;?>R$ 6,00</h2>
+                                    <h2 class="lead">R$ <?=number_format($somatotal,2,",",".");?></h2>
                                 </div>
                             </div>
                             </a>
