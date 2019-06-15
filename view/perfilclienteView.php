@@ -1,6 +1,20 @@
 <?php  
 session_start(); 
 include '../view/menuView.php';
+
+require_once '../model/autoload.php';
+
+$menu = new Menu();
+
+$endereco = new Endereco(); 
+$idusuario = $_SESSION['id'];
+
+$listadeenderecos = $endereco->listaEnderecos($idusuario);
+$numeroenderecos = $listadeenderecos->rowCount(); 
+
+$numerolistadecompras = $menu->listarlistasdecompras();
+$numerohistorico = $menu->listarhistorico();
+
 ?>
 
 <?php if(isset($_SESSION['email'])) { ?>
@@ -106,7 +120,7 @@ include '../view/menuView.php';
                                 <div class="card-body">
                                     <i class="fas fa-users fa-3x"></i>
                                     <h6 class="card-title">Meus Endereços</h6>
-                                    <h2 class="lead"><?=$numeroclientes;?>3</h2>
+                                    <h2 class="lead"><?=$numeroenderecos?></h2>
                                 </div>
                             </div>
                             </a>
