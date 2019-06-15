@@ -1,6 +1,7 @@
 <?php 
 //==========================================INCLUDES=============================================
 include '../view/modalprodutosView.php';
+include '../view/lista-comprasView.php';
 include '../view/menuView.php';
 require_once '../model/autoload.php'; $produtos = new Produtos(); 
 echo '<img src="../assets/img/carrinho-vazio.jpg" width="100%" height="100%" class="bk-carrinho">';
@@ -36,7 +37,7 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
 <!--+++++++++++++++++++++BEM VINDO AO FORMULÁRIO DO CARRINHO DE COMPRAS+++++++++++++++++++++++-->
 <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 <form method="POST" id="carrinho_produtos<?= $listaEspecifica['id_produto']?>" enctype="multipart/form-data">     
-<input type="hidden" name="form-produto-id" value="<?= $listaEspecifica['id_produto']?>"> 
+<input type="hidden" name="form-produto-id" class="form-produto-id" value="<?= $listaEspecifica['id_produto']?>"> 
 <div class="container-fluid desfocar">
  
 <div class="row mt-4">  
@@ -73,7 +74,9 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
       <div class="nome-produto-carrinho"><?=$listaEspecifica['nome']?></div>
       <div class="carrinho-opcao">
         <div class="btn btn-success">Comprar</div>
-        <div class="btn btn-primary">Salvar na listade compras</div>
+         <div class='btn btn-primary add-lista-compra'>
+          Adicionar a lista de Compras
+         </div>
         <button name="rm-produto" class="btn btn-danger remover-produto">Remover</button>
       </div>
     </div>

@@ -88,9 +88,91 @@ include '../view/menuView.php';
 						<b>Resumo do seu perfil</b>	
 					</div>
 
-					<div class="alert alert-danger">
+					<!--
+          <div class="alert alert-danger">
 						<b>Aqui vão as últimas compras feitas</b>	
 					</div>
+          -->
+
+          <!-- Navbar -->
+
+            <div class="content p-1">
+                <div class="list-group-item" style="background-color: #eaeef3">
+
+                    <div class="row mb-3">
+                        <div class="col-lg-3 col-sm-6">
+                            <a href="list-cliente.php">
+                            <div class="card bg-primary text-white">
+                                <div class="card-body">
+                                    <i class="fas fa-users fa-3x"></i>
+                                    <h6 class="card-title">Meus Endereços</h6>
+                                    <h2 class="lead"><?=$numeroclientes;?>3</h2>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                         <div class="col-lg-3 col-sm-6">
+                            <a href="list-reportsView.php">
+                            <div class="card bg-success text-white">
+                                <div class="card-body">
+                                    <i class="fas fa-paste fa-3x"></i>
+                                    <h6 class="card-title"> Listas de compras </h6>
+                                    <h2 class="lead">56</h2>
+                                </div>
+                            </div>
+                            </a>
+                        </div> 
+                        <div class="col-lg-3 col-sm-6">
+                            <a href="list-produtos.php">
+                            <div class="card bg-danger text-white">
+                                <div class="card-body">
+                                    <i class="fas fa-dolly fa-3x"></i>
+                                    <h6 class="card-title">Compras Feitas</h6>
+                                    <h2 class="lead"><?=$numeroprodutos;?>10</h2>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                         <!--<div class="col-lg-3 col-sm-6">
+                            <div class="card bg-warning text-white">
+                                <div class="card-body">
+                                    <i class="fas fa-handshake fa-3x"></i>
+                                    <h6 class="card-title">Financeiro</h6>
+                                    <h2 class="lead">13</h2>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="col-lg-3 col-sm-6">
+                            <a href="list-cargos.php">
+                            <div class="card bg-secondary text-white">
+                                <div class="card-body">
+                                    <i class="fas fa-address-card fa-3x"></i>
+                                    <h6 class="card-title">Cargos </h6>
+                                    <h2 class="lead"><?=$numerocargos;?>6</h2>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+          <div class="alert alert-primary resumo">
+            <b>Últimas compras</b> 
+          </div>
+          <div class="alert alert-secondary d-flex justify-content-around">
+            <b>Pedido 70</b><br>3 produtos</br><b>Data: 11/06/2019</b> <br>R$ 3,00 o Kg</b> <b class="text-success">pagamento aprovado</b> 
+          </div>
+          <div class="alert alert-secondary d-flex justify-content-around">
+            <b>Pedido 71</b><br>3 produtos</br><b>Data: 11/06/2019</b> <br>R$ 3,00 o Kg</b> <b class="text-success">pagamento aprovado</b> 
+          </div>
+          <div class="alert alert-secondary d-flex justify-content-around">
+            <b>Pedido 70</b><br>3 produtos</br><b>Data: 11/06/2019</b> <br>R$ 3,00 o Kg</b> <b class="text-success">pagamento aprovado
+          
+
+                </div>
+            </div>
+
+            <!-- End of Navbar -->
+
+
 				</div>
 
 			</div>
