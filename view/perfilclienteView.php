@@ -4,16 +4,15 @@ include '../view/menuView.php';
 
 require_once '../model/autoload.php';
 
-$menu = new Menu();
+$perfil = new Perfil();
 
 $endereco = new Endereco(); 
 $idusuario = $_SESSION['id'];
 
-$listadeenderecos = $endereco->listaEnderecos($idusuario);
-$numeroenderecos = $listadeenderecos->rowCount(); 
+$numeroenderecos  = $endereco->listarenderecos($idusuario);
 
-$numerolistadecompras = $menu->listarlistasdecompras();
-$numerohistorico = $menu->listarhistorico();
+$numerolistadecompras = $perfil->listarlistasdecompras();
+$numerohistorico = $perfil->listarhistorico();
 
 ?>
 

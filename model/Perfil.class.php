@@ -5,10 +5,10 @@ include_once 'autoload.php';
 class Perfil extends Conexao
 {
 
-    public function listarenderecos()
+    public function listarenderecos($idusuario)
         {       
             $conexao = Conexao::conectarBanco();
-            $query = "SELECT * FROM endereco";
+            $query = "SELECT * FROM endereco WHERE cliente_fk='$idusuario'";
             $resultado = $conexao->query($query);           
             $numeroenderecos = $resultado->rowCount();
             return $numeroenderecos;
