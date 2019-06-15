@@ -101,7 +101,7 @@ include '../view/menuView.php';
 
                     <div class="row mb-3">
                         <div class="col-lg-3 col-sm-6">
-                            <a href="#">
+                            <a href="list-cliente.php">
                             <div class="card bg-primary text-white">
                                 <div class="card-body">
                                     <i class="fas fa-users fa-3x"></i>
@@ -112,7 +112,7 @@ include '../view/menuView.php';
                             </a>
                         </div>
                          <div class="col-lg-3 col-sm-6">
-                            <a href="#">
+                            <a href="list-reportsView.php">
                             <div class="card bg-success text-white">
                                 <div class="card-body">
                                     <i class="fas fa-paste fa-3x"></i>
@@ -123,7 +123,7 @@ include '../view/menuView.php';
                             </a>
                         </div> 
                         <div class="col-lg-3 col-sm-6">
-                            <a href="#">
+                            <a href="list-produtos.php">
                             <div class="card bg-danger text-white">
                                 <div class="card-body">
                                     <i class="fas fa-dolly fa-3x"></i>
@@ -133,8 +133,17 @@ include '../view/menuView.php';
                             </div>
                             </a>
                         </div>
+                         <!--<div class="col-lg-3 col-sm-6">
+                            <div class="card bg-warning text-white">
+                                <div class="card-body">
+                                    <i class="fas fa-handshake fa-3x"></i>
+                                    <h6 class="card-title">Financeiro</h6>
+                                    <h2 class="lead">13</h2>
+                                </div>
+                            </div>
+                        </div> -->
                         <div class="col-lg-3 col-sm-6">
-                            <a href="#">
+                            <a href="list-cargos.php">
                             <div class="card bg-secondary text-white">
                                 <div class="card-body">
                                     <i class="fas fa-address-card fa-3x"></i>
@@ -145,18 +154,17 @@ include '../view/menuView.php';
                             </a>
                         </div>
                     </div>
-            <div class="alert alert-primary resumo">
-              <b>Últimas compras</b> 
-            </div>
-            <div class="alert alert-secondary d-flex justify-content-around">
-              <b>Pedido 70</b> 3 produtos <b>Data: 25/06/2019</b> <b class="text-success">Pagamento aprovado</b> 
-            </div>
-            <div class="alert alert-secondary d-flex justify-content-around">
-             <b>Pedido 69</b> 6 produtos <b>Data: 11/05/2019</b> <b class="text-success">Pagamento aprovado</b> 
-            </div>
+          <div class="alert alert-primary resumo">
+            <b>Últimas compras</b> 
+          </div>
           <div class="alert alert-secondary d-flex justify-content-around">
-              <b>Pedido 68</b> 10 produtos <b>Data: 10/04/2019</b><b class="text-success">Pagamento aprovado</b> 
-            </div>
+            <b>Pedido 70</b><br>3 produtos</br><b>Data: 11/06/2019</b> <br>R$ 3,00 o Kg</b> <b class="text-success">pagamento aprovado</b> 
+          </div>
+          <div class="alert alert-secondary d-flex justify-content-around">
+            <b>Pedido 71</b><br>3 produtos</br><b>Data: 11/06/2019</b> <br>R$ 3,00 o Kg</b> <b class="text-success">pagamento aprovado</b> 
+          </div>
+          <div class="alert alert-secondary d-flex justify-content-around">
+            <b>Pedido 70</b><br>3 produtos</br><b>Data: 11/06/2019</b> <br>R$ 3,00 o Kg</b> <b class="text-success">pagamento aprovado
           
 
                 </div>
