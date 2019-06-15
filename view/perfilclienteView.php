@@ -16,14 +16,19 @@ $geralhistorico = $perfil->listargeralhistorico($idusuario);
 $valorpedido = $perfil->listarvalorpedido($idusuario);
 
 $somatotal = 0;
+
 foreach ($valorpedido as $id_pedido) {
 
-  $valoritempedido = $perfil->listarvaloritemPedido($id_pedido['id']);
+  $qtd_produto[$id_pedido['id']] = 0;
 
+  $valoritempedido = $perfil->listarvaloritemPedido($id_pedido['id']);
   foreach ($valoritempedido as $lista_produto){
     $valor_sem_desconto = ($lista_produto['valor']*(101+$lista_produto['desconto']))/100;
     $economia = $valor_sem_desconto - $lista_produto['valor'];
     $somatotal+=$economia;
+
+    $qtd_produto[$id_pedido['id']]++;
+
   }
   
 }
@@ -189,7 +194,7 @@ foreach ($valorpedido as $id_pedido) {
           <div class="h-200">
           <?php foreach ($geralhistorico as $lista):?>
           <div class="alert alert-secondary d-flex justify-content-around">
-            <b>Pedido <?=$lista['id']?></b><br>3 produtos</br><b>Data: <?=$lista['pedido_efetuado']?></b> <br>R$ <?=number_format($lista['valor'],2,",",".")?></b> <b class="text-success">pagamento aprovado</b> 
+            <b>Pedido <?=$lista['id']?></b><br>Produtos: <?=$qtd_produto[$lista['id']]?></br><b>Data: <?=$lista['pedido_efetuado']?></b> <br>R$ <?=number_format($lista['valor'],2,",",".")?></b> <b class="text-success">pagamento aprovado</b> 
           </div>
           <?php endforeach?>
           </div>
