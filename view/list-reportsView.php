@@ -30,7 +30,7 @@ include_once '../parts/head.php'; ?>
     			Lista de Clientes
   				</div>
   				<div class="card-body">
-    				<h6 class="card-title">Versão 1.0 - Em desenvolvimento</h6>
+    				<h6 class="card-title">Versão 1.0</h6>
     				<p class="card-text">
     					Relatório com os clientes cadastrados no sistema.
     				</p>
@@ -42,7 +42,7 @@ include_once '../parts/head.php'; ?>
     			Ultimas 10 Compras realizadas
   				</div>
   				<div class="card-body">
-    				<h6 class="card-title">Versão 1.0 - Em desenvolvimento</h6>
+    				<h6 class="card-title">Versão 1.0</h6>
     				<p class="card-text">
     					Relatório das últimas 10 compras realizadas.
     				</p>
@@ -57,7 +57,7 @@ include_once '../parts/head.php'; ?>
     			Lista de Produtos
   				</div>
   				<div class="card-body">
-    				<h6 class="card-title">Versão 1.0 - Em desenvolvimento</h6>
+    				<h6 class="card-title">Versão 1.0</h6>
     				<p class="card-text">
     					Relatório com os produtos cadastrados em estoque.
     				</p>
@@ -69,7 +69,7 @@ include_once '../parts/head.php'; ?>
     			Lista de Usuários
   				</div>
   				<div class="card-body">
-    				<h6 class="card-title">Versão 1.0 - Em desenvolvimento</h6>
+    				<h6 class="card-title">Versão 1.0</h6>
     				<p class="card-text">
     					Relatório com os usuários dos sistemas.
     				</p>
