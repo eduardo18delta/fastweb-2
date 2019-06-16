@@ -108,7 +108,7 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
             <span>R$ <?=$valor_com_desconto?></span>       
             </div> 
     </div>
-    <div class="col-md-2 col mt-4"> 
+    <div class="col-md-2 mt-4"> 
         <div class="carrinho-titulo-info carrinho-subtotal<?=$listaEspecifica['id_produto']?>">Subtotal (UND)</div>
           <div class="fofo valor-produto<?=$listaEspecifica['id_produto']?>">R$ 00,00</div>
     </div>
