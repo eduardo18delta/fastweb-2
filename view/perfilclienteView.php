@@ -196,21 +196,30 @@ foreach ($valorpedido as $id_pedido) {
 
           <div class="h-200">
           <?php foreach ($geralhistorico as $lista):?>
-          <div class="alert alert-secondary d-flex justify-content-around">
+          <div class="alert alert-secondary d-lg-flex flex-lg-row flex-sm-column">
+          <div class="col-lg-2 col-sm-6">
             <b>Pedido <?=$lista['id']?></b>
+          </div>
+          <div class="col-lg-2 col-sm-6">
             <span>
             <?php
             if ($qtd_produto[$lista['id']]=="1") {
               echo $qtd_produto[$lista['id']]." produto";
             } else {
               echo $qtd_produto[$lista['id']]." produtos";
-            }
-               
+            }              
             ?> 
               </span>
+            </div>
+            <div class="col-lg-2 col-sm-6">
             <span>Total de R$ <?=number_format($lista['valor'],2,",",".")?></span>
+            </div>
+            <div class="col-lg-3 col-sm-6 d-flex">
             <span>Data: <?=$lista['pedido_efetuado']?></span>
+          </div>
+          <div class="col-lg-3 col-sm-6 d-flex">
             <b class="text-success">pagamento aprovado</b> 
+          </div>
           </div>
           <?php endforeach?>
           </div>
