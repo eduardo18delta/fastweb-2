@@ -290,8 +290,8 @@ function consulta_medida(){
                                 
                                 <div class="bg-primary btn-sm d-flex justify-content-between border border-white">
                                     <label class="btn btn-primary btn-sm expandir-minimizar<?=$lista['id']?>"></label>
-                                    <label class="btn btn-primary btn-sm" style="font-family: optima; text-transform: uppercase;">
-                                        <i><?= $lista['nome']?></i>
+                                    <label class="btn btn-primary btn-sm">
+                                        <?= $lista['nome']?>
                                     </label>
                                     <div class="d-flex"> 
                                         <label class="cont-produtos<?=$lista['id']?> btn btn-primary btn-sm">
