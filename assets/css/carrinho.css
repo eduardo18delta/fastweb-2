@@ -117,11 +117,6 @@
       display: none;
     }
 
-.carrinho-opcao{
-  display: flex;
-  justify-content: space-between;
-}
-
 .carrinho-titulo-info{
   margin-top: 80px;
   font-size: 17px;
@@ -324,11 +319,6 @@ font-weight: bolder;
 .cont_add_produto{
       display: none;
     }
-
-.carrinho-opcao{
-  display: flex;
-  justify-content: space-between;
-}
 
 .carrinho-titulo-info{
   margin-top: 80px;

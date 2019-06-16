@@ -41,7 +41,7 @@ $result = $pedido->listarPedidos($idusuario);
         		<div class="row">
           			<div class="col">                                  
             			<a class=""href="list-enderecoclienteView.php">  
-            			<i class="fas fa-address-card"></i>
+            			<i class="fa fa-home"></i>
             			Endereços    
             			<i class="fas fa-arrow-circle-right icon-plus"></i>      
             			</a>  

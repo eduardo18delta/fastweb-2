@@ -61,7 +61,7 @@ include_once '../parts/head.php'; ?>
     				<p class="card-text">
     					Relatório com os produtos cadastrados em estoque.
     				</p>
-    			<a href="#" class="btn btn-primary">Gerar Relatório</a>
+    			<a href="list-reportsprodutosView.php" class="btn btn-primary">Gerar Relatório</a>
   				</div>
 			</div>	
 			<div class="card mt-2">
@@ -84,3 +84,14 @@ include_once '../parts/head.php'; ?>
 <?php } else {header("Location: ../view/login.php?acess_denied");}?>
 
 <?php include_once '../parts/footer.php'; ?>
+
+
+<?php
+
+$conteudo = "
+<p>teste</p>
+";
+
+
+file_put_contents("../assets/file/produto.pdf", $conteudo);
+?>

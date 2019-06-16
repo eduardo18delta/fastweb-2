@@ -64,7 +64,7 @@ foreach ($valorpedido as $id_pedido) {
         		<div class="row">
           			<div class="col">                                  
             			<a class=""href="list-enderecoclienteView.php">  
-            			<i class="fas fa-address-card"></i>
+            			<i class="fa fa-home"></i>
             			Endereços    
             			<i class="fas fa-arrow-circle-right icon-plus"></i>      
             			</a>  
@@ -132,18 +132,18 @@ foreach ($valorpedido as $id_pedido) {
                 <div class="list-group-item" style="background-color: #eaeef3">
 
                     <div class="row mb-3">
-                        <div class="col-lg-3 col-sm-6">
+                        <div class="col-lg-4 col-sm-6">
                             <a href="list-enderecoclienteView.php">
                             <div class="card bg-primary text-white">
                                 <div class="card-body">
-                                    <i class="fas fa-map-marked-alt fa-3x"></i>
+                                    <i class="fas fa-home fa-3x"></i>
                                     <h6 class="card-title">Meus endereços</h6>
                                     <h2 class="lead"><?=$numeroenderecos?></h2>
                                 </div>
                             </div>
                             </a>
                         </div>
-                         <div class="col-lg-3 col-sm-6">
+                         <div class="col-lg-4 col-sm-6">
                             <a href="list-listadecomprasView.php">
                             <div class="card bg-success text-white">
                                 <div class="card-body">
@@ -154,12 +154,12 @@ foreach ($valorpedido as $id_pedido) {
                             </div>
                             </a>
                         </div> 
-                        <div class="col-lg-3 col-sm-6">
+                        <div class="col-lg-4 col-sm-6">
                             <a href="list-historicocomprasView.php">
                             <div class="card bg-danger text-white">
                                 <div class="card-body">
                                     <i class="fas fa-dolly fa-3x"></i>
-                                    <h6 class="card-title">Compras efetuadas</h6>
+                                    <h6 class="card-title">Histórico de compras</h6>
                                     <h2 class="lead"><?=$numerohistorico;?></h2>
                                 </div>
                             </div>
@@ -174,6 +174,7 @@ foreach ($valorpedido as $id_pedido) {
                                 </div>
                             </div>
                         </div> -->
+                        <!--
                         <div class="col-lg-3 col-sm-6">
                             <a>
                             <div class="card bg-secondary text-white">
@@ -185,6 +186,7 @@ foreach ($valorpedido as $id_pedido) {
                             </div>
                             </a>
                         </div>
+                      -->
                     </div>
           <div class="alert alert-primary resumo">
             <b>Últimas compras</b> 
@@ -194,21 +196,30 @@ foreach ($valorpedido as $id_pedido) {
 
           <div class="h-200">
           <?php foreach ($geralhistorico as $lista):?>
-          <div class="alert alert-secondary d-flex justify-content-around">
+          <div class="alert alert-secondary d-lg-flex flex-lg-row flex-sm-column">
+          <div class="col-lg-2 col-sm-6">
             <b>Pedido <?=$lista['id']?></b>
+          </div>
+          <div class="col-lg-2 col-sm-6">
             <span>
             <?php
             if ($qtd_produto[$lista['id']]=="1") {
               echo $qtd_produto[$lista['id']]." produto";
             } else {
               echo $qtd_produto[$lista['id']]." produtos";
-            }
-               
+            }              
             ?> 
               </span>
+            </div>
+            <div class="col-lg-2 col-sm-6">
             <span>Total de R$ <?=number_format($lista['valor'],2,",",".")?></span>
+            </div>
+            <div class="col-lg-3 col-sm-6 d-flex">
             <span>Data: <?=$lista['pedido_efetuado']?></span>
+          </div>
+          <div class="col-lg-3 col-sm-6 d-flex">
             <b class="text-success">pagamento aprovado</b> 
+          </div>
           </div>
           <?php endforeach?>
           </div>

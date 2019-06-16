@@ -40,9 +40,9 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
 <input type="hidden" name="form-produto-id" class="form-produto-id" value="<?= $listaEspecifica['id_produto']?>"> 
 <div class="container-fluid desfocar">
  
-<div class="row mt-4">  
+<div class="row mt-4 d-lg-flex flex-lg-row flex-sm-column">  
 <!--===========================IMAGEM DO PRODUTO=================================-->          
-  <div class="col-md-2 col mt-4">
+  <div class="col-md-2 col mt-4 d-flex justify-content-center">
     <section class="carrinho-card-principal">
       <div class="desconto-site">
            <div class="desconto-texto-site"><?=$desconto?>%</div>
@@ -70,18 +70,18 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
       </section>
   </div>
   <!--===========================COMPRAR/SALVAR LISTA DE COMPRA/REMOVER=======================-->
-    <div class="col-md-4 col mt-4">
+    <div class="col-md-4 mt-4">
       <div class="nome-produto-carrinho"><?=$listaEspecifica['nome']?></div>
-      <div class="carrinho-opcao">
-        <div class="btn btn-success">Comprar</div>
-         <div class='btn btn-primary add-lista-compra'>
+      <div class="d-lg-flex flex-lg-row flex-sm-column">
+        <div class="btn btn-success mr-2  mt-2">Comprar</div>
+         <div class='btn btn-primary add-lista-compra mr-2  mt-2'>
           Adicionar a lista de Compras
          </div>
-        <button name="rm-produto" class="btn btn-danger remover-produto">Remover</button>
+        <button name="rm-produto" class="btn btn-danger remover-produto mr-2  mt-2">Remover</button>
       </div>
     </div>
   <!--===========================QUANTIDADE/VALOR/SUBTOTAL=======================-->
-    <div class="col-md-2 col mt-2">
+    <div class="col-md-2 mt-2">
       <div class="carrinho-titulo-info carrinho-add-valor<?=$listaEspecifica['id_produto']?>">Quantidade (UND)</div>
       <input type="hidden" class="carrinho-requisicao" value="">
         
@@ -101,7 +101,7 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
 
       <div style="display: none;"><?=$listaEspecifica['quantidade']?> Unidades</div>
     </div>
-    <div class="col-md-2 col mt-4"> 
+    <div class="col-md-2 mt-4"> 
           <div class="carrinho-titulo-info carrinho-valor<?=$listaEspecifica['id_produto']?>">Valor (UND)</div>
           <div class="valor-carrinho<?=$listaEspecifica['id_produto']?>">
             <span class="valor-sem-desconto text-danger">R$ <strike><?=$listaEspecifica['valor']?></strike></span>
@@ -118,7 +118,8 @@ $qtd_produtos = 0; //variável que conta a quantidade de produtos iniciando com 
 <?php endforeach?>
 
 <!--===========================FOOTER DO CARRINHO (PREÇO TOTAL)=======================-->
-<div class="row mt-4 desfocar carrinho-footer">       
+<div class="row mt-4 desfocar carrinho-footer"> 
+<div class="col-lg-12 col-sm-12 d-lg-flex flex-lg-row flex-sm-column">      
   <div class="col-md-7 col mt-4">
     <div>Quantidade de Produtos (<?=$qtd_produtos?>)</div>
     <div>
@@ -258,10 +259,12 @@ echo '
 <script type="text/javascript" src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
 -->
 
-    <div class="col-md-2 col mt-4">
+    <div class="col-md-2 col mt-12">
       <h2>Total</h2>
         <h2 class="carrinho-valor-total">R$ 00,00</h2>
-    </div>  
+    </div> 
+
+    </div> 
 </div>       
 
 <?php
