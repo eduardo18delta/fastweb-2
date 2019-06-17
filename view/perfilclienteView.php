@@ -212,7 +212,7 @@ foreach ($valorpedido as $id_pedido) {
               </span>
             </div>
             <div class="col-lg-2 col-sm-6">
-            <span>Total de R$ <?=number_format($lista['valor'],2,",",".")?></span>
+            <span>Total: R$ <?=number_format($lista['valor'],2,",",".")?></span>
             </div>
             <div class="col-lg-3 col-sm-6 d-flex">
             <span>Data: <?=$lista['pedido_efetuado']?></span>
