@@ -128,21 +128,24 @@ $numeroclientes = $menu->listarclientes();
                                     <h2 class="lead">13</h2>
                                 </div>
                             </div>
-                        </div> -->
+                        </div> -->                                 
+                        <?php if ($_SESSION['permissao']  == 1):?>
                         <div class="col-lg-3 col-sm-6">
                             <a href="list-cargos.php">
-                            <div class="card bg-secondary text-white">
-                                <div class="card-body">
-                                    <i class="fas fa-address-card fa-3x"></i>
-                                    <h6 class="card-title">Cargos </h6>
-                                    <h2 class="lead"><?=$numerocargos;?></h2>
+                                <div class="card bg-secondary text-white">
+                                    <div class="card-body">
+                                        <i class="fas fa-address-card fa-3x"></i>
+                                        <h6 class="card-title">Cargos </h6>
+                                        <h2 class="lead"><?=$numerocargos;?></h2>
+                                    </div>
                                 </div>
-                            </div>
                             </a>
                         </div>
+                        <?php endif ?>                    
                     </div>
 
-                <div class="row mb-3">
+                    <div class="row mb-3">
+                        <?php if ($_SESSION['permissao']  == 1):?>
                         <div class="col-lg-3 col-sm-6">
                             <a href="list-users.php">
                             <div class="card bg-info text-white">
@@ -153,25 +156,11 @@ $numeroclientes = $menu->listarclientes();
                                 </div>
                             </div>
                             </a>
-                        </div>
-                          <!--<div class="col-lg-3 col-sm-6">
-                            <a href="list-cargos.php">
-                            <div class="card bg-secondary text-white">
-                                <div class="card-body">
-                                    <i class="fas fa-bars fa-3x"></i>
-                                    <h6 class="card-title">Slides Home </h6>
-                                    <h2 class="lead"><?=$numerocargos;?></h2>
-                                </div>
-                            </div>
-                            </a>
-                        </div>-->                        
+                        </div>  
+                         <?php endif ?>                   
                     </div>
-
                 </div>
             </div>
-
-            <!-- End of Navbar -->
-
         </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
