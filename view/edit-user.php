@@ -13,7 +13,14 @@ $listarcargo = $users->listarcargo();
 ?>
 
 
-<?php include_once '../parts/head.php'; ?>
+<?php 
+
+session_start();
+
+if(isset($_SESSION['user']) && $_SESSION['permissao'] == 1 ) {
+
+include_once '../parts/head.php'; ?>
+
 
 <div class="container">
 
@@ -84,9 +91,9 @@ $listarcargo = $users->listarcargo();
 </div>
 
 
-<?php include_once '../parts/footer.php' ?>
+<?php } else {header("Location: ../view/menu.php");}?>
 
-
+<?php include_once '../parts/footer.php'; ?>
 
 
 
