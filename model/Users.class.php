@@ -26,9 +26,11 @@ class Users extends Conexao {
 		$id = $sql['id'];
 		$email = $sql['email'];
         $nome = $sql['nome'];
+        $permissao = $sql['permissao'];
 		$_SESSION['user'] = $id;
 		$_SESSION['email'] = $email;
         $_SESSION['nome'] = $nome;
+        $_SESSION['permissao'] = $permissao;
 		header("Location: ../view/menu.php?login_sucess");
 	} 
 	else
