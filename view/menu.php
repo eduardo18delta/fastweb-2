@@ -190,4 +190,4 @@ $numeroclientes = $menu->listarclientes();
     </body>
 </html>
 
-<?php  } else { header("Location: ../login.php?acess_denied"); } ?>
+<?php  } else { header("Location: ../view/login.php?acess_denied"); } ?>

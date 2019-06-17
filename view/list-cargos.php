@@ -4,7 +4,7 @@
 
 session_start();
 
-if(isset($_SESSION['user'])) {
+if(isset($_SESSION['user']) && $_SESSION['permissao'] == 1 ) {
 
 include_once '../parts/head.php'; ?>
 
@@ -87,6 +87,6 @@ include_once '../parts/head.php'; ?>
 
 </div>
 
-<?php } else {header("Location: ../view/login.php?acess_denied");}?>
+<?php } else {header("Location: ../view/menu.php");}?>
 
 <?php include_once '../parts/footer.php'; ?>
