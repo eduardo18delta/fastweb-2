@@ -51,7 +51,7 @@
         } 
         else 
         { 
-          echo "Gerente";
+          echo "Colaborador";
         };
       ?>
     </div>          
