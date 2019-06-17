@@ -37,14 +37,25 @@
 
 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
-     <div class="modal-content">      
-     <div class="container">   
+    <div class="modal-content">      
+    <div class="container">   
 
-     <div class="alert alert-info mt-4">
+    <div class="alert alert-info mt-4">
       <h5 class="alert-heading">Sessão:</h5>  
-      Usuário: <?php echo $_SESSION['nome']; ?></div>          
-     </div>
-
+      Usuário: <?php echo $_SESSION['nome']; ?><br>
+      Permissão: 
+      <?php 
+        if ($_SESSION['permissao'] == 1) 
+        { 
+          echo("Administrador") ;
+        } 
+        else 
+        { 
+          echo "Gerente";
+        };
+      ?>
+    </div>          
+    </div>
     </div>
   </div>
 </div>
