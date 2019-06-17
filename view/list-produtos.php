@@ -66,7 +66,9 @@ include_once '../parts/head.php'; ?>
         <th>Categoria</th>
         <th>Cód. Barra:</th>
         <th>Editar:</th>
+        <?php if ($_SESSION['permissao']  == 1):?>
         <th>Apagar:</th>
+        <?php endif ?>
       </tr>
     </thead>
     <tbody class="lista-produtos">
@@ -84,6 +86,7 @@ include_once '../parts/head.php'; ?>
         <td><?= $produtos['marca']?></td>
         <td><?= $produtos['descricao']?></td>
         <th><?=$produtos['cod_barra']?></th>
+        <?php if ($_SESSION['permissao']  == 1):?>
         <td>
           <form name="deleteuser" method="post" action="../controller/deleteprodutoController.php">
           
@@ -91,6 +94,7 @@ include_once '../parts/head.php'; ?>
           <input class="btn btn-danger" onclick="return confirm('Deseja realmente apagar? Produto:<?=$produtos['nome']?>');" type="submit" value="Apagar">
           </form>
         </td>
+        <?php endif ?>  
         <td> 
           <!--       
           <form name="updateuser" method="post" action="../view/edit-produtos.php">
