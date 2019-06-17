@@ -59,9 +59,13 @@ $numeroclientes = $menu->listarclientes();
                
                     <li><a href="list-produtos.php"><i class="fas fa-dolly"></i> Estoque </a></li>              
 
+                    <?php if ($_SESSION['permissao']  == 1):?>
                     <li><a href="list-users.php"><i class="fas fa-users"></i> Usuários</a></li>
+                    <?php endif ?>  
 
+                    <?php if ($_SESSION['permissao']  == 1):?>
                     <li><a href="list-cargos.php"><i class="fas fa-address-card"></i> Cargos</a></li>
+                    <?php endif ?>  
 
 
                     <!-- Button of Logoff -->
