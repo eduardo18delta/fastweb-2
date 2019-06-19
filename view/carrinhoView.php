@@ -198,8 +198,7 @@ $('#comprar').submit();
 
 </script>
 
-<?php 
-if (isset($lista['id'])) {
+<?php  if(isset($_SESSION['id'])) { 
 
 $cont=0; 
 foreach ($listadeenderecos as $lista){
@@ -212,7 +211,11 @@ foreach ($listadeenderecos as $lista){
         </div>
         ';
         $cont++;
-    } else if ($cont<1) {
+    } 
+
+}
+
+if ($cont<1) {
         echo '
         <div class="col-md-3 col mt-4">
             <a href="../view/list-enderecoclienteView.php" class="btn btn-danger form-control">FINALIZAR COMPRA</a>
@@ -228,11 +231,6 @@ foreach ($listadeenderecos as $lista){
 
         $cont++;
     }
-
-
-}
-
-
 
 } else {
 echo '
