@@ -525,7 +525,7 @@ include "../parts/modal_listadecompra.php";
 } 
 else 
 { 
-  $_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita!</div>";
+  $_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita! Faça login ou <a href='cadastroclienteView.php'>Cadastre-se</a></div>";
   header("Location: ../view/loginclienteView.php"); 
 } 
 

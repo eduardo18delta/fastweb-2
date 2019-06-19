@@ -249,7 +249,7 @@ foreach ($valorpedido as $id_pedido) {
 } 
 else 
 { 
-  $_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita!</div>";
+  $_SESSION['msg'] = "<div class='alert alert-danger'>Área restrita! Faça login ou <a href='cadastroclienteView.php'>Cadastre-se</a></div>";
   header("Location: loginclienteView.php"); 
 } 
 
