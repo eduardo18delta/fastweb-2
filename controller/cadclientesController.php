@@ -15,8 +15,19 @@ if ($password == $password_again) {
  	echo "Password são diferentes";	
 }
 
-$foto_perfil = md5(uniqid(time()));
+$file = $_FILES["foto-perfil"];
+$allow = array('jpg', 'png', 'bmp', 'gif', 'jpeg', 'pjpeg');
+$ext = substr($file['type'], strrpos($file['type'], '/') + 1);
+if (array_search($ext, $allow) === false) {
+	// <erro>
+} else {	
+
+$foto_perfil = md5(uniqid(time())).".".$ext;
 move_uploaded_file($_FILES["foto-perfil"]["tmp_name"],"../assets/img/upload_perfil/".$foto_perfil);
+
+}
+
+
 
 $cliente = new Cliente();
 

@@ -33,7 +33,7 @@ include_once '../parts/head.php'; ?>
     				<p class="card-text">
     					Relatório com os clientes cadastrados no sistema.
     				</p>
-    			<a href="#" class="btn btn-primary">Gerar Relatório</a>
+    			<a href="list-reportsclientesView.php" target="_blank" class="btn btn-primary">Gerar Relatório</a>
   				</div>
 			</div>
 			<div class="card mt-2">
@@ -58,7 +58,7 @@ include_once '../parts/head.php'; ?>
     				<p class="card-text">
     					Relatório com os produtos cadastrados em estoque.
     				</p>
-    			<a href="list-reportsprodutosView.php" class="btn btn-primary">Gerar Relatório</a>
+    			<a href="list-reportsprodutosView.php" target="_blank" class="btn btn-primary">Gerar Relatório</a>
   				</div>
 			</div>	
 			<div class="card mt-2">
@@ -69,7 +69,7 @@ include_once '../parts/head.php'; ?>
     				<p class="card-text">
     					Relatório com os usuários dos sistemas.
     				</p>
-    			<a href="#" class="btn btn-primary">Gerar Relatório</a>
+    			<a href="list-reportsusuariosView.php" target="_blank" class="btn btn-primary">Gerar Relatório</a>
   				</div>
 			</div>	
 		</div>

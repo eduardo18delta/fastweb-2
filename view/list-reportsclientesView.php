@@ -24,7 +24,7 @@ $pdf->Image("../assets/img/logo.png", 100,17,15,15);
 //$titulo="Relatório de clientes em estoque";
 //escreve no pdf largura,altura,conteudo,borda,quebra de linha,alinhamento
 $pdf->SetFont('Arial','',10);
-$pdf->Cell(0,5,$numeroclientes.' clientes existente no sistema',0,0,'L'); 
+$pdf->Cell(0,5,$numeroclientes.' clientes cadastrados no sistema',0,0,'L'); 
 $pdf->Cell(0,5,'http://www.fastwebstore.com.br',0,1,'R'); 
 $pdf->Cell(0,0,'',1,1,'L'); 
 $pdf->Ln(17);
