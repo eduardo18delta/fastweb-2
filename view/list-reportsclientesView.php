@@ -47,7 +47,12 @@ $pdf->setFillColor(230,230,230);
 
                 $pdf->SetFont('Arial','',12);
                 //$pdf->Cell(5,10,$clientes['id_cliente'],1,0,'C');
-                  $pdf->Cell(10,10,$pdf->Image('../assets/img/upload_perfil/'.$clientes['foto_perfil'], $pdf->GetX(), $pdf->GetY(), 10),1,0,'',false);
+                if ($clientes['foto_perfil']==NULL) {
+                $pdf->Cell(10,10,$pdf->Image('../assets/img/perfil.jpg', $pdf->GetX(), $pdf->GetY(), 10),1,0,'',false);  
+                } else {
+                $pdf->Cell(10,10,$pdf->Image('../assets/img/upload_perfil/'.$clientes['foto_perfil'], $pdf->GetX(), $pdf->GetY(), 10),1,0,'',false);
+                }
+                  
             
                 $pdf->Cell(50,10,$clientes['nome'],1,0,'C');
                 $pdf->Cell(58,10,$clientes['email'],1,0,'C');

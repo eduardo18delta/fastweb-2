@@ -44,7 +44,7 @@ include_once '../parts/head.php'; ?>
     				<p class="card-text">
     					Relatório das últimas 10 compras realizadas.
     				</p>
-    			<a href="#" class="btn btn-primary">Gerar Relatório</a>
+    			<a href="list-reportspedidosView.php" target="_blank" class="btn btn-primary">Gerar Relatório</a>
   				</div>
 			</div>
 		</div>		

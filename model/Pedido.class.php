@@ -23,7 +23,18 @@ Class Pedido extends Conexao{
     function listarPedidos($id_clientes){
      $conexao = Conexao::conectarBanco();
      $query = "
-     SELECT pedido.id, status_pedido.status, pedido.valor, clientes.nome, endereco.rua, endereco.numero, endereco.bairro, endereco.cidade, endereco.estado, endereco.cep FROM pedido JOIN clientes JOIN endereco JOIN status_pedido ON pedido.cliente_fk=clientes.id AND pedido.endereco_fk=endereco.id AND pedido.status_fk=status_pedido.id WHERE clientes.id='$id_clientes' ORDER BY pedido.id DESC;
+     SELECT pedido.id, status_pedido.status, pedido.valor, clientes.nome, endereco.rua, endereco.numero, endereco.bairro, endereco.cidade, endereco.estado, endereco.cep, pedido.pedido_efetuado FROM pedido JOIN clientes JOIN endereco JOIN status_pedido ON pedido.cliente_fk=clientes.id AND pedido.endereco_fk=endereco.id AND pedido.status_fk=status_pedido.id WHERE clientes.id='$id_clientes' ORDER BY pedido.id DESC;
+     ";
+     $resultado = $conexao->query($query);
+     $lista = $resultado->fetchAll();
+     return $lista;
+     
+     }
+
+     function listartodosPedidos(){
+     $conexao = Conexao::conectarBanco();
+     $query = "
+     SELECT pedido.id, status_pedido.status, pedido.valor, clientes.nome, endereco.rua, endereco.numero, endereco.bairro, endereco.cidade, endereco.estado, endereco.cep, pedido.pedido_efetuado FROM pedido JOIN clientes JOIN endereco JOIN status_pedido ON pedido.cliente_fk=clientes.id AND pedido.endereco_fk=endereco.id AND pedido.status_fk=status_pedido.id ORDER BY pedido.id DESC;
      ";
      $resultado = $conexao->query($query);
      $lista = $resultado->fetchAll();
@@ -58,6 +69,15 @@ Class Pedido extends Conexao{
      return $lista;
      
      }
+
+     public function listarqtdPedido()
+        {       
+            $conexao = Conexao::conectarBanco();
+            $query = "SELECT * FROM pedido";
+            $resultado = $conexao->query($query);           
+            $numeropedido = $resultado->rowCount();
+            return $numeropedido;
+    }
 
      function consultarUltimoPedido()
      {

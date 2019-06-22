@@ -108,7 +108,7 @@ $numeroclientes = $menu->listarclientes();
                                 <div class="card-body">
                                     <i class="fas fa-paste fa-3x"></i>
                                     <h6 class="card-title"> Relatórios </h6>
-                                    <h2 class="lead">56</h2>
+                                    <h2 class="lead">4</h2>
                                 </div>
                             </div>
                             </a>
