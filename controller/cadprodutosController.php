@@ -22,8 +22,20 @@ $destaque=1;
 } else {
 $destaque=0;
 }
-$img_01 = md5(uniqid(time()));
+
+$file = $_FILES["img_01"];
+$allow = array('jpg', 'png', 'bmp', 'gif', 'jpeg', 'pjpeg');
+$ext = substr($file['type'], strrpos($file['type'], '/') + 1);
+if (array_search($ext, $allow) === false) {
+	// <erro>
+} else {	
+
+
+  $img_01 = md5(uniqid(time())).".".$ext;
   move_uploaded_file($_FILES["img_01"]["tmp_name"],"../assets/img/upload_produtos/".$img_01);
+}
+
+
 $img_02 = md5(uniqid(time()));
   move_uploaded_file($_FILES["img_02"]["tmp_name"],"../assets/img/upload_produtos/".$img_02);
 $img_03 = md5(uniqid(time()));
