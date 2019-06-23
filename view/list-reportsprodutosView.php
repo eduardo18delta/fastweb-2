@@ -56,7 +56,7 @@ $pdf->setFillColor(230,230,230);
                   $pdf->Cell(10,10,$pdf->Image('../assets/img/upload_produtos/'.$produtos['img_01'], $pdf->GetX(), $pdf->GetY(), 10),1,0,'',false);
             
                 $pdf->Cell(50,10,$produtos['nome'],1,0,'C');
-                $pdf->Cell(40,10,number_format($produtos['valor'],2,",","."),1,0,'C');
+                $pdf->Cell(40,10,"R$ ".number_format($produtos['valor'],2,",","."),1,0,'C');
                 $pdf->Cell(40,10,$produtos['quantidade'],1,0,'C');
 
                 if ($produtos['medida']==1){
