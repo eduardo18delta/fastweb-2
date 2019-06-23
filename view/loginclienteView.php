@@ -25,7 +25,7 @@
 									<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 								</div>
 								<input type="text" name="email" placeholder="Digite o seu e-mail" class="form-control">	
-							</div>
+							</div>	
 
 							<div class="input-group form-group">
 								<div class="input-group-prepend">
