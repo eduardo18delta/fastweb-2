@@ -339,7 +339,7 @@ function consulta_medida(){
                                             <tr>
                                                 <th></th>
                                                 <th>Descrição</th>
-                                                <th>Valor</th>
+                                                <th>Desconto</th>
                                                 <th>Medida</th>
                                                 <th></th>
                                             </tr>
@@ -468,8 +468,8 @@ function consulta_medida(){
             <tr>
                 <th></th>
                 <th>Descrição</th>
+                <th>Desconto</th>
                 <th>Valor</th>
-                <th>Medida</th>
                 <th></th>
             </tr>
           </thead>
@@ -484,7 +484,7 @@ function consulta_medida(){
         <td><img src="../assets/img/upload_produtos/<?=$produtos['img_01']?>" whidth="50px" height="50px"></td>
         <td><?=$produtos['nome']?></td>
         <td><?=$produtos['desconto']?>%</td>
-        <td><?=$produtos['valor']?></td>
+        <td>R$ <?=number_format($produtos['valor'],2,",",".")?></td>
         <td><input type="submit" class="btn btn-success" name="enviar" value="Adicionar"></td>
       </tr>  
       </form>   
