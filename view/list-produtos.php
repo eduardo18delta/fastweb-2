@@ -663,7 +663,7 @@ $('#filtro-nome-produto').keyup(function() {
           $(".msg-produto").html("<div class='alert alert-success mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
-          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produto em estoque!</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produto encontrado</span>"
           +"</div>");
           
           } else
@@ -671,7 +671,7 @@ $('#filtro-nome-produto').keyup(function() {
           $(".msg-produto").html("<div class='alert alert-success mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
-          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produtos em estoque!</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produtos encontrados</span>"
           +"</div>");
           
           }  else       
@@ -679,7 +679,7 @@ $('#filtro-nome-produto').keyup(function() {
           $(".msg-produto").html("<div class='alert alert-danger mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
-          +"</button><span class='w-90  d-flex justify-content-center'>Nenhum produto em estoque!</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>Nenhum produto encontrado</span>"
           +"</div>");
           q++
           } 
@@ -707,7 +707,7 @@ $('#filtro-cod-barra-produto').keyup(function() {
           $(".msg-produto").html("<div class='alert alert-success mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
-          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produto em estoque!</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produto encontrado</span>"
           +"</div>");
           
           } else
@@ -715,7 +715,7 @@ $('#filtro-cod-barra-produto').keyup(function() {
           $(".msg-produto").html("<div class='alert alert-success mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
-          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produtos em estoque!</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produtos encontrados!</span>"
           +"</div>");
           
           }  else       
@@ -723,7 +723,7 @@ $('#filtro-cod-barra-produto').keyup(function() {
           $(".msg-produto").html("<div class='alert alert-danger mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
-          +"</button><span class='w-90  d-flex justify-content-center'>Nenhum produto em estoque!</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>Nenhum produto encontrado</span>"
           +"</div>");
           q++
           }
