@@ -440,6 +440,49 @@ $(".und").click(function(){
 })
 
 
+$("[name=busca-cod-barra]").removeClass("d-none")
+$("[name=busca-cod-barra]").hide()
+
+$(".busca_cod_barra").click(function(){
+
+  if ($(".busca_cod_barra").hasClass('ativo')) {
+    $(".busca_cod_barra").addClass("bg-white")
+    $(".busca_cod_barra").addClass("text-dark")
+    $(".busca_cod_barra").removeClass("bg-primary")
+    $(".busca_cod_barra").removeClass("text-white")
+  //$(".busca_cod_barra").css("background-color","#fff")
+  //$(".busca_cod_barra i").css("background-color","#000")
+  $("[name=busca-cod-barra]").hide()
+  $("[name=busca]").show()
+  $("#form-busca").attr("action","../view/buscaView.php")
+  $(".busca_cod_barra").removeClass("ativo")
+  return false;
+  } else {
+    $(".busca_cod_barra").addClass("bg-primary")
+    $(".busca_cod_barra").addClass("text-white")
+    $(".busca_cod_barra").removeClass("bg-white")
+    $(".busca_cod_barra").removeClass("text-dark")
+  //$(".busca_cod_barra").css("background-color","red")
+  //$(".busca_cod_barra i").css("background-color","#fff")
+  $("[name=busca-cod-barra]").focus();
+  $("[name=busca-cod-barra]").show()
+  $("[name=busca]").hide()
+  $("#form-busca").attr("action","../view/buscacodbarraView.php")
+$("[name=busca-cod-barra]").select()
+  $("[name=busca-cod-barra]").keyup(function() {
+        
+      $(".enviar-cod-barra").focus()
+      
+      return true;
+  });
+
+  $(".busca_cod_barra").addClass("ativo")
+  return false; 
+  }
+  
+})
+
+
 });
 
 

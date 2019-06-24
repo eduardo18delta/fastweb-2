@@ -162,12 +162,13 @@ if ($cont<1) {
 $_SESSION['endereço'] = "ativo";
 $cont++;
 
-$_SESSION['msgcadastro'] = "
+/*$_SESSION['msgcadastro'] = "
 <div class='alert alert-danger mt-4'>
     <button type='button' class='close' data-dismiss='alert' aria-label='Close>
     <span aria-hidden='true'>&times;</span>
     </button>Você precisa informar um endereço pra finalizar a compra!
 </div>";
+*/
 } 
 }
 else 
@@ -221,14 +222,14 @@ if ($cont<1) {
             <a href="../view/list-enderecoclienteView.php" class="btn btn-danger form-control">FINALIZAR COMPRA</a>
         </div>
         ';
-
+        /*
         $_SESSION['msgcadastro'] = "
         <div class='alert alert-danger mt-4'>
             <button type='button' class='close' data-dismiss='alert' aria-label='Close>
             <span aria-hidden='true'>&times;</span>
             </button>Você precisa informar um endereço pra finalizar a compra!
         </div>";
-
+        */
         $cont++;
     }
 

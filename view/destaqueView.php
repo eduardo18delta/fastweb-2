@@ -159,7 +159,7 @@ $listaAlimentos=$produtos->listaAlimentos();?>
               <div> 
               <div class="valor-produto"><strike>R$ <?=number_format($produtos['valor'],2,",",".")?></strike></div>
               <div class="valor-produto-desconto">R$ <?= number_format(($produtos['valor']*(100-$produtos['desconto']))/100,2,",",".")?></div>
-              <div class="unidade-produto<?=$destaque['id_produto']?>">(Uni)</div>
+              <div class="unidade-produto<?=$produtos['id_produto']?>">(Uni)</div>
             </div> 
             </div>  
             <div class="estrelas">

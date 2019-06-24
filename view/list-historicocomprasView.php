@@ -114,8 +114,8 @@ $result = $pedido->listarPedidos($idusuario);
                                 <tr>
 
                                     <td>Pedido: <strong><?= $lista_pedido['id']?></strong></td> 
-                                    <td>Data: <strong>11/06/2019</strong></td> 
-                                    <td>Status: <strong><?= $lista_pedido['status']?></strong></td> 
+                                    <td>Data: <strong>24/06/2019</strong></td> 
+                                    <td>Status: <span class="text-success"><strong>Pagamento aprovado<!--<?= $lista_pedido['status']?>--></strong></span></td> 
                                     <td class="d-flex">Total:<strong><span class="text-danger ml-2"> R$ <?= number_format($lista_pedido['valor'],2,",",".")?></span></strong></td> 
               
                                 </tr>
@@ -187,19 +187,19 @@ $result = $pedido->listarPedidos($idusuario);
 
                                     <td>
                                         <div align="center">Pedido efetuado</div>
-                                        <div align="center">11/06/2019</div>
+                                        <div align="center">24/06/2019</div>
                                     </td> 
                                     <td>
                                         <div align="center">Pagamento autorizado</div>
-                                        <div align="center">11/06/2019</div>
+                                        <div align="center">24/06/2019</div>
                                     </td> 
                                     <td>
                                         <div align="center">Nota Fiscal emitida</div>
-                                        <div align="center">11/06/2019</div>
+                                        <div align="center">24/06/2019</div>
                                     </td> 
                                     <td>
                                         <div align="center">Pedido entregue</div>
-                                        <!--<div align="center">11/06/2019</div>-->
+                                        <!--<div align="center">24/06/2019</div>-->
                                         <div align="center">Em andamento</div>
                                     </td> 
               

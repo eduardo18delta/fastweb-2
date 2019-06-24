@@ -237,7 +237,7 @@ include_once '../parts/head.php'; ?>
           <div class="col-md-4 col-sm-12 form-group">
           <label>Categoria:</label>
           <select name="categoria" class="form-control">
-          <option selected disabled="">Escolha uma categoria</option>
+          <!--<option selected disabled="">Escolha uma categoria</option>-->
           <?php foreach ($listacategorias as $categorias):?>  
       <option value="<?=$categorias['id_categoria']?>"><?=$categorias['descricao']?></option>
       <?php endforeach?>
@@ -663,7 +663,7 @@ $('#filtro-nome-produto').keyup(function() {
           $(".msg-produto").html("<div class='alert alert-success mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
-          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produto em estoque!</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produto encontrado</span>"
           +"</div>");
           
           } else
@@ -671,7 +671,7 @@ $('#filtro-nome-produto').keyup(function() {
           $(".msg-produto").html("<div class='alert alert-success mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
-          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produtos em estoque!</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produtos encontrados</span>"
           +"</div>");
           
           }  else       
@@ -679,7 +679,7 @@ $('#filtro-nome-produto').keyup(function() {
           $(".msg-produto").html("<div class='alert alert-danger mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
-          +"</button><span class='w-90  d-flex justify-content-center'>Nenhum produto em estoque!</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>Nenhum produto encontrado</span>"
           +"</div>");
           q++
           } 
@@ -707,7 +707,7 @@ $('#filtro-cod-barra-produto').keyup(function() {
           $(".msg-produto").html("<div class='alert alert-success mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
-          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produto em estoque!</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produto encontrado</span>"
           +"</div>");
           
           } else
@@ -715,7 +715,7 @@ $('#filtro-cod-barra-produto').keyup(function() {
           $(".msg-produto").html("<div class='alert alert-success mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
-          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produtos em estoque!</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>"+q+" produtos encontrados!</span>"
           +"</div>");
           
           }  else       
@@ -723,53 +723,12 @@ $('#filtro-cod-barra-produto').keyup(function() {
           $(".msg-produto").html("<div class='alert alert-danger mt-4'>"
           +"<button type='button' class='close' data-dismiss='alert' aria-label='Close>"
           +"<span aria-hidden='true'>&times;</span>"
-          +"</button><span class='w-90  d-flex justify-content-center'>Nenhum produto em estoque!</span>"
+          +"</button><span class='w-90  d-flex justify-content-center'>Nenhum produto encontrado</span>"
           +"</div>");
           q++
           }
 });
 
-$("[name=busca-cod-barra]").removeClass("d-none")
-$("[name=busca-cod-barra]").hide()
-
-$(".busca_cod_barra").click(function(){
-
-  if ($(".busca_cod_barra").hasClass('ativo')) {
-    $(".busca_cod_barra").addClass("bg-white")
-    $(".busca_cod_barra").addClass("text-dark")
-    $(".busca_cod_barra").removeClass("bg-primary")
-    $(".busca_cod_barra").removeClass("text-white")
-  //$(".busca_cod_barra").css("background-color","#fff")
-  //$(".busca_cod_barra i").css("background-color","#000")
-  $("[name=busca-cod-barra]").hide()
-  $("[name=busca]").show()
-  $("#form-busca").attr("action","../view/buscaView.php")
-  $(".busca_cod_barra").removeClass("ativo")
-  return false;
-  } else {
-    $(".busca_cod_barra").addClass("bg-primary")
-    $(".busca_cod_barra").addClass("text-white")
-    $(".busca_cod_barra").removeClass("bg-white")
-    $(".busca_cod_barra").removeClass("text-dark")
-  //$(".busca_cod_barra").css("background-color","red")
-  //$(".busca_cod_barra i").css("background-color","#fff")
-  $("[name=busca-cod-barra]").focus();
-  $("[name=busca-cod-barra]").show()
-  $("[name=busca]").hide()
-  $("#form-busca").attr("action","../view/buscacodbarraView.php")
-$("[name=busca-cod-barra]").select()
-  $("[name=busca-cod-barra]").keyup(function() {
-        
-      $(".enviar-cod-barra").focus()
-      
-      return true;
-  });
-
-  $(".busca_cod_barra").addClass("ativo")
-  return false; 
-  }
-  
-})
 
       
 }); //fim do jquery

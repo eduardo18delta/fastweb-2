@@ -38,7 +38,7 @@ $pdf->setFillColor(230,230,230);
 				//$pdf->Cell(5,10,'id',0,0,'C',1);
 				$pdf->Cell(10,10,'',0,0,'C',1);
                 $pdf->Cell(50,10,'Nome',0,0,'C',1);
-                $pdf->Cell(58,10,'E-mail',0,0,'C',1);
+                $pdf->Cell(68,10,'E-mail',0,0,'C',1);
                 $pdf->Cell(40,10,'Contato ',0,0,'C',1);
                 $pdf->Cell(22,10,'Sexo',0,1,'C',1);
 
@@ -55,7 +55,7 @@ $pdf->setFillColor(230,230,230);
                   
             
                 $pdf->Cell(50,10,$clientes['nome'],1,0,'C');
-                $pdf->Cell(58,10,$clientes['email'],1,0,'C');
+                $pdf->Cell(68,10,$clientes['email'],1,0,'C');
                 $pdf->Cell(40,10,$clientes['telefone'],1,0,'C');
                 $pdf->Cell(22,10,$clientes['sexo'],1,1,'C');
 	     

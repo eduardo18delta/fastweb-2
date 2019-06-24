@@ -43,7 +43,7 @@ $pdf->SetFont('Arial','B',12);
 $pdf->setFillColor(230,230,230); 
         //$pdf->Cell(5,10,'id',0,0,'C',1);
         $pdf->Cell(10,10,'',0,0,'C',1);
-                $pdf->Cell(50,10,'Nome',0,0,'C',1);
+                $pdf->Cell(60,10,'Nome',0,0,'C',1);
                 $pdf->Cell(40,10,'Valor',0,0,'C',1);
                 $pdf->Cell(40,10,'Quantidade ',0,0,'C',1);
                 $pdf->Cell(40,10,'Medida',0,1,'C',1);
@@ -55,7 +55,7 @@ $pdf->setFillColor(230,230,230);
                 //$pdf->Cell(5,10,$produtos['id_produto'],1,0,'C');
                   $pdf->Cell(10,10,$pdf->Image('../assets/img/upload_produtos/'.$produtos['img_01'], $pdf->GetX(), $pdf->GetY(), 10),1,0,'',false);
             
-                $pdf->Cell(50,10,$produtos['nome'],1,0,'C');
+                $pdf->Cell(60,10,$produtos['nome'],1,0,'C');
                 $pdf->Cell(40,10,"R$ ".number_format($produtos['valor'],2,",","."),1,0,'C');
                 $pdf->Cell(40,10,$produtos['quantidade'],1,0,'C');
 
