@@ -601,7 +601,7 @@
     }
 
     .slides_img img{
-      cursor: url(../assets/img/lupa.gif);
+      /*cursor: url(../assets/img/lupa.gif);*/
     }
 
     .slide_modal{
@@ -619,7 +619,7 @@
       padding-bottom: 15px;
     }
     .slide_produtos{
-      cursor:url(../img/lupa.gif), default;
+      /*cursor:url(../img/lupa.gif), default;*/
     }
     .btn-action-modal {
       margin-top: 5px;
