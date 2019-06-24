@@ -59,7 +59,16 @@ $('#filtro-nome<?=$lista['id']?>').keyup(function() {
     });
 });
 
-
+$('#filtro-nome').keyup(function() {
+    var nomeFiltro = $(this).val().toLowerCase();
+    console.log(nomeFiltro);
+    $('.listar-compras').find('tr').each(function() {
+        var conteudoCelula = $(this).find('td').text();
+        console.log(conteudoCelula);
+        var corresponde = conteudoCelula.toLowerCase().indexOf(nomeFiltro) >= 0;
+        $(this).css('display', corresponde ? '' : 'none');
+    });
+});
 
 <?php
 $qtd_produtos_js=0;
@@ -464,7 +473,7 @@ function consulta_medida(){
         
         <table class="table table-striped table-hover table-bordered mt-4">
           <thead>
-            <tr><input style="width: 50%; margin: 0px auto" class="form-control" id="filtro-nome<?=$lista['id']?>" placeholder="Pesquisar..." /></tr>
+            <tr><input style="width: 50%; margin: 0px auto" class="form-control" id="filtro-nome" placeholder="Pesquisar..." /></tr>
             <tr>
                 <th></th>
                 <th>Descrição</th>
