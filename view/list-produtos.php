@@ -237,7 +237,7 @@ include_once '../parts/head.php'; ?>
           <div class="col-md-4 col-sm-12 form-group">
           <label>Categoria:</label>
           <select name="categoria" class="form-control">
-          <option selected disabled="">Escolha uma categoria</option>
+          <!--<option selected disabled="">Escolha uma categoria</option>-->
           <?php foreach ($listacategorias as $categorias):?>  
       <option value="<?=$categorias['id_categoria']?>"><?=$categorias['descricao']?></option>
       <?php endforeach?>
